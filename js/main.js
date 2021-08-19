@@ -14,11 +14,14 @@ exclude: 'yes'
         $('.content-wrapper').addClass('animated slideInRight')
       } else {
         $('.panel-cover').css('max-width', currentWidth)
-        $('.panel-cover').animate({ 'max-width': '530px', 'width': '40%' }, 400, swing = 'swing', function () { })
+        $('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 400, swing = 'swing', function () { })
       }
     })
 
-    if (window.location.hash && window.location.hash == '#blog') {
+    if (window.location.hash &&
+        window.location.hash == '#about' ||
+        window.location.hash == '#project' ||
+        window.location.hash == '#blog') {
       $('.panel-cover').addClass('panel-cover--collapsed')
     }
 
