@@ -6,7 +6,7 @@ title:  "About"
 ---
 
 I’m a computer science Ph.D. candidate in University at Buffalo, The State University of New York. 
-My research area is Android mobile system, and I’m interested in secured image display using 
+My research area is Android mobile system, and I’m interested in secure image display using 
 Trusted Execution Environment (TEE), system challenges, automated software analysis, and UI testing.
 
 - [Link to CV](https://github.com/ChangMinPark/cv/blob/master/CV.pdf)
@@ -24,7 +24,7 @@ Trusted Execution Environment (TEE), system challenges, automated software analy
   - Focus: Systems Challenges in Mobile Computing
 - B.S. in Computer Science (Aug '11 – May '17)
   - Magna Cum Laude
-  - Summer ‘12: Study Abroad Program at Yonsei University in Republic of Korea
+  - Summer ‘12: Study Abroad Program at Yonsei University in South Korea
   - Jun ‘13 – Mar ‘15: Served Military Service in Republic of Korea
 <br/>
 
