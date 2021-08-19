@@ -1,0 +1,82 @@
+---
+title:  "About"
+#date:   2016-01-08 15:04:23
+#categories: [jekyll]
+#tags: [jekyll]
+---
+
+I’m a computer science Ph.D. candidate in University at Buffalo, The State University of New York. 
+My research area is Android mobile system, and I’m interested in secured image display using 
+Trusted Execution Environment (TEE), system challenges, automated software analysis, and UI testing.
+
+- [Link to CV](https://github.com/ChangMinPark/cv/blob/master/CV.pdf)
+
+
+---
+<img align="left" width="30" height="30" src="/images/education.png" alt="">
+
+### &nbsp; Education
+
+**University at Buffalo**, The State University of New York
+
+- Ph.D. in Computer Science and Engineering (Aug '17 – Present)
+  - Advisor: Prof. Steven Y. Ko
+  - Focus: Systems Challenges in Mobile Computing
+- B.S. in Computer Science (Aug '11 – May '17)
+  - Magna Cum Laude
+  - Summer ‘12: Study Abroad Program at Yonsei University in Republic of Korea
+  - Jun ‘13 – Mar ‘15: Served Military Service in Republic of Korea
+<br/>
+
+---
+<img align="left" width="30" height="30" src="/images/experience.png" alt="">
+
+### &nbsp; Experience
+
+**University at Buffalo**, The State University of New York
+- Research Assistant
+  - Ph.D., RMS Lab (Aug '18 – Present)
+  - Undergraduate, RMS Lab (May '16 – Aug '17)
+- Teaching Assistant
+  - CSE486/586: Distributed Systems (Jan '20 – May '21)
+  - CSE421/521: Operating Systems (Aug '17 – May '18)
+
+**Breeding Corporation**, South Korea
+- Co-­Founder & CTO (May '20 – Jul '21)
+- The first platform service connecting dog owners and trainers with a video call
+- Designed an app architecture and a business model
+<br/>
+
+---
+<img align="left" width="30" height="30" src="/images/publication.png" alt="">
+
+### &nbsp; Publications
+
+1. "Rushmore: Securely Displaying Static and Animated Images Using TrustZone", `MobiSys '21`
+  - <u>Chang Min Park</u>, Donghwi Kim, Deepesh Veersen Sidhwani, Andrew Fuchs, Arnob Paul, Sung­Ju Lee, Karthik Dantu, and Stevn Y. Ko
+
+2. "Gesto: Mapping UI Events to Gestures and Voice", **_Best Paper Honorable Mention_**, `EICS '19` `PACM-HCI '19`
+  - <u>Chang Min Park</u>, Taeyeon Ki, Ali Ben Ali, Nikhil Sunil Pawar, Karthik Dantu, Steven Y. Ko, and Lukasz Ziarek
+
+3. “Mimic: UI Compatibility Testing System for Android Apps”, `ICSE '19`
+  - Taeyeon Ki, <u>Chang Min Park</u>, Karthik Dantu, Stevn Y. Ko, and Lukasz Ziarek
+
+4. “Reptor: Enabling API Virtualization on Android for Platform Openness”, `MobiSys '17`
+  - Taeyeon Ki, Alexander Simeonov, Bhavika Pravin Jain, <u>Chang Min Park</u>, Keshav Sharma, Karthik Dantu, Stevn Y. Ko, and Lukasz Ziarek
+<br/>
+
+---
+<img align="left" width="30" height="30" src="/images/award.png" alt="">
+
+### &nbsp; Awards & Grants
+
+- **Excellence Award with $80,000 Grant** in K-­Startup (ChungChung) Contest, Ministry of SMEs and Startups in South Korea (Nov '20)
+- **Top Award** in Youth Startup Awards, Youth and Future Corporation in South Korea (Oct '20)
+- **Pre-­Startup Package with $50,000 Grant**, Ministry of SMEs and Startups in South Korea (Sep '20)
+- **Second Place** in CSE PhD Poster Competition, University at Buffalo (Dec '19)
+- **Best Paper Honorable Mention Award**, EICS (Jun '19)
+- **SEAS Dean’s Fellowship**, University at Buffalo ('17)
+- **CSE Undergraduate Award** for Research, University at Buffalo (May '17)
+- **Dean’s List**, University at Buffalo ('12)
+
+<br/>
