@@ -15,7 +15,7 @@ exclude: 'yes'
         $('.content-wrapper').addClass('animated slideInRight')
       } else {
         $('.panel-cover').css('max-width', currentWidth)
-        $('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 50, swing = 'swing', function () { })
+        $('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 500, swing = 'swing', function () { })
       }
     })
 
