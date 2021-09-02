@@ -6,8 +6,8 @@ title:  "About"
 ---
 
 I’m a computer science Ph.D. candidate in University at Buffalo, The State University of New York. 
-My research area is Android mobile system, and I’m interested in secure image display using 
-Trusted Execution Environment (TEE), system challenges, automated software analysis, and UI testing.
+My research area is Android mobile system, and I’m interested in `secure image display` using ARM
+TrustZone, `mobile system challenges`, `automated software analysis`, and `UI testing`.
 
 - [Link to CV](https://github.com/ChangMinPark/cv/blob/master/CV.pdf)
 
@@ -41,8 +41,8 @@ Trusted Execution Environment (TEE), system challenges, automated software analy
   - CSE486/586: Distributed Systems (Jan '20 – May '21)
   - CSE421/521: Operating Systems (Aug '17 – May '18)
 
-**Breeding Corporation**, South Korea
-- Co-­Founder & CTO (May '20 – Jul '21)
+**Breeding**, South Korea
+- Founding member & CTO (May '20 – Jul '21)
 - The first platform service connecting dog owners and trainers with a video call
 - Designed an app architecture and a business model
 <br/>

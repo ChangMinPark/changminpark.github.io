@@ -7,26 +7,28 @@ exclude: 'yes'
   $(document).ready(function () {
     {% if site.disable_landing_page != true %}
     $('a.blog-button').click(function (e) {
-      if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
+      if ($('.panel-cover').hasClass('panel-cover--collapsed'))  
+        return
       currentWidth = $('.panel-cover').width()
       if (currentWidth < 960) {
         $('.panel-cover').addClass('panel-cover--collapsed')
         $('.content-wrapper').addClass('animated slideInRight')
       } else {
         $('.panel-cover').css('max-width', currentWidth)
-        $('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 400, swing = 'swing', function () { })
+        $('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 50, swing = 'swing', function () { })
       }
     })
 
     if (window.location.hash &&
         window.location.hash == '#about' ||
-        window.location.hash == '#project' ||
         window.location.hash == '#blog') {
       $('.panel-cover').addClass('panel-cover--collapsed')
     }
 
     if (window.location.pathname !== '{{ site.baseurl }}/' && window.location.pathname !== '{{ site.baseurl }}/index.html') {
-      $('.panel-cover').addClass('panel-cover--collapsed')
+        //$('.panel-cover').css('max-width', '1800px')
+        //$('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 500, swing = 'swing', function () { })
+        $('.panel-cover').addClass('panel-cover--collapsed')
     }
     {% endif %}
 
