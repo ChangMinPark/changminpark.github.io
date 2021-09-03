@@ -45,7 +45,7 @@ overhead. We have created a video of two users playing Temple Run side-by-side w
 the left playing the game on the non-instrumented version and the user on the right playing the 
 game on the instrumented version. As can be seen in the video, there is no noticeable delays in 
 game play. Both games are being played on a Samsung Galaxy Nexus which is a phone that was 
-released approximately four years ago.
+released in late 2011.
 <br/>
 
 <div class="video_container"> 
