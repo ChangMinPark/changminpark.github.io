@@ -1,0 +1,111 @@
+---
+title:  "Gesto: Mapping UI Events to Gestures and Voice"
+date:   2019-06-18 12:00:00
+#categories: [Course]
+tags: [Research]
+where: [EICS]
+---
+
+
+<br/>
+Gesto is a system that enables task automation for Android apps using gestures and voice commands. 
+
+Using Gesto, a user can record a UI action sequence for an app, choose a gesture or a voice command 
+to activate the UI action sequence, and later trigger the UI action sequence by the corresponding 
+gesture/voice command. 
+
+Gesto enables this for existing Android apps without requiring their source 
+code or any help from their developers. In order to make such capability possible, Gesto combines 
+bytecode instrumentation and UI action record-and-replay.
+
+To evaluate the usefulness of Gesto, we develop four use cases using real apps downloaded from 
+Google Play—Bing, Yelp, AVG Cleaner, and Spotify. For each of these apps, we map a gesture or a 
+voice command to a sequence of UI actions. According to our measurement, Gesto incurs modest 
+overhead for these apps in terms of memory usage, energy usage, and code size increase. We also 
+evaluate our instrumentation capability and overhead by downloading 1,000 popular apps from 
+Google Play and instrument them. Our result shows that Gesto is able to instrument 94.9% of the 
+apps without any significant overhead.
+
+- **_Best Paper Honorable Mention_**
+- <a href="https://dl.acm.org/doi/10.1145/3300964">Published Paper</a>, 
+<a href="images/posts/gesto/gesto.pptx">Presentation Slides (EICS `19)</a>,
+<a href="https://dl.acm.org/doi/10.1145/3081333.3089336">Demo Paper</a>
+
+
+
+
+---
+### Instrumentation and Workflow
+
+<img src="../images/posts/gesto/instrumentation-workflow.png" sytle="padding-top: 100px;" alt="drawing" width="900"/>
+
+**Usage at App Development/Instrumentation Time**: Gesto is a static bytecode instrumentation 
+tool that injects new bytecode into an existing Android app and rewrites some parts of the 
+app’s bytecode (more details on this in Section 3.5). It takes an existing Android app 
+(a .apk file) as input, instruments the app, and produces another version of the app that 
+is now capable of task automation using gestures and voice. A few ways are possible to use 
+this tool: (i) a developer can run it on the developer’s machine to transform an app that 
+the developer has written before releasing it to an online app market, (ii) a user can run 
+it on the user’s machine to transform an app that the user downloads from an online app market 
+such as Google Play, and (iii) a third party can provide a web service that runs the tool in 
+the cloud.
+
+**Usage at Run Time**: Once an app is Gesto-enabled and installed on an Android device, a user 
+can automate custom tasks using gestures and voice commands. In order to create a UI task to 
+be automated for an app, a user needs to (i) open the app, (ii) perform the “start recording” 
+command (currently, a pre-registered gesture), (iii) perform a gesture or record a voice 
+command that will be used as the trigger for replaying, (iv) record a sequence of UI actions 
+to be automated, and (v) perform the “stop recording” command (another pre-registered gesture). 
+In our current prototype, waving once near a device starts recording; waving twice near a 
+device stops recording. Figure 1 depicts these run-time workflows.
+
+After a user finishes mapping a sequence of UI actions to a gesture or voice command for an app, 
+the user can simply perform the gesture or speak the voice command to trigger the action 
+sequence when the app is open. We can further automate app opening by instrumenting the main 
+app launcher of the user’s device using Gesto, since app launchers are regular Android apps. 
+However, Gesto currently does not support cross-app task automation.
+
+<br/>
+
+---
+### Use Case
+
+#### 1. Spotify App
+
+<br/>
+
+<div class="video_container" style="margin-left: 40px;"> 
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/LKN5g7J2epw" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+- **Simplifying UI Interaction** - A music player app is typically used to provide background 
+music while a user performs other tasks. us, there is a high probability that they are 
+occupied (such as when running or driving) and unable to interact with the app via the 
+touch interface of the mobile device. The provided functions are set statically which means 
+users cannot change their mapping or define custom mappings to other actions in an app. 
+Further, they can enable just one action and not a complete sequence. Gesto instrumentation 
+enables both dynamic mapping and mapping multiple UI actions with single gesture or word.
+
+<br/>
+
+#### 2. Yelp App
+
+<br/>
+
+<div class="video_container" style="margin-left: 40px;"> 
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/DWylllt2N0U" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+- **Long Sequence of UI Actions** - Today’s applications are content-rich with an involved, 
+hierarchical UI. While this makes for more compelling applications, navigating to an element 
+of interest requires executing a long sequence of UI actions. Some apps provide a bookmark 
+feature which helps users to get to desired content that has been visited before. However, 
+such bookmarks are limited to static content. Gesto allows a user to define a dynamic 
+mapping to a sequence of UI events. We chose yelp to demonstrate this use case. Yelp 
+provides information about local businesses along with customer reviews for these businesses.
+
+<br/>

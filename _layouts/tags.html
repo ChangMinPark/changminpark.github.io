@@ -1,12 +1,14 @@
 ---
 layout: default
 ---
-<h2>Tags:</h2>
+<!-- <h2>Tags:</h2> -->
+<br/>
 <div class="tags"> 
 {% for tagitem in site.tags  %} 
   <a href="#{{ tagitem[0] }}">{{  tagitem[0] }}</a>
 {% endfor %}
 </div>
+<br/>
 
 <!-- iterate through all tags on the site --> 
 {% for tagitem in site.tags %} 

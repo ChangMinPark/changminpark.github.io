@@ -7,7 +7,9 @@ where: [MobiSys Demo]
 ---
 
 <br/>AutoClicker is a fully automated UI testing system for large-scale Android apps using multiple 
-devices. It provides a way to quickly and easily verify that a large number of Android apps behave 
+devices. 
+
+It provides a way to quickly and easily verify that a large number of Android apps behave 
 correctly at runtime in a repeatable manner.
 
 <div class="video_container"> 
