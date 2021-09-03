@@ -21,7 +21,7 @@
   {% if site.author.twitter_username %}
   <meta name="twitter:creator" content="{{ site.author.twitter_username }}">
   {% endif %}
-  <!-- <meta name="twitter:image" content="{{ site.baseurl }}/images/favicons/favicon-194x194.png" /> -->
+  <meta name="twitter:image" content="{{ site.baseurl }}/images/favicons/favicon-194x194.png" />
   <meta name="twitter:image" content="{{ site.baseurl }}/images/favicons/favicon.png" />
 
   <meta property="og:type" content="article">
@@ -29,6 +29,15 @@
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{ site.baseurl }}/images/favicons/favicon-194x194.png" />
 
+  <!-- New Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/new/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/new/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/new/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicons/new/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicons/new/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+<!--
   <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/images/favicons/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/images/favicons/apple-touch-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/images/favicons/apple-touch-icon-72x72.png">
@@ -44,12 +53,14 @@
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicons/android-chrome-192x192.png" sizes="192x192">
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicons/favicon-16x16.png" sizes="16x16">
   <link rel="manifest" href="{{ site.baseurl }}/images/favicons/manifest.json">
-  <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicons/favicon.ico">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicons/favicon.png">
   <link rel="stylesheet" href="{{ site.baseurl }}/fonts/academicons/css/academicons.min.css"/>
   <meta name="msapplication-TileColor" content="#ffc40d">
   <meta name="msapplication-TileImage" content="{{ site.baseurl }}/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  -->
   
+  <link rel="stylesheet" href="{{ site.baseurl }}/fonts/academicons/css/academicons.min.css"/>
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css?{{site.time | date: '%s%N'}}">
   <link rel="canonical" href="{% if page.canonical %}{{ page.canonical }}{% else %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
