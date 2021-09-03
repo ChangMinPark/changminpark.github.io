@@ -1,0 +1,95 @@
+---
+title:  "Reptor: Enabling API Virtualization on Android for Platform Openness"
+date:   2017-06-19 12:00:00
+#categories: [Course]
+tags: [Research]
+where: [MobiSys]
+---
+
+
+<br/>Reptor allows third-party developers to inject new third-party’s implementation of a 
+platform API to an app, so that they can modify, reimplement, or customize existing Android 
+APIs. 
+
+This is achieved by (i) injecting a replacement class that contains custom code for each 
+platform API class that a third-party developer wants to replace, (ii) rewriting the binary of 
+an app so that the app code uses replacement classes instead of platform API classes, and (iii) 
+distributing the new implementation through standard app distribution channels. 
+
+Below are our contributions,
+- **Extensibility** -
+  Reptor provides a general way to alter functionality of platform APIs on Android. This allows third-party developers to extend platform API calls.
+
+- **Deployability** -
+  Reptor does not require any platform-level changes. This allows third parties to easily distribute their modifications for Android platform.
+
+- **Innovation** -
+  With the extensibility and deployability, Reptor allows third-party developers to easily and seamlessly realize novel ideas to make advances for Android.
+
+<div class="video_container"> 
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/bjmH8DbJuRE" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+- <a href="https://dl.acm.org/doi/10.1145/3081333.3081341">Published Paper</a>, 
+<a href="http://reptor.cse.buffalo.edu/">Web Site</a>
+
+
+
+
+---
+### Performance
+To demonstrate that our approach is practical by showing that Reptor does not incur too much 
+overhead. We have created a video of two users playing Temple Run side-by-side with the user on 
+the left playing the game on the non-instrumented version and the user on the right playing the 
+game on the instrumented version. As can be seen in the video, there is no noticeable delays in 
+game play. Both games are being played on a Samsung Galaxy Nexus which is a phone that was 
+released approximately four years ago.
+<br/>
+
+<div class="video_container"> 
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/PU-klktnz2I" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+---
+### Use Cases
+
+#### 1. Vendor-tied Library Switching
+  - In this use case, we automatically transform Airbnb app developed with Google’s library to 
+use Amazon’s library by using Reptor, specifically Google Maps APIs to Amazon Maps APIs. A user 
+who uses an Amazon device can download an app that uses Google Maps from Google Play and change 
+the app behavior that uses Amazon Maps instead of Google Maps by using Reptor without efforts from 
+the original app developer.
+
+<div class="video_container" style="margin-left: 40px;"> 
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/PU-klktnz2I" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+#### 2. Runtime Permission Mechanism
+  - In this use case, we have implemented a runtime permission mechanism that asks a user to grant 
+  permission to an app at run time, mirroring the iOS permission model. We have used Twitter as 
+  a target app. By using Reptor, legacy apps that do not use runtime permissions can easily 
+  incorporate them; Also, Reptor can replace each and every sensitive API call with a call that 
+  requests a runtime permission first before making an actual call to the API.
+
+<div class="video_container" style="margin-left: 40px;"> 
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/PASegzti9c8" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+#### 3. Http to Https Translator
+  - In this use case, we have implemented an HTTP-to-HTTPS Translator, where we replace URL, so that 
+  it returns an HTTPS object instead of an HTTP object. Reptor automatically makes apps use secure 
+  HTTPS connection instead of HTTP if HTTPS is available on a requested URL.
+
+<div class="video_container" style="margin-left: 40px;"> 
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/7nC22ed8aHk" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>

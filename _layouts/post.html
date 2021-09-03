@@ -3,10 +3,11 @@ layout: default
 ---
 <article class="post-container post-container--single">
   <header class="post-header">
-    <div class="post-meta">
-      <time datetime="{{ page.date | date: "%Y-%m-%d %H:%M" }}" class="post-meta__date date">{{ page.date | date: "%-d %b %Y" }}</time>
+    <div class="post-meta" style="font-size:0.8em;">
+      <span class="post-meta__tags" style="font-size:1.2em;">{{ page.where }}</span>
+      &#8226; <time datetime="{{ page.date | date: "%Y-%m %H:%M" }}" class="post-meta__date date" style="font-size:1.2em;">{{ page.date | date: "%b %Y" }}</time>
       {% if page.tags.size > 0 %}
-      &#8226; <span class="post-meta__tags">on {% for tag in page.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
+      &#8226; <span class="post-meta__tags" style="font-size:1.2em;">{% for tag in page.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
       {% endif %}
     </div>
     <h1 class="post-title">{{ page.title }}</h1>

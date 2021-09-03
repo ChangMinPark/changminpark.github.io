@@ -21,6 +21,9 @@ layout: default
         {% if post.tags contains tagitem[0] %} 
             <li>
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              <span class="post-meta__tags" style="font-size:0.8em;color:#a7a7a7">{{ post.where }}</span>
+              &#8226; <time datetime="{{ post.date | date: "%Y-%m-%d %H:%M" }}" class="post-list__meta--date date" style="color:#a7a7a7">{{ post.date | date: "%b %Y" }}</time>
+              
             </li>
         {% endif %}
       {% endfor %}

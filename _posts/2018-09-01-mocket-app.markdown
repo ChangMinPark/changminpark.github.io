@@ -1,0 +1,107 @@
+---
+title:  "Mocket App"
+date:   2018-09-01 12:00:00
+#categories: [Course]
+tags: [Personal]
+where: [Android App] 
+---
+
+<br/>Mocket is an android application helping users to memorize vocabulary words. Please visit Github for source code.
+
+Total code implementation: `Java` > 5,000 LoC, `XML` > 12,000 LoC
+
+- <a href="https://github.com/ChangMinPark/mocket">Github Repo</a>
+
+---
+### Unique Features Provided
+- **Unique testing system** -  helping users to memorize words in lifetime.
+- **Built-in dictionary** - Users can lookup words and directly add to memory list. It keeps bothering users to finish daily test (the duration can be configurable).
+- **Fun card game** - Vocabulary words get selected randomly from memory list.
+- **Graph** - showing statics of memory, game, and test.
+
+<br/>
+
+---
+### Logic of Lifetime Memory
+According to [Ebbinghaus’s forgetting curve](https://en.wikipedia.org/wiki/Forgetting_curve), people get a stronger memory when they are able to recall it longer period of time.
+
+So, Mocket gives tests in certain periods.
+
+<img src="../images/posts/mocket/ebbinghaus-forget-curve.png" alt="drawing" width="800"/>
+
+As shown on the above picture, it gives tests everyday for first three days. After that, the period gets longer, and this helps users to memorize words for lifetime.
+
+<br/>
+
+---
+### Third Party Libraries Used
+- [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) in graph feature.
+- [Glide](https://github.com/bumptech/glide) to optimize images.
+- [EasyFlipView](https://github.com/wajahatkarim3/EasyFlipView) for card flipping animation.
+
+<br/>
+
+---
+### Layout
+
+#### 1. Login
+
+<img src="../images/posts/mocket/layout_login.png" sytle="marign-top: 10px;" alt="drawing" width="800"/>
+
+- Used Firebase Realtime Database.
+- It stores encrypted passwords.
+- After signup, email verification should be done to login.
+- When forgot password, users can send password reset link to their emails.
+
+<br/>
+
+#### 2. Profile
+
+<img src="../images/posts/mocket/layout_profile.png" sytle="marign-top: 10px;" alt="drawing" width="400"/>
+
+- On settings, users can set time duration for daily test notification and switch of vibration.
+- Users can edit their profile, logout, or completely delete their account.
+
+<br/>
+
+#### 3. Memory
+
+<img src="../images/posts/mocket/layout_memory.png" sytle="marign-top: 10px;" alt="drawing" width="400"/>
+
+- When adding words, users can lookup on built in dictionary.
+- Supports pronunciation feature.
+- Today’s memory list has all words added on that day.
+- Users can have a quiz for today’s memorized words.
+
+<br/>
+
+#### 4. Graph
+
+<img src="../images/posts/mocket/layout_graph.png" sytle="marign-top: 10px;" alt="drawing" width="400"/>
+
+- A graph shows statistics about number of memorized words, number of words tested, number of correct-and-incorrect counts in game.
+- There are three time period options(weekly, monthly, and yearly)
+- Under the graph, there is a list of all the words that a user memorized.
+
+
+<br/>
+
+#### 5. Daily Test and Game
+This screen has two fun features, **daily test** and **game**.
+
+<img src="../images/posts/mocket/layout_daily-test-and-game.png" sytle="marign-top: 10px;" alt="drawing" width="800"/>
+
+**Daily Test** (2nd & 3rd screenshots)
+- For certain period mentioned earlier, all the words, which should be tested today, will be shown on the cards.
+- After guessing a definition of the shown word, users flip the card.
+  - Confused emoticon: keep it in the iteration.
+  - Confidence emoticon: remove the word from the iteration.
+- It iterates until no word left.
+
+**Game** (4th & 5th screenshots)
+- For each word, 4 random definitions will appear.
+- Users choose a definition from the 4 options.
+- Correct and incorrect count will be shown on upper right.
+
+
+<br/>
