@@ -40,7 +40,7 @@ Below are our contributions,
 
 ---
 ### Performance
-To demonstrate that our approach is practical by showing that Reptor does not incur too much 
+We demonstrate that our approach is practical by showing that Reptor does not incur too much 
 overhead. We have created a video of two users playing Temple Run side-by-side with the user on 
 the left playing the game on the non-instrumented version and the user on the right playing the 
 game on the instrumented version. As can be seen in the video, there is no noticeable delays in 

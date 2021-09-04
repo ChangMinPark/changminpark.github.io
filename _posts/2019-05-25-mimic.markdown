@@ -7,10 +7,7 @@ where: [ICSE]
 ---
 
 
-<br/>
-This paper proposes Mimic, an automated UI compatibility testing system for Android apps. 
-
-Mimic is designed specifically for comparing the UI behavior of an app across different devices, different 
+<br/>Mimic is designed specifically for comparing the UI behavior of an app across different devices, different 
 Android versions, and different app versions. 
 
 This design choice stems from a common problem that Android developers and researchers face—-how 
