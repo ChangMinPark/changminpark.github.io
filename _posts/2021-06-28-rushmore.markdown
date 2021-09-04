@@ -1,0 +1,132 @@
+---
+title:  "Rushmore: Securely Displaying Static and Animated Images Using TrustZone"
+date:   2021-06-28 12:00:00
+#categories: [Course]
+tags: [Research]
+where: [MobiSys]
+---
+
+
+<br/>Rushmore is a system that securely displays static or animated images using TrustZone. The core 
+functionality of Rushmore is to securely decrypt and display encrypted images (sent by a trusted party) 
+on a mobile device.
+
+Previous apporaches using TrustZone has a critical limitation that, when the trusted domain of 
+TrustZone (the secure world) takes control of the display, the untrusted domain (the normal world) 
+cannot display anything simultaneously. This limitation comes from the fact that previous approaches 
+give the secure world exclusive access to the display hardware to preserve security.
+
+This post shows how we address the limitation by leveraging an overlay channel in image processing unit (IPU)
+and demonstrates one notable cryptographic method we adapt for Rushmore, visual cryptography, 
+how light it is so that can be alternative to other cryptographic methods for certain use cases.
+
+Here are our contributions:
+- Rushmore is capable of displaying from the normal world and the secure world **simultaneously**.
+- Rushmore is capable of displaying animated images in **real time** at around **30 FPS or higher**.
+- Rushmore supports **visual cryptography** as an alternative to regular cryptography.
+
+All other details such as system architecture, how Rushmore provides 30 FPS or higher to display animated images, 
+and evaluations are in the paper.
+
+Our source code is publicy available, and a link for the code is given below a teaser video. 
+
+
+<div class="video_container"> 
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/KqXMrJywJlY" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<br/>
+
+- **_Artifact Functional_** and **_Actifact Available_**
+- <a href="https://dl.acm.org/doi/abs/10.1145/3458864.3467887">Published Paper</a>, 
+<a href="https://www.youtube.com/watch?v=iZIw-Ia7-94">Conference Talk (MobiSys `21)</a>,
+<a href="https://github.com/ub-rms/rushmore">Github Repo</a>
+
+
+
+
+<!-- 
+---
+### Limitation of Previous Approaches
+
+<img src="../images/posts/rushmore/limitation.png" alt="drawing" width="100%" style="margin-top: 0px;margin-bottom: 0px;"/>
+
+-->
+
+
+<br/>
+
+---
+### Secure Display Multiplexing
+
+<img src="../images/posts/rushmore/secure-display-channel.png" alt="drawing" width="100%" style="margin-top: 0px;margin-bottom: 0px;"/>
+
+
+
+Rushmore provides two display channels: 
+- **Normal display channel** - displays non-confidential images
+- **Secure display channel** - displays confidential images
+
+Using [TrustZone](https://developer.arm.com/ip-products/security-ip/trustzone), Rushmore isolates these two 
+channels in two different domains, untrusted (the noraml world) and trusted (the secure world). Every image 
+displayed through the secure display channel is protected and not visible from the normal world. 
+
+However, as mentioned in the beginning, previous approaches have a critical limitation that the normal world
+(untrusted domain) cannot display anything simultaneously while the secure world is displaying a confidential
+image. This means images in the normal world frame buffer cannot be updated and remain as frozen (e.g., 
+no updates on displayed UIs or no received notifications). 
+
+We address the limitation by leveraging image processing unit (IPU). 
+IPU is a media processor widely used in commodity mobile devices for various functions 
+such as noise reduction, sharpening, or rotating. It also provides multiple display channels that can be
+overlaid and displayed simultaneously on the same device screen, and Rushmore leverages two of the 
+display channels--**the main channel** and **the overlay channel**.
+
+Then, we assign the overlay channel to the secure world which 
+means that only the secure world has read/write access to the overlay channel and assign the main channel
+to the normal world for non-confidential image display. An encrypted confidential image is
+passed to the secure world, decrypted, and then displayed on the overlay channel. Finally, the confidential
+image is overlaid with the non-confidential images from the normal world and displayed on the device screen.
+At this point, even when the OS is compromised, the images on the overlay channel are still protected.
+
+Below animation shows the whole process. 
+
+<img src="../images/posts/rushmore/rushmore.gif" alt="drawing" width="500px" style="margin-top: 0px;margin-bottom: 0px;"/>
+
+
+
+
+<br/>
+
+---
+### Visual Cryptography
+
+Here's how [visual cryptography](https://en.wikipedia.org/wiki/Visual_cryptography) works in detail.
+- Suppose we have an original image to protect.
+- In order to encrypt this image, visual cryptography first generates **a key image**, which is an image with randomly distributed pixels.
+- It then calculates pixel-wise XOR between the key image and the original image to generate **an encrypted image**
+- Now, only a user who has both the key imag and the encrypted image can decrypt. 
+- To  decrypt the original image, the **only way is to overlay** the key image and the encrypted image together.
+
+Below animation shows how Rushmore adapts the visual cryptography. 
+
+<img src="../images/posts/rushmore/visual-cryptography.gif" alt="drawing" width="500px" style="margin-top: 0px;margin-bottom: 0px;"/>
+
+- **Trusted Server**
+  1. Generates **a key image** using a pseudo random number generator with the same seed shared with the client device
+  2. Generates **an encrypted image** with the key image and the original image
+  3. Sends only the encrypted image to the client device
+
+- **Client Device**
+  1. The normal world displays the received encrypted image.
+  2. The secure world generates **the same key image** using the same pseudo random number generator and the shared seed and **displays on the screen**.
+  3. Finally, the images from the two worlds are **overlaid** by the IPU and **reveal** the original image.
+
+
+Visual cryptography in Rushmore currently supports only black and white images but outperforms all other 
+crypto methods. Thus, it can be alternative to other cryptographic methods for the case requiring a 
+light-weight method.
+
+
+
+<br/>
