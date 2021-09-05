@@ -12,7 +12,7 @@ Please visit Github for source code.
 
 Total code implementation: `Java` > 5,000 LoC, `XML` > 12,000 LoC
 
-- <a href="https://github.com/ChangMinPark/mocket">Github Repo</a>
+- <a href="https://github.com/ChangMinPark/mocket" target="_blank">Github Repo</a>
 
 ---
 ### Unique Features Provided

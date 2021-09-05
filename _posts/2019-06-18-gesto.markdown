@@ -27,9 +27,9 @@ Google Play and instrument them. Our result shows that Gesto is able to instrume
 apps without any significant overhead.
 
 - **_Best Paper Honorable Mention_**
-- <a href="https://dl.acm.org/doi/10.1145/3300964">Published Paper</a>, 
-<a href="images/posts/gesto/gesto.pptx">Presentation Slides (EICS `19)</a>,
-<a href="https://dl.acm.org/doi/10.1145/3081333.3089336">Demo Paper</a>
+- <a href="https://dl.acm.org/doi/10.1145/3300964" target="_blank">Published Paper</a>, 
+<a href="images/posts/gesto/gesto.pptx" target="_blank">Presentation Slides (EICS `19)</a>,
+<a href="https://dl.acm.org/doi/10.1145/3081333.3089336" target="_blank">Demo Paper</a>
 
 
 

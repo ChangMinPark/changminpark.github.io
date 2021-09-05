@@ -18,8 +18,8 @@ correctly at runtime in a repeatable manner.
 
 <br/>
 
-- <a href="https://dl.acm.org/doi/10.1145/3081333.3089330">Demo Paper</a>, 
-<a href="images/posts/autoclicker/poster.pdf">Poster</a>
+- <a href="https://dl.acm.org/doi/10.1145/3081333.3089330" target="_blank">Demo Paper</a>, 
+<a href="images/posts/autoclicker/poster.pdf" target="_blank">Poster</a>
 
 
 ---

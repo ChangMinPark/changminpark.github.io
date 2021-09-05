@@ -21,8 +21,8 @@ less developer effort than other comparable systems.
 
 <img src="../images/posts/mimic/picture1.png" sytle="marign-top: 10px;" alt="drawing" width="500"/>
 
-- <a href="https://dl.acm.org/doi/10.1109/ICSE.2019.00040">Published Paper</a>, 
-<a href="images/posts/mimic/mimic.pptx">Presentation Slides (ICSE `19)</a>
+- <a href="https://dl.acm.org/doi/10.1109/ICSE.2019.00040" target="_blank">Published Paper</a>, 
+<a href="images/posts/mimic/mimic.pptx" target="_blank">Presentation Slides (ICSE `19)</a>
 
 
 

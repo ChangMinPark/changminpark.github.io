@@ -37,9 +37,9 @@ Our source code is publicy available, and a link for the code is given below a t
 <br/>
 
 - **_Artifact Functional_** and **_Actifact Available_**
-- <a href="https://dl.acm.org/doi/abs/10.1145/3458864.3467887">Published Paper</a>, 
-<a href="https://www.youtube.com/watch?v=iZIw-Ia7-94">Conference Talk (MobiSys `21)</a>,
-<a href="https://github.com/ub-rms/rushmore">Github Repo</a>
+- <a href="https://dl.acm.org/doi/abs/10.1145/3458864.3467887" target="_blank">Published Paper</a>, 
+<a href="https://www.youtube.com/watch?v=iZIw-Ia7-94" target="_blank">Conference Talk (MobiSys `21)</a>,
+<a href="https://github.com/ub-rms/rushmore" target="_blank">Github Repo</a>
 
 
 

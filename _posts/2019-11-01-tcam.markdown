@@ -17,8 +17,8 @@ classify packets floating around the networks. It basically checks a specific fi
 packet and compares with rules on the table. For the comparison, most of architecture uses 
 Ternary Content Addressable Memory (TCAM).
 
-- <a href="images/posts/tcam/project-report.pdf">Project Report</a>,
-<a href="images/posts/tcam/tcam.pptx">Presentation Slides</a>
+- <a href="images/posts/tcam/project-report.pdf" target="_blank">Project Report</a>,
+<a href="images/posts/tcam/tcam.pptx" target="_blank">Presentation Slides</a>
 
 
 ---

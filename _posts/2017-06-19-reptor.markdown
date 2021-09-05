@@ -32,8 +32,8 @@ Below are our contributions,
 
 <br/>
 
-- <a href="https://dl.acm.org/doi/10.1145/3081333.3081341">Published Paper</a>, 
-<a href="http://reptor.cse.buffalo.edu/">Web Site</a>
+- <a href="https://dl.acm.org/doi/10.1145/3081333.3081341" target="_blank">Published Paper</a>, 
+<a href="http://reptor.cse.buffalo.edu/" target="_blank">Web Site</a>
 
 
 
