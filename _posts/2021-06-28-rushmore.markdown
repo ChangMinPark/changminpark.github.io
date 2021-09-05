@@ -7,9 +7,8 @@ where: [MobiSys]
 ---
 
 
-<br/>Rushmore is a system that securely displays static or animated images using TrustZone. The core 
-functionality of Rushmore is to securely decrypt and display encrypted images (sent by a trusted party) 
-on a mobile device.
+<br/>The core functionality of Rushmore is to securely decrypt and display encrypted images 
+(sent by a trusted party) on a mobile device.
 
 Previous apporaches using TrustZone has a critical limitation that, when the trusted domain of 
 TrustZone (the secure world) takes control of the display, the untrusted domain (the normal world) 
