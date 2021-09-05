@@ -20,10 +20,11 @@ In this post, I demonstrate our business in the order of most important things t
 2. App development
 3. Team members
 
-
 Another important parts of our business are marketing and securing great trainers as many as possible.
 I ommmited in this post, but other members, **Sanghee Park**, **Myeongjin Jeong**, and **Yelim Kim**, have 
 done exceptional jobs on that.
+
+**_Unfortunately, I'm now out of this business for academic reasons._**
 
 
 Awards that _Breeding_ received and a startup pitch:
@@ -123,11 +124,9 @@ Initially, we planned to build the service as a corss-platform mobile app. Howev
 we had to show a completely working service and meaningful data in a short term to a person in charge.
 Therefore, we changed the plan and decided to build a prototype service first with responsive website.
 
-We had meetings with six different outsourcing companies and finished development with one of them.
+We had meetings with six different outsourcing companies and signed a contract with one of them.
 Below are example pages of the task order document that we gave to the company. 
 The document contains flowcharts, screen design details, expected timeline, and all other agreements required. 
-
-
 
 
 <img src="../images/posts/breeding/work-order.png" alt="drawing" width="80%" style="margin-top: 20px;margin-bottom: 0px;"/>
