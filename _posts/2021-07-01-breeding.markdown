@@ -15,9 +15,6 @@ I initially started this project to learn how to write proposals to receive inve
 fortunately, several continuous investments have led to the current business.
 None of the early members had ever imagined it to be this successful.
 
-As with all early startups, we had specific tasks in charge but did not have a strictly divided 
-role at the first time. We've all thought, discussed, and refined business models and app services.
-
 In this post, I demonstrate our business in the order of most important things to get invested as a startup. 
 1. Business model and market size
 2. App development
