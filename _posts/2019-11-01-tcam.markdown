@@ -11,7 +11,6 @@ where: [VLSI Electronics]
 As a router and a switch are advanced, it has started to support Software Defined Network (SDN) 
 technique which enables dynamic, programmable, and efficient network configurations. 
 Since proposed in 2009, it has become the most promising architecture for large-scale networks. 
-
 SDN protocols (e.g., OpenFlow from Google) in a router or a switch require rule tables to 
 classify packets floating around the networks. It basically checks a specific field in the 
 packet and compares with rules on the table. For the comparison, most of architecture uses 
