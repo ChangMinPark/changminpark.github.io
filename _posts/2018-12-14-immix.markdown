@@ -20,8 +20,8 @@ collection that outperforms the original garbage collection in the Dart VM.
 ### Immix 
 
 Main three steps in canonical garbage collections are: **(1) mark**, 
-**(2) sweep**, and **(3) compact**. They all have limitations either having a 
-poor locality, space inefficient, or high latency. 
+**(2) sweep**, and **(3) compact**. These garbage collections all have limitations 
+either having a poor locality, space inefficient, or high latency. 
 
 Immix is an efficient mark-region garbage collection solving the limitations
 by marking both lines and blocks. Here are characteristics of the lines and 
