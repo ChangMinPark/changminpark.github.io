@@ -27,7 +27,7 @@ Immix is an efficient mark-region garbage collection solving the limitations
 by marking both lines and blocks. Here are characteristics of the lines and 
 blocks:
 
-<img src="../images/posts/immix/immix-lines-and-blocks.png" sytle="padding-top: 100px;" alt="drawing" width="800"/>
+<img src="../images/posts/immix/immix_animation.gif" sytle="padding-top: 100px;" alt="drawing" width="800"/>
 
   - A block size is four times larger than the larget object size.
   - Objects span lines, but not blocks. 
