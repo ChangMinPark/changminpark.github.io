@@ -1,0 +1,161 @@
+---
+title:  "Immix Garbage Collection on Dart VM"
+date:   2018-12-14 12:00:00 
+#categories: [Course]
+tags: [Course]
+where: [Advanced Programming Languages]
+---
+
+<br/>
+Dart is a language that powers Flutter apps, and Dart virtual machine (VM) uses 
+generational garbage collection by default. We implement **_Immix_** garbage 
+collection that outperforms the original garbage collection in the Dart VM.
+
+- <a href="images/posts/immix/project-report.pdf" target="_blank">Project Report</a>,
+<a href="images/posts/immix/immix.pptx" target="_blank">Presentation Slides</a>, and
+<a href="https://github.com/ChangMinPark/immix-gc-dart" target="_blank">Github Repo</a>
+
+
+---
+### Immix 
+
+Main three steps in canonical garbage collections are: **(1) mark**, 
+**(2) sweep**, and **(3) compact**. They all have limitations either having a 
+poor locality, space inefficient, or high latency. 
+
+Immix is an efficient mark-region garbage collection solving the limitations
+by marking both lines and blocks. Here are characteristics of the lines and 
+blocks:
+
+<img src="../images/posts/immix/immix-lines-and-blocks.png" sytle="padding-top: 100px;" alt="drawing" width="800"/>
+
+  - A block size is four times larger than the larget object size.
+  - Objects span lines, but not blocks. 
+  - Lines with obejcts get marked.
+  - Implicit mark when small objects span from a previous line.
+
+These characteristics minimize fragmentations, maximize sharing of freed
+blocks, and eventually enables fast garbage collection.
+
+_Please find details from the presentation slides shared on top._
+
+<br/>
+
+---
+### Design Overview
+
+We refer to Jikes RVM, which is an open Java VM for research, to understand how
+the Immix garbage collection is designed. In this section, we shows the 
+original design of Immix in Jikes RVM how it stores objects and our design in 
+Dart VM.
+
+
+**<u>Jikes RVM</u>**
+
+<img src="../images/posts/immix/jikes-chunk.png" sytle="padding-top: -50px;" alt="drawing" width="800"/>
+  - A chunk is a container for all metadata for lines and blocks, tables
+  for blocks, and 128 blocks.
+  - On top, there is a chunk map that contains addresses of all chunks created.
+
+<br/>
+
+**<u>Dart VM</u>**
+
+<img src="../images/posts/immix/dart-block.png" sytle="padding-top: -50px;" alt="drawing" width="800"/>
+  - Different from Immix in Jikes RVM, we simplify the block structure as above.
+  - The first line of each block keeps metadata (e.g., line mark tables and 
+  block state).
+  - Also in _ImmixHeap_, we keep addresses of all the blocks in an array, and it
+  gets updated when creating a new block.
+
+
+
+<br/>
+
+---
+### Structure Overview
+We have spent time to understand actual structure implementation of Immix in 
+Jikes RVM. By using a logging function in Jikes RVM, we could trace all function
+calls and relationships between while allocating objects and garbage collecting.
+Below are dependancy diagrams we have drawn and possible structure implementation
+in Dart VM to enable Immix. 
+
+_Please read the project report shared on top for details._
+
+**<u>Jikes RVM</u>**
+
+<img src="../images/posts/immix/jikes-structure.png" sytle="padding-top: 100px;" alt="drawing" width="900"/>
+
+**<u>Dart VM</u>**
+
+<img src="../images/posts/immix/dart-structure.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
+<br/>
+
+---
+### Demo
+
+To demonstrate our work, we have tested with a small number of blocks (3) and 
+lines (11).
+
+**1. Allocation of 10 small objects**
+
+<img src="../images/posts/immix/test1-1.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+<img src="../images/posts/immix/test1-2.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
+- It allocates 10 small object with a size less than 256 bytes (=line).
+- Each mark means different status (#: Unavailable, *: Recyclable, .: Not used).
+- We can see that 10 objects were allocated in first block, and not the block is
+unavailable. 
+- Currently even object is smaller than a line, it gets regular marking. 
+
+<br/>
+
+**2. Allocation of a big object**
+
+<img src="../images/posts/immix/test2-1.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+<img src="../images/posts/immix/test2-2.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
+- The allocation continues from the blocks in previous test. 
+- Third object is larger than half size of a block (max object size possible),
+and it gives an 0 because it cannot be allocated. 
+- It starts to allocate other 4 objects from a second block. After allocating 2 
+objects, 1000 bytes sized object is allocated on next line because there are no 
+enough contiguous lines available.
+- Last object can be allocated in second block and gets allocated there.
+
+<br/>
+
+**3. Request for a new block**
+
+<img src="../images/posts/immix/test3-1.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+<img src="../images/posts/immix/test3-2.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
+- After allocating first two objects in 3rd block, it requests a new free block 
+to allocate 1000 bytes sized object. 
+
+
+<br/>
+
+---
+### Future Work
+Due to the limited time, we have implemented a simplified version of Immix 
+garbage collection that can be manually called and used instead of being invoked
+automatically by the original _object.cc_ file. To simulate our garbage 
+collection, we manually called allocation functions. 
+
+In the future, we can advance the implementation by following two directions.
+
+1. Implementing implicit marking for a single line
+  - As mentioned, our garbage collection is a simplified version and does only a
+  normal implicit marking instead of the single line implicit marking.
+  - To implement, _cursor_ and _limit_ need to be implemented to track an exact
+  address where to start allocating.
+
+2. Completely replacing Dart garbage collection
+  - To replace the original Dart garbage collection, our implementation requires
+  to reliably intercept and bypass the original allocate call to our 
+  _ImmixHeap_ allocate call.
+  - It will not be simple and requires some effort to handle lots of original
+  methods interacting with an original heap.
+

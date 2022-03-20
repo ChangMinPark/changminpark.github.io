@@ -1,5 +1,5 @@
 ---
-title:  "Gesto: Mapping UI Events to Gestures and Voice"
+title:  "Gesto: Mapping UI Events to Gestures and Voice Commands"
 date:   2019-06-18 12:00:00
 #categories: [Course]
 tags: [Research]
