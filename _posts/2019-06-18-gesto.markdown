@@ -9,7 +9,6 @@ where: [EICS]
 
 <br/>
 Gesto is a system that enables task automation for Android apps using gestures and voice commands. 
-
 Using Gesto, a user can record a UI action sequence for an app, choose a gesture or a voice command 
 to activate the UI action sequence, and later trigger the UI action sequence by the corresponding 
 gesture/voice command. 

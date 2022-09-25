@@ -20,14 +20,14 @@ collection that outperforms the original garbage collection in the Dart VM.
 ### Immix 
 
 Main three steps in canonical garbage collections are: **(1) mark**, 
-**(2) sweep**, and **(3) compact**. They all have limitations either having a 
-poor locality, space inefficient, or high latency. 
+**(2) sweep**, and **(3) compact**. These garbage collections all have limitations 
+either having a poor locality, space inefficient, or high latency. 
 
 Immix is an efficient mark-region garbage collection solving the limitations
 by marking both lines and blocks. Here are characteristics of the lines and 
 blocks:
 
-<img src="../images/posts/immix/immix-lines-and-blocks.png" sytle="padding-top: 100px;" alt="drawing" width="800"/>
+<img src="../images/posts/immix/immix_animation.gif" sytle="padding-top: 100px;" alt="drawing" width="800"/>
 
   - A block size is four times larger than the larget object size.
   - Objects span lines, but not blocks. 
@@ -101,6 +101,7 @@ lines (11).
 **1. Allocation of 10 small objects**
 
 <img src="../images/posts/immix/test1-1.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
 <img src="../images/posts/immix/test1-2.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
 
 - It allocates 10 small object with a size less than 256 bytes (=line).
@@ -114,6 +115,7 @@ unavailable.
 **2. Allocation of a big object**
 
 <img src="../images/posts/immix/test2-1.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
 <img src="../images/posts/immix/test2-2.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
 
 - The allocation continues from the blocks in previous test. 
@@ -129,6 +131,7 @@ enough contiguous lines available.
 **3. Request for a new block**
 
 <img src="../images/posts/immix/test3-1.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
+
 <img src="../images/posts/immix/test3-2.png" sytle="padding-top: 100px;" alt="drawing" width="500"/>
 
 - After allocating first two objects in 3rd block, it requests a new free block 
