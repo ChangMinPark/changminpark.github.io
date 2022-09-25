@@ -7,22 +7,27 @@ where: [Platform Service]
 ---
 
 
-<br/> Breeding is the first non-face-to-face platform service between dog owners and trainers. 
-All the members except me work in South Korea and the company was established in South Korea. 
-I participated in this project remotely while working on my Ph.D. program.
+<br/> 
+Breeding is the first non-face-to-face platform service between dog owners and 
+trainers. All the members except me work in South Korea, and the company was 
+established in South Korea. I participated in this project remotely while 
+working on my Ph.D. program.
 
-I initially started this project to learn how to write proposals to receive investment. However, 
-fortunately, several continuous investments have led to the current business.
-None of the early members had ever imagined it to be this successful.
+I initially started this project to learn how to write proposals to receive 
+investment. However, fortunately, several continuous investments have led to 
+the current business. None of the early members had ever imagined it to be this 
+successful.
 
-In this post, I demonstrate our business in the order of most important things to get invested as a startup. 
+In this post, I demonstrate our business in the order of the most important 
+things to get invested in as a startup.
 1. Business model and market size
 2. App development
 3. Team members
 
-Another important parts of our business are marketing and securing great trainers as many as possible.
-I ommmited in this post, but other members, **Sanghee Park**, **Myeongjin Jeong**, and **Yelim Kim**, have 
-done exceptional jobs on that.
+Another essential parts of our business are marketing and securing great 
+trainers as many as possible. I ommited in this post, but other members, 
+**Sanghee Park**, **Myeongjin Jeong**, and **Yelim Kim**, have done exceptional 
+jobs on that.
 
 **_Unfortunately, I'm now out of this business for academic reasons._**
 
@@ -40,8 +45,9 @@ Awards that _Breeding_ received and a startup pitch:
 
 #### Business Model
 
-According to our investigation and surveys, dog owners and freelance trainers both are experiencing 
-the following difficulties with current visiting training system.
+According to our investigation and surveys, dog owners and freelance trainers 
+are experiencing the following difficulties with the current visiting training 
+system.
 
 - **Dog owners**
   - Expensive price - average cost of one visiting training is 250-300 dollars.
@@ -57,9 +63,10 @@ the following difficulties with current visiting training system.
 
 <img src="../images/posts/breeding/business.png" alt="drawing" width="80%" style="margin-top: 0px;margin-bottom: 0px;"/>
 
-As far as we know, _Breeding_ is the first non-face-to-face mobile platform (in South Korea) that connects 
-customers who need dog training with freelance dog trainers and can lead a healthy pet culture. As shown on 
-the figure above, we provide four service features to address the aformentioned difficulties.
+As far as we know, _Breeding_ is the first non-face-to-face mobile platform 
+(in South Korea) that connects customers who need dog training with freelance 
+dog trainers and can lead a healthy pet culture. As shown in the figure above, 
+we provide four service features to address the difficulties above.
 
 - **Non-face-to-face Training System** - reducing a training cost about 80% for dog owners and travel time for trainers
 - **Big Data Based Training Suggestion** - for specific dog breeds, ages, and personalities based on accumulated data in the service
@@ -67,12 +74,12 @@ the figure above, we provide four service features to address the aformentioned 
 - **Real-time Review Sharing** - providing an availabiltiy to share honest reviews between users
 
 
-By providing the services in between, _Breeding_ charges **8% of borkerage fee** to trainers. It is cheaper compared 
-to the average brokerage fee of 15 percent for other platform services in South Korea, and we surveyed and told by
-trainers that 8% would be reasonable to pay. 
+By providing the services in between, _Breeding_ charges 
+**8% of the brokerage fee** to trainers. It is cheaper compared to the average 
+brokerage fee of 15 percent for other platform services in South Korea, and we 
+surveyed and told by trainers that 8% would be reasonable to pay. 
 
-On next section, I will demonstrate our expected revenue with respect to a market share in details. 
-
+In the next section, I will detail our expected revenue concerning market share. 
 
 <br/>
 
@@ -80,16 +87,19 @@ On next section, I will demonstrate our expected revenue with respect to a marke
 
 <img src="../images/posts/breeding/market-revenue.png" alt="drawing" width="100%" style="margin-top: 20px;margin-bottom: 0px;"/>
 
-In order to receive investment from investors, we also had to prove that the pet training market was big enough 
-and growing rapidly. In South Korea, the average interesting market size for investors is at least 
-600-800 million dollars.
-Left figure above shows **exponential estimated growth of pet training market pie** 
+In order to receive investment from investors, we also had to prove that the pet 
+training market was big enough and proliferating. In South Korea, the average 
+interesting market size for investors is at least 600-800 million dollars. The 
+left figure above shows 
+**exponential estimated growth of the pet training market pie** 
 (orange colored) in the entire pet-related market, 620 million dollars in 2026.  
 
-Table on the right shows _Breeding_'s estimated revenue with respect to our expected market share every year. 
-In five years (2025, orange colored), **estimated revenue of our service is 5.9 million dollars**. 
-It is not surprising that we estimated 8% of market share in five years since we are the first platform service 
-that connects dog owners and trainers in the current market. We believe that it is possible. 
+The table on the right shows _Breeding_'s estimated revenue concerning our 
+expected market share every year. In five years (2025, orange colored), 
+**estimated revenue of our service is 5.9 million dollars**. 
+It is not surprising that we estimated 8% of the market share in five years 
+since we are the first platform service that connects dog owners and trainers 
+in the current market. We believe that it is possible. 
 
 <br/>
 
@@ -108,8 +118,9 @@ that connects dog owners and trainers in the current market. We believe that it 
 <img src="../images/posts/breeding/empty-bar.png" alt="drawing" width="100%" style="margin-top: 0px;margin-bottom: 0px;"/>
 
 
-Above images show our app's user-flow designed on [Figma](https://www.figma.com/) prototyping tool. It is a
-great tool supporting app designers to build interactive prototypes. 
+The above images show our app's user-flow designed on 
+[Figma](https://www.figma.com/) prototyping tool. It is a great tool supporting 
+app designers in building interactive prototypes. 
 
 Here are features we provide in the app:
 - Login, register, find password, and settings
@@ -120,20 +131,25 @@ Here are features we provide in the app:
 - Private chat and video call between a dog owner and a trainer
 
 
-Initially, we planned to build the service as a corss-platform mobile app. However, after funded by Korean government,
-we had to show a completely working service and meaningful data in a short term to a person in charge.
-Therefore, we changed the plan and decided to build a prototype service first with responsive website.
+Initially, we planned to build the service as a cross-platform mobile app. 
+However, after being funded by the Korean government, we had to show a 
+completely working service and meaningful data in the short term to a person in 
+charge. Therefore, we changed the plan and decided to build a prototype service 
+first with a responsive website.
 
-We had meetings with six different outsourcing companies and signed a contract with one of them.
-Below are example pages of the task order document that we gave to the company. 
-The document contains flowcharts, screen design details, expected timeline, and all other agreements required. 
+We met with six different outsourcing companies and signed a contract with one 
+of them. Below are example pages of the task order document we gave to the 
+company. The document contains flowcharts, screen design details, the expected 
+timeline, and all other agreements required. 
+
 
 
 <img src="../images/posts/breeding/work-order.png" alt="drawing" width="80%" style="margin-top: 20px;margin-bottom: 0px;"/>
 
 
-Now, our website has launched. It is running with AWS's EC2/RDS and uses [SendBird](https://sendbird.com/) service 
-for chat and video call. Since we designed it thinking that it would be developed as a mobile app, it currently 
+Now, our website has been launched. It runs with AWS's EC2/RDS and uses 
+[SendBird](https://sendbird.com/) service for chat and video calls. Since we 
+designed it thinking that it would be developed as a mobile app, it currently 
 has significant limitations:
 - Users won't receive a real-time notification after they close the website.
 - To start a training session with video call, a dog owner and a trainer should be sitting in front of 
@@ -141,16 +157,18 @@ their computers when the training starts.
 - Unstable quality of video call
 
 Nevertheless, it was and is still the best decision we could make. 
-It is important to demonstrate feasibility of our service and create meaningful data (actual transactions and reviews) to 
-receive subsequent investments at this stage.
-Also, even if we created a cross-platform mobile app with a small amount of money, 
-lots of features would be required to be added, removed, and updated anyway. This costs a lot and is almost
-similar to building a new app entirely.
-Thus, it was a good decision to build a prototype quickly with responsive website in a short term. 
+It is important to demonstrate the feasibility of our service and create 
+meaningful data (actual transactions and reviews) to receive subsequent 
+investments at this stage. Also, even if we created a cross-platform mobile app 
+with a small amount of money, many features would be required to be added, 
+removed, and updated. It costs a lot and is almost like building a new app. 
+Thus, it was a great decision to build a prototype quickly with a responsive 
+website in the short term. 
 
-After work with the outsourcing company was done, my main job was to add features, fix minor issues, and maintain the service.
-Not shown on this post, but there is an administrator page as well to manage our users. Below is a landing page of our website
-that we built. 
+After work with the outsourcing company was done, my main job was to add 
+features, fix minor issues, and maintain the service. Not shown on this post, 
+but there is an administrator page as well to manage our users. Below is a 
+landing page of the website that we built. 
 
 
 <img src="../images/posts/breeding/landing-page.gif" alt="drawing" width="90%" style="margin-top: 0px;margin-bottom: 0px;"/>
@@ -166,16 +184,18 @@ that we built.
 
 
 
-This startup project has initially started with upper-left three members, and now we have three more members:
+This startup project initially started with three upper-left members, and now we 
+have three more members.:
 (1) **Hyoyoung Park**--full stack developer, (2) **Yelim Kim**--marketing/HR, and (3) **Seungho Lee**--designer.
 All our members are great and enthusiastic.
 
-Thanks to all the team members for giving me a great opportunity to learn how to begin a startup from 
-scratch and to learn about startup infrastructures in South Korea. As the business grows, it began to make no 
-sense that the CTO works remotely from the United States and in parallel with PhD research, so I had to hand 
-over to the rest of the team on July 2021. However, I am confident that the business can grow further because 
-the remaining team members are exceptional and passionate.
-
+Thanks to all the team members for giving me a great opportunity to learn how 
+to begin a startup from scratch and to learn about startup infrastructures in 
+South Korea. As the business grew, it made no sense for the CTO to work 
+remotely from the United States and in parallel with Ph.D. research, so I had 
+to hand it over to the rest of the team on July 2021. However, I am confident 
+the business can grow further because the remaining team members are 
+exceptional and passionate.
 
 
 
