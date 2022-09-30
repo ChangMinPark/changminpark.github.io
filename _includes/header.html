@@ -80,7 +80,19 @@
               </li>
               &nbsp;
               {% endif %}
-                
+               
+              {% if site.author.medium_id %}
+              <!-- Medium -->
+              <li class="navigation__item">
+                <a href="https://medium.com/@{{ site.author.medium_id }}"
+                  title="{{ site.author.medium_id }} on Medium" target="_blank">
+                  <i class="icon icon-social-medium" style="font-size:1.7em;"></i>
+                  <span class="label">Medium</span>
+                </a>
+              </li>
+              &nbsp;
+              {% endif %}
+ 
               {% if site.author.linkedin_username %}
               <!-- LinkedIn -->
               <li class="navigation__item">
