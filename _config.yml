@@ -1,6 +1,6 @@
 # Site settings
 title: Chang Min Park
-description: 'Computer Science PhD Candidate, </br>University at Buffalo'
+description: 'Software Engineer at Yahoo'
 url: 'https://changminpark.github.io'
 baseurl: ''
 google_analytics: 'UA-206787238-1'
@@ -9,7 +9,7 @@ google_analytics: 'UA-206787238-1'
 
 author:
   name: 'Chang Min Park'
-  email: cpark22@buffalo.edu
+  email: pcm4150@gmail.com
   #  twitter_username: joshgerdes
   #  facebook_username: joshgerdes
   medium_id: pcm4150
