@@ -960,7 +960,7 @@ h5 {
 
 h1 {
 	margin-top: 0;
-	font-size: 3.2em;
+	font-size: 2.5em;
 	line-height: 1.2em;
 	letter-spacing: .05em; }
 
@@ -1044,7 +1044,7 @@ pre {
 .time,
 .author,
 .tags {
-	font-size: .6em;
+	font-size: .5em;
 	color: #c7c7c7; }
 	.date a,
 	.time a,
@@ -1148,7 +1148,7 @@ hr {
 	color: #c7c7c7; }
 
 .post-meta__date {
-	margin-right: .5em; }
+	margin-right: .6em; }
 
 .post-meta__tags {
 	font-size: 1.2em;
@@ -1192,7 +1192,7 @@ hr {
 
 .panel-title {
 	margin: 0 0 5px 0;
-	font-size: 2.2em;
+	font-size: 1.8em;
 	letter-spacing: 4px;
 	color: #FFF; }
 
@@ -1234,7 +1234,8 @@ hr {
 	margin-bottom: .2em; }
 
 .panel-cover__description {
-	margin: 0 30px; }
+	margin: 0 30px; 
+    font-size: 1em}
 
 .panel-cover__divider {
 	width: 50%;
@@ -1454,6 +1455,8 @@ i {
 
 .post-list__meta--date {
 	margin-right: .5em;
+	margin-left: .5em;
+	font-size: 0.7em;
 	color: #c7c7c7; }
 
 .post-list__meta--tags {
@@ -1568,14 +1571,14 @@ input[type="tel"] {
 		width: 70px; }
 
 	.panel-title {
-		font-size: 2em; }
+		font-size: 1.6em; }
 
 	.panel-subtitle {
 		font-size: 1em; }
 
 	.panel-cover__description {
 		margin: 0 10px;
-		font-size: .9em; }
+		font-size: 1em; }
 
 	.navigation--social {
 		margin-top: 5px;
@@ -1680,7 +1683,7 @@ input[type="tel"] {
 
 	.panel-title {
 		margin-bottom: .1em;
-		font-size: 1.5em; }
+		font-size: 1.6em; }
 
 	.panel-subtitle {
 		font-size: .9em; }
