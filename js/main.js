@@ -21,6 +21,7 @@ exclude: 'yes'
 
     if (window.location.hash &&
         window.location.hash == '#about' ||
+        window.location.hash == '#writing' ||
         window.location.hash == '#blog') {
       $('.panel-cover').addClass('panel-cover--collapsed')
     }
