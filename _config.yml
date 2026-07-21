@@ -24,6 +24,12 @@ defaults:
       type: 'posts'
     values:
         layout: 'post'
+  -
+    scope:
+      path: '_posts/writing'
+      type: 'posts'
+    values:
+        layout: 'writing_post'
 
 # Build settings
 destination: _site

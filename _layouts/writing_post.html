@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta" style="font-size:0.8em;">
+      {% if page.where %}
+      <span class="post-meta__tags" style="font-size:1.2em;">{{ page.where }}</span>
+      &#8226;
+      {% endif %}
+      <time datetime="{{ page.date | date: "%Y-%m %H:%M" }}" class="post-meta__date date" style="font-size:1.2em;">{{ page.date | date: "%b %Y" }}</time>
+      {% capture post_cat_raw %}{% for tag in page.tags %}{% unless tag == "Writing" %}{{ tag }}|{% endunless %}{% endfor %}{% endcapture %}
+      {% assign post_cats = post_cat_raw | split: "|" | where_exp: "t", "t != ''" %}
+      {% if post_cats.size > 0 %}
+      &#8226; <span class="post-meta__tags" style="font-size:1.2em;">{% for tag in post_cats %}<a href="{{ site.baseurl }}/writing/?category={{ tag | uri_escape }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
+      {% endif %}
+      {% if page.draft %}
+      &#8226; <span class="post-meta__tags" style="font-size:1.2em;color:#a67c00;">draft</span>
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <section class="post">
+    {{ content }}
+  </section>
+  {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section>{% endif %}
+</article>
+{% if page.comments != false %}{% include disqus.html %}{% endif %}
