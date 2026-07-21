@@ -36,11 +36,14 @@
               <li class="navigation__item">
                   <a href="{{ site.baseurl }}/project" title="link to {{ site.title }} project"
                     class="blog-button">Project</a></li>
+              {% assign writing_posts = site.posts | where_exp: "post", "post.path contains '_posts/writing/'" %}
+              {% if writing_posts.size > 0 %}
               &nbsp;
-              <!-- Writing -->
+              <!-- Writing (shown only when published posts exist under _posts/writing/) -->
               <li class="navigation__item">
                   <a href="{{ site.baseurl }}/writing" title="link to {{ site.title }} writing"
                     class="blog-button">Writing</a></li>
+              {% endif %}
 
             </ul>
           </nav>

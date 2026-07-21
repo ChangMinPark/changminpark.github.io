@@ -6,3 +6,6 @@ vendor
 
 **/*.swp
 
+# Local symlinks to private Writing posts (created by ./serve-local.sh)
+_posts/writing/*
+!_posts/writing/README.md
