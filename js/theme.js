@@ -22,7 +22,7 @@
       toggle.setAttribute("aria-pressed", dark ? "true" : "false");
       toggle.classList.toggle("is-dark", dark);
       var label = toggle.querySelector(".theme-toggle__label");
-      if (label) label.textContent = dark ? "Light" : "Dark";
+      if (label) label.textContent = dark ? "Dark" : "Light";
     }
   }
 

@@ -46,6 +46,8 @@
         var theme = stored || (prefersDark ? "dark" : "light");
         if (theme === "dark") {
           document.documentElement.classList.add("theme-dark");
+          var meta = document.getElementById("theme-color-meta");
+          if (meta) meta.setAttribute("content", "#121212");
         }
       } catch (e) {}
     })();

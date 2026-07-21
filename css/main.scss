@@ -183,6 +183,7 @@ pre.highlight code,
   --color-code-border: #c9e1f6;
   --color-selection: #fae3df;
   --color-table-stripe: #eeeeee;
+  --color-blockquote-border: #eeeeee;
 }
 
 html.theme-dark {
@@ -200,6 +201,7 @@ html.theme-dark {
   --color-code-border: #2f4558;
   --color-selection: #5a2f28;
   --color-table-stripe: #1a1a1a;
+  --color-blockquote-border: #2a2a2a;
 }
 
 body {
@@ -241,17 +243,42 @@ h1, h2, h3, h4, h5, h5 {
 
 .post-list__meta,
 .post-list__meta--date,
-.post-list__meta--tags {
+.post-list__meta--tags,
+.post-meta,
+.date,
+.time,
+.author,
+.tags {
   color: var(--color-meta);
 }
 
+.date a,
+.time a,
+.author a,
+.tags a {
+  color: var(--color-text);
+}
+.date a:hover,
+.time a:hover,
+.author a:hover,
+.tags a:hover {
+  color: var(--color-accent-hover);
+}
+
+.excerpt {
+  color: var(--color-muted);
+}
+
 .post-list__divider,
-.paginated-list .paginated-list-divider {
+.paginated-list .paginated-list-divider,
+.section-title__divider,
+.post-comments,
+.post hr,
+.footer {
   border-top-color: var(--color-border);
 }
 
 .footer {
-  border-top-color: var(--color-border);
   color: var(--color-muted);
 }
 .footer__copyright,
@@ -267,16 +294,24 @@ code {
   border-color: var(--color-code-border);
 }
 
+pre.highlight,
+.highlight pre {
+  background-color: #272822;
+}
+
 blockquote {
   background: var(--color-bg-elevated);
-  border-color: var(--color-border);
+  border-color: var(--color-blockquote-border);
   color: var(--color-text);
 }
 
 table {
   color: var(--color-text);
 }
-table tr:nth-child(even) {
+table thead th {
+  border-bottom-color: var(--color-muted);
+}
+table tr:nth-child(even) td {
   background: var(--color-table-stripe);
 }
 table th,
@@ -314,6 +349,12 @@ table td {
 }
 .list-page-ellipsis {
   color: var(--color-muted);
+}
+
+/* Uno form/readability bits that stay light otherwise */
+html.theme-dark .read-more,
+html.theme-dark .excerpt {
+  color: var(--color-text);
 }
 
 /* Inline emphasis used heavily on About / empty states */
