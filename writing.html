@@ -38,7 +38,7 @@ title: Writing
         <div style="width:80%;float: right">
           <li>
             <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-            <p class="excerpt">{{ post.excerpt | strip_html }}&hellip;</p>
+            <p class="excerpt">{{ post.excerpt | strip_html }}</p>
             <div class="post-list__meta">
                 {% if post.where %}
                 <span class="post-meta__tags" style="font-size:0.8em;color:gray">{{ post.where }}</span>

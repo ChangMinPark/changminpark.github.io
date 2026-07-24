@@ -6,6 +6,15 @@
     {% include header.html %}
 
     <div class="content-wrapper">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21 14.3A9.2 9.2 0 0 1 9.7 3 9.1 9.1 0 1 0 21 14.3z"/></svg>
+        </span>
+        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 17a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm9-8a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zM5 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm12.95 5.95a1 1 0 0 1 0 1.41l-.7.7a1 1 0 1 1-1.42-1.41l.71-.7a1 1 0 0 1 1.41 0zM7.76 6.34a1 1 0 0 1 0 1.41l-.71.71A1 1 0 0 1 5.64 7l.7-.7a1 1 0 0 1 1.42 0zm10.6-1.41.7.7a1 1 0 1 1-1.41 1.42l-.7-.71a1 1 0 0 1 1.41-1.41zM7.05 17.66l.7.7a1 1 0 1 1-1.41 1.42l-.7-.71a1 1 0 1 1 1.41-1.41z"/></svg>
+        </span>
+      </button>
+
       <div class="content-wrapper__inner">
         {{ content }}
       </div>
