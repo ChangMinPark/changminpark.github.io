@@ -228,6 +228,37 @@ h1, h2, h3, h4, h5, h5 {
   color: var(--color-heading);
 }
 
+/* Post headings: one step smaller than global Uno sizes (section titles felt oversized) */
+.post-title {
+  font-size: 2.2em; /* was global h1 2.5em */
+  line-height: 1.25em;
+}
+
+.post h1 {
+  font-size: 2.2em;
+  line-height: 1.25em;
+}
+
+.post h2 {
+  font-size: 1.8em; /* was 2.2em */
+}
+
+.post h3 {
+  font-size: 1.4em; /* was 1.8em */
+}
+
+.post h4 {
+  font-size: 1.2em; /* was ~1.4em / 1.2em */
+}
+
+.post h5 {
+  font-size: 1em; /* was 1.2em-ish ladder */
+}
+
+.post h6 {
+  font-size: 0.95em;
+}
+
 .content-wrapper,
 .content-wrapper__inner {
   background-color: var(--color-bg);
