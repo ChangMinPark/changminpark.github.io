@@ -228,8 +228,10 @@ h1, h2, h3, h4, h5, h5 {
   color: var(--color-heading);
 }
 
-/* Post headings: one step smaller than global Uno sizes (section titles felt oversized) */
-.post-title {
+/* Post article headings: one step smaller than global Uno sizes.
+   Do NOT target bare .post-title — Writing/Project list items also use
+   class="post-list__post-title post-title" and must keep 1.3em. */
+h1.post-title {
   font-size: 2.2em; /* was global h1 2.5em */
   line-height: 1.25em;
 }
@@ -252,7 +254,7 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 .post h5 {
-  font-size: 1em; /* was 1.2em-ish ladder */
+  font-size: 1em;
 }
 
 .post h6 {
