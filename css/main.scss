@@ -88,6 +88,24 @@ pre.highlight code,
   margin-bottom: 0;
 }
 
+.paginated-list-thumb {
+  width: 17%;
+  float: left;
+}
+
+.paginated-list-thumb__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.paginated-list-body {
+  width: 80%;
+  float: right;
+}
+
 .paginated-list .post-list li {
   margin: 0 0 0.85em 0;
 }
@@ -239,26 +257,45 @@ h1.post-title {
 .post h1 {
   font-size: 2.2em;
   line-height: 1.25em;
+  margin-top: 2em;
+  margin-bottom: 0.55em;
 }
 
 .post h2 {
   font-size: 1.8em; /* was 2.2em */
+  margin-top: 2.1em;
+  margin-bottom: 0.55em;
 }
 
 .post h3 {
   font-size: 1.4em; /* was 1.8em */
+  margin-top: 1.85em;
+  margin-bottom: 0.5em;
 }
 
 .post h4 {
   font-size: 1.2em; /* was ~1.4em / 1.2em */
+  margin-top: 1.65em;
+  margin-bottom: 0.45em;
 }
 
 .post h5 {
   font-size: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
 }
 
 .post h6 {
   font-size: 0.95em;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+}
+
+/* First section heading after the post header shouldn't leave a huge gap */
+.post > h1:first-child,
+.post > h2:first-child,
+.post > h3:first-child {
+  margin-top: 0.6em;
 }
 
 .content-wrapper,
