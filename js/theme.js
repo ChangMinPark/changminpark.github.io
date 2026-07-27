@@ -5,6 +5,10 @@
     return document.documentElement.classList.contains("theme-dark");
   }
 
+  function toggles() {
+    return document.querySelectorAll(".theme-toggle");
+  }
+
   function applyTheme(theme) {
     var dark = theme === "dark";
     document.documentElement.classList.toggle("theme-dark", dark);
@@ -17,13 +21,12 @@
       meta.setAttribute("content", dark ? "#121212" : "#ffffff");
     }
 
-    var toggle = document.getElementById("theme-toggle");
-    if (toggle) {
+    toggles().forEach(function (toggle) {
       toggle.setAttribute("aria-pressed", dark ? "true" : "false");
       toggle.classList.toggle("is-dark", dark);
       var label = toggle.querySelector(".theme-toggle__label");
       if (label) label.textContent = dark ? "Dark" : "Light";
-    }
+    });
   }
 
   function currentTheme() {
@@ -38,14 +41,13 @@
     // Sync UI with class already set by the head script (or default).
     applyTheme(currentTheme());
 
-    var toggle = document.getElementById("theme-toggle");
-    if (toggle) {
+    toggles().forEach(function (toggle) {
       toggle.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         toggleTheme();
       });
-    }
+    });
   }
 
   if (document.readyState === "loading") {
