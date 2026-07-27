@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">IN-APP REVIEW</text>
+  <text x="12" y="40" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f1a14">success != dialog</text>
+  <rect x="12" y="55" width="105" height="95" rx="8" fill="#2f9e44"/>
+  <text x="64" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#ffffff">Task OK</text>
+  <text x="64" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#d3f9d8">launchReviewFlow</text>
+  <rect x="133" y="55" width="105" height="95" rx="8" fill="#c92a2a"/>
+  <text x="185" y="90" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="13" fill="#ffffff">no UI</text>
+  <text x="185" y="112" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#ffc9c9">ratings cliff</text>
+  <text x="185" y="132" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#ffc9c9">Apr 2026</text>
+</svg>

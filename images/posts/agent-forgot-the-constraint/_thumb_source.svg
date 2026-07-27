@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">CONTEXT</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">constraint decay</text>
+  <rect x="12" y="55" width="226" height="28" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="22" y="74" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#1f1a14">don't touch generated/</text>
+  <rect x="12" y="92" width="226" height="28" rx="7" fill="#e9e4db" stroke="#6b6458" stroke-width="1"/>
+  <text x="22" y="111" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#6b6458">don't touch generated/</text>
+  <rect x="12" y="129" width="226" height="28" rx="7" fill="#eee" stroke="#6b6458" stroke-width="1"/>
+  <text x="22" y="148" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#c92a2a">don't t…  (forgotten)</text>
+</svg>

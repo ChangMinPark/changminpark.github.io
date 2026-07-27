@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">PLAN</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#1f1a14">theater vs acceptance</text>
+  <rect x="12" y="58" width="105" height="90" rx="7" fill="#e9e4db" stroke="#6b6458" stroke-width="1"/>
+  <text x="64" y="95" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#6b6458">vague</text>
+  <text x="64" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6458">checklist</text>
+  <rect x="133" y="58" width="105" height="90" rx="7" fill="#ffffff" stroke="#2f6fed" stroke-width="2"/>
+  <text x="185" y="90" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#2f6fed">checkable</text>
+  <text x="185" y="112" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">done when</text>
+  <text x="185" y="132" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">tests green</text>
+</svg>

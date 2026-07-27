@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">RETRY STORM</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">phones as DDoS</text>
+  <circle cx="20" cy="70" r="5" fill="#e8590c"/>
+  <circle cx="34" cy="70" r="5" fill="#2f6fed"/>
+  <circle cx="48" cy="70" r="5" fill="#2f6fed"/>
+  <circle cx="62" cy="70" r="5" fill="#e8590c"/>
+  <circle cx="76" cy="70" r="5" fill="#2f6fed"/>
+  <circle cx="90" cy="70" r="5" fill="#2f6fed"/>
+  <circle cx="104" cy="70" r="5" fill="#e8590c"/>
+  <circle cx="118" cy="70" r="5" fill="#2f6fed"/>
+  <circle cx="20" cy="86" r="5" fill="#2f6fed"/>
+  <circle cx="34" cy="86" r="5" fill="#e8590c"/>
+  <circle cx="48" cy="86" r="5" fill="#2f6fed"/>
+  <circle cx="62" cy="86" r="5" fill="#2f6fed"/>
+  <circle cx="76" cy="86" r="5" fill="#e8590c"/>
+  <circle cx="90" cy="86" r="5" fill="#2f6fed"/>
+  <circle cx="104" cy="86" r="5" fill="#2f6fed"/>
+  <circle cx="118" cy="86" r="5" fill="#e8590c"/>
+  <circle cx="20" cy="102" r="5" fill="#2f6fed"/>
+  <circle cx="34" cy="102" r="5" fill="#2f6fed"/>
+  <circle cx="48" cy="102" r="5" fill="#e8590c"/>
+  <circle cx="62" cy="102" r="5" fill="#2f6fed"/>
+  <circle cx="76" cy="102" r="5" fill="#2f6fed"/>
+  <circle cx="90" cy="102" r="5" fill="#e8590c"/>
+  <circle cx="104" cy="102" r="5" fill="#2f6fed"/>
+  <circle cx="118" cy="102" r="5" fill="#2f6fed"/>
+  <rect x="150" y="62" width="88" height="80" rx="7" fill="#252a33"/>
+  <text x="194" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#fff">API</text>
+  <text x="194" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#c92a2a">5xx → herd</text>
+</svg>

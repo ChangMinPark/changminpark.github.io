@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">NOT A COMPOSE BUG</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">send → refresh → gone</text>
+  <rect x="12" y="58" width="105" height="90" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="22" y="82" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6458">client</text>
+  <text x="22" y="104" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">optimistic UI</text>
+  <text x="22" y="124" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">pull refresh</text>
+  <rect x="130" y="58" width="108" height="90" rx="7" fill="#252a33"/>
+  <text x="140" y="82" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#e8b06a">read replica</text>
+  <text x="140" y="106" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#cfc6b6">behind primary</text>
+  <text x="140" y="130" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#c92a2a">message missing</text>
+</svg>

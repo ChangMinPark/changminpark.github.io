@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">RATE LIMIT</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">protect API ≠ spinner</text>
+  <rect x="12" y="58" width="100" height="90" rx="7" fill="#252a33"/>
+  <text x="62" y="95" text-anchor="middle" font-weight="700" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="22" fill="#c92a2a">429</text>
+  <text x="62" y="120" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#cfc6b6">Retry-After</text>
+  <rect x="128" y="58" width="110" height="90" rx="7" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+  <text x="138" y="85" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#2f9e44">queue</text>
+  <text x="138" y="108" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#1f1a14">coalesce</text>
+  <text x="138" y="130" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#1f1a14">explain</text>
+</svg>

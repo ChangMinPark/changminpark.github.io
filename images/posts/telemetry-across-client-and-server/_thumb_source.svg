@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">TELEMETRY</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">one request id</text>
+  <rect x="12" y="58" width="70" height="90" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="47" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">APK</text>
+  <text x="47" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">crash</text>
+  <rect x="95" y="90" width="60" height="28" rx="7" fill="#2f6fed"/>
+  <text x="125" y="109" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#fff">corr-id</text>
+  <rect x="168" y="58" width="70" height="90" rx="7" fill="#252a33"/>
+  <text x="203" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#fff">API</text>
+  <text x="203" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#9ad67a">logs</text>
+</svg>

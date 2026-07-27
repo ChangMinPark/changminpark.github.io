@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="18" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">PATTERNS</text>
+  <text x="12" y="36" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">steal these six</text>
+  <rect x="12" y="50" width="70" height="44" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="47" y="76" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#1f1a14">LB</text>
+  <rect x="90" y="50" width="70" height="44" rx="7" fill="#252a33"/>
+  <text x="125" y="76" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#cfc6b6">cache</text>
+  <rect x="168" y="50" width="70" height="44" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="203" y="76" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#1f1a14">scatter</text>
+  <rect x="12" y="106" width="70" height="44" rx="7" fill="#252a33"/>
+  <text x="47" y="132" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#cfc6b6">pipe</text>
+  <rect x="90" y="106" width="70" height="44" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="125" y="132" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#1f1a14">map-red</text>
+  <rect x="168" y="106" width="70" height="44" rx="7" fill="#2f6fed"/>
+  <text x="203" y="132" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#fff">orch</text>
+</svg>

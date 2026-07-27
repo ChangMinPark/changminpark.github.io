@@ -5,8 +5,21 @@ title: Writing
 ---
 
 {% assign writing_posts = site.posts | where_exp: "post", "post.path contains '_posts/writing/'" %}
+{% comment %}Preferred chip order; any extra tags from posts append alphabetically.{% endcomment %}
+{% assign preferred_cats = "Android,Distributed,Agents,Systems,Linux,Security,Testing,DevEx" | split: "," %}
 {% capture writing_cat_raw %}{% for post in writing_posts %}{% for tag in post.tags %}{% unless tag == "Writing" %}{{ tag }}|{% endunless %}{% endfor %}{% endfor %}{% endcapture %}
-{% assign writing_categories = writing_cat_raw | split: "|" | uniq | sort %}
+{% assign writing_categories_found = writing_cat_raw | split: "|" | uniq %}
+{% assign writing_categories = "" | split: "" %}
+{% for cat in preferred_cats %}
+  {% if writing_categories_found contains cat %}
+    {% assign writing_categories = writing_categories | push: cat %}
+  {% endif %}
+{% endfor %}
+{% for cat in writing_categories_found %}
+  {% unless preferred_cats contains cat or cat == "" %}
+    {% assign writing_categories = writing_categories | push: cat %}
+  {% endunless %}
+{% endfor %}
 
 <div class="main-post-list paginated-list" data-page-size="7" data-base-path="{{ site.baseurl }}/writing/">
   <br/>

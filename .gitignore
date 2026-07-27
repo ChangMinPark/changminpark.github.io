@@ -6,6 +6,8 @@ vendor
 
 **/*.swp
 
-# Local symlinks to private Writing posts (created by ./serve-local.sh)
+# Local hard-links from ./serve-local.sh (private Writing repo).
+# Published sync force-adds tracked copies; keep this ignore so local
+# preview links do not create untracked noise before the next sync.
 _posts/writing/*
 !_posts/writing/README.md

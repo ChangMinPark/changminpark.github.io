@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">FLAGS</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">three jobs</text>
+  <rect x="12" y="56" width="70" height="96" rx="7" fill="#ffffff" stroke="#c92a2a" stroke-width="2"/>
+  <text x="47" y="88" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#c92a2a">KILL</text>
+  <text x="47" y="110" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">safe</text>
+  <text x="47" y="128" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">default</text>
+  <rect x="90" y="56" width="70" height="96" rx="7" fill="#ffffff" stroke="#2f6fed" stroke-width="2"/>
+  <text x="125" y="88" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#2f6fed">ROLL</text>
+  <text x="125" y="110" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">% grow</text>
+  <text x="125" y="128" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">sticky</text>
+  <rect x="168" y="56" width="70" height="96" rx="7" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+  <text x="203" y="88" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#2f9e44">EXP</text>
+  <text x="203" y="110" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">expose</text>
+  <text x="203" y="128" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">metric</text>
+</svg>

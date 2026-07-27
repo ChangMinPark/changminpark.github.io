@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">PUSH</text>
+  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">not just FCM</text>
+  <rect x="12" y="60" width="70" height="88" rx="7" fill="#252a33"/>
+  <text x="47" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#fff">FCM</text>
+  <text x="47" y="115" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#9ad67a">APNs</text>
+  <rect x="100" y="60" width="138" height="40" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
+  <text x="110" y="85" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">collapse key</text>
+  <rect x="100" y="108" width="138" height="40" rx="7" fill="#ffffff" stroke="#2f6fed" stroke-width="2"/>
+  <text x="110" y="133" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#2f6fed">priority / TTL</text>
+</svg>
