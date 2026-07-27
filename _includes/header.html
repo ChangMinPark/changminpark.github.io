@@ -89,17 +89,7 @@
               &nbsp;
               {% endif %}
                
-              {% if site.author.medium_id %}
-              <!-- Medium -->
-              <li class="navigation__item">
-                <a href="https://medium.com/@{{ site.author.medium_id }}"
-                  title="{{ site.author.medium_id }} on Medium" target="_blank">
-                  <i class="icon icon-social-medium" style="font-size:1.7em;"></i>
-                  <span class="label">Medium</span>
-                </a>
-              </li>
-              &nbsp;
-              {% endif %}
+              {% comment %} Medium / GitHub icons hidden from the cover social row {% endcomment %}
  
               {% if site.author.linkedin_username %}
               <!-- LinkedIn -->
@@ -108,18 +98,6 @@
                   title="{{ site.author.linkedin_username }} on LinkedIn" target="_blank">
                   <i class="icon icon-social-linkedin"></i>
                   <span class="label">LinkedIn</span>
-                </a>
-              </li>
-              &nbsp;
-              {% endif %}
-
-              {% if site.author.github_username %}
-              <!-- GitHub -->
-              <li class="navigation__item">
-                <a href="https://www.github.com/{{ site.author.github_username }}"
-                  title="{{ site.author.github_username }} on GitHub" target="_blank">
-                  <i class="icon icon-social-github"></i>
-                  <span class="label">GitHub</span>
                 </a>
               </li>
               &nbsp;
