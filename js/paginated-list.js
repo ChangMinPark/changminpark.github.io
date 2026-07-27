@@ -80,6 +80,31 @@
     var currentCategory = getCategoryFromUrl();
     var currentPage = getPageFromUrl();
 
+    function rewritePostLinks() {
+      var links = root.querySelectorAll("a.paginated-list-post-link");
+      for (var i = 0; i < links.length; i++) {
+        var a = links[i];
+        var href = a.getAttribute("href") || "";
+        var path = href;
+        var hash = "";
+        var hashIdx = path.indexOf("#");
+        if (hashIdx !== -1) {
+          hash = path.slice(hashIdx);
+          path = path.slice(0, hashIdx);
+        }
+        var qIdx = path.indexOf("?");
+        if (qIdx !== -1) path = path.slice(0, qIdx);
+        if (currentCategory) {
+          a.setAttribute("href", path + "?category=" + encodeURIComponent(currentCategory) + hash);
+        } else {
+          a.setAttribute("href", path + hash);
+        }
+      }
+      try {
+        sessionStorage.setItem("listCategory:" + basePath, currentCategory || "");
+      } catch (e) {}
+    }
+
     function matchingItems() {
       if (!currentCategory) return items;
       return items.filter(function (item) {
@@ -143,6 +168,7 @@
         if (pagination) pagination.hidden = true;
         if (emptyMsg) emptyMsg.hidden = false;
         setActiveCategoryLinks(root, currentCategory);
+        rewritePostLinks();
         return;
       }
 
@@ -170,6 +196,7 @@
       if (prevBtn) prevBtn.disabled = currentPage <= 1;
       if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
       setActiveCategoryLinks(root, currentCategory);
+      rewritePostLinks();
     }
 
     function applyCategory(category) {

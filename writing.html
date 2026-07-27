@@ -33,11 +33,11 @@ title: Writing
       {% capture cats %}{% for tag in post.tags %}{% unless tag == "Writing" %}{{ tag }},{% endunless %}{% endfor %}{% endcapture %}
       <div class="paginated-list-item" style="height:auto" data-categories="{{ cats | strip | escape }}">
         <div class="paginated-list-thumb">
-          <a href="{{ site.baseurl }}{{ post.url }}"><img class="paginated-list-thumb__img" src="{{ site.baseurl }}/images/posts{{ post.url }}/thumbnail.png" alt="" width="250" height="170" loading="lazy" onerror="this.style.visibility='hidden'" onload="this.style.visibility='visible'" /></a>
+          <a class="paginated-list-post-link" href="{{ site.baseurl }}{{ post.url }}"><img class="paginated-list-thumb__img" src="{{ site.baseurl }}/images/posts{{ post.url }}/thumbnail.png" alt="" width="250" height="170" loading="lazy" onerror="this.style.visibility='hidden'" onload="this.style.visibility='visible'" /></a>
         </div>
         <div class="paginated-list-body">
           <li>
-            <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+            <h2 class="post-list__post-title post-title"><a class="paginated-list-post-link" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
             <p class="excerpt">{{ post.excerpt | strip_html }}</p>
             <div class="post-list__meta">
                 {% if post.where %}

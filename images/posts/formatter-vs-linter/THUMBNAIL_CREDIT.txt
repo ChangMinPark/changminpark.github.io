@@ -1,0 +1,1 @@
+Code lint / format icon (light + dark variants) — provided by author for Writing list thumbnail.

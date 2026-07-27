@@ -21,9 +21,8 @@
     if (toggle) {
       toggle.setAttribute("aria-pressed", dark ? "true" : "false");
       toggle.classList.toggle("is-dark", dark);
-      var nextLabel = dark ? "Switch to light mode" : "Switch to dark mode";
-      toggle.setAttribute("aria-label", nextLabel);
-      toggle.setAttribute("title", nextLabel);
+      var label = toggle.querySelector(".theme-toggle__label");
+      if (label) label.textContent = dark ? "Dark" : "Light";
     }
   }
 

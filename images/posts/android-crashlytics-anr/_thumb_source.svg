@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#121417"/>
+  <text x="12" y="18" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#ff8a65">ANR SNAPSHOT</text>
+  <text x="12" y="38" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f5f6f8">stack != root cause</text>
+  <g font-family="DejaVu Sans Mono, Menlo, monospace" font-size="8">
+    <rect x="12" y="52" width="150" height="20" rx="3" fill="#1e232b"/>
+    <text x="18" y="65" fill="#8b93a7">nativePollOnce</text>
+    <rect x="12" y="76" width="140" height="20" rx="3" fill="#1e232b"/>
+    <text x="18" y="89" fill="#8b93a7">Looper.loop</text>
+    <rect x="12" y="100" width="160" height="20" rx="3" fill="#2a2118" stroke="#ff8a65" stroke-width="1.2"/>
+    <text x="18" y="113" fill="#ffccbc">watchdog fired here</text>
+    <rect x="12" y="124" width="148" height="20" rx="3" fill="#1e232b"/>
+    <text x="18" y="137" fill="#5c6573">earlier work gone...</text>
+  </g>
+  <rect x="176" y="58" width="62" height="62" rx="10" fill="#FFCA28"/>
+  <text x="207" y="84" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#1a1a1a">Firebase</text>
+  <text x="207" y="100" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="7" fill="#3d3200">Crashlytics</text>
+  <text x="12" y="160" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="8" fill="#8b93a7">one layer · Android 11+</text>
+</svg>

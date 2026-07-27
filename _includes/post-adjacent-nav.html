@@ -1,0 +1,91 @@
+{% comment %}
+  Adjacent posts at bottom (option 2 layout).
+  List is newest-first, so left = Newer, right = Older (matches scrolling the list).
+  Category filter (?category=) is applied client-side via post-adjacent-nav.js.
+{% endcomment %}
+{% assign nav_is_writing = false %}
+{% if page.layout == 'writing_post' or page.tags contains 'Writing' %}
+  {% assign nav_is_writing = true %}
+{% endif %}
+{% if nav_is_writing %}
+  {% assign nav_list_path = '/writing/' %}
+{% else %}
+  {% assign nav_list_path = '/project/' %}
+{% endif %}
+
+{% assign nav_posts = "" | split: "" %}
+{% for p in site.posts %}
+  {% if nav_is_writing %}
+    {% if p.tags contains 'Writing' %}
+      {% assign nav_posts = nav_posts | push: p %}
+    {% endif %}
+  {% else %}
+    {% unless p.tags contains 'Writing' %}
+      {% unless p.path contains '_posts/writing/' %}
+        {% if p.title != 'About' %}
+          {% assign nav_posts = nav_posts | push: p %}
+        {% endif %}
+      {% endunless %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} site.posts is newest-first: newer = lower index, older = higher index {% endcomment %}
+{% assign nav_newer = nil %}
+{% assign nav_older = nil %}
+{% for p in nav_posts %}
+  {% if p.url == page.url %}
+    {% unless forloop.first %}
+      {% assign newer_i = forloop.index0 | minus: 1 %}
+      {% assign nav_newer = nav_posts[newer_i] %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign older_i = forloop.index0 | plus: 1 %}
+      {% assign nav_older = nav_posts[older_i] %}
+    {% endunless %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if nav_newer or nav_older %}
+<nav class="post-adjacent" aria-label="Adjacent posts">
+  {% if nav_newer %}
+  <a class="post-adjacent__link post-adjacent__link--newer" href="{{ nav_newer.url | prepend: site.baseurl }}">
+    <span class="post-adjacent__dir">← Newer</span>
+    <span class="post-adjacent__title">{{ nav_newer.title }}</span>
+  </a>
+  {% else %}
+  <span class="post-adjacent__link post-adjacent__link--newer post-adjacent__link--empty" aria-hidden="true"></span>
+  {% endif %}
+
+  <a class="post-adjacent__category" href="{{ site.baseurl }}{{ nav_list_path }}" data-list-path="{{ nav_list_path }}">
+    <span class="post-adjacent__category-label">Category</span>
+    <span class="post-adjacent__category-value">All</span>
+  </a>
+
+  {% if nav_older %}
+  <a class="post-adjacent__link post-adjacent__link--older" href="{{ nav_older.url | prepend: site.baseurl }}">
+    <span class="post-adjacent__dir">Older →</span>
+    <span class="post-adjacent__title">{{ nav_older.title }}</span>
+  </a>
+  {% else %}
+  <span class="post-adjacent__link post-adjacent__link--older post-adjacent__link--empty" aria-hidden="true"></span>
+  {% endif %}
+</nav>
+{% endif %}
+
+<script type="application/json" id="post-nav-index">
+{
+  "listPath": {{ nav_list_path | jsonify }},
+  "posts": [
+  {% for p in nav_posts %}
+    {
+      "url": {{ p.url | prepend: site.baseurl | jsonify }},
+      "title": {{ p.title | jsonify }},
+      "categories": [{% assign cat_first = true %}{% for tag in p.tags %}{% if nav_is_writing %}{% unless tag == 'Writing' %}{% unless cat_first %},{% endunless %}{{ tag | jsonify }}{% assign cat_first = false %}{% endunless %}{% else %}{% unless cat_first %},{% endunless %}{{ tag | jsonify }}{% assign cat_first = false %}{% endif %}{% endfor %}]
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+}
+</script>
+<script src="{{ site.baseurl }}/js/post-adjacent-nav.js?{{ site.time | date: '%s%N' }}"></script>

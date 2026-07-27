@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#0f1720"/>
+  <text x="12" y="18" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="8" fill="#64b5f6">JETPACK COMPOSE</text>
+  <text x="12" y="34" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#e8eef5">assistant · LazyColumn · IME</text>
+  <rect x="40" y="46" width="170" height="110" rx="10" fill="#1a2330" stroke="#334155" stroke-width="1.5"/>
+  <rect x="52" y="58" width="90" height="18" rx="7" fill="#263244"/>
+  <rect x="108" y="84" width="90" height="18" rx="7" fill="#1e3a5f"/>
+  <rect x="52" y="110" width="72" height="16" rx="7" fill="#263244"/>
+  <rect x="52" y="132" width="110" height="14" rx="4" fill="#0f1720" stroke="#475569"/>
+  <rect x="168" y="132" width="30" height="14" rx="4" fill="#4285F4"/>
+  <text x="183" y="142" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="7" fill="#fff">Send</text>
+  <rect x="40" y="156" width="170" height="5" rx="1" fill="#4285F4"/>
+  <text x="125" y="168" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="7" fill="#64b5f6">imePadding()</text>
+</svg>
