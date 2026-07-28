@@ -1,0 +1,1 @@
+Hand-authored SVG: faded constraint sticky + chat thread + agent forgetting the rule.

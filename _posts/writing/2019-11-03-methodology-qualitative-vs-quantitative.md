@@ -2,6 +2,7 @@
 title: "Research Methodology: Qualitative vs Quantitative"
 date: 2019-11-03 10:00:00
 tags: [Writing, Testing]
+draft: false
 ---
 
 ## Why the split matters before you collect data

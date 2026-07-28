@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">MAIL SYNC</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">fresh vs offline</text>
-  <rect x="12" y="55" width="70" height="95" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="47" y="78" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">device</text>
-  <text x="47" y="98" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#6b6458">Room</text>
-  <text x="47" y="118" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#2f6fed">outbox</text>
-  <rect x="95" y="85" width="60" height="36" rx="7" fill="#e9e4db" stroke="#1f1a14" stroke-width="1"/>
-  <text x="125" y="107" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">sync</text>
-  <rect x="168" y="55" width="70" height="95" rx="7" fill="#252a33"/>
-  <text x="203" y="85" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#cfc6b6">server</text>
-  <text x="203" y="108" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#9ad67a">replica</text>
-  <text x="203" y="128" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#e8b06a">lag?</text>
+
+  <rect x="25" y="30" width="55" height="100" rx="8" fill="#1f1a14"/>
+  <rect x="30" y="40" width="45" height="70" rx="3" fill="#faf8f4"/>
+  <rect x="36" y="55" width="32" height="14" rx="2" fill="#2f9e44"/>
+  <rect x="170" y="30" width="55" height="100" rx="8" fill="#1f1a14"/>
+  <rect x="175" y="40" width="45" height="70" rx="3" fill="#faf8f4"/>
+  <!-- draft vanished -->
+  <rect x="181" y="55" width="32" height="14" rx="2" fill="none" stroke="#c92a2a" stroke-dasharray="3 2" stroke-width="2"/>
+  <!-- offline cloud broken -->
+  <ellipse cx="125" cy="70" rx="28" ry="18" fill="#e9e4db" stroke="#6b6458" stroke-width="2"/>
+  <path d="M110 70 L140 70" stroke="#c92a2a" stroke-width="3"/>
+  <path d="M125 55 L125 85" stroke="#c92a2a" stroke-width="3"/>
+  <path d="M85 80 L97 80" stroke="#6b6458" stroke-width="2" stroke-dasharray="3 2"/>
+  <path d="M153 80 L165 80" stroke="#6b6458" stroke-width="2" stroke-dasharray="3 2"/>
+
 </svg>

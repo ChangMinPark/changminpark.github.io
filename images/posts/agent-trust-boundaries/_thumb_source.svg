@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
-  <rect width="250" height="170" fill="#1c1f24"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#cfc6b6">TRUST</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#fff">approve the right calls</text>
-  <rect x="12" y="58" width="100" height="90" rx="7" fill="#2b3038"/>
-  <text x="62" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#8a8274">ls</text>
-  <text x="62" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#2f9e44">auto-ok</text>
-  <rect x="128" y="58" width="110" height="90" rx="7" fill="#3b1f1f" stroke="#c92a2a" stroke-width="2"/>
-  <text x="183" y="90" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#ffc9c9">push /</text>
-  <text x="183" y="110" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#ffc9c9">delete /</text>
-  <text x="183" y="130" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#c92a2a">MCP write</text>
+  <rect width="250" height="170" fill="#f4f1ea"/>
+
+  <rect x="20" y="30" width="90" height="110" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2.5"/>
+  <circle cx="65" cy="70" r="20" fill="#1f1a14"/>
+  <circle cx="59" cy="66" r="3" fill="#ffffff"/>
+  <circle cx="71" cy="66" r="3" fill="#ffffff"/>
+  <!-- approval gate -->
+  <rect x="40" y="105" width="50" height="22" rx="4" fill="#2f9e44"/>
+  <path d="M55 116 l6 6 12-12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- dangerous tools outside -->
+  <rect x="140" y="35" width="90" height="40" rx="6" fill="#c92a2a" opacity="0.9"/>
+  <rect x="140" y="90" width="90" height="40" rx="6" fill="#e8590c" opacity="0.9"/>
+  <!-- wall -->
+  <rect x="118" y="25" width="8" height="120" fill="#1f1a14"/>
+  <path d="M126 55 L140 55" stroke="#c92a2a" stroke-width="2" stroke-dasharray="4 2"/>
+  <path d="M126 110 L140 110" stroke="#e8590c" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="112" cy="55" r="8" fill="#ffffff" stroke="#c92a2a" stroke-width="2"/>
+  <path d="M108 51 L116 59 M116 51 L108 59" stroke="#c92a2a" stroke-width="2"/>
+
 </svg>

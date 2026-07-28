@@ -2,6 +2,7 @@
 title: "Android SDK Versions: compileSdk, minSdk, and targetSdk in Production"
 date: 2022-12-08 16:45:00
 tags: [Writing, Android]
+draft: false
 ---
 
 ## The release that broke on a newer phone

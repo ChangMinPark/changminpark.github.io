@@ -1,1 +1,1 @@
-Custom SVG timeline (MVC → MVP → MVVM → MVI → Compose) for Writing list thumbnail.
+SVG: FE architecture evolution steps ending in Compose.

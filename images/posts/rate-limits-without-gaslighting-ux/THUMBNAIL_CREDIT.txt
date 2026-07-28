@@ -1,0 +1,1 @@
+SVG: spinner that lies vs honest rate-limit UX.

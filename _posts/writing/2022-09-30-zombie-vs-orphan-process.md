@@ -2,6 +2,7 @@
 title: "Zombie vs Orphan Processes: What ps Is Actually Showing"
 date: 2022-09-30 12:00:00
 tags: [Writing, Linux]
+draft: false
 ---
 
 ## The ps line that will not die

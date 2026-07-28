@@ -2,6 +2,7 @@
 title: "Scalable Patterns Worth Stealing (Without Renaming Your Résumé)"
 date: 2025-05-18 11:00:00
 tags: [Writing, Distributed]
+draft: false
 ---
 
 ## You already ship these — under different names

@@ -1,0 +1,2 @@
+Generated locally with Hugging Face Diffusers (segmind/tiny-sd).
+Prompt: flat minimal tech illustration of a small robot coding agent struggling and slowing down, sweating, stuck gears, heavy lag spinner, tangled wires, frustrated posture, soft cream background, clean vector style, simple shapes, no text no letters no watermark

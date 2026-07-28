@@ -1,0 +1,1 @@
+Hand-authored SVG: one-off demo chat crossed out vs eval scoreboard with pass/fail cases.

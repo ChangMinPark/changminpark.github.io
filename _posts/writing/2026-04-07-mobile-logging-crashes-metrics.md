@@ -2,6 +2,7 @@
 title: "Mobile Logs, Crashes, and Metrics: Pick Signals That Decide"
 date: 2026-04-07 09:40:00
 tags: [Writing, Android]
+draft: false
 ---
 
 ## More telemetry is not more control

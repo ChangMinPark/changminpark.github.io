@@ -2,6 +2,7 @@
 title: "In-App Review Returned Success — The Dialog Never Showed"
 date: 2026-05-14 11:35:00
 tags: [Writing, Android]
+draft: false
 ---
 
 ## Ratings fell. Installs did not.

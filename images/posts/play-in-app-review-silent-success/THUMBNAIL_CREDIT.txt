@@ -1,0 +1,2 @@
+Hand-authored SVG concept diagram (phone + Play-style review dialog + false success / crash marks).
+Rasterized for Writing list thumbnail.

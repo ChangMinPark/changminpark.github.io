@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">HOT KEY</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#1f1a14">one mailbox melts shard</text>
-  <rect x="12" y="60" width="226" height="28" rx="7" fill="#e9e4db" stroke="#1f1a14" stroke-width="1"/>
-  <text x="20" y="79" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#1f1a14">shard A  shard B  [HOT]  shard D</text>
-  <rect x="90" y="100" width="70" height="50" rx="7" fill="#c92a2a"/>
-  <text x="125" y="122" text-anchor="middle" font-weight="700" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#fff">HOT</text>
-  <text x="125" y="140" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#ffc9c9">inbox</text>
+
+  <!-- shards -->
+  <rect x="30" y="50" width="50" height="80" rx="4" fill="#e9e4db" stroke="#6b6458"/>
+  <rect x="100" y="40" width="50" height="100" rx="4" fill="#c92a2a"/>
+  <rect x="170" y="50" width="50" height="80" rx="4" fill="#e9e4db" stroke="#6b6458"/>
+  <!-- heat on middle -->
+  <path d="M115 30 Q125 10 135 30" fill="none" stroke="#e8590c" stroke-width="3"/>
+  <path d="M108 35 Q125 5 142 35" fill="none" stroke="#e8590c" stroke-width="2" opacity="0.7"/>
+  <!-- many refresh arrows into hot shard -->
+  <g stroke="#1f1a14" stroke-width="2">
+    <path d="M60 20 L120 45"/>
+    <path d="M125 15 L125 40"/>
+    <path d="M190 20 L130 45"/>
+  </g>
+
 </svg>

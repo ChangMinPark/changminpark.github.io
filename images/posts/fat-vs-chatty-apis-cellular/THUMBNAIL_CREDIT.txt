@@ -1,0 +1,1 @@
+SVG: fat payload vs chatty many small requests on cellular.

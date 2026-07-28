@@ -1,0 +1,1 @@
+SVG: GitHub Actions PR checks as merge gates.

@@ -2,6 +2,7 @@
 title: "White Box, Black Box, and Gray Box Testing"
 date: 2019-11-21 10:15:00
 tags: [Writing, Testing]
+draft: false
 ---
 
 ## Why "how much you know" changes what you find

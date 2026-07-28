@@ -2,6 +2,7 @@
 title: "tee, Pipe, and Redirection: Watch Output While You Log It"
 date: 2021-03-13 16:15:00
 tags: [Writing, Linux]
+draft: false
 ---
 
 ## Why plain redirection hides the stream

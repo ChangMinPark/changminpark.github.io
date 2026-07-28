@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+
+  <!-- unidirectional loop -->
+  <circle cx="125" cy="85" r="45" fill="none" stroke="#2f6fed" stroke-width="4"/>
+  <polygon points="170,85 162,78 162,92" fill="#2f6fed"/>
+  <rect x="100" y="30" width="50" height="24" rx="4" fill="#1f1a14"/>
+  <rect x="175" y="70" width="50" height="24" rx="4" fill="#e8590c"/>
+  <rect x="100" y="116" width="50" height="24" rx="4" fill="#2f9e44"/>
+  <rect x="25" y="70" width="50" height="24" rx="4" fill="#7950f2"/>
+  <!-- arrows around -->
+  <path d="M125 54 L160 78" fill="none" stroke="#6b6458" stroke-width="2"/>
+  <path d="M175 94 L140 120" fill="none" stroke="#6b6458" stroke-width="2"/>
+  <path d="M100 128 L60 94" fill="none" stroke="#6b6458" stroke-width="2"/>
+  <path d="M50 70 L100 54" fill="none" stroke="#6b6458" stroke-width="2"/>
+
+</svg>

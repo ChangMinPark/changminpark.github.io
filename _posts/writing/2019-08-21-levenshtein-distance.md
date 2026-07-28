@@ -2,6 +2,7 @@
 title: "Levenshtein Distance: Edit Cost for Typos and Fuzzy Match"
 date: 2019-08-21 09:45:00
 tags: [Writing, Systems]
+draft: false
 ---
 
 ## When exact match is too strict

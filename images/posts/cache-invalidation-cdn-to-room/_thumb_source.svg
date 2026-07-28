@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">INVALIDATION</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">CDN → API → Room</text>
-  <rect x="12" y="60" width="68" height="42" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="46" y="85" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">CDN</text>
-  <rect x="91" y="60" width="68" height="42" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="125" y="85" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">API</text>
-  <rect x="170" y="60" width="68" height="42" rx="7" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
-  <text x="204" y="85" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#e8590c">Room</text>
-  <text x="12" y="130" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6458">stale avatar / thread meta</text>
-  <text x="12" y="150" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#c92a2a">stampede on open</text>
+
+  <!-- four layers -->
+  <rect x="30" y="20" width="190" height="28" rx="4" fill="#4285f4"/>
+  <rect x="30" y="56" width="190" height="28" rx="4" fill="#2f6fed"/>
+  <rect x="30" y="92" width="190" height="28" rx="4" fill="#e8590c"/>
+  <rect x="30" y="128" width="190" height="28" rx="4" fill="#2f9e44"/>
+  <!-- same bug marks -->
+  <g fill="#fff">
+    <circle cx="55" cy="34" r="6"/>
+    <circle cx="55" cy="70" r="6"/>
+    <circle cx="55" cy="106" r="6"/>
+    <circle cx="55" cy="142" r="6"/>
+  </g>
+  <g fill="#c92a2a">
+    <circle cx="55" cy="34" r="3"/>
+    <circle cx="55" cy="70" r="3"/>
+    <circle cx="55" cy="106" r="3"/>
+    <circle cx="55" cy="142" r="3"/>
+  </g>
+  <path d="M55 40 L55 136" stroke="#c92a2a" stroke-width="2" stroke-dasharray="3 3"/>
+
 </svg>

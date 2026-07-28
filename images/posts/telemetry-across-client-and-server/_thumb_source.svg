@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">TELEMETRY</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">one request id</text>
-  <rect x="12" y="58" width="70" height="90" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="47" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">APK</text>
-  <text x="47" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">crash</text>
-  <rect x="95" y="90" width="60" height="28" rx="7" fill="#2f6fed"/>
-  <text x="125" y="109" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#fff">corr-id</text>
-  <rect x="168" y="58" width="70" height="90" rx="7" fill="#252a33"/>
-  <text x="203" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#fff">API</text>
-  <text x="203" y="118" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#9ad67a">logs</text>
+
+  <rect x="20" y="40" width="50" height="90" rx="8" fill="#1f1a14"/>
+  <rect x="180" y="50" width="50" height="70" rx="6" fill="#2f6fed"/>
+  <!-- three disagreeing dashboards -->
+  <rect x="85" y="25" width="70" height="35" rx="4" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+  <rect x="85" y="68" width="70" height="35" rx="4" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+  <rect x="85" y="111" width="70" height="35" rx="4" fill="#ffffff" stroke="#c92a2a" stroke-width="2"/>
+  <path d="M70 85 L85 42" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M70 85 L85 85" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M70 85 L85 128" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M155 42 L180 70" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M155 85 L180 85" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M155 128 L180 100" stroke="#6b6458" stroke-width="1.5"/>
+
 </svg>

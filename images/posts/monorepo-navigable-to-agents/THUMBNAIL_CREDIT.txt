@@ -1,0 +1,2 @@
+Generated locally with Hugging Face Diffusers (segmind/tiny-sd).
+Prompt: flat minimal figure diagram, large monorepo box in the center made of nested folder modules, clear navigable path arrows through the repo, small robot agents around the outside following the path into the center, architecture diagram style, soft cream background, clean vector shapes, simple boxes and arrows, no text no letters no watermark no words

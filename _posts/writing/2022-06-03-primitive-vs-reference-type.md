@@ -2,6 +2,7 @@
 title: "Primitive vs Reference Types: Memory, Boxing, and Kotlin Nulls"
 date: 2022-06-03 12:45:00
 tags: [Writing, Systems]
+draft: false
 ---
 
 ## Why "same variable" stores different things

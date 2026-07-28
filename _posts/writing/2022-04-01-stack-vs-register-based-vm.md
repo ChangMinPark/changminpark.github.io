@@ -2,6 +2,7 @@
 title: "Stack-Based vs Register-Based VMs: Why Dalvik Chose Registers"
 date: 2022-04-01 09:45:00
 tags: [Writing, Systems]
+draft: false
 ---
 
 ## Two ways to fake a CPU

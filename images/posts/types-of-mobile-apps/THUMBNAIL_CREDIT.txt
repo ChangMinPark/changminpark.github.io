@@ -1,0 +1,1 @@
+SVG: native vs hybrid vs webview trap.

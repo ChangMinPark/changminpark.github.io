@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">MEMOIZATION</text>
-  <text x="12" y="40" font-family="DejaVu Serif, Georgia, serif" font-size="15" font-weight="700" fill="#1f1a14">cache the result</text>
-  <rect x="12" y="58" width="70" height="48" rx="7" fill="#fff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="47" y="78" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">f(key)</text>
-  <text x="47" y="94" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="9" fill="#6b6458">compute?</text>
-  <line x1="88" y1="82" x2="108" y2="82" stroke="#1f1a14" stroke-width="2"/>
-  <polygon points="108,77 118,82 108,87" fill="#1f1a14"/>
-  <rect x="122" y="52" width="116" height="100" rx="8" fill="#1f1a14"/>
-  <text x="132" y="72" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#cfc6b6">Map&lt;Key, Value&gt;</text>
-  <text x="132" y="94" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#9ad67a">hit  - return</text>
-  <text x="132" y="112" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="10" fill="#e8b06a">miss - store</text>
-  <text x="132" y="136" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="9" fill="#8a8274">TTL / invalidate / LRU</text>
+
+  <!-- function -->
+  <rect x="20" y="55" width="70" height="50" rx="8" fill="#1f1a14"/>
+  <rect x="30" y="70" width="50" height="8" rx="2" fill="#7dd3a0"/>
+  <rect x="30" y="84" width="35" height="8" rx="2" fill="#7dd3a0"/>
+  <!-- same input twice -->
+  <path d="M95 60 L120 60" stroke="#6b6458" stroke-width="2"/>
+  <path d="M95 100 L120 100" stroke="#6b6458" stroke-width="2"/>
+  <!-- cache -->
+  <rect x="120" y="40" width="60" height="80" rx="6" fill="#2f6fed"/>
+  <rect x="130" y="55" width="40" height="20" rx="3" fill="#fff" opacity="0.85"/>
+  <rect x="130" y="85" width="40" height="20" rx="3" fill="#fff" opacity="0.5"/>
+  <!-- cached result hit -->
+  <path d="M185 80 L210 80" stroke="#2f9e44" stroke-width="3"/>
+  <polygon points="210,80 202,74 202,86" fill="#2f9e44"/>
+  <rect x="215" y="60" width="25" height="40" rx="4" fill="#2f9e44"/>
+
 </svg>

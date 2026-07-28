@@ -1,1 +1,1 @@
-Custom SVG: ANR stack-snapshot frames + Firebase Crashlytics badge for Writing list thumbnail.
+SVG: ANR phone + incomplete Crashlytics stack with missing frames.

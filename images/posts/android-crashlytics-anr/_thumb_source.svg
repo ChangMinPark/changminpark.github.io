@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
-  <rect width="250" height="170" fill="#121417"/>
-  <text x="12" y="18" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#ff8a65">ANR SNAPSHOT</text>
-  <text x="12" y="38" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#f5f6f8">stack != root cause</text>
-  <g font-family="DejaVu Sans Mono, Menlo, monospace" font-size="8">
-    <rect x="12" y="52" width="150" height="20" rx="3" fill="#1e232b"/>
-    <text x="18" y="65" fill="#8b93a7">nativePollOnce</text>
-    <rect x="12" y="76" width="140" height="20" rx="3" fill="#1e232b"/>
-    <text x="18" y="89" fill="#8b93a7">Looper.loop</text>
-    <rect x="12" y="100" width="160" height="20" rx="3" fill="#2a2118" stroke="#ff8a65" stroke-width="1.2"/>
-    <text x="18" y="113" fill="#ffccbc">watchdog fired here</text>
-    <rect x="12" y="124" width="148" height="20" rx="3" fill="#1e232b"/>
-    <text x="18" y="137" fill="#5c6573">earlier work gone...</text>
-  </g>
-  <rect x="176" y="58" width="62" height="62" rx="10" fill="#FFCA28"/>
-  <text x="207" y="84" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#1a1a1a">Firebase</text>
-  <text x="207" y="100" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="7" fill="#3d3200">Crashlytics</text>
-  <text x="12" y="160" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="8" fill="#8b93a7">one layer · Android 11+</text>
+  <rect width="250" height="170" fill="#f4f1ea"/>
+
+  <rect x="20" y="20" width="70" height="130" rx="10" fill="#1f1a14"/>
+  <rect x="26" y="30" width="58" height="100" rx="3" fill="#faf8f4"/>
+  <!-- frozen UI / ANR dialog hint -->
+  <rect x="34" y="60" width="42" height="36" rx="4" fill="#ffffff" stroke="#6b6458" stroke-width="1"/>
+  <rect x="40" y="68" width="30" height="6" rx="1" fill="#e9e4db"/>
+  <rect x="40" y="80" width="20" height="8" rx="2" fill="#2f6fed"/>
+  <!-- incomplete stack (lie by omission) -->
+  <rect x="110" y="28" width="120" height="114" rx="6" fill="#1f1a14"/>
+  <rect x="120" y="40" width="90" height="8" rx="2" fill="#ffa8a8"/>
+  <rect x="120" y="54" width="100" height="8" rx="2" fill="#ffc9c9"/>
+  <rect x="120" y="68" width="70" height="8" rx="2" fill="#ffe3e3"/>
+  <!-- dashed missing frames -->
+  <rect x="120" y="90" width="100" height="8" rx="2" fill="none" stroke="#6b6458" stroke-dasharray="4 3" stroke-width="1.5"/>
+  <rect x="120" y="104" width="80" height="8" rx="2" fill="none" stroke="#6b6458" stroke-dasharray="4 3" stroke-width="1.5"/>
+  <rect x="120" y="118" width="60" height="8" rx="2" fill="none" stroke="#6b6458" stroke-dasharray="4 3" stroke-width="1.5"/>
+  <circle cx="210" cy="48" r="12" fill="#e8590c"/>
+  <text x="210" y="52" text-anchor="middle" font-size="14" font-family="DejaVu Sans,sans-serif" fill="#fff" font-weight="bold">!</text>
+
 </svg>

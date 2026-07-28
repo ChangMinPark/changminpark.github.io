@@ -1,1 +1,1 @@
-Redux unidirectional flow diagram (React / action / store / reducer) — provided by author for Writing list thumbnail.
+SVG: Redux unidirectional state loop.

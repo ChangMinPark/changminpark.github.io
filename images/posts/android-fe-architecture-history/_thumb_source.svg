@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
-  <rect width="250" height="170" fill="#1a1d23"/>
-  <text x="12" y="22" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#9aa3b2">ANDROID FE</text>
-  <text x="12" y="42" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f2f4f8">MVC to Compose</text>
-  <line x1="14" y1="88" x2="236" y2="88" stroke="#3d4452" stroke-width="2"/>
-  <g font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" font-weight="700" text-anchor="middle">
-    <rect x="10" y="74" width="40" height="28" rx="5" fill="#2b3340" stroke="#5b6b82"/>
-    <text x="30" y="92" fill="#c9d4e3">MVC</text>
-    <rect x="56" y="74" width="40" height="28" rx="5" fill="#2b3340" stroke="#5b6b82"/>
-    <text x="76" y="92" fill="#c9d4e3">MVP</text>
-    <rect x="102" y="74" width="44" height="28" rx="5" fill="#2b3340" stroke="#5b6b82"/>
-    <text x="124" y="92" fill="#c9d4e3">MVVM</text>
-    <rect x="152" y="74" width="40" height="28" rx="5" fill="#2b3340" stroke="#5b6b82"/>
-    <text x="172" y="92" fill="#c9d4e3">MVI</text>
-    <rect x="198" y="74" width="42" height="28" rx="5" fill="#3a5a40" stroke="#7cbc8a"/>
-    <text x="219" y="92" fill="#d4f0da">Compose</text>
+  <rect width="250" height="170" fill="#f4f1ea"/>
+
+  <g font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="9" fill="#6b6458">
   </g>
-  <text x="12" y="132" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#8b93a7">Unidirectional state</text>
-  <text x="12" y="148" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#8b93a7">UI as a function of state</text>
+  <!-- timeline boxes -->
+  <rect x="14" y="60" width="48" height="50" rx="6" fill="#ffffff" stroke="#6b6458" stroke-width="1.5"/>
+  <rect x="18" y="68" width="40" height="10" rx="2" fill="#e9e4db"/>
+  <rect x="18" y="82" width="40" height="10" rx="2" fill="#e9e4db"/>
+  <rect x="18" y="96" width="40" height="8" rx="2" fill="#2f6fed"/>
+  <path d="M66 85 L78 85" stroke="#1f1a14" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="80" y="60" width="48" height="50" rx="6" fill="#ffffff" stroke="#6b6458" stroke-width="1.5"/>
+  <rect x="84" y="68" width="40" height="14" rx="2" fill="#e9e4db"/>
+  <rect x="84" y="88" width="40" height="14" rx="2" fill="#e8590c"/>
+  <path d="M132 85 L144 85" stroke="#1f1a14" stroke-width="2"/>
+  <rect x="146" y="60" width="48" height="50" rx="6" fill="#ffffff" stroke="#6b6458" stroke-width="1.5"/>
+  <circle cx="170" cy="78" r="10" fill="#2f6fed"/>
+  <rect x="152" y="94" width="36" height="10" rx="2" fill="#e9e4db"/>
+  <path d="M198 85 L210 85" stroke="#1f1a14" stroke-width="2"/>
+  <rect x="212" y="50" width="28" height="70" rx="6" fill="#1f1a14"/>
+  <rect x="216" y="58" width="20" height="8" rx="2" fill="#7dd3a0"/>
+  <rect x="216" y="72" width="20" height="20" rx="3" fill="#2f6fed"/>
+  <rect x="216" y="98" width="20" height="12" rx="2" fill="#e9e4db"/>
+  <!-- arrow heads -->
+  <polygon points="78,85 72,81 72,89" fill="#1f1a14"/>
+  <polygon points="144,85 138,81 138,89" fill="#1f1a14"/>
+  <polygon points="210,85 204,81 204,89" fill="#1f1a14"/>
+
 </svg>

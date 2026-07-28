@@ -2,6 +2,7 @@
 title: "One Telemetry Story Across Client and Server"
 date: 2025-04-02 12:00:00
 tags: [Writing, Distributed]
+draft: false
 ---
 
 ## Users say it's broken; three dashboards disagree

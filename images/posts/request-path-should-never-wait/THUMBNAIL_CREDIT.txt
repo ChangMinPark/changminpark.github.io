@@ -1,0 +1,1 @@
+SVG: fast request path; slow work async off-path.

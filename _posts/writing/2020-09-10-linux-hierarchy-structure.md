@@ -2,6 +2,7 @@
 title: "Linux Filesystem Hierarchy: Where Production Bugs Hide"
 date: 2020-09-10 18:30:00
 tags: [Writing, Linux]
+draft: false
 ---
 
 ## When the filesystem layout is the bug

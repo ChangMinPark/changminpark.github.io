@@ -2,6 +2,7 @@
 title: "Interrupt Handling in OP-TEE: IRQ, FIQ, and World Switches"
 date: 2020-03-20 12:45:00
 tags: [Writing, Security]
+draft: false
 ---
 
 ## When a secure interrupt lands in the wrong world

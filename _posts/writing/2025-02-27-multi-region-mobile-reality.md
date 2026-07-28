@@ -2,6 +2,7 @@
 title: "Multi-Region Reality for Mobile Users"
 date: 2025-02-27 12:00:00
 tags: [Writing, Distributed]
+draft: false
 ---
 
 ## The phone moved; the control plane did not

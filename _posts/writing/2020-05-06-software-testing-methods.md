@@ -2,6 +2,7 @@
 title: "Software Testing Methods"
 date: 2020-05-06 16:45:00
 tags: [Writing, Testing]
+draft: false
 ---
 
 ## Why method choice is a budget decision

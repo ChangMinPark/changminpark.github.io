@@ -2,6 +2,7 @@
 title: "The API Is Up. Why Are Phones Still Broken?"
 date: 2024-01-17 12:00:00
 tags: [Writing, Distributed]
+draft: false
 ---
 
 ## Green dashboards, angry sessions

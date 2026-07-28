@@ -2,6 +2,7 @@
 title: "Hard Links vs Symbolic Links: Same Inode, Different Contract"
 date: 2020-11-15 18:00:00
 tags: [Writing, Linux]
+draft: false
 ---
 
 ## When two paths are not two files

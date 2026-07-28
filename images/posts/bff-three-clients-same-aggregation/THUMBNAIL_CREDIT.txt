@@ -1,0 +1,1 @@
+SVG: three clients sharing one BFF aggregation.

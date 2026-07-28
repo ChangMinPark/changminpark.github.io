@@ -2,6 +2,7 @@
 title: "Web-to-App Install Prompts: When Nagging Costs Retention"
 date: 2023-06-20 12:00:00
 tags: [Writing, Android]
+draft: false
 ---
 
 ## The install funnel nobody measures end-to-end

@@ -1,0 +1,1 @@
+SVG: agent surrounded by too many tool plugins.

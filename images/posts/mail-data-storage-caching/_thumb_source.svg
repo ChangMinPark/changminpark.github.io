@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">MAIL STORAGE</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">tiered for gestures</text>
-  <rect x="12" y="55" width="70" height="95" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="47" y="85" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">memory</text>
-  <text x="47" y="105" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">hot rows</text>
-  <rect x="90" y="55" width="70" height="95" rx="7" fill="#252a33"/>
-  <text x="125" y="85" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#fff">Room</text>
-  <text x="125" y="108" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#9ad67a">threads</text>
-  <rect x="168" y="55" width="70" height="95" rx="7" fill="#e9e4db" stroke="#e8590c" stroke-width="2"/>
-  <text x="203" y="85" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#e8590c">files</text>
-  <text x="203" y="108" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="10" fill="#6b6458">attach</text>
+
+  <rect x="30" y="25" width="55" height="100" rx="8" fill="#1f1a14"/>
+  <rect x="36" y="35" width="43" height="75" rx="3" fill="#faf8f4"/>
+  <!-- storage tiers -->
+  <rect x="110" y="30" width="110" height="28" rx="4" fill="#2f6fed"/>
+  <rect x="110" y="68" width="110" height="28" rx="4" fill="#e8590c"/>
+  <rect x="110" y="106" width="110" height="28" rx="4" fill="#2f9e44"/>
+  <!-- hitch on gesture -->
+  <path d="M85 80 C95 60 100 100 110 80" fill="none" stroke="#c92a2a" stroke-width="2.5"/>
+  <circle cx="50" cy="140" r="10" fill="#e9e4db" stroke="#6b6458"/>
+  <path d="M45 140 L55 140 M50 135 L50 145" stroke="#6b6458" stroke-width="2"/>
+
 </svg>

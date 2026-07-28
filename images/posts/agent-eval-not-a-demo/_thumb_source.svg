@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">EVAL</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">demo ≠ ship bar</text>
-  <rect x="12" y="58" width="100" height="90" rx="7" fill="#ffffff" stroke="#6b6458" stroke-width="1"/>
-  <text x="62" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#6b6458">1× chat</text>
-  <text x="62" y="120" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6458">worked</text>
-  <rect x="128" y="58" width="110" height="90" rx="7" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
-  <text x="183" y="88" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#2f9e44">golden</text>
-  <text x="183" y="110" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">tasks</text>
-  <text x="183" y="132" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#1f1a14">pass^k</text>
+
+  <!-- LEFT: one-off demo chat (not enough) -->
+  <rect x="18" y="28" width="96" height="90" rx="8" fill="#ffffff" stroke="#c9c2b6" stroke-width="1.5"/>
+  <rect x="28" y="40" width="70" height="18" rx="8" fill="#e9e4db"/>
+  <rect x="28" y="66" width="60" height="18" rx="8" fill="#2f6fed"/>
+  <rect x="28" y="92" width="70" height="14" rx="6" fill="#e9e4db"/>
+  <!-- big green "worked once" then crossed -->
+  <circle cx="66" cy="138" r="14" fill="#2f9e44"/>
+  <path d="M59 138 l5 5 9-10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="30" y1="30" x2="102" y2="118" stroke="#c92a2a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="102" y1="30" x2="30" y2="118" stroke="#c92a2a" stroke-width="4" stroke-linecap="round"/>
+  <!-- RIGHT: eval scoreboard / test cases -->
+  <rect x="132" y="28" width="100" height="114" rx="8" fill="#1f1a14"/>
+  <rect x="142" y="40" width="80" height="12" rx="2" fill="#3a3530"/>
+  <!-- pass/fail rows -->
+  <g>
+    <rect x="142" y="60" width="80" height="16" rx="3" fill="#2a2622"/>
+    <circle cx="152" cy="68" r="5" fill="#2f9e44"/>
+    <rect x="162" y="65" width="50" height="6" rx="2" fill="#7dd3a0"/>
+    <rect x="142" y="82" width="80" height="16" rx="3" fill="#2a2622"/>
+    <circle cx="152" cy="90" r="5" fill="#2f9e44"/>
+    <rect x="162" y="87" width="44" height="6" rx="2" fill="#7dd3a0"/>
+    <rect x="142" y="104" width="80" height="16" rx="3" fill="#2a2622"/>
+    <circle cx="152" cy="112" r="5" fill="#c92a2a"/>
+    <rect x="162" y="109" width="40" height="6" rx="2" fill="#ffa8a8"/>
+  </g>
+  <rect x="142" y="126" width="80" height="8" rx="2" fill="#2f6fed"/>
+
 </svg>

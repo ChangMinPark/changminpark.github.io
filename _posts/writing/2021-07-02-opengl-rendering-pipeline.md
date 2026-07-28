@@ -2,6 +2,7 @@
 title: "OpenGL Rendering Pipeline: What Actually Breaks in Practice"
 date: 2021-07-02 12:30:00
 tags: [Writing, Systems]
+draft: false
 ---
 
 ## Why the pipeline map matters

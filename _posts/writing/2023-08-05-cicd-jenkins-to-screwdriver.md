@@ -2,6 +2,7 @@
 title: "From Jenkins to Screwdriver: What CI/CD Actually Buys an Android Team"
 date: 2023-08-05 12:00:00
 tags: [Writing, DevEx]
+draft: false
 ---
 
 ## Shipping broke before the code did

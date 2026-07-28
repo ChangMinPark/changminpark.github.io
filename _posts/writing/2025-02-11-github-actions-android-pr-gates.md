@@ -2,6 +2,7 @@
 title: "GitHub Actions for Android: PR Gates That Protect Merges"
 date: 2025-02-11 10:15:00
 tags: [Writing, DevEx]
+draft: false
 ---
 
 ## Green checks that mean nothing

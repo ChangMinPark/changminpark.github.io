@@ -1,22 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="340" viewBox="0 0 500 340">
-  <rect width="500" height="340" fill="#141c24"/>
-  <rect x="50" y="36" width="400" height="48" rx="8" fill="#1e2a38" stroke="#3d5a73" stroke-width="2"/>
-  <text x="250" y="66" text-anchor="middle" fill="#c5d4e0" font-family="system-ui,sans-serif" font-size="15" font-weight="600">pull request</text>
-  <line x1="250" y1="84" x2="250" y2="118" stroke="#5a7a94" stroke-width="2"/>
-  <rect x="40" y="120" width="130" height="56" rx="6" fill="#1a3d32" stroke="#4caf82" stroke-width="2"/>
-  <text x="105" y="145" text-anchor="middle" fill="#8fd4b0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">ktlint</text>
-  <text x="105" y="162" text-anchor="middle" fill="#6a9a80" font-family="system-ui,sans-serif" font-size="11">detekt</text>
-  <rect x="185" y="120" width="130" height="56" rx="6" fill="#1a3d32" stroke="#4caf82" stroke-width="2"/>
-  <text x="250" y="145" text-anchor="middle" fill="#8fd4b0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">module</text>
-  <text x="250" y="162" text-anchor="middle" fill="#6a9a80" font-family="system-ui,sans-serif" font-size="11">graph</text>
-  <rect x="330" y="120" width="130" height="56" rx="6" fill="#1a3d32" stroke="#4caf82" stroke-width="2"/>
-  <text x="395" y="145" text-anchor="middle" fill="#8fd4b0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">assemble</text>
-  <text x="395" y="162" text-anchor="middle" fill="#6a9a80" font-family="system-ui,sans-serif" font-size="11">affected</text>
-  <line x1="105" y1="176" x2="105" y2="210" stroke="#5a7a94" stroke-width="2"/>
-  <line x1="250" y1="176" x2="250" y2="210" stroke="#5a7a94" stroke-width="2"/>
-  <line x1="395" y1="176" x2="395" y2="210" stroke="#5a7a94" stroke-width="2"/>
-  <line x1="105" y1="210" x2="395" y2="210" stroke="#5a7a94" stroke-width="2"/>
-  <line x1="250" y1="210" x2="250" y2="238" stroke="#5a7a94" stroke-width="2"/>
-  <rect x="140" y="240" width="220" height="52" rx="8" fill="#2a3d1a" stroke="#8bc34a" stroke-width="2.5"/>
-  <text x="250" y="272" text-anchor="middle" fill="#c5e89a" font-family="system-ui,sans-serif" font-size="15" font-weight="700">merge contract</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+
+  <rect x="30" y="25" width="190" height="120" rx="8" fill="#ffffff" stroke="#c9c2b6" stroke-width="1.5"/>
+  <rect x="30" y="25" width="190" height="30" fill="#1f1a14" rx="8"/>
+  <rect x="30" y="45" width="190" height="10" fill="#1f1a14"/>
+  <!-- checks -->
+  <circle cx="55" cy="80" r="10" fill="#2f9e44"/>
+  <path d="M50 80 l3 3 6-7" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="55" cy="110" r="10" fill="#2f9e44"/>
+  <path d="M50 110 l3 3 6-7" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="55" cy="140" r="10" fill="#c92a2a"/>
+  <path d="M50 135 L60 145 M60 135 L50 145" stroke="#fff" stroke-width="2"/>
+  <rect x="75" y="74" width="120" height="12" rx="2" fill="#e9e4db"/>
+  <rect x="75" y="104" width="100" height="12" rx="2" fill="#e9e4db"/>
+  <rect x="75" y="134" width="110" height="12" rx="2" fill="#ffe3e3"/>
+  <!-- gate -->
+  <rect x="200" y="70" width="12" height="70" fill="#1f1a14"/>
+
 </svg>

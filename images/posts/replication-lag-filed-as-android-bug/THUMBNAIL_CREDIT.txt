@@ -1,0 +1,1 @@
+SVG: two phones out of sync; lag mislabeled as Android bug.

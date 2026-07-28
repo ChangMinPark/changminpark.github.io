@@ -2,6 +2,7 @@
 title: "Image Security in General: What Breaks on the Mobile Photo Path"
 date: 2023-04-15 15:10:00
 tags: [Writing, Security]
+draft: false
 ---
 
 ## Why a photo is harder to secure than a message

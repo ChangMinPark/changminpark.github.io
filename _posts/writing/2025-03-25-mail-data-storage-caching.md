@@ -2,6 +2,7 @@
 title: "Mail Storage & Caching Without Lagging the Gesture"
 date: 2025-03-25 16:05:00
 tags: [Writing, Android]
+draft: false
 ---
 
 ## “We have a cache” is not a latency budget

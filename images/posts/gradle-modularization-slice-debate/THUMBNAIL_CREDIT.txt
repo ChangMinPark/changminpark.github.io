@@ -1,0 +1,1 @@
+SVG: Gradle modules — feature vs layer slice debate.

@@ -2,6 +2,7 @@
 title: "Android Architecture Breakdown: Which Layer Owns Your Bug?"
 date: 2020-11-05 16:15:00
 tags: [Writing, Android]
+draft: false
 ---
 
 ## Why the layer map matters

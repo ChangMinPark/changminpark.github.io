@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">NOT A COMPOSE BUG</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#1f1a14">send → refresh → gone</text>
-  <rect x="12" y="58" width="105" height="90" rx="7" fill="#ffffff" stroke="#1f1a14" stroke-width="1.5"/>
-  <text x="22" y="82" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6458">client</text>
-  <text x="22" y="104" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">optimistic UI</text>
-  <text x="22" y="124" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#1f1a14">pull refresh</text>
-  <rect x="130" y="58" width="108" height="90" rx="7" fill="#252a33"/>
-  <text x="140" y="82" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#e8b06a">read replica</text>
-  <text x="140" y="106" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#cfc6b6">behind primary</text>
-  <text x="140" y="130" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#c92a2a">message missing</text>
+
+  <!-- two phones -->
+  <rect x="30" y="35" width="55" height="100" rx="8" fill="#1f1a14"/>
+  <rect x="35" y="45" width="45" height="70" rx="3" fill="#faf8f4"/>
+  <rect x="42" y="60" width="30" height="12" rx="2" fill="#2f9e44"/>
+  <rect x="165" y="35" width="55" height="100" rx="8" fill="#1f1a14"/>
+  <rect x="170" y="45" width="45" height="70" rx="3" fill="#faf8f4"/>
+  <!-- missing message on second -->
+  <rect x="177" y="60" width="30" height="12" rx="2" fill="#e9e4db" stroke="#c92a2a" stroke-dasharray="3 2"/>
+  <!-- laggy replication pipe -->
+  <path d="M90 85 C120 60 140 110 160 85" fill="none" stroke="#e8590c" stroke-width="3" stroke-dasharray="6 4"/>
+  <circle cx="125" cy="85" r="14" fill="#e8590c"/>
+  <!-- android bug tag wrongly applied -->
+  <rect x="95" y="130" width="60" height="22" rx="4" fill="#c92a2a"/>
+  <path d="M110 137 L140 145 M110 145 L140 137" stroke="#fff" stroke-width="2" opacity="0.5"/>
+
 </svg>

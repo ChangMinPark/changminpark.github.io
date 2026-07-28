@@ -1,0 +1,1 @@
+SVG: client retry storm DDoS-ing a recovering server.

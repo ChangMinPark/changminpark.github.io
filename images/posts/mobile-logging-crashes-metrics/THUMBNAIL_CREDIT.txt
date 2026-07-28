@@ -1,0 +1,1 @@
+Hand-authored SVG: phone emitting crash/log/metric streams; metrics highlighted as the deciding signal.

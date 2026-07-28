@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
   <rect width="250" height="170" fill="#f4f1ea"/>
-  <text x="12" y="20" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="9" fill="#6b6458">TOOLS</text>
-  <text x="12" y="40" font-weight="700" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#1f1a14">fewer, sharper</text>
-  <rect x="12" y="58" width="24" height="24" rx="4" fill="#e9e4db" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="40" y="58" width="24" height="24" rx="4" fill="#e9e4db" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="68" y="58" width="24" height="24" rx="4" fill="#e9e4db" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="96" y="58" width="24" height="24" rx="4" fill="#e9e4db" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="124" y="58" width="24" height="24" rx="4" fill="#c92a2a" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="152" y="58" width="24" height="24" rx="4" fill="#c92a2a" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="180" y="58" width="24" height="24" rx="4" fill="#c92a2a" stroke="#1f1a14" stroke-width="1"/>
-  <rect x="208" y="58" width="24" height="24" rx="4" fill="#c92a2a" stroke="#1f1a14" stroke-width="1"/>
-  <text x="12" y="100" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="11" fill="#c92a2a">kitchen sink → thrash</text>
-  <rect x="12" y="118" width="226" height="38" rx="7" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
-  <text x="22" y="142" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="11" fill="#2f9e44">read · edit · shell · search (+ thin MCP)</text>
+
+  <circle cx="125" cy="85" r="28" fill="#1f1a14"/>
+  <circle cx="118" cy="80" r="3" fill="#ffffff"/>
+  <circle cx="132" cy="80" r="3" fill="#ffffff"/>
+  <path d="M116 92 Q125 98 134 92" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <!-- tools orbiting (too many) -->
+  <g>
+    <rect x="40" y="30" width="36" height="24" rx="4" fill="#2f6fed"/>
+    <rect x="175" y="28" width="36" height="24" rx="4" fill="#e8590c"/>
+    <rect x="30" y="80" width="36" height="24" rx="4" fill="#2f9e44"/>
+    <rect x="185" y="78" width="36" height="24" rx="4" fill="#7950f2"/>
+    <rect x="50" y="125" width="36" height="24" rx="4" fill="#c92a2a"/>
+    <rect x="165" y="125" width="36" height="24" rx="4" fill="#4285f4"/>
+    <rect x="105" y="18" width="36" height="20" rx="4" fill="#6b6458"/>
+    <rect x="105" y="132" width="36" height="20" rx="4" fill="#e9e4db" stroke="#6b6458"/>
+  </g>
+  <path d="M70 50 L100 70" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M180 50 L150 70" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M70 100 L100 95" stroke="#6b6458" stroke-width="1.5"/>
+  <path d="M185 100 L150 95" stroke="#6b6458" stroke-width="1.5"/>
+
 </svg>

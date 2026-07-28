@@ -1,1 +1,1 @@
-Custom SVG: Compose chat surface with IME padding bar for Writing list thumbnail.
+SVG: Compose AI chat surface fighting the keyboard inset.

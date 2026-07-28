@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="170" viewBox="0 0 250 170">
+  <rect width="250" height="170" fill="#f4f1ea"/>
+
+  <!-- native wins -->
+  <rect x="20" y="40" width="60" height="100" rx="8" fill="#1f1a14"/>
+  <rect x="26" y="50" width="48" height="70" rx="3" fill="#2f9e44"/>
+  <circle cx="50" cy="130" r="6" fill="#2f9e44"/>
+  <!-- hybrid -->
+  <rect x="95" y="50" width="60" height="90" rx="8" fill="#ffffff" stroke="#6b6458" stroke-width="2"/>
+  <rect x="105" y="65" width="40" height="40" rx="3" fill="#e9e4db"/>
+  <rect x="110" y="75" width="30" height="8" rx="2" fill="#e8590c"/>
+  <!-- webview trap -->
+  <rect x="170" y="55" width="60" height="85" rx="8" fill="#ffffff" stroke="#c92a2a" stroke-width="2"/>
+  <rect x="180" y="70" width="40" height="50" rx="2" fill="#ffe3e3"/>
+  <path d="M190 85 L210 110 M210 85 L190 110" stroke="#c92a2a" stroke-width="2.5"/>
+
+</svg>

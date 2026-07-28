@@ -2,6 +2,7 @@
 title: "Why Your PR Diff Is Noisy: Formatters vs Linters"
 date: 2023-06-22 12:00:00
 tags: [Writing, DevEx]
+draft: false
 ---
 
 ## The symptom is the diff, not the bug

@@ -1,1 +1,1 @@
-Custom SVG: f(key) → Map cache hit/miss diagram for Writing list thumbnail.
+SVG: memoization — cache the result, skip recompute.
