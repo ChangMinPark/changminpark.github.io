@@ -4,6 +4,21 @@
 
   <body>
     {% include header.html %}
+    {%- comment -%}
+      Collapse the cover before paint for hash routes on the home page
+      (Liquid only collapses non-home URLs; #about still needs this).
+    {%- endcomment -%}
+    <script>
+      (function () {
+        var path = location.pathname.replace(/\/index\.html$/, '/');
+        var home = path === '{{ site.baseurl }}/' || path === '/';
+        var hash = location.hash;
+        if (!home || hash === '#about' || hash === '#writing' || hash === '#blog') {
+          var panel = document.querySelector('.panel-cover');
+          if (panel) panel.classList.add('panel-cover--collapsed');
+        }
+      })();
+    </script>
 
     <div class="content-wrapper">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">

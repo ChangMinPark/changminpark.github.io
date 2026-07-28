@@ -6,30 +6,41 @@ exclude: 'yes'
 
   $(document).ready(function () {
     {% if site.disable_landing_page != true %}
-    $('a.blog-button').click(function (e) {
-      if ($('.panel-cover').hasClass('panel-cover--collapsed'))  
-        return
-      currentWidth = $('.panel-cover').width()
-      if (currentWidth < 960) {
-        $('.panel-cover').addClass('panel-cover--collapsed')
-        $('.content-wrapper').addClass('animated slideInRight')
-      } else {
-        $('.panel-cover').css('max-width', currentWidth)
-        $('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 500, swing = 'swing', function () { })
-      }
-    })
+    function collapsePanel(animateDesktop) {
+      var $panel = $('.panel-cover')
+      if ($panel.hasClass('panel-cover--collapsed')) return
 
-    if (window.location.hash &&
-        window.location.hash == '#about' ||
-        window.location.hash == '#writing' ||
-        window.location.hash == '#blog') {
-      $('.panel-cover').addClass('panel-cover--collapsed')
+      var currentWidth = $panel.width()
+      if (currentWidth < 960) {
+        $panel.addClass('panel-cover--collapsed')
+        $('.content-wrapper').addClass('animated slideInRight')
+        return
+      }
+
+      if (animateDesktop) {
+        $panel.css('max-width', currentWidth)
+        $panel.animate({ 'max-width': '450px', 'width': '40%' }, 400, 'swing', function () {
+          $panel.addClass('panel-cover--collapsed')
+          // Let CSS own collapsed layout (avoids stale inline widths on next nav).
+          $panel.css({ 'max-width': '', 'width': '' })
+        })
+      } else {
+        $panel.addClass('panel-cover--collapsed')
+      }
     }
 
-    if (window.location.pathname !== '{{ site.baseurl }}/' && window.location.pathname !== '{{ site.baseurl }}/index.html') {
-        //$('.panel-cover').css('max-width', '1800px')
-        //$('.panel-cover').animate({ 'max-width': '450px', 'width': '40%' }, 500, swing = 'swing', function () { })
-        $('.panel-cover').addClass('panel-cover--collapsed')
+    $('a.blog-button').click(function (e) {
+      collapsePanel(true)
+    })
+
+    var hash = window.location.hash
+    if (hash === '#about' || hash === '#writing' || hash === '#blog') {
+      collapsePanel(false)
+    }
+
+    var path = window.location.pathname.replace(/\/index\.html$/, '/')
+    if (path !== '{{ site.baseurl }}/' && path !== '/') {
+      collapsePanel(false)
     }
     {% endif %}
 

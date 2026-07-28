@@ -7,7 +7,11 @@
   <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
 </span>
 
-<header class="panel-cover {% if site.disable_landing_page %}panel-cover--collapsed{% endif %}"
+{% assign is_home_page = false %}
+{% if page.url == '/' or page.url == '/index.html' %}
+  {% assign is_home_page = true %}
+{% endif %}
+<header class="panel-cover{% if site.disable_landing_page or is_home_page == false %} panel-cover--collapsed{% endif %}"
   style="background-image: url({{ site.baseurl }}/images/cover.jpg)">
   <div class="panel-main">
 
