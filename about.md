@@ -114,7 +114,7 @@ I'm a senior Android engineer and interested in:
 1. **“System and method for distributed personalization via adapted individualized language models using localized data”** — `U.S. Patent App. 19/540,086` (2026)  
    Kelvin Bui, Wally Ho, Reid Isaki, **Chang Min Park**, Nicholas Wilson
 
-2. **“Recover as It is Designed to Be: Recovering from Compatibility Mobile App Crashes by Reusing User Flows”** — `Archived` (2024) — [Project page](/recoflow)  
+2. **“Recover as It is Designed to Be: Recovering from Compatibility Mobile App Crashes by Reusing User Flows”** — `Archived` (2024)  
    Donghwi Kim, Hyungjun Yoon, **Chang Min Park**, Sujin Han, Youngjin Kwon, Steven Y. Ko, Sung-Ju Lee
 
 3. **“End-to-End Image Integrity through Crestone”** — `Archived` (2023)  
@@ -154,7 +154,6 @@ I'm a senior Android engineer and interested in:
 
 | Project | Path |
 |---------|------|
-| RecoFlow | `/recoflow` |
 | Rushmore | `/rushmore` |
 | Gesto | `/gesto` |
 | Mimic | `/mimic` |
