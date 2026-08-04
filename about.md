@@ -111,7 +111,7 @@ I'm a senior Android engineer and interested in:
 
 ## Publications
 
-1. **“System and method for distributed personalization via adapted individualized language models using localized data”** — `U.S. Patent App. 19/540,086` (2026)  
+1. **“System and method for distributed personalization via adapted individualized language models using localized data”** — `U.S. Patent App. 19/540,086` (2026) — [Project page](/on-device-hyper-personalization)  
    Kelvin Bui, Wally Ho, Reid Isaki, **Chang Min Park**, Nicholas Wilson
 
 2. **“Recover as It is Designed to Be: Recovering from Compatibility Mobile App Crashes by Reusing User Flows”** — `Archived` (2024)  
@@ -154,6 +154,7 @@ I'm a senior Android engineer and interested in:
 
 | Project | Path |
 |---------|------|
+| On-Device Hyper-Personalization | `/on-device-hyper-personalization` |
 | Rushmore | `/rushmore` |
 | Gesto | `/gesto` |
 | Mimic | `/mimic` |

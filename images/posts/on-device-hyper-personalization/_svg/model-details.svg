@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380">
+  <rect width="900" height="380" fill="#fafbfc"/>
+  <rect x="24" y="24" width="400" height="330" rx="14" fill="#fff" stroke="#e2e8f0"/>
+  <text x="224" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2332">Tiny on-device sequence model</text>
+  <text x="48" y="95" font-size="12" fill="#334155">• ~10²k parameters (schema-dependent)</text>
+  <text x="48" y="123" font-size="12" fill="#334155">• Last ~30 actions × structured signals</text>
+  <text x="48" y="145" font-size="12" fill="#64748b">  action, screen, trigger, context,</text>
+  <text x="48" y="163" font-size="12" fill="#64748b">  UI component, category, …</text>
+  <text x="48" y="195" font-size="12" fill="#334155">• Train in the background on-device</text>
+  <text x="48" y="223" font-size="12" fill="#334155">• Infer &lt; 5 ms on phone</text>
+  <text x="48" y="251" font-size="12" fill="#334155">• Unified TFLite with named signatures</text>
+  <text x="48" y="279" font-size="12" fill="#334155">• Schema-driven heads (predict / score)</text>
+  <rect x="452" y="24" width="424" height="330" rx="14" fill="#fff" stroke="#e2e8f0"/>
+  <text x="664" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2332">Why GRU, not linear features?</text>
+  <text x="476" y="95" font-size="12" font-weight="700" fill="#b91c1c">Linear regression</text>
+  <text x="476" y="118" font-size="12" fill="#475569">Hand-build every feature</text>
+  <text x="476" y="138" font-size="12" fill="#475569">(“archives in last 5 from sender”…)</text>
+  <text x="476" y="158" font-size="12" fill="#475569">Misses order you didn’t encode</text>
+  <text x="476" y="200" font-size="12" font-weight="700" fill="#047857">GRU</text>
+  <text x="476" y="223" font-size="12" fill="#475569">Ingests raw last-N actions</text>
+  <text x="476" y="243" font-size="12" fill="#475569">→ 128-dim encoding of “user now”</text>
+  <text x="476" y="263" font-size="12" fill="#475569">Order and timing are the signal</text>
+  <text x="476" y="310" font-size="12" font-style="italic" fill="#64748b">Daily routines live in sequence space.</text>
+</svg>

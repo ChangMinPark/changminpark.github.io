@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+  <rect width="920" height="480" fill="#fafbfc"/>
+  <text x="28" y="32" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#1a2332">Host app + on-device personalization library</text>
+  <!-- Host app box -->
+  <rect x="24" y="48" width="700" height="400" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="40" y="76" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#475569">Host app (e.g. mail client)</text>
+  <!-- User action arrow -->
+  <text x="40" y="120" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2563eb">User action →</text>
+  <!-- Wrapper UIs -->
+  <rect x="130" y="95" width="200" height="90" rx="10" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="230" y="118" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1e293b">Wrapper UIs</text>
+  <text x="150" y="142" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#64748b">Row · Column · Button · Text</text>
+  <text x="150" y="162" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#64748b">(+ eventData map)</text>
+  <!-- Android UI -->
+  <rect x="130" y="210" width="200" height="70" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <text x="230" y="240" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#64748b">Android UI Framework</text>
+  <text x="230" y="260" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#94a3b8">real Compose / Material controls</text>
+  <path d="M230 185 L230 210" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- Library -->
+  <rect x="360" y="95" width="340" height="320" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="530" y="122" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#047857">On-device ML library</text>
+  <rect x="380" y="140" width="130" height="50" rx="8" fill="#fff" stroke="#059669"/>
+  <text x="445" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Action Registry</text>
+  <rect x="530" y="140" width="150" height="50" rx="8" fill="#fff" stroke="#059669"/>
+  <text x="605" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Label Assigner</text>
+  <text x="605" y="178" text-anchor="middle" font-size="10" fill="#64748b">events + labels</text>
+  <rect x="380" y="220" width="300" height="50" rx="8" fill="#fff" stroke="#059669"/>
+  <text x="530" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Storage (behavior events)</text>
+  <rect x="380" y="295" width="140" height="50" rx="8" fill="#fff" stroke="#059669"/>
+  <text x="450" y="325" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Inference Engine</text>
+  <rect x="540" y="295" width="140" height="50" rx="8" fill="#d1fae5" stroke="#047857"/>
+  <text x="610" y="325" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Per-user model</text>
+  <path d="M330 140 L360 155" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M445 190 L445 220" stroke="#059669" stroke-width="1.5"/>
+  <path d="M605 190 L530 220" stroke="#059669" stroke-width="1.5"/>
+  <path d="M530 270 L450 295" stroke="#059669" stroke-width="1.5"/>
+  <path d="M530 270 L610 295" stroke="#059669" stroke-width="1.5"/>
+  <!-- Registered actions -->
+  <rect x="380" y="370" width="130" height="30" rx="6" fill="#fff" stroke="#94a3b8"/>
+  <text x="445" y="390" text-anchor="middle" font-size="10" fill="#475569">Registered Actions</text>
+  <path d="M445 370 L445 190" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Side note -->
+  <rect x="740" y="95" width="160" height="200" rx="10" fill="#fff" stroke="#e2e8f0"/>
+  <text x="820" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">At training</text>
+  <text x="755" y="155" font-size="11" fill="#475569">1. Intercept UI events</text>
+  <text x="755" y="180" font-size="11" fill="#475569">2. Label + store with</text>
+  <text x="755" y="198" font-size="11" fill="#475569">   time &amp; location</text>
+  <text x="755" y="223" font-size="11" fill="#475569">3. Train / fine-tune</text>
+  <text x="755" y="241" font-size="11" fill="#475569">   per-user model</text>
+  <text x="755" y="275" font-size="11" font-style="italic" fill="#047857">Thin app integration</text>
+  <defs><marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#64748b"/></marker></defs>
+</svg>

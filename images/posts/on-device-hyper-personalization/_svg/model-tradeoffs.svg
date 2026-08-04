@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400">
+  <rect width="900" height="400" fill="#fafbfc"/>
+  <text x="450" y="36" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#1a2332">Behavior GRU vs general LLM — different jobs</text>
+  <rect x="24" y="60" width="416" height="300" rx="14" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="232" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">What this model cannot do</text>
+  <text x="48" y="130" font-size="12" fill="#334155">• No text understanding of message bodies</text>
+  <text x="48" y="158" font-size="12" fill="#334155">• No generative replies or summaries</text>
+  <text x="48" y="186" font-size="12" fill="#334155">• No natural-language Q&amp;A</text>
+  <text x="48" y="214" font-size="12" fill="#334155">• No verbal explanations of decisions</text>
+  <text x="48" y="242" font-size="12" fill="#334155">• No zero-shot new categories without retrain</text>
+  <text x="48" y="270" font-size="12" fill="#334155">• No cross-user knowledge transfer</text>
+  <text x="48" y="310" font-size="12" font-style="italic" fill="#64748b">LLM territory: language in / language out</text>
+  <rect x="460" y="60" width="416" height="300" rx="14" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="668" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#047857">What this model can do</text>
+  <text x="484" y="130" font-size="12" fill="#065f46">• Ultra-small on-device footprint (~10²k params)</text>
+  <text x="484" y="158" font-size="12" fill="#065f46">• Sub-5 ms inference, no network</text>
+  <text x="484" y="186" font-size="12" fill="#065f46">• True privacy — trains on local behavior only</text>
+  <text x="484" y="214" font-size="12" fill="#065f46">• Zero cloud inference cost at user scale</text>
+  <text x="484" y="242" font-size="12" fill="#065f46">• Offline on low-power phones</text>
+  <text x="484" y="270" font-size="12" fill="#065f46">• Hyper-personalized by construction</text>
+  <text x="484" y="310" font-size="12" font-style="italic" fill="#047857">GRU territory: sequences in / next label out</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360">
+  <rect width="880" height="360" fill="#fafbfc"/>
+  <text x="28" y="32" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#1a2332">Registered actions + confidence gates</text>
+  <rect x="28" y="56" width="280" height="160" rx="12" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <text x="168" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">«interface» Registered action</text>
+  <line x1="48" y1="100" x2="288" y2="100" stroke="#e2e8f0"/>
+  <text x="48" y="128" font-family="Menlo,monospace" font-size="12" fill="#475569">confidenceLevel: Level</text>
+  <text x="48" y="158" font-family="Menlo,monospace" font-size="12" fill="#475569">matches(prediction): Boolean</text>
+  <text x="48" y="188" font-family="Menlo,monospace" font-size="12" fill="#475569">onTrigger(label)</text>
+  <rect x="340" y="56" width="510" height="220" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="360" y="88" font-size="13" font-weight="700" fill="#1e293b">Confidence level → threshold → typical use</text>
+  <rect x="360" y="108" width="470" height="36" rx="6" fill="#f8fafc"/>
+  <text x="380" y="131" font-size="12" fill="#334155">Low · 0.3 · easy to undo (suggestions)</text>
+  <rect x="360" y="152" width="470" height="36" rx="6" fill="#f1f5f9"/>
+  <text x="380" y="175" font-size="12" fill="#334155">Medium · 0.5 · moderate automation</text>
+  <rect x="360" y="196" width="470" height="36" rx="6" fill="#e2e8f0"/>
+  <text x="380" y="219" font-size="12" fill="#334155">High · 0.7 · stronger confidence required</text>
+  <rect x="360" y="240" width="470" height="36" rx="6" fill="#fee2e2"/>
+  <text x="380" y="263" font-size="12" fill="#991b1b">Critical · 0.9 · hard to undo (e.g. delete)</text>
+  <text x="28" y="280" font-size="12" fill="#64748b">Matcher checks label + confidence; trigger runs only when the action’s threshold is met.</text>
+  <text x="28" y="308" font-size="12" fill="#64748b">Hard-to-undo actions demand higher model confidence than dismissible suggestions.</text>
+</svg>

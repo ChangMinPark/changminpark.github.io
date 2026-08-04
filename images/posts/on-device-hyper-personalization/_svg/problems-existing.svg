@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380">
+  <rect width="900" height="380" fill="#fafbfc"/>
+  <!-- Left: Cloud -->
+  <rect x="24" y="24" width="416" height="332" rx="14" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="232" y="56" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#1a2332">Cloud personalization</text>
+  <ellipse cx="232" cy="130" rx="48" ry="28" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="232" y="135" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">Cloud</text>
+  <!-- phones around cloud -->
+  <rect x="90" y="100" width="36" height="58" rx="6" fill="#f8fafc" stroke="#64748b"/>
+  <rect x="338" y="100" width="36" height="58" rx="6" fill="#f8fafc" stroke="#64748b"/>
+  <rect x="140" y="200" width="36" height="58" rx="6" fill="#f8fafc" stroke="#64748b"/>
+  <rect x="288" y="200" width="36" height="58" rx="6" fill="#f8fafc" stroke="#64748b"/>
+  <line x1="126" y1="120" x2="190" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="338" y1="120" x2="274" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="158" y1="200" x2="200" y2="155" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="306" y1="200" x2="264" y2="155" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="50" y="290" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#475569">• Requires connectivity</text>
+  <text x="50" y="312" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#475569">• Central storage at scale (cost)</text>
+  <text x="50" y="334" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#475569">• Moves sensitive behavior off-device</text>
+  <!-- Right: on-device LLM -->
+  <rect x="460" y="24" width="416" height="332" rx="14" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="668" y="56" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#1a2332">On-device general LLMs</text>
+  <rect x="620" y="90" width="96" height="150" rx="14" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+  <circle cx="668" cy="155" r="28" fill="#e2e8f0" stroke="#64748b"/>
+  <text x="668" y="160" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#334155">LLM</text>
+  <!-- app icons -->
+  <rect x="500" y="100" width="44" height="44" rx="8" fill="#fef3c7" stroke="#d97706"/><text x="522" y="127" text-anchor="middle" font-size="10" fill="#92400e">mail</text>
+  <rect x="500" y="160" width="44" height="44" rx="8" fill="#dbeafe" stroke="#2563eb"/><text x="522" y="187" text-anchor="middle" font-size="10" fill="#1e40af">chat</text>
+  <rect x="790" y="100" width="44" height="44" rx="8" fill="#dcfce7" stroke="#16a34a"/><text x="812" y="127" text-anchor="middle" font-size="10" fill="#166534">docs</text>
+  <rect x="790" y="160" width="44" height="44" rx="8" fill="#fce7f3" stroke="#db2777"/><text x="812" y="187" text-anchor="middle" font-size="10" fill="#9d174d">voice</text>
+  <path d="M544 122 L620 140" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M544 182 L620 170" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M790 122 L716 140" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M790 182 L716 170" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="486" y="290" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#475569">• Prompt / retrieval / adapter — not a owned</text>
+  <text x="486" y="312" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#475569">  behavior sequence model</text>
+  <text x="486" y="334" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#475569">• Heavy for “next UI action” prediction</text>
+</svg>

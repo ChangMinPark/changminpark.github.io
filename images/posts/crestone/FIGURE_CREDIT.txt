@@ -1,0 +1,2 @@
+Figures copied as-is from Desktop/crestone/ (Crestone / MobiCom’23 paper exports).
+thumbnail.png is a 250×170 cover-crop of end-to-end-design.png for the Project list only.

@@ -1,0 +1,7 @@
+Figures copied as-is from Desktop/recoflow/ (paper figure exports).
+Sources:
+- App development workflow with RecoFlow.png → workflow.png
+- Automatic crash recovery with RecoFlow.png → recovery.png
+- The corresponding UI elements of UI actions.png → ui-action-stages.png
+- compatibility mode app execution.png → compatibility-mode.png
+thumbnail.png is a 250×170 cover-crop of recovery.png for the Project list only.
