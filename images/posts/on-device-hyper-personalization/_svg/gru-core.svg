@@ -1,18 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
-  <rect width="720" height="420" fill="#fafbfc"/>
-  <text x="360" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#1a2332">Schema-driven heads on a shared GRU core</text>
-  <rect x="80" y="70" width="200" height="70" rx="12" fill="#ede9fe" stroke="#7c3aed"/>
-  <text x="180" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">Content classification</text>
-  <text x="180" y="120" text-anchor="middle" font-size="11" fill="#6b7280">categories / domains</text>
-  <rect x="440" y="70" width="200" height="70" rx="12" fill="#ede9fe" stroke="#7c3aed"/>
-  <text x="540" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">Item score prediction</text>
-  <text x="540" y="120" text-anchor="middle" font-size="11" fill="#6b7280">interesting to this user?</text>
-  <circle cx="360" cy="230" r="70" fill="#1e3a5f" stroke="#0f172a" stroke-width="2"/>
-  <text x="360" y="225" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">GRU core</text>
-  <text x="360" y="248" text-anchor="middle" font-size="11" fill="#cbd5e1">sequence model</text>
-  <path d="M180 140 L320 185" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <path d="M540 140 L400 185" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <path d="M360 300 L360 340" stroke="#334155" stroke-width="2"/>
-  <rect x="250" y="340" width="220" height="50" rx="10" fill="#dbeafe" stroke="#2563eb"/>
-  <text x="360" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">128-dim encoding vector</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300">
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="560" height="300" fill="#fff"/>
+
+  <!-- Task heads -->
+  <rect x="40" y="28" width="160" height="52" fill="#fff" stroke="#333" stroke-width="1.1"/>
+  <text x="120" y="59" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Task head A</text>
+
+  <rect x="360" y="28" width="160" height="52" fill="#fff" stroke="#333" stroke-width="1.1"/>
+  <text x="440" y="59" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Task head B</text>
+
+  <line x1="120" y1="80" x2="240" y2="140" stroke="#555" stroke-width="1.1"/>
+  <line x1="440" y1="80" x2="320" y2="140" stroke="#555" stroke-width="1.1"/>
+
+  <!-- Shared encoder -->
+  <circle cx="280" cy="170" r="58" fill="#f4f4f4" stroke="#333" stroke-width="1.3"/>
+  <text x="280" y="166" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">Shared</text>
+  <text x="280" y="186" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">encoder</text>
+
+  <line x1="280" y1="228" x2="280" y2="248" stroke="#555" stroke-width="1.1" marker-end="url(#arr)"/>
+
+  <rect x="180" y="248" width="200" height="36" fill="#fff" stroke="#333" stroke-width="1.1"/>
+  <text x="280" y="271" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">User encoding</text>
 </svg>

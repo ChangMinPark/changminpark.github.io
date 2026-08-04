@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="220" viewBox="0 0 780 220">
+  <defs>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#333"/>
+    </marker>
+    <marker id="arrL" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <path d="M7,0 L0,3.5 L7,7 Z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="780" height="220" fill="#fff"/>
+
+  <!-- Time and Location -->
+  <circle cx="90" cy="70" r="22" fill="#fff" stroke="#222" stroke-width="1.5"/>
+  <circle cx="90" cy="70" r="2" fill="#222"/>
+  <line x1="90" y1="70" x2="90" y2="55" stroke="#222" stroke-width="1.8"/>
+  <line x1="90" y1="70" x2="102" y2="74" stroke="#222" stroke-width="1.8"/>
+
+  <path d="M145,48 C158,48 165,58 165,68 C165,82 145,100 145,100 C145,100 125,82 125,68 C125,58 132,48 145,48 Z" fill="#fff" stroke="#222" stroke-width="1.5"/>
+  <circle cx="145" cy="68" r="5" fill="none" stroke="#222" stroke-width="1.3"/>
+
+  <text x="117" y="130" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Time and Location</text>
+
+  <!-- Check arrow (model checks context - points left toward context) -->
+  <line x1="280" y1="80" x2="190" y2="80" stroke="#333" stroke-width="1.5" marker-end="url(#arrL)"/>
+  <text x="235" y="68" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Check</text>
+
+  <!-- AI Model -->
+  <rect x="300" y="45" width="80" height="80" rx="4" fill="#e5e7eb" stroke="#222" stroke-width="1.6"/>
+  <line x1="288" y1="60" x2="300" y2="60" stroke="#222" stroke-width="1.5"/>
+  <line x1="288" y1="85" x2="300" y2="85" stroke="#222" stroke-width="1.5"/>
+  <line x1="288" y1="110" x2="300" y2="110" stroke="#222" stroke-width="1.5"/>
+  <line x1="380" y1="60" x2="392" y2="60" stroke="#222" stroke-width="1.5"/>
+  <line x1="380" y1="85" x2="392" y2="85" stroke="#222" stroke-width="1.5"/>
+  <line x1="380" y1="110" x2="392" y2="110" stroke="#222" stroke-width="1.5"/>
+  <line x1="318" y1="33" x2="318" y2="45" stroke="#222" stroke-width="1.5"/>
+  <line x1="340" y1="33" x2="340" y2="45" stroke="#222" stroke-width="1.5"/>
+  <line x1="362" y1="33" x2="362" y2="45" stroke="#222" stroke-width="1.5"/>
+  <line x1="318" y1="125" x2="318" y2="137" stroke="#222" stroke-width="1.5"/>
+  <line x1="340" y1="125" x2="340" y2="137" stroke="#222" stroke-width="1.5"/>
+  <line x1="362" y1="125" x2="362" y2="137" stroke="#222" stroke-width="1.5"/>
+  <path d="M318,75 C318,58 328,52 340,52 C352,52 362,58 362,75 C362,95 352,108 340,108 C328,108 318,95 318,75 Z" fill="none" stroke="#222" stroke-width="1.6"/>
+  <path d="M340,52 L340,108" stroke="#222" stroke-width="1.2"/>
+  <text x="340" y="165" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">AI Model</text>
+
+  <!-- Predict and Execute -->
+  <line x1="400" y1="85" x2="560" y2="85" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="480" y="72" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Predict and Execute</text>
+
+  <!-- Phone with gear -->
+  <rect x="580" y="40" width="70" height="120" rx="8" fill="#fff" stroke="#222" stroke-width="1.8"/>
+  <rect x="590" y="55" width="50" height="85" fill="#f8fafc" stroke="#222" stroke-width="1"/>
+  <circle cx="615" cy="95" r="18" fill="#22c55e" stroke="#166534" stroke-width="1.2"/>
+  <circle cx="615" cy="95" r="7" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="615" cy="95" r="2.5" fill="#fff"/>
+  <!-- circular arrows hint -->
+  <path d="M605,82 A16,16 0 0 1 628,90" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <path d="M625,108 A16,16 0 0 1 602,100" fill="none" stroke="#fff" stroke-width="1.5"/>
+</svg>

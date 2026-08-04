@@ -1,0 +1,38 @@
+digraph PE {
+  rankdir=TB;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.5", nodesep="0.45", ranksep="0.7"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", penwidth=1.5, fontcolor="#1a1a1a"];
+  edge [penwidth=1.4, arrowsize=0.8];
+
+  subgraph cluster_cloud {
+    label="Cloud personalization";
+    fontsize=14;
+    fontname="Helvetica";
+    fontcolor="#1E40AF";
+    style="rounded,filled";
+    color="#93C5FD";
+    fillcolor="#EFF6FF";
+    cloud [label="Cloud", shape=ellipse, fillcolor="#BFDBFE", color="#1D4ED8", penwidth=2];
+    p1 [label="Phone", fillcolor="#FFFFFF", color="#3B82F6"];
+    p2 [label="Phone", fillcolor="#FFFFFF", color="#3B82F6"];
+    p3 [label="Phone", fillcolor="#FFFFFF", color="#3B82F6"];
+    p4 [label="Phone", fillcolor="#FFFFFF", color="#3B82F6"];
+    p1 -> cloud [dir=both, color="#3B82F6"];
+    p2 -> cloud [dir=both, color="#3B82F6"];
+    p3 -> cloud [dir=both, color="#3B82F6"];
+    p4 -> cloud [dir=both, color="#3B82F6"];
+  }
+
+  subgraph cluster_llm {
+    label="On-device general LLMs";
+    fontsize=14;
+    fontname="Helvetica";
+    fontcolor="#6D28D9";
+    style="rounded,filled";
+    color="#C4B5FD";
+    fillcolor="#F5F3FF";
+    apps [label="Apps\n(mail, voice, docs, translate)", fillcolor="#FDE68A", color="#D97706"];
+    phone [label="Phone + on-device LLM", fillcolor="#DDD6FE", color="#7C3AED", penwidth=2];
+    apps -> phone [dir=forward, color="#7C3AED", penwidth=2];
+  }
+}

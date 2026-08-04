@@ -1,0 +1,13 @@
+digraph TRAIN {
+  rankdir=LR;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.5", nodesep="0.5", ranksep="0.8"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", penwidth=1.8, fontcolor="#1a1a1a"];
+  edge [fontname="Helvetica", fontsize=11, penwidth=1.8, arrowsize=0.9, fontcolor="#334155"];
+
+  ua [label="User Actions", fillcolor="#FEF3C7", color="#D97706"];
+  ss [label="Secure Storage", fillcolor="#BFDBFE", color="#1D4ED8"];
+  am [label="AI Model", fillcolor="#DDD6FE", color="#6D28D9"];
+
+  ua -> ss [label="Record and Store\n(+ Time/Location + Label)", color="#F59E0B"];
+  ss -> am [label="Train", color="#2563EB"];
+}

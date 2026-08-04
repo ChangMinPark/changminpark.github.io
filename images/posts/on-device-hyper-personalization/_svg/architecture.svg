@@ -1,52 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
-  <rect width="920" height="480" fill="#fafbfc"/>
-  <text x="28" y="32" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#1a2332">Host app + on-device personalization library</text>
-  <!-- Host app box -->
-  <rect x="24" y="48" width="700" height="400" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
-  <text x="40" y="76" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#475569">Host app (e.g. mail client)</text>
-  <!-- User action arrow -->
-  <text x="40" y="120" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2563eb">User action →</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420">
+  <defs>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="820" height="420" fill="#fff"/>
+
+  <!-- Host app -->
+  <rect x="24" y="24" width="772" height="280" rx="10" fill="#f3f4f6" stroke="#333" stroke-width="1.4"/>
+  <text x="40" y="48" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">Host app</text>
+
+  <!-- Registered Actions stack -->
+  <rect x="48" y="80" width="100" height="28" fill="#fff" stroke="#333" stroke-width="1"/>
+  <rect x="54" y="88" width="100" height="28" fill="#fff" stroke="#333" stroke-width="1"/>
+  <rect x="60" y="96" width="100" height="28" fill="#fff" stroke="#333" stroke-width="1"/>
+  <text x="110" y="150" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222">Registered</text>
+  <text x="110" y="166" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222">Actions</text>
+  <line x1="160" y1="110" x2="210" y2="110" stroke="#444" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- On-device library region -->
+  <path d="M220,70 H780 V280 H400 V200 H220 Z" fill="#dbe4ee" stroke="#333" stroke-width="1.3"/>
+  <text x="500" y="92" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#1e3a5f">On-device ML library</text>
+
+  <!-- Action Registry -->
+  <rect x="240" y="110" width="140" height="40" fill="#fff" stroke="#333" stroke-width="1.1"/>
+  <text x="310" y="135" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Action Registry</text>
+
+  <!-- Label Assigner -->
+  <rect x="240" y="190" width="140" height="40" fill="#fff" stroke="#333" stroke-width="1.1"/>
+  <text x="310" y="215" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Label Assigner</text>
+
+  <!-- double arrow registry <-> assigner -->
+  <line x1="310" y1="150" x2="310" y2="190" stroke="#444" stroke-width="1.2"/>
+  <polygon points="310,150 306,157 314,157" fill="#444"/>
+  <polygon points="310,190 306,183 314,183" fill="#444"/>
+
+  <!-- Storage -->
+  <rect x="460" y="190" width="200" height="40" fill="#fff" stroke="#333" stroke-width="1.1"/>
+  <text x="560" y="215" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Storage (Behavior Events)</text>
+  <line x1="380" y1="210" x2="460" y2="210" stroke="#444" stroke-width="1.2" marker-end="url(#arr)"/>
+
   <!-- Wrapper UIs -->
-  <rect x="130" y="95" width="200" height="90" rx="10" fill="#f1f5f9" stroke="#64748b"/>
-  <text x="230" y="118" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1e293b">Wrapper UIs</text>
-  <text x="150" y="142" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#64748b">Row · Column · Button · Text</text>
-  <text x="150" y="162" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#64748b">(+ eventData map)</text>
-  <!-- Android UI -->
-  <rect x="130" y="210" width="200" height="70" rx="10" fill="#fff" stroke="#cbd5e1"/>
-  <text x="230" y="240" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#64748b">Android UI Framework</text>
-  <text x="230" y="260" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#94a3b8">real Compose / Material controls</text>
-  <path d="M230 185 L230 210" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
-  <!-- Library -->
-  <rect x="360" y="95" width="340" height="320" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
-  <text x="530" y="122" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#047857">On-device ML library</text>
-  <rect x="380" y="140" width="130" height="50" rx="8" fill="#fff" stroke="#059669"/>
-  <text x="445" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Action Registry</text>
-  <rect x="530" y="140" width="150" height="50" rx="8" fill="#fff" stroke="#059669"/>
-  <text x="605" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Label Assigner</text>
-  <text x="605" y="178" text-anchor="middle" font-size="10" fill="#64748b">events + labels</text>
-  <rect x="380" y="220" width="300" height="50" rx="8" fill="#fff" stroke="#059669"/>
-  <text x="530" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Storage (behavior events)</text>
-  <rect x="380" y="295" width="140" height="50" rx="8" fill="#fff" stroke="#059669"/>
-  <text x="450" y="325" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Inference Engine</text>
-  <rect x="540" y="295" width="140" height="50" rx="8" fill="#d1fae5" stroke="#047857"/>
-  <text x="610" y="325" text-anchor="middle" font-size="11" font-weight="700" fill="#065f46">Per-user model</text>
-  <path d="M330 140 L360 155" stroke="#64748b" stroke-width="1.5"/>
-  <path d="M445 190 L445 220" stroke="#059669" stroke-width="1.5"/>
-  <path d="M605 190 L530 220" stroke="#059669" stroke-width="1.5"/>
-  <path d="M530 270 L450 295" stroke="#059669" stroke-width="1.5"/>
-  <path d="M530 270 L610 295" stroke="#059669" stroke-width="1.5"/>
-  <!-- Registered actions -->
-  <rect x="380" y="370" width="130" height="30" rx="6" fill="#fff" stroke="#94a3b8"/>
-  <text x="445" y="390" text-anchor="middle" font-size="10" fill="#475569">Registered Actions</text>
-  <path d="M445 370 L445 190" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
-  <!-- Side note -->
-  <rect x="740" y="95" width="160" height="200" rx="10" fill="#fff" stroke="#e2e8f0"/>
-  <text x="820" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">At training</text>
-  <text x="755" y="155" font-size="11" fill="#475569">1. Intercept UI events</text>
-  <text x="755" y="180" font-size="11" fill="#475569">2. Label + store with</text>
-  <text x="755" y="198" font-size="11" fill="#475569">   time &amp; location</text>
-  <text x="755" y="223" font-size="11" fill="#475569">3. Train / fine-tune</text>
-  <text x="755" y="241" font-size="11" fill="#475569">   per-user model</text>
-  <text x="755" y="275" font-size="11" font-style="italic" fill="#047857">Thin app integration</text>
-  <defs><marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#64748b"/></marker></defs>
+  <rect x="48" y="200" width="150" height="70" fill="#9ca3af" stroke="#333" stroke-width="1.1"/>
+  <text x="123" y="222" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#fff">Wrapper UIs</text>
+  <rect x="58" y="232" width="28" height="22" fill="#4b5563" stroke="#222"/>
+  <text x="72" y="247" text-anchor="middle" font-size="8" fill="#fff">Row</text>
+  <rect x="90" y="232" width="36" height="22" fill="#4b5563" stroke="#222"/>
+  <text x="108" y="247" text-anchor="middle" font-size="8" fill="#fff">Column</text>
+  <rect x="130" y="232" width="36" height="22" fill="#4b5563" stroke="#222"/>
+  <text x="148" y="247" text-anchor="middle" font-size="8" fill="#fff">Button</text>
+  <rect x="170" y="232" width="20" height="22" fill="#4b5563" stroke="#222"/>
+  <text x="180" y="247" text-anchor="middle" font-size="8" fill="#fff">…</text>
+
+  <line x1="123" y1="70" x2="123" y2="200" stroke="#444" stroke-width="1.2" marker-end="url(#arr)"/>
+  <line x1="198" y1="235" x2="240" y2="210" stroke="#444" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- Android UI Framework -->
+  <rect x="24" y="330" width="772" height="70" rx="10" fill="#f3f4f6" stroke="#333" stroke-width="1.4"/>
+  <text x="40" y="358" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">UI framework</text>
+  <rect x="200" y="348" width="40" height="28" fill="#6b7280" stroke="#222"/>
+  <text x="220" y="367" text-anchor="middle" font-size="10" fill="#fff">Row</text>
+  <rect x="250" y="348" width="52" height="28" fill="#6b7280" stroke="#222"/>
+  <text x="276" y="367" text-anchor="middle" font-size="10" fill="#fff">Column</text>
+  <rect x="312" y="348" width="52" height="28" fill="#6b7280" stroke="#222"/>
+  <text x="338" y="367" text-anchor="middle" font-size="10" fill="#fff">Button</text>
+  <rect x="374" y="348" width="40" height="28" fill="#6b7280" stroke="#222"/>
+  <text x="394" y="367" text-anchor="middle" font-size="10" fill="#fff">Text</text>
+  <rect x="424" y="348" width="28" height="28" fill="#6b7280" stroke="#222"/>
+  <text x="438" y="367" text-anchor="middle" font-size="12" fill="#fff">…</text>
+
+  <line x1="123" y1="270" x2="123" y2="330" stroke="#444" stroke-width="1.2" marker-end="url(#arr)"/>
 </svg>

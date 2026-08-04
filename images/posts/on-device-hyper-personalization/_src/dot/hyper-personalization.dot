@@ -1,0 +1,15 @@
+digraph HP {
+  rankdir=LR;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.4", nodesep="0.5", ranksep="0.7"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", penwidth=1.6, fontcolor="#1a1a1a"];
+  edge [color="#64748b", penwidth=1.8, arrowsize=0.9];
+
+  u1 [label="User 1\n\"Read school emails\"", fillcolor="#FEF3C7", color="#D97706"];
+  u2 [label="User 2\n\"Read newsletter emails\"", fillcolor="#DCFCE7", color="#16A34A"];
+  u3 [label="User 3\n\"Read social emails\"", fillcolor="#DBEAFE", color="#2563EB"];
+  all [label="All Users\n\"Read emails\"", fillcolor="#F1F5F9", color="#475569", penwidth=2];
+
+  u1 -> all [color="#D97706"];
+  u2 -> all [color="#16A34A"];
+  u3 -> all [color="#2563EB"];
+}

@@ -11,3 +11,14 @@ vendor
 # preview links do not create untracked noise before the next sync.
 _posts/writing/*
 !_posts/writing/README.md
+
+# Local figure bake-off tooling (do not publish)
+images/posts/on-device-hyper-personalization/_tools/
+images/posts/on-device-hyper-personalization/m1-mermaid/
+images/posts/on-device-hyper-personalization/m3-d2/
+images/posts/on-device-hyper-personalization/m4-matplotlib/
+images/posts/on-device-hyper-personalization/m5-ai/
+images/posts/on-device-hyper-personalization/m2-graphviz/
+images/posts/on-device-hyper-personalization/_src/d2/
+images/posts/on-device-hyper-personalization/_src/matplotlib/
+images/posts/on-device-hyper-personalization/_src/mermaid/

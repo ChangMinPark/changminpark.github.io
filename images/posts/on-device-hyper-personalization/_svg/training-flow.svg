@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="280" viewBox="0 0 860 280">
+  <defs>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="860" height="280" fill="#fff"/>
+
+  <!-- User Actions: phone -->
+  <rect x="50" y="90" width="50" height="90" rx="6" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <rect x="58" y="102" width="34" height="60" fill="none" stroke="#222" stroke-width="1"/>
+  <line x1="68" y1="170" x2="82" y2="170" stroke="#222" stroke-width="1.2"/>
+  <!-- mail icons around phone -->
+  <rect x="30" y="70" width="22" height="16" rx="2" fill="#fff" stroke="#666"/>
+  <path d="M30,70 L41,78 L52,70" fill="none" stroke="#666"/>
+  <rect x="95" y="75" width="22" height="16" rx="2" fill="#fff" stroke="#666"/>
+  <path d="M95,75 L106,83 L117,75" fill="none" stroke="#666"/>
+  <rect x="105" y="130" width="22" height="16" rx="2" fill="#fff" stroke="#666"/>
+  <path d="M105,130 L116,138 L127,130" fill="none" stroke="#666"/>
+  <text x="75" y="215" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">User Actions</text>
+
+  <line x1="130" y1="140" x2="400" y2="140" stroke="#333" stroke-width="1.4" marker-end="url(#arr)"/>
+
+  <!-- Time / Location / Label funneling in -->
+  <!-- clock -->
+  <circle cx="220" cy="55" r="16" fill="#fff" stroke="#222" stroke-width="1.3"/>
+  <circle cx="220" cy="55" r="1.5" fill="#222"/>
+  <line x1="220" y1="55" x2="220" y2="45" stroke="#222" stroke-width="1.5"/>
+  <line x1="220" y1="55" x2="228" y2="58" stroke="#222" stroke-width="1.5"/>
+  <!-- pin -->
+  <path d="M255,40 C265,40 270,48 270,55 C270,65 255,78 255,78 C255,78 240,65 240,55 C240,48 245,40 255,40 Z" fill="#fff" stroke="#222" stroke-width="1.3"/>
+  <circle cx="255" cy="54" r="4" fill="none" stroke="#222" stroke-width="1.2"/>
+  <text x="237" y="100" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222">Time and Location</text>
+
+  <!-- label tag -->
+  <path d="M310,42 L345,42 L355,55 L345,68 L310,68 Z" fill="#f5d76e" stroke="#222" stroke-width="1.2"/>
+  <circle cx="318" cy="55" r="3" fill="#fff" stroke="#222"/>
+  <text x="332" y="100" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#222">Label</text>
+
+  <!-- funnel -->
+  <path d="M200,110 L360,110 L300,140 L260,140 Z" fill="#e5e7eb" stroke="#666" stroke-width="1"/>
+
+  <text x="265" y="170" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Record and Store</text>
+
+  <!-- Secure Storage -->
+  <ellipse cx="480" cy="105" rx="36" ry="12" fill="#93c5fd" stroke="#1e40af" stroke-width="1.2"/>
+  <rect x="444" y="105" width="72" height="40" fill="#93c5fd" stroke="none"/>
+  <line x1="444" y1="105" x2="444" y2="145" stroke="#1e40af" stroke-width="1.2"/>
+  <line x1="516" y1="105" x2="516" y2="145" stroke="#1e40af" stroke-width="1.2"/>
+  <ellipse cx="480" cy="145" rx="36" ry="12" fill="#60a5fa" stroke="#1e40af" stroke-width="1.2"/>
+  <ellipse cx="480" cy="125" rx="36" ry="12" fill="none" stroke="#1e40af" stroke-width="1"/>
+  <!-- shield lock -->
+  <path d="M500,130 L520,125 L520,145 C520,158 510,165 500,170 C490,165 480,158 480,145 L480,125 Z" fill="#22c55e" stroke="#166534" stroke-width="1.2"/>
+  <rect x="494" y="142" width="12" height="10" rx="1" fill="#fff" stroke="#166534"/>
+  <path d="M496,142 C496,138 504,138 504,142" fill="none" stroke="#166534" stroke-width="1.3"/>
+  <text x="480" y="215" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Secure Storage</text>
+
+  <line x1="530" y1="140" x2="680" y2="140" stroke="#333" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="605" y="128" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">Train</text>
+
+  <!-- AI Model chip -->
+  <rect x="700" y="95" width="70" height="70" rx="4" fill="#e5e7eb" stroke="#222" stroke-width="1.5"/>
+  <line x1="690" y1="110" x2="700" y2="110" stroke="#222" stroke-width="1.5"/>
+  <line x1="690" y1="130" x2="700" y2="130" stroke="#222" stroke-width="1.5"/>
+  <line x1="690" y1="150" x2="700" y2="150" stroke="#222" stroke-width="1.5"/>
+  <line x1="770" y1="110" x2="780" y2="110" stroke="#222" stroke-width="1.5"/>
+  <line x1="770" y1="130" x2="780" y2="130" stroke="#222" stroke-width="1.5"/>
+  <line x1="770" y1="150" x2="780" y2="150" stroke="#222" stroke-width="1.5"/>
+  <line x1="715" y1="85" x2="715" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="735" y1="85" x2="735" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="755" y1="85" x2="755" y2="95" stroke="#222" stroke-width="1.5"/>
+  <line x1="715" y1="165" x2="715" y2="175" stroke="#222" stroke-width="1.5"/>
+  <line x1="735" y1="165" x2="735" y2="175" stroke="#222" stroke-width="1.5"/>
+  <line x1="755" y1="165" x2="755" y2="175" stroke="#222" stroke-width="1.5"/>
+  <path d="M715,120 C715,105 725,100 735,100 C745,100 755,105 755,120 C755,140 745,150 735,150 C725,150 715,140 715,120 Z" fill="none" stroke="#222" stroke-width="1.5"/>
+  <path d="M735,100 L735,150" stroke="#222" stroke-width="1.2"/>
+  <text x="735" y="215" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#222">AI Model</text>
+</svg>

@@ -31,33 +31,32 @@ I'm a senior Android engineer and interested in:
 
 ### Yahoo!
 
-**Senior Software Engineer** (Feb 2023 – Present), Mail Client Platforms — Android
+**Senior Software Engineer** (Feb 2023 – Present), Yahoo Mail for Android
 
-- Lead Jetpack Compose migration of Yahoo Mail's highest-traffic surfaces (message list, compose, attachment smart view)
-- Drive performance, architecture, and monetization improvements; plan work and mentor engineers
+- Serve on the Mail Client Platforms team, owning CI/CD pipelines, release cycle management, production crash triage, architectural improvements, and development-environment support
+- Built and patented lightweight **on-device AI for hyper-personalized** in-app experiences (U.S. Patent App. 2026)—behavioral signals, local training, and gated actions with no server dependency for personalization
+- Led Jetpack Compose migration of the highest-traffic Mail surfaces (list, compose, attachments, sidebar), improving architecture, performance, and engagement
 
 #### Extended impact (for resume / interviews — not all on live site)
 
 <details>
-<summary>Yahoo Mail — Jetpack Compose migration details</summary>
+<summary>Yahoo Mail — platform, on-device AI, and Compose migration</summary>
 
-**Compose screen** (Feb 2025 – Present)
+**Platform ownership**
 
-- Lead migration of compose and attachment-picker from XML/WebView to Compose
-- Delegate attachment picker (senior engineer), scheduled-send/reply-to (senior engineer)
-- Replace WebView/JS text fields with Compose; cross-version draft compatibility
+- CI/CD pipelines and release cycle management for Yahoo Mail Android
+- Production crash triage, architectural improvements, and development-environment support
 
-**Message list** (Nov 2023 – May 2025)
+**Lightweight on-device AI for hyper-personalized mobile experiences** (U.S. Patent Application, 2026)
 
-- Technical lead ~18 months; memoization and recomposition tuning (>95% reduction in unnecessary recompositions)
-- Slot system for ads, nudges, onboarding
-- Dynamic filters/subfilters; contextual empty states
-- Monetization experiments: Taboola +19% revenue, GAM +8%, Search Ads +31% impressions; ~$10M+ annual run-rate uplift cited in impact review
+- Implemented a mobile SDK that collects behavioral signals, trains personalized models, and executes in-app actions entirely on-device, with no server dependency for that loop
+- Used sequence modeling over on-device UI event streams to predict the next in-app action, where event order encodes user behavior
+- Public overview: [On-Device Hyper-Personalization](/on-device-hyper-personalization)
 
-**Attachment smart view** (Aug 2023 – Apr 2024)
+**Jetpack Compose migration for highest-traffic Mail surfaces**
 
-- First list-type Compose migration; unified `MailSubFilterItem`
-- Phased rollout 5% → 100%; lifecycle/ViewModel bug fixes
+- Led a team of three migrating email list, compose, attachments, and sidebar to Jetpack Compose with an incremental rollout
+- Improved code quality and architecture; boosted app performance, ad impressions, and engagement (projected ~\$10M annual run-rate impact)
 
 **Leadership**
 
@@ -117,7 +116,7 @@ I'm a senior Android engineer and interested in:
 2. **“Recover as It is Designed to Be: Recovering from Compatibility Mobile App Crashes by Reusing User Flows”** — `Archived` (2024)  
    Donghwi Kim, Hyungjun Yoon, **Chang Min Park**, Sujin Han, Youngjin Kwon, Steven Y. Ko, Sung-Ju Lee
 
-3. **“End-to-End Image Integrity through Crestone”** — `Archived` (2023)  
+3. **“End-to-End Image Integrity through Crestone”** — `Archived` (2023) — [Project page](/crestone)  
    **Chang Min Park**, Mohammad Omidvar Tehrani, Karthik Dantu, Steven Y. Ko
 
 4. **“Providing Image Confidentiality and Integrity on Mobile Devices”** — `Dissertation` (2022)  
@@ -155,6 +154,7 @@ I'm a senior Android engineer and interested in:
 | Project | Path |
 |---------|------|
 | On-Device Hyper-Personalization | `/on-device-hyper-personalization` |
+| Crestone | `/crestone` |
 | Rushmore | `/rushmore` |
 | Gesto | `/gesto` |
 | Mimic | `/mimic` |
@@ -169,7 +169,7 @@ I'm a senior Android engineer and interested in:
 
 | Topic | Website (`index.html`) | Resume (`resume.tex`) |
 |-------|------------------------|------------------------|
-| Yahoo bullets | 3 high-level bullets | Full Compose migration + metrics |
+| Yahoo bullets | Platform + on-device AI (patent) + Compose migration | Same three themes in `resume.tex` |
 | Research roles | Listed under UB | Not repeated (publications cover research) |
 | Dean's List | Yes | No (space) |
 | Patent authors | Full author list | Title only |
@@ -180,7 +180,7 @@ When updating one, consider updating the other and `resume.md` / this file.
 
 ## Checklist
 
-- [ ] Yahoo section on live site matches latest role and bullets
+- [x] Yahoo section on live site matches latest role and bullets
 - [ ] Resume PDF link works on About page
 - [ ] New publications/patents added to `index.html` and `resume.tex`
 - [ ] Rebuild Jekyll site after HTML changes

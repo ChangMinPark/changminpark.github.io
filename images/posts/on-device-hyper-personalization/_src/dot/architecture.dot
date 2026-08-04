@@ -1,0 +1,37 @@
+digraph ARCH {
+  rankdir=LR;
+  compound=true;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.4", nodesep="0.4", ranksep="0.55"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", penwidth=1.5, fontcolor="#1a1a1a"];
+  edge [penwidth=1.5, arrowsize=0.85];
+
+  subgraph cluster_host {
+    label="Host app";
+    style="rounded,filled";
+    color="#94A3B8";
+    fillcolor="#F8FAFC";
+    fontsize=14;
+    fontcolor="#334155";
+
+    ra [label="Registered Actions", fillcolor="#FFEDD5", color="#EA580C"];
+    wu [label="Wrapper UIs\nRow · Column · Button · Text", fillcolor="#E0E7FF", color="#4F46E5"];
+
+    subgraph cluster_lib {
+      label="On-device ML library";
+      style="rounded,filled";
+      fillcolor="#ECFDF5";
+      color="#059669";
+      fontcolor="#065F46";
+      fontsize=12;
+      ar [label="Action Registry", fillcolor="#A7F3D0", color="#059669"];
+      la [label="Label Assigner", fillcolor="#6EE7B7", color="#047857"];
+      st [label="Storage\n(Behavior Events)", fillcolor="#34D399", color="#065F46", fontcolor="#064E3B"];
+      ar -> la [dir=both, color="#059669"];
+      la -> st [color="#047857"];
+    }
+    ra -> ar [color="#EA580C"];
+    wu -> la [color="#4F46E5"];
+  }
+  ui [label="UI framework\nRow · Column · Button · Text", fillcolor="#F1F5F9", color="#64748B"];
+  wu -> ui [color="#6366F1"];
+}

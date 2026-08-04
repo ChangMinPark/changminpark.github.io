@@ -1,0 +1,13 @@
+digraph INF {
+  rankdir=LR;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.5", nodesep="0.55", ranksep="0.85"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", penwidth=1.8, fontcolor="#1a1a1a"];
+  edge [fontname="Helvetica", fontsize=12, penwidth=1.8, arrowsize=0.9, fontcolor="#334155"];
+
+  tl [label="Time and Location", fillcolor="#CCFBF1", color="#0D9488"];
+  am [label="AI Model", fillcolor="#DDD6FE", color="#6D28D9"];
+  ph [label="Device", fillcolor="#BBF7D0", color="#15803D"];
+
+  am -> tl [label="Check", color="#0D9488"];
+  am -> ph [label="Predict and Execute", color="#16A34A"];
+}
