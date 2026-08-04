@@ -1,5 +1,6 @@
 ---
 title: "The Chat That Forgot the Constraint — and the Memory That Gaslit the Fix"
+excerpt: "Constraints stated three turns ago evaporate; memory can invent false certainty. Rules, skills, and falsifiable memory that keep agents inside the right modules."
 date: 2026-05-08 14:50:00
 tags: [Writing, Agents]
 draft: false
@@ -59,7 +60,7 @@ Put the *procedure* for a Compose screen migration in a skill: checklist, verify
 
 ## Memory is an untrusted wiki page
 
-Write memory when a fact is stable and expensive to rediscover: the one-shot test command for `:mail:compose`, the module that owns attachment smart view, “CI flake X needs a re-run not a code change.”
+Write memory when a fact is stable and expensive to rediscover: the one-shot test command for a feature module, which package owns an attachment preview surface, “CI flake X needs a re-run not a code change.”
 
 Delete or rewrite memory when the ground moves: architecture migrations, renamed packages, retired adapters. Treat every remembered sentence like a sketchy internal wiki — **useful hypothesis, not ground truth**. Before the agent acts on a memory claim, ask it to point at a file or command that still proves it.
 
@@ -68,8 +69,8 @@ Delete or rewrite memory when the ground moves: architecture migrations, renamed
 "Message list UI is XML RecyclerView + adapters."
 
 # Better: dated, falsifiable
-"As of 2024 Compose migration: message list is Compose; do not reintroduce XML adapters.
-Verify: :mail:compose sources + feature flag docs."
+"As of 2024 UI migration: message list is Compose; do not reintroduce XML adapters.
+Verify: feature module sources + feature flag docs."
 ```
 
 ## What to do in a long session that is already drifting

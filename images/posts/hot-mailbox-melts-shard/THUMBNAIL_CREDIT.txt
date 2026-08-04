@@ -1,1 +1,2 @@
-SVG: hot mailbox shard melting under refresh load.
+User-provided thumbnail from Desktop/thumbnails/A Hot Mailbox Melts the Shard.png
+Cover-cropped to 250x170 for Writing list.

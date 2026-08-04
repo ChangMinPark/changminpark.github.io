@@ -1,5 +1,6 @@
 ---
 title: "The Bot Commented on Your PR and Nobody Owns It"
+excerpt: "CI bots that spam wrong comments create public debt nobody owns. Design review agents with ownership, severity gates, and mute paths."
 date: 2026-03-07 12:00:00
 tags: [Writing, Agents]
 draft: false

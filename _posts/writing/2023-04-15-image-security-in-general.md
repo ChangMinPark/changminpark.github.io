@@ -1,5 +1,6 @@
 ---
 title: "Image Security in General: What Breaks on the Mobile Photo Path"
+excerpt: "Photos touch compression, thumbs, CDN, and GPU decode. Where the mobile image path silently weakens security."
 date: 2023-04-15 15:10:00
 tags: [Writing, Security]
 draft: false

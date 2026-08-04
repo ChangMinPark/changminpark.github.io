@@ -1,5 +1,6 @@
 ---
 title: "Research Methodology: Qualitative vs Quantitative"
+excerpt: "Pick evidence type before you collect it. Qualitative vs quantitative lessons from building Mimic."
 date: 2019-11-03 10:00:00
 tags: [Writing, Testing]
 draft: false

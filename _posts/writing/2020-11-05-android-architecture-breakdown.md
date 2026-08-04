@@ -1,5 +1,6 @@
 ---
 title: "Android Architecture Breakdown: Which Layer Owns Your Bug?"
+excerpt: "App, framework, or Binder? A layer map so you stop fixing Activities for system-service stalls."
 date: 2020-11-05 16:15:00
 tags: [Writing, Android]
 draft: false

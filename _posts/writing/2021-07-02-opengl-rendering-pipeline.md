@@ -1,5 +1,6 @@
 ---
 title: "OpenGL Rendering Pipeline: What Actually Breaks in Practice"
+excerpt: "Map OpenGL stages to contracts. Localize pose, culling, and fragment bugs instead of guessing at FPS cliffs."
 date: 2021-07-02 12:30:00
 tags: [Writing, Systems]
 draft: false

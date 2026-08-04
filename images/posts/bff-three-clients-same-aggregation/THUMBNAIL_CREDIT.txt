@@ -1,1 +1,2 @@
-SVG: three clients sharing one BFF aggregation.
+User-provided thumbnail from Desktop/thumbnails/Three Clients, Same Aggregation- Why BFF Shows Up .webp
+Cover-cropped to 250x170 for Writing list.

@@ -1,5 +1,6 @@
 ---
 title: "Agent Trust Boundaries: Approvals That Matter, Tools That Lie"
+excerpt: "Approval fatigue and lying tools lose the same afternoon. Draw trust boundaries so agents cannot reach deploy keys by accident."
 date: 2026-01-09 14:00:00
 tags: [Writing, Security]
 draft: false
@@ -31,7 +32,7 @@ Gate what is hard to undo. Autopilot what is easy to inspect afterward.
 
 Out-of-band matters: if the model can “approve” by emitting a tool call that looks like confirmation, you have theater. Prefer client-enforced hooks that the model cannot forge — the same instinct as step-up auth for destructive APIs.
 
-For an Android monorepo, protect the boring landmines: signing configs, Play upload credentials, production feature-flag consoles, anything that can ship to Yahoo Mail users at scale. Do not burn attention on reading `MessageList.kt`.
+For an Android monorepo, protect the boring landmines: signing configs, Play upload credentials, production feature-flag consoles, anything that can ship to real users at scale. Do not burn attention on reading a random list screen file.
 
 > **Rule of thumb** - if a wrong click costs a revert, gate it. If a wrong click costs a glance at `git diff`, do not train fatigue.
 

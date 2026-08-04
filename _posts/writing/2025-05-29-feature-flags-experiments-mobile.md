@@ -1,5 +1,6 @@
 ---
 title: "Feature Flags on Mobile: Kill Switch, Rollout, Experiment"
+excerpt: "Kill switch, rollout, and experiment are three jobs. Stop muddying them into one boolean on mobile."
 date: 2025-05-29 12:50:00
 tags: [Writing, Android]
 draft: false

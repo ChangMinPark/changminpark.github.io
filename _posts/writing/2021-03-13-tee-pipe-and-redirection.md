@@ -1,5 +1,6 @@
 ---
 title: "tee, Pipe, and Redirection: Watch Output While You Log It"
+excerpt: "Need a log file and a live view? tee vs pipes vs redirection when long builds hide the stream."
 date: 2021-03-13 16:15:00
 tags: [Writing, Linux]
 draft: false

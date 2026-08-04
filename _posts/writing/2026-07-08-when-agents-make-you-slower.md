@@ -1,5 +1,6 @@
 ---
 title: "Tickets Where an Agent Makes You Slower"
+excerpt: "When an agent costs more review time than typing the fix, skip it. A ticket map for negative expected value, assistant vs agency, and when to refuse the bot."
 date: 2026-07-08 12:00:00
 tags: [Writing, Agents]
 draft: false

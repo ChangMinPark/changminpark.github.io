@@ -1,5 +1,6 @@
 ---
 title: "Rate Limits Without Gaslighting the UX"
+excerpt: "A spinner that hides a 429 is gaslighting. Honor Retry-After, coalesce calls, and tell the user the truth."
 date: 2025-01-14 12:00:00
 tags: [Writing, Distributed]
 draft: false

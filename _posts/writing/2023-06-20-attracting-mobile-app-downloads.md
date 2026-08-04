@@ -1,5 +1,6 @@
 ---
 title: "Web-to-App Install Prompts: When Nagging Costs Retention"
+excerpt: "Web-to-app nag banners can cost retention. Measure the full install funnel before you plaster Get the app."
 date: 2023-06-20 12:00:00
 tags: [Writing, Android]
 draft: false

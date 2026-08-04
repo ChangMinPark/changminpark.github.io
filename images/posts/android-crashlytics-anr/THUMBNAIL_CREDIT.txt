@@ -1,1 +1,2 @@
-SVG: ANR phone + incomplete Crashlytics stack with missing frames.
+User-provided thumbnail from Desktop/thumbnails/ANR Stack Traces Lie by Omission — Crashlytics Is One Layer.png
+Cover-cropped to 250x170 for Writing list.

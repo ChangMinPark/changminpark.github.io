@@ -1,5 +1,6 @@
 ---
 title: "GitHub Actions for Android: PR Gates That Protect Merges"
+excerpt: "Green checks that only assembleDebug protect nothing. PR gates that catch module graphs, Manifest, and real risk."
 date: 2025-02-11 10:15:00
 tags: [Writing, DevEx]
 draft: false

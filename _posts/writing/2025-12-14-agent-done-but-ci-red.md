@@ -1,5 +1,6 @@
 ---
 title: "The Agent Said Done — and CI Is Red"
+excerpt: "Chat said done; formatting, tests, and types disagreed. Treat CI as the only done signal agents are allowed to claim."
 date: 2025-12-14 11:20:00
 tags: [Writing, Agents]
 draft: false

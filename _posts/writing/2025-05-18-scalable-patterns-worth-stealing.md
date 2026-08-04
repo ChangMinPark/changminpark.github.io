@@ -1,5 +1,6 @@
 ---
 title: "Scalable Patterns Worth Stealing (Without Renaming Your Résumé)"
+excerpt: "Name gateway, cache, fan-out, and async patterns so you can argue tradeoffs — without renaming your résumé."
 date: 2025-05-18 11:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -70,7 +71,7 @@ A central scheduler runs a dependency graph: unlock ready tasks, retry failures,
 | Map-reduce | Offline / batch I/O | Interactive latency budgets |
 | Orchestrator | Multi-step workflows with retries | One request / one service is enough |
 
-Name the shape so you can argue about tradeoffs — not so you can label a slide. In a large Android mail client, most of these show up as gateway routing you depend on, Room/CDN caches you populate, fan-out search you wait for, attachment pipelines you partially render, batch reindex you never see, and send workflows you retry against. If a pattern does not map to a failure you have felt (stampede, straggler, send waiting on CDN), leave it off the whiteboard.
+Name the shape so you can argue about tradeoffs — not so you can label a slide. For example, in a large Android mail client, most of these show up as gateway routing the app depends on, Room/CDN caches it populates, fan-out search it waits for, attachment pipelines it partially renders, batch reindex it never sees, and send workflows it retries against. If a pattern does not map to a failure you have felt (stampede, straggler, send waiting on CDN), leave it off the whiteboard.
 
 ## References
 

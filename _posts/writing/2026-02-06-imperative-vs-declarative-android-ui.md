@@ -1,5 +1,6 @@
 ---
 title: "Imperative vs Declarative Android UI: What Migration Actually Changes"
+excerpt: "Compose does not fail like ListAdapter. What actually changes when UI becomes a function of state — and which bugs migrate with you."
 date: 2026-02-06 12:00:00
 tags: [Writing, Android]
 draft: false

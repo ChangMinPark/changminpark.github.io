@@ -1,5 +1,6 @@
 ---
 title: "ANR Stack Traces Lie by Omission — Crashlytics Is One Layer"
+excerpt: "ANR stacks omit history; Crashlytics is only one layer. Correlate traces, breadcrumbs, and main-thread blockers before you fix the wrong frame."
 date: 2026-02-27 12:00:00
 tags: [Writing, Android]
 draft: false

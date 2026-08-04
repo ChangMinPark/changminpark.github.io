@@ -1,1 +1,2 @@
-Hand-authored SVG: phone emitting crash/log/metric streams; metrics highlighted as the deciding signal.
+User-provided thumbnail from Desktop/thumbnails/Mobile Logs, Crashes, and Metrics Pick Signals That Decide.png
+Cover-cropped to 250x170 for Writing list.

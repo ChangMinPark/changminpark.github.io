@@ -1,5 +1,6 @@
 ---
 title: "Hard Links vs Symbolic Links: Same Inode, Different Contract"
+excerpt: "Same inode vs path pointer. Why hard links matter for shared trees — and when symlinks break safe mode."
 date: 2020-11-15 18:00:00
 tags: [Writing, Linux]
 draft: false

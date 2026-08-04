@@ -1,5 +1,6 @@
 ---
 title: "Fat vs Chatty APIs on Cellular"
+excerpt: "Six GETs per row feel fine on Wi‑Fi and die on one bar. Design list APIs for cellular: fewer round trips, calmer updates."
 date: 2026-01-19 12:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -63,7 +64,7 @@ Practical split:
 2. **Secondary** — thread body, full attachment metadata, rarely used panels — separate calls, prefetch when idle
 3. **Sync** — delta documents with clear watermarks; avoid N endpoints × M folders on every tick
 
-I will not invent Yahoo payload sizes or cellular lab numbers. On large mail Android surfaces, the wins I have seen come from fewer blocking round trips and calmer list updates — not from arguing REST purity in a design review.
+The portable wins on large mail-style Android surfaces usually come from fewer blocking round trips and calmer list updates — not from arguing REST purity in a design review.
 
 ## What to measure before picking a religion
 

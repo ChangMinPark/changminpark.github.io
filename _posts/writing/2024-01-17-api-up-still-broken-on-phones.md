@@ -1,5 +1,6 @@
 ---
 title: "The API Is Up. Why Are Phones Still Broken?"
+excerpt: "Edge nines do not equal open-inbox success. Session SLIs for cold start when phones never reach the API."
 date: 2024-01-17 12:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -9,7 +10,7 @@ draft: false
 
 Backend availability sits at a comfortable stretch of nines. On-call is quiet. The status page is green. And yet support tickets and client telemetry say the same thing: people cannot open mail, send a reply, or get past splash. That gap is not a mystery once you treat the **phone session** as the product — not the HTTP handler that returned 200.
 
-At Yahoo Mail on Android, the user-visible path is a chain: process start, auth/token refresh, config, mailbox metadata, then the first useful paint. A dependency that is “mostly up” can still fail the session if it sits on the critical path of cold start. Server SLIs that only count well-formed requests at the edge miss phones that never get that far.
+For example, in a mail Android client the user-visible path is a chain: process start, auth/token refresh, config, mailbox metadata, then the first useful paint. A dependency that is “mostly up” can still fail the session if it sits on the critical path of cold start. Server SLIs that only count well-formed requests at the edge miss phones that never get that far.
 
 ## Related reading
 
@@ -57,7 +58,7 @@ On a mail client, “API up” often means many APIs. The wrong instinct after a
 
 > **Rule of thumb** - if a call can turn a healthy backend into a stuck splash, it belongs on a session SLI, not only on a service dashboard.
 
-I will not invent internal Yahoo latency numbers here. Qualitatively: when cold-start critical paths balloon under partial dependency failure, users experience “Mail is down” even while edge success rates stay high. That is the product truth.
+Qualitatively: when cold-start critical paths balloon under partial dependency failure, users experience “the app is down” even while edge success rates stay high. That is the product truth — for example, in a mail app with a green API dashboard and a stuck splash.
 
 ## Redefine SLIs when the client is the product
 

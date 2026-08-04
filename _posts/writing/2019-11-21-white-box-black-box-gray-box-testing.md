@@ -1,5 +1,6 @@
 ---
 title: "White Box, Black Box, and Gray Box Testing"
+excerpt: "How much you know changes what you find. White, black, and gray box as access models — not buzzwords."
 date: 2019-11-21 10:15:00
 tags: [Writing, Testing]
 draft: false

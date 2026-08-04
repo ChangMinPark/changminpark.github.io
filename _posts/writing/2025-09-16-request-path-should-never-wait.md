@@ -1,5 +1,6 @@
 ---
 title: "The Request Path Should Never Wait"
+excerpt: "Send should not wait on virus scan or CDN publish. Keep the request path short; run slow work asynchronously."
 date: 2025-09-16 12:00:00
 tags: [Writing, Distributed]
 draft: false

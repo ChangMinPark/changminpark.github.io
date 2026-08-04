@@ -1,5 +1,6 @@
 ---
 title: "From Jenkins to Screwdriver: What CI/CD Actually Buys an Android Team"
+excerpt: "Laptop-green and store-red usually means the pipeline lied. What CI/CD actually buys an Android team."
 date: 2023-08-05 12:00:00
 tags: [Writing, DevEx]
 draft: false
@@ -95,7 +96,7 @@ What transfers across Jenkins → Screwdriver (or any migration):
 4. **Signed releases only from CI** — no manual keystore on a laptop
 5. **Treat flaky tests as debt** — green that lies erodes trust faster than red
 
-I will not invent internal Yahoo pipeline names or metrics here. Public takeaway: large mail-client Android CI looks boring on purpose — repeatable Gradle, guarded secrets, staged promotion — because exciting pipelines mean someone is firefighting.
+Public takeaway: large mail-client Android CI looks boring on purpose — repeatable Gradle, guarded secrets, staged promotion — because exciting pipelines mean someone is firefighting.
 
 ## Wrap-up
 

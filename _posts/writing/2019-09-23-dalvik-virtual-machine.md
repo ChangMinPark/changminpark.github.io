@@ -1,5 +1,6 @@
 ---
 title: "Dalvik and ART: What the Runtime Layer Still Explains"
+excerpt: "ART replaced Dalvik; DEX and per-process VMs remain. What the old runtime layer still explains in traces."
 date: 2019-09-23 11:45:00
 tags: [Writing, Systems]
 draft: false

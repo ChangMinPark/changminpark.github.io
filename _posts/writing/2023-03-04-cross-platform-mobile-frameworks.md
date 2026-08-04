@@ -1,5 +1,6 @@
 ---
 title: "Cross-Platform Mobile Frameworks: Flutter, RN, and the WebView Trap"
+excerpt: "Write-once hides a fork: WebView vs native widgets. Flutter, RN, and when the WebView trap shows up."
 date: 2023-03-04 13:20:00
 tags: [Writing, Android]
 draft: false

@@ -1,5 +1,6 @@
 ---
 title: "Why Your PR Diff Is Noisy: Formatters vs Linters"
+excerpt: "Noisy diffs and false CI reds often mix format and lint. Separate style machines from correctness rules."
 date: 2023-06-22 12:00:00
 tags: [Writing, DevEx]
 draft: false

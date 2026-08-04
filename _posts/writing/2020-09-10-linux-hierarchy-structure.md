@@ -1,5 +1,6 @@
 ---
 title: "Linux Filesystem Hierarchy: Where Production Bugs Hide"
+excerpt: "ENOENT after reboot is often layout, not logic. Where production bugs hide in the FHS tree."
 date: 2020-09-10 18:30:00
 tags: [Writing, Linux]
 draft: false

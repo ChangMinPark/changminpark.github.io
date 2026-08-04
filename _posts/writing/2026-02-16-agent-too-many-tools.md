@@ -1,5 +1,6 @@
 ---
 title: "Your Agent Has Too Many Tools — and Mistakes Access for Expertise"
+excerpt: "More MCP plugins often mean worse judgment. Curate tools so the agent cannot confuse access with expertise."
 date: 2026-02-16 09:15:00
 tags: [Writing, Agents]
 draft: false

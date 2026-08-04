@@ -1,5 +1,6 @@
 ---
 title: "Gradle Modularization: Slice for Change, Not for the Diagram"
+excerpt: "Hexagon diagrams do not cut build times. Slice Gradle modules by change frequency and ownership, not purity."
 date: 2025-10-08 12:00:00
 tags: [Writing, Android]
 draft: false
@@ -9,7 +10,7 @@ draft: false
 
 Every large Android team eventually holds the same meeting: *should we modularize?* Someone draws clean hexagons. Someone else cites build times. Six months later you still have a mega-module — or fifty modules that every feature PR must touch. The failure is rarely “we used Gradle wrong.” It is slicing for **diagram purity** instead of **how the app actually changes**.
 
-I have watched this play out on production mail clients and smaller products. The useful question is not “how many modules,” it is “what boundary survives the next twenty PRs without becoming a tax.”
+This plays out on production mail clients and smaller products alike. The useful question is not “how many modules,” it is “what boundary survives the next twenty PRs without becoming a tax.”
 
 ## Related reading
 
@@ -48,9 +49,9 @@ I have watched this play out on production mail clients and smaller products. Th
 
 Gradle’s `api` vs `implementation` is not trivia: leaking a type through `api` expands the compile fan-out. Circular project dependencies are the other classic smell — if `:feature:a` needs `:feature:b` and vice versa, your slice is lying.
 
-## How I decide on a mail-scale app
+## How to slice a mail-scale app
 
-Start from **change frequency**. Message list and compose churn weekly; attachment pipelines less so. Give high-churn surfaces a feature module. Put stable infrastructure behind `api`/`impl` so internals can move without recompiling the world. Delay layer-only modules until a second client or test target needs the same domain — not because a blog post said “clean architecture.”
+Start from **change frequency**. For example, in a mail app, message list and compose often churn weekly; attachment pipelines less so. Give high-churn surfaces a feature module. Put stable infrastructure behind `api`/`impl` so internals can move without recompiling the world. Delay layer-only modules until a second client or test target needs the same domain — not because a blog post said “clean architecture.”
 
 
 ## A concrete anti-pattern: the expanding `:core`

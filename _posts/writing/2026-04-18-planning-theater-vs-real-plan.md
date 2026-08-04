@@ -1,5 +1,6 @@
 ---
 title: "Planning Theater vs a Plan That Saves a Rewrite"
+excerpt: "A two-page plan you ignore is theater; zero plan is thrash. What a short agent plan must include to prevent a rewrite an hour later."
 date: 2026-04-18 12:00:00
 tags: [Writing, Agents]
 draft: false

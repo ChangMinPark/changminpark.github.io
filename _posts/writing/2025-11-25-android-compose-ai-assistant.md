@@ -1,5 +1,6 @@
 ---
 title: "Building an AI Assistant Surface in Jetpack Compose Without Fighting the Keyboard"
+excerpt: "Chat UIs break on IME, scroll, and streaming tokens. Compose patterns for assistant surfaces that do not fight the keyboard."
 date: 2025-11-25 15:40:00
 tags: [Writing, Android]
 draft: false
@@ -9,7 +10,7 @@ draft: false
 
 Wire a chat-like assistant into Compose and the backend can be fine while the UI still falls apart: a long question opens the keyboard and history vanishes behind the IME, scroll jumps, a streaming token arrives mid-animation and the last bubble flickers. Design review misses all of that — Figma does not simulate `WindowInsets` or partial text updates at dozens of tokens per second.
 
-This is a **pattern post**, not a claim that Yahoo Mail shipped an in-app assistant. The lessons come from high-churn Compose surfaces I *have* shipped (message list, compose, attachment smart view): stable list keys, observable state, Material theming, and inset-aware layout. Assistant UX just amplifies those constraints — reverse-ordered lists, incremental text, and keyboard-driven layout shifts. Treat the panel like a single `TextField` on a `Column` and you will fight the framework.
+This is a **pattern post** about Compose assistant-style surfaces — not a product claim about any particular mail or chat app. The hard parts are the same ones that show up on any high-churn list or editor UI: stable list keys, observable state, Material theming, and inset-aware layout. Assistant UX just amplifies those constraints — reverse-ordered lists, incremental text, and keyboard-driven layout shifts. Treat the panel like a single `TextField` on a `Column` and you will fight the framework.
 
 For the declarative mental model — state driving UI, recomposition, migration from Views — see [Imperative vs Declarative Android UI]({{ site.baseurl }}/imperative-vs-declarative-android-ui). This post assumes that contract and focuses on **assistant-specific Compose patterns**.
 
@@ -38,7 +39,7 @@ fun AssistantChat(
 
 > **Rule of thumb** - assign real IDs to messages before they hit the list; placeholder IDs that change when streaming completes will remount the bubble and reset selection.
 
-`reverseLayout = true` pairs naturally with an input bar pinned below the list: new tokens append at the "bottom" of the data model while the lazy list grows upward visually. Unstable keys were a top source of scroll jank on Mail list surfaces; assistant UIs amplify that because row content mutates in place.
+`reverseLayout = true` pairs naturally with an input bar pinned below the list: new tokens append at the "bottom" of the data model while the lazy list grows upward visually. Unstable keys are a top source of scroll jank on long list surfaces (for example, a mail thread list); assistant UIs amplify that because row content mutates in place.
 
 ## Theming: one Material 3 tree for assistant and app chrome
 

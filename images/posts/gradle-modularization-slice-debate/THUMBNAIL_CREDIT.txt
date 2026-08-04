@@ -1,1 +1,2 @@
-SVG: Gradle modules — feature vs layer slice debate.
+User-provided thumbnail from Desktop/thumbnails/Gradle Modularization- Slice for Change, Not for the Diagram .jpg
+Cover-cropped to 250x170 for Writing list.

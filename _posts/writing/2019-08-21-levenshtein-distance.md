@@ -1,5 +1,6 @@
 ---
 title: "Levenshtein Distance: Edit Cost for Typos and Fuzzy Match"
+excerpt: "One typo should not kill search. Edit distance for fuzzy match — and when exact equality is too strict."
 date: 2019-08-21 09:45:00
 tags: [Writing, Systems]
 draft: false

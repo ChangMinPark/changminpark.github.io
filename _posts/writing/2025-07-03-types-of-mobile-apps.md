@@ -1,5 +1,6 @@
 ---
 title: "Types of Mobile Apps: When Native Still Wins"
+excerpt: "Native, web, PWA, hybrid — pick by symptoms, not labels. When frame time and device APIs still force native."
 date: 2025-07-03 12:00:00
 tags: [Writing, Android]
 draft: false
@@ -9,7 +10,7 @@ draft: false
 
 Every mobile project eventually hits the same fork: ship a browser tab, wrap the website, or commit to platform-native code. The labels — native, web, PWA, hybrid — sound like a textbook taxonomy. In practice the choice shows up as symptoms: scroll jank on a long feed, a camera API that works on Android but not iOS Safari, or a surface where WebView already failed a performance budget.
 
-I have hit this fork twice, in different eras. At Breeding (2020–2021), a dog-trainer marketplace, we chose native Android early because push, camera uploads, and session reliability were core to the product. At Yahoo Mail (from 2023), the same question returned at a different scale: when does a high-traffic surface justify Kotlin and Jetpack Compose instead of stacking more WebView?
+I have hit this fork more than once. At Breeding (2020–2021), a dog-trainer marketplace, we chose native Android early because push, camera uploads, and session reliability were core to the product. The same question shows up at much larger scale in consumer apps — for example, in a mail app: when does a high-traffic surface justify Kotlin and Jetpack Compose instead of stacking more WebView?
 
 This post is a decision map written after both, not a claim that the Breeding years were Mail work.
 
@@ -27,7 +28,7 @@ Built with platform SDKs (Swift/SwiftUI on iOS, Kotlin/Jetpack Compose on Androi
 
 **Cons:** Separate codebases per platform; higher build and QA cost; two release trains unless you add a cross-platform layer on top.
 
-**When teams still pick native:** Hardware-adjacent features, strict offline/sync, or UI where frame time is the product — long heterogeneous feeds, rich-text editors, media previews. On Mail Android, that is why the highest-traffic surfaces moved toward Compose rather than stacking more WebView on critical paths.
+**When teams still pick native:** Hardware-adjacent features, strict offline/sync, or UI where frame time is the product — long heterogeneous feeds, rich-text editors, media previews. In a mail-style Android client, that is why the highest-traffic surfaces often move toward Compose rather than stacking more WebView on critical paths.
 
 ### Web apps
 

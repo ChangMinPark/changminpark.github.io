@@ -1,5 +1,6 @@
 ---
 title: "Interrupt Handling in OP-TEE: IRQ, FIQ, and World Switches"
+excerpt: "Secure IRQs in the wrong world hang SMCs. IRQ/FIQ and world-switch rules in OP-TEE."
 date: 2020-03-20 12:45:00
 tags: [Writing, Security]
 draft: false

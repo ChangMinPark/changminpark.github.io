@@ -1,1 +1,2 @@
-SVG: kill switch / rollout / experiment as three flag jobs.
+User-provided thumbnail from Desktop/thumbnails/Feature Flags on Mobile- Kill Switch, Rollout, Experiment .jpeg
+Cover-cropped to 250x170 for Writing list.

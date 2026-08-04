@@ -1,5 +1,6 @@
 ---
 title: "Making a Monorepo Navigable to Agents"
+excerpt: "Agents fail on layout, not IQ. Module maps, verify commands, and repo conventions that keep coding agents from inventing fake Gradle targets."
 date: 2026-06-12 12:00:00
 tags: [Writing, Agents]
 draft: false
@@ -80,7 +81,7 @@ Medium Engineering described the evolution from one heavy `AGENTS.md` to scoped 
 
 ## Module boundaries on paper
 
-Large Mail-style clients are graphs of Gradle projects. Write a short module map: feature name, Gradle path, what it may depend on, what must not depend back. Agents routinely "help" by introducing a dependency cycle or reaching into another team's internals because the graph was implicit. You do not need a full architecture book — a table and a "preferred public API packages" line save more thrash than another essay on MVVM.
+Large mail-style clients are graphs of Gradle projects. Write a short module map: feature name, Gradle path, what it may depend on, what must not depend back. Agents routinely "help" by introducing a dependency cycle or reaching into another team's internals because the graph was implicit. You do not need a full architecture book — a table and a "preferred public API packages" line save more thrash than another essay on MVVM.
 
 ## Wrap-up
 

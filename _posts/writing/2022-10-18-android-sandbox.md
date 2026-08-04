@@ -1,5 +1,6 @@
 ---
 title: "Android Sandbox: UID Isolation and the Holes You Open Yourself"
+excerpt: "UID isolation is not a bug. Which holes apps open themselves with shared UIDs, exports, and world-readable paths."
 date: 2022-10-18 14:30:00
 tags: [Writing, Security]
 draft: false
@@ -7,7 +8,7 @@ draft: false
 
 ## The symptom that looks like a bug
 
-A teammate once insisted our mail client “could not see” another app’s attachment cache — as if Android were broken. It was not. **Two apps with different Linux UIDs cannot read each other’s private directories.** That is the sandbox working. Confusion started because a debug build on an older test image used a shared certificate path that blurred the mental model.
+A teammate once insisted a mail client “could not see” another app’s attachment cache — as if Android were broken. It was not. **Two apps with different Linux UIDs cannot read each other’s private directories.** That is the sandbox working. Confusion started because a debug build on an older test image used a shared certificate path that blurred the mental model.
 
 The sandbox is not a Java policy you opt into. It is **kernel-enforced UID separation** plus permissions, SELinux, and explicit IPC when data is meant to cross app boundaries.
 

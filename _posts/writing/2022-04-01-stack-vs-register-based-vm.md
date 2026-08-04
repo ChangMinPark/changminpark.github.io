@@ -1,5 +1,6 @@
 ---
 title: "Stack-Based vs Register-Based VMs: Why Dalvik Chose Registers"
+excerpt: "Stack and register VMs fake CPUs differently. Why Dalvik chose registers and what that still explains."
 date: 2022-04-01 09:45:00
 tags: [Writing, Systems]
 draft: false

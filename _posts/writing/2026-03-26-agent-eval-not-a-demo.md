@@ -1,5 +1,6 @@
 ---
 title: '"It Worked Once in Chat" Is Not a Ship Bar'
+excerpt: "One green chat session is not a ship bar. Promote agent configs with golden tasks, flake budgets, and outcomes you can re-run."
 date: 2026-03-26 12:00:00
 tags: [Writing, Testing]
 draft: false

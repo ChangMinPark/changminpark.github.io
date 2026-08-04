@@ -1,5 +1,6 @@
 ---
 title: "Cache Invalidation from CDN to Room"
+excerpt: "Avatar updated; every layer still shows yesterday. Walk CDN → API → OkHttp → Room before you “fix” Compose."
 date: 2025-11-14 12:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -36,7 +37,7 @@ Typical mail-shaped symptoms:
 - **Wrong thread subject / participants** — API cache or Room row older than the mutation
 - **Unread counts flicker** — list from Room, badge from a fresher path (or the reverse)
 
-Debugging only the Compose binding wastes days when the binding is faithfully showing yesterday’s Room row. At Yahoo Mail I treat “UI not updating” as a **layer walk**: did origin change, did API cache miss after write, did the edge still hold bytes, did OkHttp short-circuit the repository, did Room ever see a newer version? Skip a rung and you “fix” Compose while users keep the old face.
+Debugging only the Compose binding wastes days when the binding is faithfully showing yesterday’s Room row. Treat “UI not updating” as a **layer walk**: did origin change, did API cache miss after write, did the edge still hold bytes, did OkHttp short-circuit the repository, did Room ever see a newer version? Skip a rung and you “fix” Compose while users keep the old face. For example, in a mail app the same walk applies when a thread subject looks stale after a rename.
 
 ## Stampede when the cache finally dies
 

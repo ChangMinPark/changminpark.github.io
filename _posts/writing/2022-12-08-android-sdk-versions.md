@@ -1,5 +1,6 @@
 ---
 title: "Android SDK Versions: compileSdk, minSdk, and targetSdk in Production"
+excerpt: "compileSdk, minSdk, and targetSdk are contracts. Why a green CI build still breaks on a newer phone."
 date: 2022-12-08 16:45:00
 tags: [Writing, Android]
 draft: false

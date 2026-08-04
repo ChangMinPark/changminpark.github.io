@@ -1,5 +1,6 @@
 ---
 title: "Mail Storage & Caching Without Lagging the Gesture"
+excerpt: "Inbox open is a latency budget across memory, disk, and network. Put each byte where the gesture can afford it."
 date: 2025-03-25 16:05:00
 tags: [Writing, Android]
 draft: false

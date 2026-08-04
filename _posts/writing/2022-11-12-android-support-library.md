@@ -1,5 +1,6 @@
 ---
 title: "Android Support Library → AndroidX: What the Old Stack Maps To Today"
+excerpt: "appcompat-v7 still appears in old modules. How Support Library maps to AndroidX without a cargo-cult migration."
 date: 2022-11-12 11:15:00
 tags: [Writing, Android]
 draft: false

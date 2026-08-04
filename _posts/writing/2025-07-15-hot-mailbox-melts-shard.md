@@ -1,5 +1,6 @@
 ---
 title: "A Hot Mailbox Melts the Shard"
+excerpt: "One celebrity inbox can melt a shard. Client refresh discipline and cache-aside as the first shield."
 date: 2025-07-15 12:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -35,7 +36,7 @@ Server heat is often a product of client behavior:
 - Message list, thread, and attachment metadata requested as separate chatty calls
 - Retry storms when the hot shard slows (timeouts → more retries → more heat)
 
-On Android mail clients I have worked on, the fix is partly product discipline: coalesce refreshes, backoff when the server signals load, and avoid turning every UI recomposition into a network round trip. Shared inboxes make this worse: many human operators open the same mailbox across devices, each running its own sync cadence. The client cannot fix a melting shard alone — but it can stop pouring gasoline.
+On Android mail clients, the usual client-side mitigations are partly product discipline: coalesce refreshes, backoff when the server signals load, and avoid turning every UI recomposition into a network round trip. Shared inboxes make this worse: many human operators open the same mailbox across devices, each running its own sync cadence. The client cannot fix a melting shard alone — but it can stop pouring gasoline.
 
 Writes matter too. A hot support inbox does not only get read; operators mark read, assign, and reply. Write amplification on the same shard key stacks with the read hotspot. Cache-aside helps reads; it does not remove the need for careful write batching and conflict rules on shared mailboxes.
 

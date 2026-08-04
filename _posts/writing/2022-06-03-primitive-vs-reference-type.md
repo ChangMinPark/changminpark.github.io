@@ -1,5 +1,6 @@
 ---
 title: "Primitive vs Reference Types: Memory, Boxing, and Kotlin Nulls"
+excerpt: "Int vs Int? and boxing bugs after R8. What a variable actually holds on Android Kotlin/Java."
 date: 2022-06-03 12:45:00
 tags: [Writing, Systems]
 draft: false

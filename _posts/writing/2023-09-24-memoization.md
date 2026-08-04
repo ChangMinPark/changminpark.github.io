@@ -1,5 +1,6 @@
 ---
 title: "Memoization: Cache the Result, Not the Algorithm"
+excerpt: "Same inputs, same answer — stop recomputing on every scroll frame. Memoization as production caching, not interview DP."
 date: 2023-09-24 12:00:00
 tags: [Writing, Systems]
 draft: false
@@ -7,7 +8,7 @@ draft: false
 
 ## When the same work runs twice
 
-The first time I memoized something outside a LeetCode tab, it was not for Fibonacci. A mail feature needed to resolve a stable display label from a long chain of IDs — contacts, aliases, domain rules — on every list scroll frame. The resolver was pure: same inputs, same string out. Profiling showed the same `(userId, threadId)` pairs recomputing dozens of times per second. The fix was not a faster algorithm; it was **remembering answers** for keys we had already paid for.
+The first time memoization mattered outside a LeetCode tab, it was not for Fibonacci. For example, in a mail app a feature may need to resolve a stable display label from a long chain of IDs — contacts, aliases, domain rules — on every list scroll frame. The resolver is pure: same inputs, same string out. Profiling often shows the same `(userId, threadId)` pairs recomputing dozens of times per second. The fix is not a faster algorithm; it is **remembering answers** for keys already paid for.
 
 That is **memoization**: wrap a function so repeated calls with the same arguments return a cached result instead of recomputing. It is the technique behind many dynamic-programming wins, but you do not need a DP table on the wall to use it in production code.
 

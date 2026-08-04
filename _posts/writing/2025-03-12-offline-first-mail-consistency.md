@@ -1,5 +1,6 @@
 ---
 title: "Offline-First Mail: Consistency Is a UX Decision"
+excerpt: "Offline compose chooses availability over strong consistency. Draft conflicts, sync tokens, and honest UI when devices diverge."
 date: 2025-03-12 12:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -58,7 +59,7 @@ Two devices editing the same draft is where “eventually consistent” becomes 
 2. **Draft revision / etag** — second device must merge or fork (“keep both”) when versions diverge
 3. **Single active editor lease** — rare on mobile; fights the offline-first goal
 
-At Mail scale I care less about inventing a novel CRDT than about **honest UI**: pending sync affordances, conflict surfaces when needed, and never silently dropping the longer draft. Cross-device read-your-writes is a different promise than same-device; product copy and sync order should admit that.
+At mail scale, inventing a novel CRDT usually matters less than **honest UI**: pending sync affordances, conflict surfaces when needed, and never silently dropping the longer draft. Cross-device read-your-writes is a different promise than same-device; product copy and sync order should admit that.
 
 ## Incremental sync, push, and poll
 

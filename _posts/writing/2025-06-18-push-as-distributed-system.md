@@ -1,5 +1,6 @@
 ---
 title: "Push Is a Distributed System, Not a FCM Call"
+excerpt: "FCM.send is not a push architecture. Collapse keys, priority, payloads, and failover as an explicit distributed design."
 date: 2025-06-18 12:00:00
 tags: [Writing, Distributed]
 draft: false

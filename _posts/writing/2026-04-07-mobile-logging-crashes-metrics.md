@@ -1,5 +1,6 @@
 ---
 title: "Mobile Logs, Crashes, and Metrics: Pick Signals That Decide"
+excerpt: "More telemetry is not more control. How to pick logs, crashes, and metrics that actually decide ship/fix calls on mobile."
 date: 2026-04-07 09:40:00
 tags: [Writing, Android]
 draft: false

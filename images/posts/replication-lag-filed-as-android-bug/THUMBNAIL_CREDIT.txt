@@ -1,1 +1,2 @@
-SVG: two phones out of sync; lag mislabeled as Android bug.
+User-provided thumbnail from Desktop/thumbnails/Replication Lag Filed as an Android Bug.png
+Cover-cropped to 250x170 for Writing list.

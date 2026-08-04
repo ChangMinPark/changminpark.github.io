@@ -1,5 +1,6 @@
 ---
 title: "Retry Storms: When Your Own Clients DDoS You"
+excerpt: "Recovery traffic can outpace the outage. Jitter, caps, and breakers so your own fleet is not the DDoS."
 date: 2024-06-04 12:00:00
 tags: [Writing, Distributed]
 draft: false

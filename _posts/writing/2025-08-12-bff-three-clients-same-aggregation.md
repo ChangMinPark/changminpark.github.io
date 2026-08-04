@@ -1,5 +1,6 @@
 ---
 title: "Three Clients, Same Aggregation: Why BFF Shows Up"
+excerpt: "Android, iOS, and web should not each reassemble the same list model. When a BFF earns its keep — and what it costs."
 date: 2025-08-12 12:00:00
 tags: [Writing, Distributed]
 draft: false

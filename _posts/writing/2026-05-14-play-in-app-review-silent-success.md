@@ -1,5 +1,6 @@
 ---
 title: "In-App Review Returned Success — The Dialog Never Showed"
+excerpt: "Play can return success while the review dialog never appears. How to separate app bugs from store-side review outages before you ship a panic fix."
 date: 2026-05-14 11:35:00
 tags: [Writing, Android]
 draft: false
@@ -70,7 +71,7 @@ Before you rewrite the integration, prove where the break lives.
 
 **2. Separate client races from silent no-UI.** A different failure class is real app bugs — e.g. launching after the `Activity` is gone, or racing configuration changes into NPEs in wrappers. Those usually leave exceptions or obvious lifecycle smells. The April bug left **success and silence**.
 
-**3. Compare against Play-side expectations.** On a large mail client we treat Play Core as an untrusted dependency: when ratings telemetry diverges from session success, the question is not “did we call the API” but “did Play keep its side of the contract.” For this incident I **repackaged / decompiled the Play review libraries**, walked the **in-app review request call path**, and checked **call signatures** against public / AOSP-shaped expectations. The signatures and short-circuit timing matched a **Play-internal** failure to present UI — not a missing `launchReviewFlow` from the app. That is the difference between shipping a panicked workaround and waiting for a store update.
+**3. Compare against Play-side expectations.** On a large app — for example, a mail client — treat Play Core as an untrusted dependency: when ratings telemetry diverges from session success, the question is not “did the app call the API” but “did Play keep its side of the contract.” For this incident I **repackaged / decompiled the Play review libraries**, walked the **in-app review request call path**, and checked **call signatures** against public / AOSP-shaped expectations. The signatures and short-circuit timing matched a **Play-internal** failure to present UI — not a missing `launchReviewFlow` from the app. That is the difference between shipping a panicked workaround and waiting for a store update.
 
 **4. Use a *test-only* store rollback carefully.** Some developers restored the dialog on QA devices by uninstalling Play Store updates (factory Play). That is a **lab** signal that the store binary mattered. It is not a user-facing fix.
 

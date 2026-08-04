@@ -1,5 +1,6 @@
 ---
 title: "One Telemetry Story Across Client and Server"
+excerpt: "Three dashboards disagree while users say it is broken. One telemetry story across phone and backend."
 date: 2025-04-02 12:00:00
 tags: [Writing, Distributed]
 draft: false

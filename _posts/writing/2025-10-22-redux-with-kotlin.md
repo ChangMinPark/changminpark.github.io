@@ -1,5 +1,6 @@
 ---
 title: "Redux on Android: When Unidirectional State Is Worth the Ceremony"
+excerpt: "Racey ViewModel mutations are order bugs, not syntax bugs. When unidirectional state ceremony pays for itself on Android."
 date: 2025-10-22 12:00:00
 tags: [Writing, Android]
 draft: false

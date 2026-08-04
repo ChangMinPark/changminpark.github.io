@@ -1,5 +1,6 @@
 ---
 title: "Android FE Architecture History: MVC to Compose"
+excerpt: "From God Activities to Compose: how MVC, MVP, MVVM, MVI, and declarative UI change where state and side effects live."
 date: 2026-03-16 12:00:00
 tags: [Writing, Android]
 draft: false

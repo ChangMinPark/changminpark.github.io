@@ -1,5 +1,6 @@
 ---
 title: "The Overnight Agent PR Fantasy"
+excerpt: "Wake-up-to-a-green-PR is mostly fantasy. Overnight agents need verify loops, narrow scopes, and humans who still own the merge."
 date: 2026-01-28 09:00:00
 tags: [Writing, Agents]
 draft: false

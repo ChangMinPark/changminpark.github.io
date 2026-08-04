@@ -1,5 +1,6 @@
 ---
 title: "Subagents That Argue While You Pay for Both"
+excerpt: "Parallel research children burn tokens and contradict each other. When subagents help — and when one careful thread wins."
 date: 2025-11-06 10:30:00
 tags: [Writing, Agents]
 draft: false
@@ -9,7 +10,7 @@ draft: false
 
 You ask for a focused fix in one Gradle module. The agent spawns three “research” children: one maps Navigation, one greps for `ViewModel`, one “audits” a neighboring sync package because the name sounded related. Ten minutes later you have three confident summaries that contradict each other on where state lives, a parent that merges them into a wrong plan, and a token bill that would have covered a careful single-threaded edit.
 
-I have seen this in personal IDE agent setups on large Android trees — not as a Yahoo Mail ops practice. Subagents are sold as speed. On a monorepo they are often a **context-budget tool**, and a cost multiplier when you spawn them for the wrong reasons.
+I have seen this in personal IDE agent setups on large Android trees. Subagents are sold as speed. On a monorepo they are often a **context-budget tool**, and a cost multiplier when you spawn them for the wrong reasons.
 
 ## What actually goes wrong
 

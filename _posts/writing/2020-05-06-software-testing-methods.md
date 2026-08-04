@@ -1,5 +1,6 @@
 ---
 title: "Software Testing Methods"
+excerpt: "Method choice is a budget. Match fuzz, UI, and unit evidence to the failure you actually fear."
 date: 2020-05-06 16:45:00
 tags: [Writing, Testing]
 draft: false

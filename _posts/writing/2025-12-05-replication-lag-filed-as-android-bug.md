@@ -1,5 +1,6 @@
 ---
 title: "Replication Lag Filed as an Android Bug"
+excerpt: "Send succeeds, refresh hides the message, Android gets the ticket. Separate freshness classes so lag is not misfiled as a client bug."
 date: 2025-12-05 12:00:00
 tags: [Writing, Distributed]
 draft: false
@@ -50,7 +51,7 @@ Load-balancer stickiness pins a user to an **app instance**, not to “always re
 - Or return a **version / LSN-style token** on write; subsequent reads carry `X-Min-Read-…` and wait or redirect until the replica is past that point
 - Size the window against **p99 lag under load**, not the peaceful median — batch jobs and failovers stretch the gap
 
-I will not quote internal Yahoo replica metrics. Qualitatively: lag that is fine for global inbox browse is not fine for “I just sent this.” Product paths need different freshness classes.
+Qualitatively: lag that is fine for global inbox browse is not fine for “I just sent this.” Product paths need different freshness classes.
 
 | Read class | Example | Freshness need |
 |------------|---------|----------------|

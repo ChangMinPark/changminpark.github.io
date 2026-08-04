@@ -1,1 +1,2 @@
-SVG: client + server feeding three disagreeing dashboards.
+User-provided thumbnail from Desktop/thumbnails/One Telemetry Story Across Client and Server .avif
+Cover-cropped to 250x170 for Writing list.

@@ -1,5 +1,6 @@
 ---
 title: "Multi-Region Reality for Mobile Users"
+excerpt: "The phone moved; the control plane did not. Region affinity, latency, and what mobile users actually feel."
 date: 2025-02-27 12:00:00
 tags: [Writing, Distributed]
 draft: false

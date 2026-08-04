@@ -1,1 +1,2 @@
-SVG: push as multi-hop distributed pipeline, not one FCM call.
+User-provided thumbnail from Desktop/thumbnails/Push Is a Distributed System, Not a FCM Call .png
+Cover-cropped to 250x170 for Writing list.
