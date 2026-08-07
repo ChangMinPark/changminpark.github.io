@@ -1,0 +1,2 @@
+thumbnail.png: cover-crop (250×170) of github-actions-outage.jpg
+github-actions-outage.jpg: generated in the style of Desktop/github-hacked.jpg (red crisis / glitch GitHub phone aesthetic) for the Actions outage post.

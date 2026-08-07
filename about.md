@@ -33,7 +33,7 @@ I'm a senior Android engineer and interested in:
 
 **Senior Software Engineer** (Feb 2023 – Present), Yahoo Mail for Android
 
-- Serve on the Mail Client Platforms team, owning CI/CD pipelines, release cycle management, production crash triage, architectural improvements, and development-environment support
+- Serve on the Mail Client Platforms team, owning CI/CD pipelines, release cycle management, production crash triage, SDK integration, architectural improvements, and development-environment support
 - Built and patented lightweight **on-device AI for hyper-personalized** in-app experiences (U.S. Patent App. 2026)—behavioral signals, local training, and gated actions with no server dependency for personalization
 - Led Jetpack Compose migration of the highest-traffic Mail surfaces (list, compose, attachments, sidebar), improving architecture, performance, and engagement
 
@@ -45,7 +45,7 @@ I'm a senior Android engineer and interested in:
 **Platform ownership**
 
 - CI/CD pipelines and release cycle management for Yahoo Mail Android
-- Production crash triage, architectural improvements, and development-environment support
+- Production crash triage, SDK integration, architectural improvements, and development-environment support
 
 **Lightweight on-device AI for hyper-personalized mobile experiences** (U.S. Patent Application, 2026)
 
