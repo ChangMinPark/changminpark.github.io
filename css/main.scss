@@ -629,3 +629,46 @@ html.theme-dark .theme-toggle {
     bottom: 1rem;
   }
 }
+
+/* Collapsed prerequisites (filled summary bar) at top of Writing posts */
+.post-prereq {
+  margin: 0 0 1.75em;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.post-prereq > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.7em 1em;
+  font-weight: 600;
+  color: var(--color-heading);
+  background: var(--color-bg-elevated, rgba(127, 127, 127, 0.1));
+}
+.post-prereq > summary::-webkit-details-marker {
+  display: none;
+}
+.post-prereq > summary::before {
+  content: "▸";
+  margin-right: 0.45em;
+  color: var(--color-accent);
+}
+.post-prereq[open] > summary::before {
+  content: "▾";
+}
+.post-prereq__body {
+  padding: 0.75em 1em 1em;
+  border-top: 1px solid var(--color-border);
+}
+.post-prereq__hint {
+  margin: 0 0 0.65em;
+  font-size: 0.92em;
+  color: var(--color-muted);
+}
+.post-prereq__body ul {
+  margin: 0;
+  padding-left: 1.25em;
+}
+.post-prereq__body li {
+  margin: 0.35em 0;
+}
