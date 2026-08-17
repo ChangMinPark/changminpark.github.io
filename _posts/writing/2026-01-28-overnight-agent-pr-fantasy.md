@@ -6,6 +6,18 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>background / cloud / overnight agents</strong>, <strong>worktrees</strong>, or <strong>unsupervised agent runs</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">Effective harnesses for long-running agents (Anthropic)</a> — multi-session agents, clean state, progress artifacts between windows</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — autonomy needs verifiers and human gates for irreversible steps</li>
+      <li><a href="https://cursor.com/docs/hooks">Cursor docs — Hooks</a> — stop and shell hooks as the inner “don’t ship trash while you sleep” layer</li>
+    </ul>
+  </div>
+</details>
+
 ## You closed the laptop on a green fantasy
 
 The pitch is irresistible: leave a coding agent with a plan, a branch, and CI access; wake up to a ready PR. Async runners and “overnight” CLIs exist for a reason — [unattended queues](https://github.com/a20185/OvernightAgent), [PR shepherds](https://github.com/jonathanong/pr-shepherd) that interpret failing checks, worktree isolation so your main checkout stays clean.

@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Room, DataStore, SQLite WAL, or WorkManager</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/training/data-storage/room">Room</a> — typed SQLite layer on Android</li>
+      <li><a href="https://developer.android.com/topic/libraries/architecture/datastore">DataStore</a> — preferences / proto storage vs SharedPreferences</li>
+      <li><a href="https://www.sqlite.org/wal.html">SQLite WAL</a> — write-ahead logging and readers vs writers</li>
+      <li><a href="https://developer.android.com/topic/libraries/architecture/workmanager">WorkManager</a> — durable background work for sync</li>
+    </ul>
+  </div>
+</details>
+
 ## “We have a cache” is not a latency budget
 
 Inbox open, scroll, search, and send all fail differently when data lives on the wrong tier. Teams add Room, then a memory cache, then another disk layer — and still hitch on first paint because sync work steals the frame after the user flicked the list. On a mail client, storage is a **product surface**: where each byte lives decides whether the gesture feels instant.

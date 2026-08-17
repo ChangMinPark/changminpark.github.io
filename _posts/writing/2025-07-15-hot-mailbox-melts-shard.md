@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>sharding, hot keys, cache-aside, or thundering herds</strong> are new.</p>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/sharding">Sharding</a> — partitioning data by key</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside">Cache-Aside</a> — first shield for hot reads</li>
+      <li><a href="https://en.wikipedia.org/wiki/Thundering_herd_problem">Thundering herd / stampede</a> — many clients missing cache together</li>
+      <li><a href="https://redis.io/docs/latest/develop/reference/keyspecs/">Hot keys (Redis glossary-style)</a> — why one key can melt a shard</li>
+    </ul>
+  </div>
+</details>
+
 ## One inbox, everyone refreshing
 
 Sharding by mailbox id looks fair on a whiteboard: hash the key, spread load, sleep well. Then a celebrity account, a shared support inbox, or a viral thread lands on one shard. Reads concentrate. Tail latency climbs for every *other* mailbox that happens to share that partition. The cluster is “balanced” by key count and on fire by request rate.

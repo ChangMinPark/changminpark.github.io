@@ -6,6 +6,18 @@ tags: [Writing, DevEx]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>ASTs</strong>, <strong>CI checks</strong>, or <strong>format-on-save vs lint-on-CI</strong> are new.</p>
+    <ul>
+      <li><a href="https://prettier.io/docs/en/comparison.html">Prettier — comparison with linters</a> — style machines vs correctness rules</li>
+      <li><a href="https://eslint.org/docs/latest/use/core-concepts/">ESLint core concepts</a> — lint as configurable static analysis over an AST</li>
+      <li><a href="https://kotlinlang.org/docs/coding-conventions.html">Kotlin coding conventions</a> — what a formatter is allowed to rewrite vs what a reviewer still owns</li>
+    </ul>
+  </div>
+</details>
+
 ## The symptom is the diff, not the bug
 
 Reviewing a Kotlin change last month, half the lines were indentation and import order. The logic was fine; the author had run a different IDE formatter than the rest of the team. Another PR failed CI on a complexity warning in legacy code nobody touched — except the linter had never been enforced on that module before. Same toolchain family, opposite outcomes: one tool cleaned noise, the other blocked a release over style-adjacent rules.

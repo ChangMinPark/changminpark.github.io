@@ -6,6 +6,18 @@ tags: [Writing, Testing]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>user studies</strong>, <strong>hypotheses</strong>, or <strong>qualitative vs quantitative evidence</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.nngroup.com/articles/quant-vs-qual/">Quantitative vs. Qualitative Usability Testing (NN/g)</a> — numbers vs reasons; when each answers a different question</li>
+      <li><a href="https://www.nngroup.com/articles/which-ux-research-methods/">When to Use Which UX Research Method (NN/g)</a> — method as a function of what you still do not know</li>
+      <li><a href="https://www.interaction-design.org/literature/topics/qualitative-research">Qualitative research (IxDF)</a> — interviews, observation, and language as data</li>
+    </ul>
+  </div>
+</details>
+
 ## Why the split matters before you collect data
 
 The fastest way to waste a user study is to pick the wrong kind of evidence first. I learned that building [Mimic]({{ site.baseurl }}/mimic): we could replay thousands of UI event sequences across Android versions and count how often a layout diverged — but the number alone did not explain *why* a vendor skin broke a gesture or which developer assumption caused the mismatch. Quantitative runs told us **how often**; qualitative sessions with engineers told us **what to instrument next**.

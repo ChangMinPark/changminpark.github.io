@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>OpenTelemetry, trace context, correlation IDs, or ANR signals</strong> are new.</p>
+    <ul>
+      <li><a href="https://opentelemetry.io/docs/concepts/signals/">OpenTelemetry concepts</a> — traces, metrics, logs as signals</li>
+      <li><a href="https://www.w3.org/TR/trace-context/">W3C Trace Context</a> — how `traceparent` ties client → server spans</li>
+      <li><a href="https://developer.android.com/topic/performance/vitals/anr">ANRs</a> — client freezes as a vital</li>
+      <li><a href="https://firebase.google.com/docs/crashlytics">Firebase Crashlytics</a> — crash/ANR reporting pipeline many apps use</li>
+    </ul>
+  </div>
+</details>
+
 ## Users say it's broken; three dashboards disagree
 
 Play Console shows a mild crash uptick. Backend latency is flat. Product analytics says "send success" is fine. Support pastes a screenshot of a spinner that never ends. Nobody is lying — they are looking at **different signals that do not share an ID**. The APK, the API gateway, and the store each tell a partial story. Without a correlation key that survives the hop from phone to backend, you triage by vibe.

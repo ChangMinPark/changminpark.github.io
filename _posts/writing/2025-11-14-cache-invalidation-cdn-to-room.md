@@ -6,6 +6,20 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>CDN invalidation, OkHttp/ETag caches, Room InvalidationTracker, or stampedes</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching">HTTP caching</a> — freshness, validators, revalidation</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a> — conditional requests for “did it change?”</li>
+      <li><a href="https://square.github.io/okhttp/features/caching/">OkHttp cache</a> — on-device HTTP response cache</li>
+      <li><a href="https://developer.android.com/reference/androidx/room/InvalidationTracker">Room — InvalidationTracker</a> — when local DB observers refresh</li>
+      <li><a href="https://en.wikipedia.org/wiki/Cache_stampede">Cache stampede</a> — mass miss after expiry</li>
+    </ul>
+  </div>
+</details>
+
 ## Same bug, four layers
 
 A user changes their avatar. Support sends a screenshot of the old face on the message list. Backend swears the profile write committed. CDN purge “completed.” The Android ticket still says *UI not updating*. You are not looking at four bugs. You are looking at **one invalidation story** that stops at the first layer that still holds a copy.

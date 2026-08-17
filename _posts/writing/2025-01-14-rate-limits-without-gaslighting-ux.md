@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>HTTP 429, Retry-After, or token-bucket limiting</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">HTTP 429 Too Many Requests</a> — the status clients must handle</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After">Retry-After header</a> — when to try again</li>
+      <li><a href="https://en.wikipedia.org/wiki/Token_bucket">Token bucket (rate limiting)</a> — common server-side limiter mental model</li>
+      <li><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-ratelimit-headers">Rate limit headers (IETF draft overview)</a> — communicating budgets to clients</li>
+    </ul>
+  </div>
+</details>
+
 ## The spinner that lied
 
 A user taps Send on a mail compose screen. The button greys out. A circular progress indicator spins for twelve seconds. Then a toast: "Something went wrong." Support gets a ticket. Backend logs show a clean `429 Too Many Requests` with `Retry-After: 8`. The client treated capacity protection like a random outage, burned the user's attention, and taught them nothing about when to try again.

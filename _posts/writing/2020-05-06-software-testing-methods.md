@@ -6,6 +6,20 @@ tags: [Writing, Testing]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>fuzzing</strong>, <strong>concolic / symbolic execution</strong>, or <strong>unit vs UI tests</strong> are new.</p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Fuzzing">Fuzzing</a> — random/invalid inputs to surface crashes; a major method in this post</li>
+      <li><a href="https://en.wikipedia.org/wiki/Concolic_testing">Concolic testing</a> — concrete + symbolic paths; the method the opening says UI suites miss</li>
+      <li><a href="https://developer.android.com/training/testing">Test apps on Android</a> — local unit vs instrumented vs UI tests</li>
+      <li><a href="https://martinfowler.com/articles/practical-test-pyramid.html">The Practical Test Pyramid (Fowler)</a> — cheap checks vs slow UI; what each layer can prove</li>
+      <li><a href="{{ site.baseurl }}/white-box-black-box-gray-box-testing">White Box, Black Box, and Gray Box Testing</a> — access model vs method choice</li>
+    </ul>
+  </div>
+</details>
+
 ## Why method choice is a budget decision
 
 A green CI badge does not mean your Android build is safe to ship. I have seen fuzz passes and hundred-case UI suites miss production failures — vendor-specific rotation bugs, concolic-path-level logic errors, boundary values at `Integer.MAX_VALUE` — because the team used one cheap method everywhere. Each testing technique buys a different kind of confidence at a different cost. The engineering question is not "did we test?" but **which failure class earns the next hour of automation**.

@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Play In-App Review or Play Core Task APIs</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/guide/playcore/in-app-review">In-app reviews (Play)</a> — what the API guarantees (and does not)</li>
+      <li><a href="https://developer.android.com/reference/com/google/android/play/core/review/ReviewManager">ReviewManager API</a> — request/launch review flow</li>
+      <li><a href="https://developer.android.com/guide/playcore">Play Core libraries</a> — Task-based async Play APIs</li>
+      <li><a href="https://developer.android.com/guide/playcore/in-app-review/test">Test in-app reviews</a> — how to verify without production quotas</li>
+    </ul>
+  </div>
+</details>
+
 ## Ratings fell. Installs did not.
 
 Around **21 April 2026**, Play Console inbound reviews for many apps fell off a cliff — reports of **60–80%** drops were common — while installs and DAU looked normal. The first instinct is always the same: we broke the prompt, we hit quota, we shipped a bad funnel. For teams that rely on in-app review for ASO, that instinct burns days.

@@ -6,6 +6,19 @@ tags: [Writing, Linux]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>zombie (defunct) processes</strong>, <strong>orphans</strong>, or <strong>fork/wait</strong> are new.</p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Zombie_process">Zombie process</a> — exited, still in the table until the parent waits; <code>kill -9</code> does nothing</li>
+      <li><a href="https://en.wikipedia.org/wiki/Orphan_process">Orphan process</a> — child still running after the parent is gone (reparented to init)</li>
+      <li><a href="https://man7.org/linux/man-pages/man2/wait.2.html">wait(2)</a> — how a parent reads exit status and reaps the child</li>
+      <li><a href="https://man7.org/linux/man-pages/man2/fork.2.html">fork(2)</a> — creating a child; why parent vs child (and PPID) matter</li>
+    </ul>
+  </div>
+</details>
+
 ## The ps line that will not die
 
 You run `ps aux | grep my-server` and see `<defunct>` or a state column of `Z`. `kill -9` does nothing. Or the opposite: a worker keeps running after its supervisor crashed, PPID now `1`. Both look like “something is wrong with processes,” but the fix paths diverge completely — one is a **parent that never reaped**, the other is a **child that outlived its parent**.

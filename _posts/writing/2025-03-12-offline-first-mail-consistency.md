@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>CAP, PACELC, read-your-writes, or sync tokens</strong> are new.</p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/CAP_theorem">CAP theorem</a> — consistency vs availability under partition</li>
+      <li><a href="https://en.wikipedia.org/wiki/PACELC_theorem">PACELC</a> — what systems trade when the network is fine</li>
+      <li><a href="https://developer.android.com/training/data-storage/room">Room</a> — on-device SQLite persistence Android apps use</li>
+      <li><a href="https://jepsen.io/consistency">Read-your-writes consistency</a> — seeing your own updates after a write</li>
+    </ul>
+  </div>
+</details>
+
 ## The draft that vanished between phones
 
 You edit a reply on the train. Radio drops. The UI still shows the text — good. Later you open the same account on a tablet and the draft is an older version, or gone, or duplicated after sync. Nobody “lost” a database row in the dramatic sense. The system chose **availability** while partitioned, then paid the bill when devices reconverged.

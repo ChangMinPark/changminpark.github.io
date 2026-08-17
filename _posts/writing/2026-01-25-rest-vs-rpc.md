@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>REST as an architectural style</strong>, <strong>RPC</strong>, or <strong>HTTP methods/URLs</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Fielding — REST (ch. 5)</a> — resources and uniform interface, not “JSON over GET”</li>
+      <li><a href="https://grpc.io/docs/what-is-grpc/core-concepts/">gRPC core concepts</a> — RPC as named procedures, often on HTTP/2</li>
+      <li><a href="https://en.wikipedia.org/wiki/Remote_procedure_call">Remote procedure call</a> — the older “call a function on another process” model REST is an alternative to</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">HTTP overview (MDN)</a> — methods, URLs, status codes; the shared pipe both ride</li>
+    </ul>
+  </div>
+</details>
+
 ## “Is this a REST API or an RPC?”
 
 Design reviews often treat **REST** and **RPC** as rival products. They are closer to rival **vocabularies** for the same problem: how should one process ask another for work over the network?

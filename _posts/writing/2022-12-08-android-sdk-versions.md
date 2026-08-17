@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>compileSdk / minSdk / targetSdk</strong>, <strong>API levels</strong>, or <strong>Play target API requirements</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/build">Configure your build</a> — the three Gradle numbers this post treats as contracts</li>
+      <li><a href="https://developer.android.com/google/play/requirements/target-sdk">Meet Google Play’s target API level</a> — why a CI-green APK still fails Play upload</li>
+      <li><a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element">uses-sdk</a> — min / target / max as platform behavior, not just integers</li>
+      <li><a href="https://developer.android.com/about/versions">Android version history</a> — API level ↔ platform version map</li>
+    </ul>
+  </div>
+</details>
+
 ## The release that broke on a newer phone
 
 A build can pass CI, ship to internal testers, and still fail the moment someone installs it on a device running a newer Android version. Often the root cause is not a logic bug — it is a **SDK version contract** nobody updated: `compileSdk` left behind, `targetSdk` below Play’s requirement, or a behavior change that only activates when `targetSdkVersion` crosses a platform threshold.

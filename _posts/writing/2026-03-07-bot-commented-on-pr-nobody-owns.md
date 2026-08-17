@@ -6,6 +6,19 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>PR review bots</strong>, <strong>event-driven CI agents</strong>, or <strong>ownership of automation</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.huuhka.net/building-your-own-pr-reviewer-with-coding-agents/">Building your own PR reviewer with coding agents</a> — event-driven control plane: model judges, code owns workflow</li>
+      <li><a href="https://dev.to/joshua_dyson/ai-agents-inside-cicd-how-we-automated-pr-triage-and-reduced-review-bottlenecks-c16">AI agents inside CI/CD</a> — triage assist without autonomous merge</li>
+      <li><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">About code owners</a> — who is supposed to own a path; the gap when a bot comments and nobody does</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — keep merge authority with humans</li>
+    </ul>
+  </div>
+</details>
+
 ## Public wrongness has a different cost
 
 You open a PR. Before a human looks, a CI agent posts twelve comments: three are useful, four restate the lint job, five are confidently wrong about a module boundary that exists only in the bot's training cut-off. The author spends twenty minutes arguing with a username that has no Slack handle. Reviewers skim past the noise and miss the one real finding. Or worse — they treat the bot as authoritative and ship a "fix" that breaks the build.
@@ -81,6 +94,4 @@ Ship event agents only when you can answer: who owns false positives, what is th
 
 ## References
 
-- [Building your own PR reviewer with coding agents](https://www.huuhka.net/building-your-own-pr-reviewer-with-coding-agents/) — event-driven control plane; model owns judgment, code owns workflow
 - [pr-shepherd](https://github.com/jonathanong/pr-shepherd) — deterministic PR orchestration and bot-noise classification for agentic tools
-- [AI agents inside CI/CD](https://dev.to/joshua_dyson/ai-agents-inside-cicd-how-we-automated-pr-triage-and-reduced-review-bottlenecks-c16) — triage assist without autonomous merge authority

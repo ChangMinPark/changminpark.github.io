@@ -6,6 +6,19 @@ tags: [Writing, Security]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>UID isolation, SELinux, scoped storage, or permissions</strong> are new.</p>
+    <ul>
+      <li><a href="https://source.android.com/docs/security/app-sandbox">Application sandbox</a> — UID isolation between apps</li>
+      <li><a href="https://source.android.com/docs/security/features/selinux">SELinux on Android</a> — mandatory access control beyond Unix permissions</li>
+      <li><a href="https://developer.android.com/guide/topics/permissions/overview">App permissions overview</a> — runtime grants vs sandbox boundaries</li>
+      <li><a href="https://developer.android.com/about/versions/11/privacy/storage">Scoped storage</a> — how shared storage access changed</li>
+    </ul>
+  </div>
+</details>
+
 ## The symptom that looks like a bug
 
 A teammate once insisted a mail client “could not see” another app’s attachment cache — as if Android were broken. It was not. **Two apps with different Linux UIDs cannot read each other’s private directories.** That is the sandbox working. Confusion started because a debug build on an older test image used a shared certificate path that blurred the mental model.

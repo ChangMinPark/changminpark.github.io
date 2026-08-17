@@ -9,12 +9,13 @@ draft: false
 <details class="post-prereq" markdown="0">
   <summary>Prerequisites</summary>
   <div class="post-prereq__body">
-    <p class="post-prereq__hint">Read these first if <strong>containers</strong>, <strong>Docker images</strong>, or <strong>orchestration</strong> are new.</p>
+    <p class="post-prereq__hint">Read these first if <strong>containers</strong>, <strong>Pods</strong>, <strong>Services</strong>, or <strong>the hostname the phone calls</strong> are new.</p>
     <ul>
-      <li><a href="https://docs.docker.com/get-started/docker-overview/">Docker overview</a> — images and containers</li>
-      <li><a href="https://kubernetes.io/docs/concepts/overview/">Kubernetes overview</a> — managing containerized workloads</li>
-      <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployments</a> — replicas and rolling updates</li>
-      <li><a href="https://docs.docker.com/compose/">Docker Compose</a> — several services on one machine</li>
+      <li><a href="https://docs.docker.com/get-started/docker-overview/">Docker overview</a> — images as the repeatable process the phone never runs itself</li>
+      <li><a href="https://kubernetes.io/docs/concepts/overview/">Kubernetes overview</a> — how a fleet of those images stays up</li>
+      <li><a href="https://kubernetes.io/docs/concepts/workloads/pods/">Pods</a> — the running process(es) behind one replica</li>
+      <li><a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a> — stable name/IP the app actually calls</li>
+      <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployments</a> — replica count and rolling updates</li>
     </ul>
   </div>
 </details>

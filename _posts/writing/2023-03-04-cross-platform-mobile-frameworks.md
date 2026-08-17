@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>React Native bridge, Flutter rendering, WebView hybrids, or MAUI</strong> are new.</p>
+    <ul>
+      <li><a href="https://reactnative.dev/architecture/overview">React Native — Architecture overview</a> — JS ↔ native bridge / New Architecture</li>
+      <li><a href="https://docs.flutter.dev/resources/architectural-overview">Flutter architectural overview</a> — Dart, engine, Skia/Impeller</li>
+      <li><a href="https://developer.android.com/develop/ui/views/layout/webapps/webview">WebView on Android</a> — embedding web UI in an app</li>
+      <li><a href="https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui">.NET MAUI</a> — single-project cross-platform UI model</li>
+    </ul>
+  </div>
+</details>
+
 ## One codebase — two very different architectures
 
 "Cross-platform" usually means "write once, run on iOS and Android." That promise hides a fork: does your UI run in a **WebView**, or does JavaScript/Dart/C# call into **native widgets** (or draw its own)? Teams that miss this distinction budget for React Native and ship something closer to Cordova — then wonder why scroll and keyboard feel wrong.

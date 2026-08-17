@@ -6,6 +6,19 @@ tags: [Writing, Testing]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>white-box</strong>, <strong>black-box</strong>, <strong>gray-box</strong>, or <strong>test oracles</strong> are new.</p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/White-box_testing">White-box testing</a> — tests that use internal structure (code, control flow)</li>
+      <li><a href="https://en.wikipedia.org/wiki/Black-box_testing">Black-box testing</a> — inputs and observed outputs with no implementation view</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gray-box_testing">Gray-box testing</a> — partial knowledge (the third access model in this post’s title)</li>
+      <li><a href="https://developer.android.com/training/testing">Test apps on Android</a> — unit, instrumentation, and UI tests as different access models</li>
+    </ul>
+  </div>
+</details>
+
 ## Why "how much you know" changes what you find
 
 The same bug can hide or expose itself depending on what the tester is allowed to see. A white-box engineer spots an off-by-one in pagination logic by reading the diff; a black-box suite never reaches that branch because it only taps happy-path buttons; a gray-box on-call engineer correlates a stack trace with a known framework workaround. **Box type is not a maturity ladder** — it is a scope choice tied to oracle, owner, and risk.

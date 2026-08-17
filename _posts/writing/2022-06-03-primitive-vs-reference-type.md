@@ -6,6 +6,20 @@ tags: [Writing, Systems]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>primitives vs objects</strong>, <strong>autoboxing</strong>, or <strong>Kotlin nullability (Int vs Int?)</strong> are new.</p>
+    <ul>
+      <li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Java primitive data types</a> — the value lives in the slot; no object header</li>
+      <li><a href="https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html">Autoboxing and unboxing</a> — <code>int</code> ↔ <code>Integer</code>; the conversion this post’s R8 bugs hide in</li>
+      <li><a href="https://kotlinlang.org/docs/null-safety.html">Kotlin null safety</a> — <code>Int</code> vs <code>Int?</code> and why the nullable form is a reference</li>
+      <li><a href="https://kotlinlang.org/docs/basic-types.html">Kotlin basic types</a> — primitives at the JVM vs wrappers</li>
+      <li><a href="https://developer.android.com/topic/performance/memory">Manage your app’s memory</a> — heap objects, GC, and boxing after R8</li>
+    </ul>
+  </div>
+</details>
+
 ## Why "same variable" stores different things
 
 A bug that only shows up after ProGuard/R8, or only when a nullable `Int?` slips through Compose state, often starts with the same confusion: **what does this variable actually hold?** In Java and Kotlin on Android, the answer depends on whether the type is **primitive** or **reference** — and Kotlin adds nullable wrappers that look like primitives but are not.

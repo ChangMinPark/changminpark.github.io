@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>202 Accepted, idempotency, DLQs, or async pipelines</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202">HTTP 202 Accepted</a> — accepted for processing, not finished</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Idempotent">Idempotency</a> — safe retries on async work</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters">Pipes and Filters</a> — staged async processing</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers">Competing Consumers / queues</a> — workers draining a queue</li>
+    </ul>
+  </div>
+</details>
+
 ## The send button lied
 
 You tap **Send** on a mail compose screen. The UI freezes for a few seconds, then shows success — or worse, a timeout with an ambiguous error. The message may already be on the server. The attachment may still be scanning. Search and analytics never got the event. The user learned one lesson: the request path waited for work that did not need to block trust.

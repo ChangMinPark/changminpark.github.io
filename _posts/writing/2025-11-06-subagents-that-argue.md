@@ -6,6 +6,18 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>subagents</strong>, <strong>multi-agent</strong>, or <strong>orchestration</strong> (many agents) are new.</p>
+    <ul>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — orchestrator / worker patterns; when multiple agents earn their keep</li>
+      <li><a href="https://www.mindstudio.ai/blog/claude-code-sub-agents-explained">MindStudio — Claude Code sub-agents explained</a> — what a subagent is and how parent context is (or isn’t) shared</li>
+      <li><a href="https://cursor.com/docs/hooks">Cursor docs — Hooks (subagent lifecycle)</a> — `subagentStart` / `subagentStop` as harness events around child agents</li>
+    </ul>
+  </div>
+</details>
+
 ## Parallel looked free until the summaries disagreed
 
 You ask for a focused fix in one Gradle module. The agent spawns three “research” children: one maps Navigation, one greps for `ViewModel`, one “audits” a neighboring sync package because the name sounded related. Ten minutes later you have three confident summaries that contradict each other on where state lives, a parent that merges them into a wrong plan, and a token bill that would have covered a careful single-threaded edit.
@@ -80,7 +92,6 @@ Subagents are isolation for noisy reads, not a substitute for knowing which modu
 
 ## References
 
-- [MindStudio — Claude Code sub-agents explained](https://www.mindstudio.ai/blog/claude-code-sub-agents-explained)
 - [DEV — When to delegate vs rule or hook](https://dev.to/rulestack/claude-code-subagents-when-to-delegate-and-when-a-rule-or-hook-is-enough-ajn)
 - [SourceShift — Subagents as a context-budget primitive](https://blog.sourceshift.io/p/subagents-as-a-context-budget-primitive/)
 - [Claude Code Guides — Multi-agent token budgeting](https://claudecodeguides.com/multi-agent-token-budgeting-allocate-subagents/)

@@ -9,12 +9,13 @@ draft: false
 <details class="post-prereq" markdown="0">
   <summary>Prerequisites</summary>
   <div class="post-prereq__body">
-    <p class="post-prereq__hint">Read these first if <strong>knowledge base</strong>, <strong>RAG</strong>, <strong>embeddings</strong>, or <strong>chunking</strong> are new.</p>
+    <p class="post-prereq__hint">Read these first if <strong>RAG</strong>, <strong>chunking</strong>, <strong>embeddings</strong>, or <strong>knowledge bases</strong> are new.</p>
     <ul>
-      <li><a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is RAG? (AWS)</a> — retrieve from an authoritative corpus, then generate; why training data alone is not enough</li>
-      <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html">Understanding RAG (AWS Prescriptive Guidance)</a> — embeddings, vector store, retrieve → augment prompt → generate</li>
-      <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents (Anthropic)</a> — how retrieved (or repo) context competes for the same attention budget</li>
-      <li>[Lewis et al. — RAG for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) (NeurIPS 2020) — original paper that named the pattern</li>
+      <li><a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is RAG? (AWS)</a> — retrieve from an authoritative corpus, then generate</li>
+      <li><a href="https://www.pinecone.io/learn/chunking-strategies/">Chunking strategies (Pinecone)</a> — how you slice the corpus; wrong boundaries → wrong top-<em>k</em></li>
+      <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html">Understanding RAG (AWS Prescriptive Guidance)</a> — embeddings, vector store, retrieve → augment → generate</li>
+      <li><a href="https://arxiv.org/abs/2005.11401">Lewis et al. — RAG for Knowledge-Intensive NLP Tasks</a> (NeurIPS 2020) — original paper that named the pattern</li>
+      <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents (Anthropic)</a> — retrieved (or repo) context competes for the same attention budget</li>
     </ul>
   </div>
 </details>

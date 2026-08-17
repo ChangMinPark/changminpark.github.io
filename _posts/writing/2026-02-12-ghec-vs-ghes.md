@@ -6,6 +6,19 @@ tags: [Writing, DevEx]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>GitHub Enterprise Cloud vs Server</strong>, <strong>Actions on an appliance</strong>, or <strong>GitHub Connect</strong> are new.</p>
+    <ul>
+      <li><a href="https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-for-enterprises">About GitHub for enterprises</a> — Cloud vs Server as two deployments of one plan</li>
+      <li><a href="https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-enterprise-server">About GitHub Enterprise Server</a> — self-hosted appliance, upgrade train, feature lag</li>
+      <li><a href="https://docs.github.com/en/enterprise-server@latest/admin/configuring-settings/configuring-github-connect/about-github-connect">About GitHub Connect</a> — hybrid: GHES talking to github.com for Actions/Dependabot</li>
+      <li><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Understanding GitHub Actions</a> — workflows and runners; what breaks when the control plane is yours</li>
+    </ul>
+  </div>
+</details>
+
 ## The workflow that “worked on GitHub”
 
 You’ve got a tidy Actions workflow: Gradle cache, a matrix, maybe a few marketplace actions pinned by SHA. It runs green on a personal fork. Then someone points the same repo at the company instance and half the jobs never start — no hosted runners, an Actions version lag, or a Dependabot feature that only exists when the appliance can talk to `github.com`.

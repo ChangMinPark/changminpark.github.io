@@ -9,12 +9,12 @@ draft: false
 <details class="post-prereq" markdown="0">
   <summary>Prerequisites</summary>
   <div class="post-prereq__body">
-    <p class="post-prereq__hint">Read these first if <strong>HTTP proxy</strong>, <strong>TLS / HTTPS</strong>, or <strong>MITM debugging</strong> are new.</p>
+    <p class="post-prereq__hint">Read these first if <strong>Charles / SSL proxying</strong>, <strong>Android network security config</strong>, or <strong>TLS</strong> are new.</p>
     <ul>
+      <li><a href="https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/">Charles — SSL certificates</a> — debug CA install; why release builds go silent</li>
+      <li><a href="https://developer.android.com/privacy-and-security/security-config">Android — Network security configuration</a> — user CAs, debug overrides, pinning on the phone path</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/TLS">MDN — TLS</a> — why HTTPS is opaque without a trusted (or debug) CA</li>
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling">MDN — Proxy servers and tunneling</a> — what a proxy hop is</li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/TLS">MDN — TLS</a> — why HTTPS is opaque without trust tricks</li>
-      <li><a href="https://developer.android.com/privacy-and-security/security-config">Android — Network security configuration</a> — user CAs, debug overrides, pinning</li>
-      <li><a href="https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/">Charles — SSL certificates</a> — how SSL proxying installs a debug CA</li>
     </ul>
   </div>
 </details>

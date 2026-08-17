@@ -6,6 +6,19 @@ tags: [Writing, Systems]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>pure functions</strong>, <strong>caching</strong>, or <strong>dynamic programming</strong> are new.</p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Memoization">Memoization</a> — cache results of a function keyed by its arguments</li>
+      <li><a href="https://en.wikipedia.org/wiki/Pure_function">Pure function</a> — same inputs, same output, no hidden store; the precondition for a safe memo table</li>
+      <li><a href="https://en.wikipedia.org/wiki/Dynamic_programming">Dynamic programming</a> — overlapping subproblems; memoization is the top-down shape</li>
+      <li><a href="https://developer.android.com/develop/ui/compose/mental-model">Compose mental model</a> — <code>remember</code> as UI-runtime memoization, not interview DP</li>
+    </ul>
+  </div>
+</details>
+
 ## When the same work runs twice
 
 The first time memoization mattered outside a LeetCode tab, it was not for Fibonacci. For example, in a mail app a feature may need to resolve a stable display label from a long chain of IDs — contacts, aliases, domain rules — on every list scroll frame. The resolver is pure: same inputs, same string out. Profiling often shows the same `(userId, threadId)` pairs recomputing dozens of times per second. The fix is not a faster algorithm; it is **remembering answers** for keys already paid for.

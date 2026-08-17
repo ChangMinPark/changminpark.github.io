@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>app modularization</strong>, <strong>api vs implementation</strong>, or <strong>feature modules</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/topic/modularization">Guide to app modularization</a> — why large Android apps split modules; the debate this post is in</li>
+      <li><a href="https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation">api vs implementation</a> — what leaks across a module boundary (ABI / compile classpath)</li>
+      <li><a href="https://developer.android.com/studio/projects/android-library">Android library modules</a> — app vs library projects in Gradle</li>
+      <li><a href="https://developer.android.com/guide/playcore/feature-delivery">Play Feature Delivery</a> — on-demand / instant feature modules vs ordinary Gradle slices</li>
+    </ul>
+  </div>
+</details>
+
 ## The debate that stalls the roadmap
 
 Every large Android team eventually holds the same meeting: *should we modularize?* Someone draws clean hexagons. Someone else cites build times. Six months later you still have a mega-module — or fifty modules that every feature PR must touch. The failure is rarely “we used Gradle wrong.” It is slicing for **diagram purity** instead of **how the app actually changes**.

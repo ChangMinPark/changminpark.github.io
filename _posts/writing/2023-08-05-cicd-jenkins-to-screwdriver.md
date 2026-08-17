@@ -6,6 +6,19 @@ tags: [Writing, DevEx]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>CI vs CD, Jenkins pipelines, or Android release artifacts</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">CI/CD explained (Atlassian)</a> — integrate, deliver, deploy</li>
+      <li><a href="https://www.jenkins.io/doc/book/pipeline/">Jenkins Pipeline</a> — agents, stages, and job graphs</li>
+      <li><a href="https://developer.android.com/studio/publish/app-signing">App signing</a> — APK/AAB signing before Play</li>
+      <li><a href="https://developer.android.com/guide/app-bundle">Android App Bundle</a> — what an AAB is vs a fat APK</li>
+    </ul>
+  </div>
+</details>
+
 ## Shipping broke before the code did
 
 A release candidate built on a laptop "worked fine." The store build did not — different JDK patch, a stale cache, signing config picked from the wrong properties file. Nobody changed application logic that week; the pipeline did. That gap between **works on my machine** and **works for users** is why CI/CD exists. It is not Agile theater or DevOps rebranding; it is repeatable assembly, test, and promotion with audit trails.

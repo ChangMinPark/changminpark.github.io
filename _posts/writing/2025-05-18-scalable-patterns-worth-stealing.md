@@ -6,6 +6,20 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>BFF, scatter-gather, cache-aside, or pipe-and-filter</strong> are new.</p>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends">Backend for Frontend (BFF)</a> — per-client API aggregation</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation">Gateway Aggregation</a> — fan-in many backends for one client call</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside">Cache-Aside</a> — load cache on miss, invalidate on write</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters">Pipes and Filters</a> — staged processing pipelines</li>
+      <li><a href="https://en.wikipedia.org/wiki/MapReduce">MapReduce (primer)</a> — split → map → shuffle → reduce shape</li>
+    </ul>
+  </div>
+</details>
+
 ## You already ship these — under different names
 
 Interview decks love pattern bingo. Production teams ship the same shapes with boring product names: edge gateways, Room caches, fan-out sync, attachment pipelines, nightly aggregations, workflow runners. Ricky Ho’s 2010 tour of [scalable system design patterns](https://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html) still maps cleanly onto mobile clients and the backends they talk to — if you skip the résumé rename and ask where each pattern already lives.

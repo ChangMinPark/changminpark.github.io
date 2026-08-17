@@ -6,6 +6,18 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>measured slowdown vs perceived speedup</strong>, <strong>assistant vs agent</strong>, or <strong>when not to use AI</strong> are new.</p>
+    <ul>
+      <li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR: early-2025 AI and experienced open-source developer productivity</a> — measured ~19% slowdown vs believing you were faster</li>
+      <li><a href="https://dev.to/aws/5-things-to-avoid-when-working-with-ai-tools-5cld">5 things to avoid when working with AI coding tools</a> — scope, review burden, and context bloat</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — prefer the simplest system that works; agents are not the default</li>
+    </ul>
+  </div>
+</details>
+
 ## Negative expected value is allowed
 
 Not every ticket deserves an agent. That sentence sounds obvious until you watch a team agent-wash a one-line string fix, a confidential design review, or a research spike with no acceptance criteria — then spend longer reviewing the diff than typing the change would have taken.
@@ -69,6 +81,4 @@ Refuse agency on unclear, tiny, confidential, or oracle-free tickets. Keep assis
 
 ## References
 
-- [METR: early-2025 AI and experienced open-source developer productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) — ~19% slowdown vs perceived speedup on familiar repos
 - [Ars Technica summary of the METR study](https://arstechnica.com/ai/2025/07/study-finds-ai-tools-made-open-source-software-developers-19-percent-slower/) — review/prompt/wait overhead eating coding-time savings
-- [5 things to avoid when working with AI coding tools](https://dev.to/aws/5-things-to-avoid-when-working-with-ai-tools-5cld) — scope, review burden, and context bloat

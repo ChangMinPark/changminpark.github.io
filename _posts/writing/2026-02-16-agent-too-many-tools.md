@@ -6,6 +6,19 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>tools</strong>, <strong>MCP</strong>, or <strong>skills</strong> are new.</p>
+    <ul>
+      <li><a href="https://modelcontextprotocol.io/">Model Context Protocol</a> — open standard for connecting agents to external tools and data</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — tools as the agent’s hands; start simple before stacking integrations</li>
+      <li><a href="https://www.anthropic.com/engineering/writing-tools-for-agents">Writing effective tools for AI agents (Anthropic)</a> — clear tool purposes, less overlap, high-signal returns</li>
+      <li><a href="https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview">Anthropic — Agent Skills</a> — reusable procedures loaded on demand (vs always-on MCP sprawl)</li>
+    </ul>
+  </div>
+</details>
+
 ## Twenty plugins, worse judgment
 
 By mid-2025 the pattern was familiar in my own agent setups: wire every MCP server you can find — GitHub, Jira, Datadog, Notion, three browsers, a docs crawler — then wonder why the coding agent flails. It calls the wrong tool, summarizes the wrong dashboard, and spends half the context window reading schemas it will never need. You did not make it smarter. You widened the decision space until correct tool choice became the hard problem.
@@ -85,5 +98,4 @@ Twenty plugins degrade judgment; live access without playbooks confuses hands fo
 ## References
 
 - [The Agent Said Done — and CI Is Red (this site)]({{ site.baseurl }}/agent-done-but-ci-red)
-- [Model Context Protocol](https://modelcontextprotocol.io/)
-- [Anthropic — Agent Skills](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview)
+- [Code execution with MCP (Anthropic)](https://www.anthropic.com/engineering/code-execution-with-mcp) — why loading every MCP definition into context hurts

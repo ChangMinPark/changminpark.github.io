@@ -6,6 +6,19 @@ tags: [Writing, Linux]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>inodes</strong>, <strong>hard links</strong>, or <strong>symbolic links</strong> are new.</p>
+    <ul>
+      <li><a href="https://man7.org/linux/man-pages/man7/inode.7.html">inode(7)</a> — metadata and data blocks live on the inode; names live in directories</li>
+      <li><a href="https://man7.org/linux/man-pages/man2/link.2.html">link(2)</a> — another name for the same inode (hard link)</li>
+      <li><a href="https://man7.org/linux/man-pages/man7/symlink.7.html">symlink(7)</a> — a path pointer, not a second name for the same bytes</li>
+      <li><a href="https://man7.org/linux/man-pages/man1/ln.1.html">ln(1)</a> — the command that creates either kind</li>
+    </ul>
+  </div>
+</details>
+
 ## When two paths are not two files
 
 `ls` shows two filenames; `stat` tells you whether you are looking at one file or a pointer. Mix them up and you get silent data loss (delete the “original” but the hard link still works), broken deploy scripts (symlink target moved), or inode exhaustion (hard links to a directory — not allowed).

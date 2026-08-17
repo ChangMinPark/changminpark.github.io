@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>read replicas, replication lag, or read-your-writes</strong> are new.</p>
+    <ul>
+      <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Read replicas (AWS)</a> — asymptotically fresher copies of a primary</li>
+      <li><a href="https://en.wikipedia.org/wiki/Replication_lag">Replication lag</a> — why a read after write can miss</li>
+      <li><a href="https://jepsen.io/consistency">Read-your-writes</a> — consistency models clients accidentally assume</li>
+      <li><a href="https://en.wikipedia.org/wiki/Eventual_consistency">Eventual consistency</a> — “it will converge” ≠ “it is fresh now”</li>
+    </ul>
+  </div>
+</details>
+
 ## Send, pull to refresh, message gone
 
 The repro is cursed in the best way: send a message, watch “Sent,” pull to refresh, and the thread looks like the send never happened. Ten seconds later it is there. Logs on the phone show a 200. QA cannot reproduce on a quiet staging stack. The ticket lands on Android anyway — *Compose list lost the item* — because that is the surface the reporter can see.

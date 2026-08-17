@@ -6,6 +6,18 @@ tags: [Writing, Testing]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>evals</strong>, <strong>golden tasks</strong>, <strong>trajectories</strong>, or an <strong>eval harness</strong> are new.</p>
+    <ul>
+      <li><a href="https://medium.com/@Micheal-Lanham/how-to-build-an-evaluation-harness-for-your-ai-agent-before-it-books-the-wrong-flight-84de83a47207">How to build an evaluation harness for your AI agent</a> — golden traces, reproducibility, and why demos ≠ ship bar</li>
+      <li><a href="https://visionforgestudio.com/blog/ai-agent-evals-cicd-production-stack">AI agent evals in CI/CD</a> — golden sets, pass^k, wiring checks into pipelines</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — measure and iterate; add complexity only when evals demand it</li>
+    </ul>
+  </div>
+</details>
+
 ## The demo is not the product
 
 You paste a skill or a team agent config into chat. The agent renames a symbol, updates a test, and says done. You merge the config. Two weeks later the same prompt edits the wrong module because someone moved packages, or it "passes" by deleting the assertion it could not satisfy. Nothing in your process caught the regression — you only ever had a happy path in one conversation.
@@ -80,7 +92,5 @@ Promote agent configs the way you promote flaky-test policy: spike in chat, enco
 
 ## References
 
-- [AI agent evals in CI/CD](https://visionforgestudio.com/blog/ai-agent-evals-cicd-production-stack) — golden sets, harnesses, pass^k, CI gates
 - [ReliabilityBench](https://arxiv.org/abs/2601.06112) — consistency, perturbations, and fault injection as production-shaped reliability
 - [CORE: full-path evaluation of LLM agents](https://arxiv.org/abs/2509.20998) — why final-state checks miss unsafe mid-trajectory behavior
-- [How to build an evaluation harness for your AI agent](https://medium.com/@Micheal-Lanham/how-to-build-an-evaluation-harness-for-your-ai-agent-before-it-books-the-wrong-flight-84de83a47207) — golden traces and reproducibility basics

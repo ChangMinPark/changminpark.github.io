@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>remote config, exposure, sticky assignment, or kill switches</strong> are new.</p>
+    <ul>
+      <li><a href="https://martinfowler.com/articles/feature-toggles.html">Feature toggles (Martin Fowler)</a> — flags vs branches; release vs experiment</li>
+      <li><a href="https://firebase.google.com/docs/remote-config">Firebase Remote Config</a> — common mobile remote-parameter path</li>
+      <li><a href="https://developer.android.com/guide/playcore/in-app-updates">Play in-app updates / staged rollout</a> — related “who gets what binary” lever</li>
+      <li><a href="https://www.optimizely.com/optimization-glossary/a-b-testing/">Experimentation exposure</a> — assignment and measuring who saw a variant</li>
+    </ul>
+  </div>
+</details>
+
 ## Three jobs, one muddy word
 
 “Feature flag” on mobile usually collapses three different jobs: a **kill switch**, a **gradual rollout**, and a **scientific experiment**. They share a boolean in a JSON blob and almost nothing else — SLAs, ownership, and tooling differ. Mixing them is how dark launches become un-measurable A/Bs, or how flag evaluation on every list bind becomes a performance bug.

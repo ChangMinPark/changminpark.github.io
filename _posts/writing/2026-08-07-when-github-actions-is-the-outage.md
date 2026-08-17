@@ -6,6 +6,20 @@ tags: [Writing, DevEx]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>GitHub Status</strong>, <strong>Actions runners</strong>, or <strong>required checks as a merge freeze</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.githubstatus.com/">GitHub Status</a> — step zero when every repo’s Actions lies at once</li>
+      <li><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Understanding GitHub Actions</a> — workflows, jobs, and how a runner gets assigned work</li>
+      <li><a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners">About self-hosted runners</a> — your VM is not a full escape from GitHub’s scheduler</li>
+      <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">About protected branches</a> — required checks turn an Actions outage into a merge freeze</li>
+      <li><a href="{{ site.baseurl }}/github-actions-android-pr-gates">GitHub Actions for Android PR gates</a> — what those required checks are supposed to protect</li>
+    </ul>
+  </div>
+</details>
+
 On August 6, 2026, [GitHub Status](https://www.githubstatus.com/) opened an Actions investigation at **15:22 UTC**. Within an hour, workflow runs were failing to start or dying mid-flight, the Actions REST API was erroring, and some workflows saw unexpected rate limits. Capacity stayed constrained for hours. Hosted runners were hit hard; self-hosted runners still saw registration errors and rate limiting. Webhook delivery slowed. Pages, Copilot code review, and Copilot coding agent degraded alongside Actions. Enterprise Importer migrations were paused to help recovery.
 
 By evening, GitHub’s updates named a concrete failure mode: **runners were being assigned jobs that were no longer valid**. Job success rates for runs that could start climbed from roughly **30–40%** earlier in the incident toward **97–99%** after mitigations. Webhook-triggered workflows stayed throttled while queues burned down. A cold Gradle cache does not look like that. A broken **assignment / scheduling path** does.

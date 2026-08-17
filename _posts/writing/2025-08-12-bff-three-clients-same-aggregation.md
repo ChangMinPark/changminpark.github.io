@@ -6,6 +6,18 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>BFF or API aggregation / fan-out</strong> are new.</p>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends">Backends for Frontends</a> — why Android/iOS/web each get a tailored edge</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation">Gateway Aggregation</a> — one client call, many backend calls</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-routing">API Gateway pattern</a> — edge routing vs aggregation</li>
+    </ul>
+  </div>
+</details>
+
 ## Copy-paste composition
 
 Android builds a message-list model: headers, unread badges, ad slots, onboarding nudges, attachment previews. iOS builds the same composition from the same microservices. Web does it again with slightly different pagination. Three teams reinvent the same fan-out, the same null handling, and the same “which field is authoritative?” bugs — then disagree on edge cases in production.

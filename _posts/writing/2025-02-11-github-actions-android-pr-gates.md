@@ -6,6 +6,19 @@ tags: [Writing, DevEx]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>branch protection, required checks, R8, or Gradle modules</strong> are new.</p>
+    <ul>
+      <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">About protected branches</a> — required status checks before merge</li>
+      <li><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">GitHub Actions</a> — workflows as PR gates</li>
+      <li><a href="https://developer.android.com/topic/performance/app-optimization/enable-app-optimization">Shrink, obfuscate, and optimize (R8)</a> — release-time code shrinking</li>
+      <li><a href="https://developer.android.com/studio/projects/android-library">Configure build variants / modules</a> — library modules in a Gradle graph</li>
+    </ul>
+  </div>
+</details>
+
 ## Green checks that mean nothing
 
 On GitHub, Android teams often land in one of two traps: a required check that only runs `assembleDebug`, or a forty-minute matrix nobody trusts. PRs still merge with broken module graphs, Manifest surprises, and “LGTM” from humans who never opened the Gradle diff. Org platforms like Jenkins or Screwdriver matter at release scale — see [Jenkins to Screwdriver]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) — but **day-to-day merge safety** is usually a developer-owned Actions workflow.

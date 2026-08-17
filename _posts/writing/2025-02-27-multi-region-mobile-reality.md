@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>DNS TTL, anycast, sticky sessions, or multi-region failover</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/TTL">DNS TTL</a> — how long clients cache a name → IP mapping</li>
+      <li><a href="https://www.cloudflare.com/learning/cdn/glossary/anycast-network/">Anycast</a> — one address, many locations</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-routing">Session affinity / sticky sessions</a> — why “same region” matters mid-session</li>
+      <li><a href="https://docs.aws.amazon.com/whitepapers/latest/real-time-communication-on-aws/multi-region-architectures.html">Multi-region architectures (AWS)</a> — failover patterns at a glance</li>
+    </ul>
+  </div>
+</details>
+
 ## The phone moved; the control plane did not
 
 A traveler opens your app over airport Wi‑Fi in SFO, then boards a flight and lands on LTE in another metro. DNS once pointed them at `us-west`. Mid-session they are physically closer to `eu-central`, but the process still holds a pooled connection to an IP that is now a bad bet — or worse, a sticky session cookie that insists the old region owns their cart and auth state. Latency climbs. Failover on the backend looks healthy in the dashboard. The user sees timeouts and a mysterious logout.

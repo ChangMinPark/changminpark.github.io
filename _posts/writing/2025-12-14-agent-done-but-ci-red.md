@@ -6,6 +6,20 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>harness / stop conditions</strong>, <strong>hooks</strong>, or <strong>CI as the done signal</strong> are new.</p>
+    <ul>
+      <li><a href="https://aakashgupta.medium.com/2025-was-agents-2026-is-agent-harnesses-heres-why-that-changes-everything-073e9877655e">2025 was agents; 2026 is harnesses</a> — runtime around the model: tools, context, stop conditions</li>
+      <li><a href="https://cursor.com/docs/hooks">Cursor docs — Hooks</a> — stop/lifecycle scripts that can veto “done” (not chat tone)</li>
+      <li><a href="{{ site.baseurl }}/formatter-vs-linter">Formatters vs linters</a> — mechanical checks that turn a green chat into a red PR</li>
+      <li><a href="{{ site.baseurl }}/github-actions-android-pr-gates">GitHub Actions for Android PR gates</a> — the merge bar the agent is not allowed to skip</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — model + tools in a loop; when a workflow beats free-form agency</li>
+    </ul>
+  </div>
+</details>
+
 ## Green chat, red pipeline
 
 You upgrade the coding model. The agent edits three modules, narrates a confident wrap-up, and marks the task complete. You open the PR. Formatting fails. A unit test you never touched is red. The typechecker catches a nullable the agent invented in a helper. The chat was green; the merge bar is not.
@@ -15,7 +29,7 @@ This is not a one-off fluke of a weak model. Stronger models still ship **broken
 ## Related reading
 
 - **Internal:** [Formatters vs Linters]({{ site.baseurl }}/formatter-vs-linter) — mechanical verifiers that shrink and block diffs; [From Jenkins to Screwdriver]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) — CI as the outer proof, not a vibe
-- **Docs / context:** [Model Context Protocol](https://modelcontextprotocol.io/) — how tools get into the loop; agent stop hooks in IDE harnesses (verify claims with exit codes, not chat tone)
+- **Docs / context:** [Model Context Protocol](https://modelcontextprotocol.io/) — how tools get into the loop; [Cursor hooks](https://cursor.com/docs/hooks) — verify claims with exit codes, not chat tone
 
 ## Stronger models still need a harness
 
@@ -38,9 +52,15 @@ flowchart TD
 
 *Figure 1. Inner loop (fast tools) plus outer loop (CI). "Done" is not a chat tone — it is a gate.*
 
-Teams building agent platforms keep landing on the same conclusion: run deterministic checks on stop (tests, lint, build), feed failures back into the loop, and cap retries so the agent does not thrash forever. IDE harnesses expose the same idea as stop hooks — block completion until a fresh command proves the claim, rather than trusting the model's closing paragraph.
+Teams building agent platforms keep landing on the same conclusion: run deterministic checks on stop (tests, lint, build), feed failures back into the loop, and cap retries so the agent does not thrash forever.
 
 Upgrading the model without tightening that gate is buying eloquence, not reliability.
+
+## Hooks are the stop gate
+
+In product language, **hooks** (or stop hooks) are harness callbacks that fire when the agent tries to finish — or before a sensitive tool runs. The model cannot forge them in markdown. A hook re-runs the formatter, linter, or focused tests and **blocks "done"** until those commands exit 0 (or until a retry budget is spent and a human takes over).
+
+That is the same instinct as a required CI check, moved into the inner loop: verify claims with exit codes, not chat tone. Cursor hooks, Claude Code stop events, and custom wrappers differ in APIs; the contract does not. If nothing runs on stop, you only have vibes.
 
 ## Verifiers beat vibes
 
@@ -89,10 +109,10 @@ I am not claiming a specific internal agent stack at Mail. The lesson from shipp
 
 ## Wrap-up
 
-A stronger model still ships broken diffs when "done" means conversational confidence. Invest in harness, verifiers, and stop conditions — format/lint/test as mechanical gates, CI as the outer loop. Upgrade the model after the gate is honest; not instead of it.
+A stronger model still ships broken diffs when "done" means conversational confidence. Invest in harness, **hooks**, verifiers, and stop conditions — format/lint/test as mechanical gates, CI as the outer loop. Upgrade the model after the gate is honest; not instead of it.
 
 ## References
 
 - [Formatters vs Linters (this site)]({{ site.baseurl }}/formatter-vs-linter)
 - [From Jenkins to Screwdriver (this site)]({{ site.baseurl }}/cicd-jenkins-to-screwdriver)
-- [Model Context Protocol](https://modelcontextprotocol.io/)
+- [Effective harnesses for long-running agents (Anthropic)](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — initializer + incremental sessions; clean state between windows

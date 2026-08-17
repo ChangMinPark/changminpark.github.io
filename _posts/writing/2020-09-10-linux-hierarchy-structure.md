@@ -6,6 +6,18 @@ tags: [Writing, Linux]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Unix paths</strong>, <strong>mount points</strong>, or <strong>the Filesystem Hierarchy Standard</strong> are new.</p>
+    <ul>
+      <li><a href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html">Filesystem Hierarchy Standard 3.0</a> — what <code>/</code>, <code>/etc</code>, <code>/var</code>, and <code>/proc</code> are <em>for</em></li>
+      <li><a href="https://man7.org/linux/man-pages/man7/path_resolution.7.html">path_resolution(7)</a> — how the kernel turns a path string into a file</li>
+      <li><a href="https://man7.org/linux/man-pages/man5/proc.5.html">proc(5)</a> — <code>/proc</code> as a live kernel view, not a disk directory</li>
+    </ul>
+  </div>
+</details>
+
 ## When the filesystem layout is the bug
 
 A service fails after reboot, disk alerts fire at 3 a.m., or `strace` shows `ENOENT` on a path that “worked yesterday.” The FHS tree looks like a vocabulary quiz — `/bin`, `/lib`, fourteen more top-level names — but in production you rarely need all of them equally. Three directories explain most surprises I have seen on servers and dev boards: **`/proc` for live state**, **`/etc` for config that outlives your editor session**, and **`/var` for data that grows until the disk is full**.

@@ -6,6 +6,19 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>AGENTS.md</strong>, <strong>rules</strong>, <strong>skills</strong>, or <strong>context engineering</strong> (what the agent can “see” in a repo) are new.</p>
+    <ul>
+      <li><a href="https://cursor.com/docs/rules.md">Cursor docs — Rules and AGENTS.md</a> — root and nested agent instructions; glob-scoped project rules</li>
+      <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents (Anthropic)</a> — curate high-signal tokens; avoid stuffing the whole monorepo into every turn</li>
+      <li><a href="https://codersera.com/blog/agents-md-vs-claude-md-vs-cursor-rules-comparison-2026/">AGENTS.md vs CLAUDE.md vs Cursor rules</a> — portable repo docs vs always-on editor rules</li>
+      <li><a href="https://cursor.com/help/customization/skills">Cursor — Skills</a> — on-demand workflows (verify commands, “add a screen”) without a 10k-token root file</li>
+    </ul>
+  </div>
+</details>
+
 ## Agents fail on layout, not IQ
 
 Watch an agent on a large Android tree long enough and a pattern shows up. It invents a `:app:assemble` flavor that does not exist. It "fixes" a crash by editing files under `build/` or `generated/`. It runs the root unit-test task that the team abandoned two years ago because it takes forty minutes and flakes. Then it declares done. The model was not uniquely dumb that day — **the repo was illegible** to tools that only know what you wrote down.
@@ -89,7 +102,5 @@ Make the monorepo legible the way you make CI honest: one-shot commands, named f
 
 ## References
 
-- [Cursor docs: Rules and AGENTS.md](https://cursor.com/docs/rules.md) — root and nested agent instructions; glob-scoped project rules
 - [Making AI write Android code our way](https://medium.engineering/making-ai-write-android-code-our-way-a-practical-guide-to-agent-skills-4e7b085d8e50) — AGENTS.md + skills on an Android codebase; move weight into scoped rules
-- [AGENTS.md vs CLAUDE.md vs Cursor rules](https://codersera.com/blog/agents-md-vs-claude-md-vs-cursor-rules-comparison-2026/) — when portable repo docs beat always-on novels
 - [Cursor rules vs AGENTS.md](https://www.romanticode.com/blog/cursor-rules-vs-agents-md/) — portable commands/gates vs editor-scoped behavior

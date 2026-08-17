@@ -9,12 +9,12 @@ draft: false
 <details class="post-prereq" markdown="0">
   <summary>Prerequisites</summary>
   <div class="post-prereq__body">
-    <p class="post-prereq__hint">Read these first if <strong>CSS classes</strong>, <strong>design tokens</strong>, or <strong>utility-first CSS</strong> are new.</p>
+    <p class="post-prereq__hint">Read these first if <strong>utility-first CSS</strong>, <strong>semantic class names</strong>, or <strong>the cascade</strong> are new.</p>
     <ul>
+      <li><a href="https://tailwindcss.com/docs/utility-first">Tailwind — Utility-first fundamentals</a> — atomic classes; one of the two naming strategies in this post</li>
+      <li><a href="https://getbem.com/introduction/">BEM</a> — a common semantic naming method (name the thing, not the look)</li>
       <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started">MDN — CSS basics</a> — selectors and cascading</li>
-      <li><a href="https://tailwindcss.com/docs/utility-first">Tailwind — Utility-first fundamentals</a> — atomic class mindset</li>
-      <li><a href="https://getbem.com/introduction/">BEM</a> — a common semantic naming method</li>
-      <li><a href="https://bradfrost.com/blog/post/atomic-web-design/">Brad Frost — Atomic Design</a> — component hierarchy (not the same as atomic CSS)</li>
+      <li><a href="https://bradfrost.com/blog/post/atomic-web-design/">Brad Frost — Atomic Design</a> — component hierarchy; <em>not</em> the same as atomic CSS</li>
     </ul>
   </div>
 </details>

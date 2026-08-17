@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Compose as UI = f(state)</strong>, <strong>the View system</strong>, or <strong>recomposition</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/develop/ui/compose/mental-model">Compose mental model</a> — describe UI from state; the runtime reconciles</li>
+      <li><a href="https://developer.android.com/develop/ui/compose/state">State and Jetpack Compose</a> — why stale UI is usually a source-of-truth bug</li>
+      <li><a href="https://developer.android.com/develop/ui/views/layout/declaring-layout">Layouts in Views</a> — inflate once, hold references, call setters (the imperative side)</li>
+      <li><a href="{{ site.baseurl }}/android-fe-architecture-history">Android FE architecture history</a> — where declarative UI sits after MVVM/MVI</li>
+    </ul>
+  </div>
+</details>
+
 ## Why the paradigm matters
 
 The first Compose bug I chased on a real screen was not a missing import or a bad modifier. The UI looked correct on first load, then stopped updating after a network refresh. The list adapter had new data; the composable tree did not. That is the moment the imperative vs declarative split stops being textbook vocabulary and becomes a production constraint.

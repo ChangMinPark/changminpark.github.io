@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>backoff with jitter, circuit breakers, or idempotency</strong> are new.</p>
+    <ul>
+      <li><a href="https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">AWS Architecture — Exponential backoff and jitter</a> — why synchronized retries stampede</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Idempotent">Idempotency</a> — safe retries without duplicate side effects</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker">Circuit breaker pattern (MS)</a> — fail fast when a dependency is down</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/retry">Retry pattern (MS)</a> — when and how to retry remote calls</li>
+    </ul>
+  </div>
+</details>
+
 ## The outage ended. The traffic did not.
 
 Origin recovers. Deploy is rolled forward. Error budgets look ready to heal. Then RPS spikes past the incident peak, tail latency returns, and on-call wonders whether the attack is back. It is not an attacker. It is **every phone** that queued a retry when the world was on fire — now firing in phase.

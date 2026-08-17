@@ -6,6 +6,18 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>SLI/SLO, session success, or cold-start critical paths</strong> are new.</p>
+    <ul>
+      <li><a href="https://sre.google/sre-book/service-level-objectives/">SRE book — SLIs and SLOs</a> — what “up” means as a measured contract</li>
+      <li><a href="https://developer.android.com/topic/performance/vitals/launch-time">Android app startup</a> — cold/warm start as user-visible latency</li>
+      <li><a href="https://developer.android.com/topic/performance/vitals">Play Vitals overview</a> — how Play scores client health</li>
+    </ul>
+  </div>
+</details>
+
 ## Green dashboards, angry sessions
 
 Backend availability sits at a comfortable stretch of nines. On-call is quiet. The status page is green. And yet support tickets and client telemetry say the same thing: people cannot open mail, send a reply, or get past splash. That gap is not a mystery once you treat the **phone session** as the product — not the HTTP handler that returned 200.

@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>cellular radio cost</strong>, <strong>RTT</strong>, or <strong>BFF aggregation</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/topic/performance/power/network">Reducing network battery drain</a> — radio wakes and batching; why six GETs per row hurt on one bar</li>
+      <li><a href="https://developer.android.com/studio/profile/network-profiler">Network Profiler</a> — seeing RTT and payload size on device</li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends">Backends for Frontends</a> — fat responses shaped for one client</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTP_2">HTTP/2</a> — multiplexing; why chatty APIs look fine on Wi‑Fi</li>
+    </ul>
+  </div>
+</details>
+
 ## The list scrolled fine on Wi‑Fi
 
 On office Wi‑Fi, a message list that fires six GETs per row feels snappy. On cellular — mid-train, one bar, radio cycling — the same design hitch-steps: placeholders flash, scroll janks while JSON arrives late, and background sync drains battery waking the radio for tiny payloads. The bug is not “Android is slow.” It is **physics**: latency and radio state dominate more than database purity arguments about resource-oriented REST.

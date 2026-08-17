@@ -6,6 +6,19 @@ tags: [Writing, Security]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>TrustZone, OP-TEE, SMC, or secure-world interrupts</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.arm.com/documentation/102418/0101">Arm TrustZone</a> — normal world vs secure world in one sentence</li>
+      <li><a href="https://optee.readthedocs.io/en/latest/">OP-TEE documentation</a> — open-source Trusted Execution Environment overview</li>
+      <li><a href="https://optee.readthedocs.io/en/latest/architecture/core.html">OP-TEE interrupt model</a> — how secure OS handles IRQs/FIQs</li>
+      <li><a href="https://developer.arm.com/documentation/den0028/latest">SMC calling convention</a> — how normal world enters the secure monitor</li>
+    </ul>
+  </div>
+</details>
+
 ## When a secure interrupt lands in the wrong world
 
 On a TrustZone phone, most of your debugging happens in normal world — logcat, gdb, perf. Secure world is a black box until something goes wrong: a TA hangs mid-call, an SMC never returns, or a non-secure driver IRQ fires while OP-TEE still holds the CPU in secure state. The failure mode is rarely “bad crypto”; it is **interrupt routing across worlds** — who saves context, who unmasks exceptions, and whether the Monitor gets involved at all.

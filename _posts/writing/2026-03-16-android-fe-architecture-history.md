@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Activities</strong>, <strong>MVC/MVVM</strong>, or <strong>unidirectional UI state</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/guide/components/activities/intro-activities">Introduction to activities</a> — the original Android UI host, and why God-Activities happen</li>
+      <li><a href="https://developer.android.com/topic/architecture">Guide to app architecture</a> — UI layer vs data layer; why patterns exist</li>
+      <li><a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel overview</a> — surviving rotation without stuffing the Activity</li>
+      <li><a href="https://developer.android.com/develop/ui/compose/architecture">Architecture in Compose</a> — declarative UI on top of the same state split</li>
+    </ul>
+  </div>
+</details>
+
 ## Why front-end architecture stops being optional
 
 Every greenfield app starts readable. Then features accumulate — ads, onboarding, sync, experiments — and Activities grow **God-object** tendrils: click handlers, API calls, adapter logic, and animation flags in one class. At some point the codebase becomes a **mutant**: it runs, but nobody can predict what breaks when they add a nudge slot or change rotation behavior.

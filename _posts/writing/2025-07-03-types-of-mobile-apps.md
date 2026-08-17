@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>WebView hybrids</strong>, <strong>PWAs</strong>, or <strong>native SDKs</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/develop/ui/views/layout/webapps">Web apps and WebView</a> — embedding a browser engine inside an APK (the trap this post warns about)</li>
+      <li><a href="https://web.dev/explore/progressive-web-apps">Progressive Web Apps (web.dev)</a> — installable web apps vs store binaries</li>
+      <li><a href="https://developer.android.com/guide/components/fundamentals">App fundamentals</a> — what “native” means: components and platform APIs, not a tab</li>
+      <li><a href="{{ site.baseurl }}/cross-platform-mobile-frameworks">Cross-platform mobile frameworks</a> — Flutter/RN as a third option beside native and web</li>
+    </ul>
+  </div>
+</details>
+
 ## The decision that keeps coming back
 
 Every mobile project eventually hits the same fork: ship a browser tab, wrap the website, or commit to platform-native code. The labels — native, web, PWA, hybrid — sound like a textbook taxonomy. In practice the choice shows up as symptoms: scroll jank on a long feed, a camera API that works on Android but not iOS Safari, or a surface where WebView already failed a performance budget.

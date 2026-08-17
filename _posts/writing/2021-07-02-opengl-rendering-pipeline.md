@@ -6,6 +6,19 @@ tags: [Writing, Systems]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>vertex/fragment shaders, rasterization, or clip space</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/develop/ui/views/graphics/opengl">OpenGL ES overview</a> — why Android games/UI effects use GLES</li>
+      <li><a href="https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview">Rendering Pipeline Overview (Khronos)</a> — stages from vertices to pixels</li>
+      <li><a href="https://learnopengl.com/Getting-started/Hello-Triangle">LearnOpenGL — Hello Triangle</a> — minimal shader + draw path</li>
+      <li><a href="https://www.khronos.org/opengl/wiki/Vertex_Shader">Vertex Shader</a> / <a href="https://www.khronos.org/opengl/wiki/Fragment_Shader">Fragment Shader</a> — per-vertex vs per-pixel work</li>
+    </ul>
+  </div>
+</details>
+
 ## Why the pipeline map matters
 
 OpenGL turns vertex and index buffers into pixels through a short chain of stages. Treat each stage as a **contract**, and “mystery” bugs get local: wrong pose → vertex stage, missing faces → assembly, FPS cliff → fragment/fill, flicker → depth.

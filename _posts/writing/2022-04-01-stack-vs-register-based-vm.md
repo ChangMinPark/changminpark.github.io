@@ -6,6 +6,19 @@ tags: [Writing, Systems]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Dalvik/DEX</strong>, <strong>bytecode</strong>, or <strong>stack vs register VMs</strong> are new.</p>
+    <ul>
+      <li><a href="https://source.android.com/docs/core/runtime/dalvik-bytecode">Dalvik bytecode</a> — register-based instructions in DEX; the choice this post explains</li>
+      <li><a href="https://source.android.com/docs/core/runtime">Android Runtime (ART)</a> — DEX on the phone, not a type-2 hypervisor</li>
+      <li><a href="{{ site.baseurl }}/dalvik-virtual-machine">Dalvik and ART</a> — how that bytecode fits process startup</li>
+      <li><a href="https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-2.html#jvms-2.6">JVM Spec §2.6 Frames</a> — the stack-VM contrast (operand stack + locals)</li>
+    </ul>
+  </div>
+</details>
+
 ## Two ways to fake a CPU
 
 A **process virtual machine** is not VMware — it is a runtime that executes bytecode for one app process. Java's JVM, Python's CPython, and Android's DEX/ART pipeline all compile source to an intermediate form, then interpret or compile that IR on the host CPU.

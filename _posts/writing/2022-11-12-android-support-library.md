@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Support Library, AndroidX, or Jetpack</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/jetpack/androidx/migrate">Migrating to AndroidX</a> — Support Library → AndroidX rename map</li>
+      <li><a href="https://developer.android.com/jetpack">Android Jetpack</a> — what Jetpack libraries are for</li>
+      <li><a href="https://developer.android.com/jetpack/androidx">AndroidX overview</a> — package namespaces and versioning</li>
+      <li><a href="https://developer.android.com/jetpack/androidx/releases/appcompat">Appcompat</a> — backward-compatible UI primitives</li>
+    </ul>
+  </div>
+</details>
+
 ## Why this post still exists
 
 If you open a five-year-old Android module, you will still see `com.android.support:appcompat-v7` in Gradle files and `android.support.v4` in imports. That stack — the **Android Support Library** — was the standard way to ship backward-compatible UI and utilities before **AndroidX** replaced it under Jetpack.

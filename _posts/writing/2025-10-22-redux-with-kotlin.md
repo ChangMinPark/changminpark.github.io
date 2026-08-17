@@ -6,6 +6,20 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Redux/reducers</strong>, <strong>unidirectional data flow</strong>, <strong>ViewModel</strong>, or <strong>StateFlow</strong> are new.</p>
+    <ul>
+      <li><a href="https://redux.js.org/understanding/thinking-in-redux/three-principles">Redux three principles</a> — single store, state is read-only, changes via pure reducers</li>
+      <li><a href="https://facebookarchive.github.io/flux/docs/in-depth-overview/">Flux in-depth overview</a> — actions in, store out; views do not write peer state</li>
+      <li><a href="https://developer.android.com/kotlin/flow/stateflow-and-sharedflow">StateFlow and SharedFlow</a> — the Kotlin stream this post maps onto a Redux-style write path</li>
+      <li><a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel overview</a> — UI state that survives configuration change</li>
+      <li><a href="{{ site.baseurl }}/android-fe-architecture-history">Android FE architecture history</a> — MVC → MVVM → MVI/Flux before the Redux slice</li>
+    </ul>
+  </div>
+</details>
+
 ## The bug was order, not syntax
 
 A screen had three buttons that all mutated the same `ViewModel` fields from different coroutines. Race conditions were rare but maddening: tap "refresh" then "filter" quickly and the list showed stale data with the new filter label. Logcat looked fine — no crashes, just **state updates arriving out of order**. The team had MVVM and `StateFlow`, but no single rule for *how* mutations were allowed to happen.

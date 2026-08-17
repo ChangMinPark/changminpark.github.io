@@ -6,6 +6,18 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>stale agent plans</strong>, <strong>plan mode</strong>, or <strong>acceptance criteria</strong> are new.</p>
+    <ul>
+      <li><a href="https://pub.towardsai.net/the-stale-plan-problem-in-coding-agents-cde2c741f8ab">The stale plan problem in coding agents</a> — why an obsolete plan is worse than no plan</li>
+      <li><a href="https://cursor.com/learn/agents.md">Cursor Learn — Agents</a> — instructions + tools + model; where a planning pass sits</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — workflows with explicit steps vs open-ended agency</li>
+    </ul>
+  </div>
+</details>
+
 ## When the plan is the product
 
 Some agent sessions open with a two-page plan that restates the ticket, invents three modules you do not need, and then gets ignored the moment the first file is opened. Other sessions skip planning, thrash for an hour across the wrong Gradle project, and force a rewrite that a ten-minute plan would have prevented. Both failure modes are common. The useful question is not "should agents plan?" It is **when a planning pass pays for itself** — and how to tell theater from a plan you can check.
@@ -103,6 +115,5 @@ Use a planning pass to bound blast radius and write checks you can fail. Skip it
 
 ## References
 
-- [The stale plan problem in coding agents](https://pub.towardsai.net/the-stale-plan-problem-in-coding-agents-cde2c741f8ab) — reconcile plan when reality diverges; do not leave a confident obsolete doc
 - [Roady](https://github.com/felixgeelhaar/roady) — file-based plan-of-record and drift detection across session resets
 - [Intent drift detection for AI coding agents](https://feelgoot.com/intent-drift-detection/) — adjacent completions that miss acceptance while sounding finished

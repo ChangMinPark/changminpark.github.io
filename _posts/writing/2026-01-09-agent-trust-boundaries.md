@@ -6,6 +6,19 @@ tags: [Writing, Security]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>guardrails</strong>, <strong>human-in-the-loop</strong>, <strong>prompt injection</strong>, or <strong>tool poisoning</strong> are new.</p>
+    <ul>
+      <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP Top 10 for LLM Applications</a> — LLM01 prompt injection and related risks in plain language</li>
+      <li><a href="https://modelcontextprotocol.io/">Model Context Protocol</a> — how third-party tools enter the agent (and why their outputs are untrusted input)</li>
+      <li><a href="https://cursor.com/docs/hooks">Cursor docs — Hooks</a> — deterministic gates (approvals / blocks) the model cannot forge in markdown</li>
+      <li><a href="https://ctaio.dev/en/ai-security/mcp-security/">CTAIO — MCP security overview</a> — practical framing of MCP permission and injection risk</li>
+    </ul>
+  </div>
+</details>
+
 ## Two ways you lose the same afternoon
 
 **Version A:** Every `ls` and file read pops an approval. After the twentieth dialog you click through without reading. The one that matters — `git push --force` to a shared branch, or a migrate script — gets the same muscle memory.
@@ -76,5 +89,4 @@ Trust boundaries are product design for agents. Make approvals scarce and conseq
 
 - [Invariant Labs — MCP tool poisoning attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
 - [arXiv — MCP threat modeling and prompt injection](https://arxiv.org/html/2603.22489v1)
-- [CTAIO — MCP security: prompt injection and tool risk](https://ctaio.dev/en/ai-security/mcp-security/)
 - [DEV — When a tool result is the attack](https://dev.to/kirandeepjassalcrypto/mcp-deep-dive-part-8-when-a-tool-result-is-the-attack-securing-mcp-against-prompt-injection-and-3bke)

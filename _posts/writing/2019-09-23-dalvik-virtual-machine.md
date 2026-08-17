@@ -6,6 +6,19 @@ tags: [Writing, Systems]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>DEX, ART, Zygote, or AOT/JIT</strong> are new.</p>
+    <ul>
+      <li><a href="https://source.android.com/docs/core/runtime">Android Runtime (ART) and Dalvik</a> — how Android runs app code (DEX → ART)</li>
+      <li><a href="https://source.android.com/docs/core/runtime/dalvik-bytecode">Dalvik Executable format</a> — what a `.dex` contains</li>
+      <li><a href="https://source.android.com/docs/core/runtime/app-process">Zygote</a> — how app processes are forked</li>
+      <li><a href="https://source.android.com/docs/core/runtime/configure">Configure ART</a> — AOT, JIT, and profile-guided compilation at a glance</li>
+    </ul>
+  </div>
+</details>
+
 ## Why Dalvik still shows up in stack traces
 
 Search “Dalvik” in 2026 and you get archaeology — fair enough. **ART replaced Dalvik as the default runtime in Android 5.0 (Lollipop)** and every current device runs ART. But the bytecode format, the per-process VM model, and the Zygote fork path Dalvik established are still how apps start and execute. When cold start regresses or you see DEX/OAT/VDEX in a build artifact, you are looking at that lineage.

@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Jetpack Compose, LazyColumn, IME insets, or recomposition</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/compose">Jetpack Compose</a> — declarative UI toolkit overview</li>
+      <li><a href="https://developer.android.com/jetpack/compose/mental-model">Thinking in Compose</a> — recomposition mental model</li>
+      <li><a href="https://developer.android.com/jetpack/compose/lists">Lists (LazyColumn)</a> — scrolling lists without RecyclerView adapters</li>
+      <li><a href="https://developer.android.com/develop/ui/compose/system/insets">WindowInsets</a> — IME/keyboard and system bars</li>
+    </ul>
+  </div>
+</details>
+
 ## Chat UI fails where screenshots look fine
 
 Wire a chat-like assistant into Compose and the backend can be fine while the UI still falls apart: a long question opens the keyboard and history vanishes behind the IME, scroll jumps, a streaming token arrives mid-animation and the last bubble flickers. Design review misses all of that — Figma does not simulate `WindowInsets` or partial text updates at dozens of tokens per second.

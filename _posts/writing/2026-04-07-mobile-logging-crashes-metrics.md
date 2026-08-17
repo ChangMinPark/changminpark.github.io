@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Play Vitals, Crashlytics, RUM, or SLIs</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/topic/performance/vitals">Play Vitals</a> — crash/ANR/startup as store-facing health</li>
+      <li><a href="https://firebase.google.com/docs/crashlytics">Firebase Crashlytics</a> — stack traces and breadcrumbs</li>
+      <li><a href="https://sre.google/sre-book/service-level-objectives/">SRE book — SLIs</a> — what to measure vs vanity counters</li>
+      <li><a href="https://opentelemetry.io/docs/concepts/signals/">OpenTelemetry logs/metrics</a> — separating signals in a telemetry map</li>
+    </ul>
+  </div>
+</details>
+
 ## More telemetry is not more control
 
 Mobile teams either drown in unsampled logs nobody reads, or fly blind when crash-free sessions move. The vocabulary is muddled: action log, breadcrumb, metric, alert — four words for overlapping pipes. The fix is not another SDK. It is choosing **signals that drive decisions** and owning who pages when they move.

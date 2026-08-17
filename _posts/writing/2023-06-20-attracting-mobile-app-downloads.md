@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>install prompts / smart banners</strong>, <strong>PWAs</strong>, or <strong>web-to-app</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners">Smart App Banners (Apple)</a> — the OS-provided install strip this post contrasts with custom nag UI</li>
+      <li><a href="https://web.dev/learn/pwa/installation">PWA installation (web.dev)</a> — installability vs a store APK, and why banners exist</li>
+      <li><a href="https://web.dev/learn/pwa/web-app-manifest">Web app manifest (web.dev)</a> — how browsers decide an origin is installable</li>
+      <li><a href="https://developer.android.com/training/app-links">Android App Links</a> — HTTPS URLs that open the installed app (after install, not the nag itself)</li>
+    </ul>
+  </div>
+</details>
+
 ## The install funnel nobody measures end-to-end
 
 Desktop-era services assumed users would bookmark a URL. Mobile shifted the default to installed apps — push, home-screen presence, sensors, in-app purchase. Product teams respond by plastering "Get the app" everywhere on mobile web. Click-to-install rates look depressing ([Branch's web-to-app benchmarks](https://www.branch.io/products/banners/) often cite low single-digit web-to-store conversion), so growth teams escalate UI aggression: full-screen blocks, persistent bottom sheets, smart banners.

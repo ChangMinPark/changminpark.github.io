@@ -6,6 +6,19 @@ tags: [Writing, Distributed]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>FCM, collapse keys, Doze, or data vs notification messages</strong> are new.</p>
+    <ul>
+      <li><a href="https://firebase.google.com/docs/cloud-messaging/android/client">FCM on Android</a> — how push reaches a device</li>
+      <li><a href="https://firebase.google.com/docs/cloud-messaging/concept-options">About FCM messages</a> — notification vs data payloads; priority</li>
+      <li><a href="https://firebase.google.com/docs/cloud-messaging/concept-options#collapsible_and_non-collapsible_messages">Collapse keys</a> — coalescing queued pushes</li>
+      <li><a href="https://developer.android.com/training/monitoring-device-state/doze-standby">Optimize for Doze</a> — how idle modes delay delivery</li>
+    </ul>
+  </div>
+</details>
+
 ## “Just send a push”
 
 New mail arrives. Someone wires `FirebaseMessaging.send(...)` from the ingest service and ships. It works in dogfood. In production you discover silent failures: Doze delays, collapse keys eating updates, tokens rotting, dual providers, and a backlog that looks healthy until one region’s fan-out stalls. Push delivery is not a library call. It is a **distributed system** with queues, prioritization, provider contracts, and failure domains.

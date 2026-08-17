@@ -6,6 +6,19 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>ANR, Play Vitals, Crashlytics, or main-thread watchdogs</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/topic/performance/vitals/anr">ANRs</a> — definition and common causes</li>
+      <li><a href="https://developer.android.com/topic/performance/vitals/anr#diagnose">Diagnose ANRs</a> — traces and clustering basics</li>
+      <li><a href="https://firebase.google.com/docs/crashlytics">Firebase Crashlytics</a> — crash/ANR reporting many teams use</li>
+      <li><a href="https://support.google.com/googleplay/android-developer/answer/9844486">Play Console Vitals</a> — how Play surfaces ANR/crash rates</li>
+    </ul>
+  </div>
+</details>
+
 ## The dialog is late; the trace is a snapshot
 
 An ANR is not a crash. The system waits, the user taps, nothing responds, and eventually Android shows **Application Not Responding**. By then the main thread may have been blocked for seconds — long enough that the stack trace bundled with the report often captures **whatever was on top when the watchdog fired**, not the work that started the stall.

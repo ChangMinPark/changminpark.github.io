@@ -6,6 +6,19 @@ tags: [Writing, Agents]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>context engineering</strong>, <strong>rules</strong>, <strong>skills</strong>, or <strong>memory</strong> are new.</p>
+    <ul>
+      <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents (Anthropic)</a> — what enters the window, compaction, and why token budget is the real constraint</li>
+      <li><a href="https://cursor.com/docs/rules.md">Cursor docs — Rules</a> — always-on project instructions (`AGENTS.md`, `.cursor/rules`)</li>
+      <li><a href="https://cursor.com/help/customization/skills">Cursor — Skills</a> — on-demand playbooks the agent loads when the task matches</li>
+      <li><a href="https://getaibook.com/blog/agent-skills-vs-cursor-rules/">Agent Skills vs Cursor Rules</a> — which guidance is always loaded vs fetched when needed</li>
+    </ul>
+  </div>
+</details>
+
 ## The rule lived three turns ago
 
 You told the agent, clearly: do not touch generated sources under `build/`, and keep the change inside `:mail:compose`. Twenty minutes later it “fixes” a compile error by editing a generated binder file and reaches into `:mail:sync` because “that is where the real bug is.” The chat still shows your constraint. The model is behaving as if it never existed.
@@ -81,11 +94,9 @@ Verify: feature module sources + feature flag docs."
 
 ## Wrap-up
 
-Agents do not “owe” you continuity. They owe you whatever is still in context plus whatever you injected as durable policy. Put non-negotiable boundaries in rules, put rare workflows in skills, keep chat for the ticket, and treat memory as untrusted until a file or command confirms it. Past me spent evenings arguing with a confident wrong memory; present me deletes the note first.
+Agents do not “owe” you continuity. They owe you whatever is still in context plus whatever you injected as durable policy. Put non-negotiable boundaries in rules, put rare workflows in skills, keep chat for the ticket, and treat memory as untrusted until a file or command confirms it. Wrong memory used to cost whole evenings of argument; deleting the bad note first is cheaper.
 
 ## References
 
-- [Cursor — Skills](https://cursor.com/help/customization/skills)
 - [Learn Cursor — Why Cursor forgets context mid-task](https://www.learncursor.dev/tips/cursor-forgets-context)
-- [Agent Skills vs Cursor Rules](https://getaibook.com/blog/agent-skills-vs-cursor-rules/)
 - [Morph — Cursor rules best practices](https://www.morphllm.com/cursor-rules-best-practices)

@@ -6,6 +6,20 @@ tags: [Writing, Android]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>Binder, ANR, ART, Zygote, or HAL</strong> are new.</p>
+    <ul>
+      <li><a href="https://developer.android.com/guide/platform">Platform architecture</a> — app → framework → HAL → kernel stack</li>
+      <li><a href="https://developer.android.com/guide/components/aidl">Binder IPC</a> — how Android processes talk across boundaries</li>
+      <li><a href="https://developer.android.com/topic/performance/vitals/anr">ANRs</a> — when the main thread is blocked too long</li>
+      <li><a href="https://source.android.com/docs/core/runtime">Android Runtime (ART)</a> — where bytecode actually runs</li>
+      <li><a href="https://source.android.com/docs/core/architecture/hal">HAL overview</a> — hardware abstraction below the framework</li>
+    </ul>
+  </div>
+</details>
+
 ## Why the layer map matters
 
 The first time I chased an Android bug by staring only at my Activity, I wasted an afternoon. The symptom looked like app logic — a list that stopped updating — but the root cause was a framework service blocking on Binder. Without a mental map of the stack, every stall feels like “my code is wrong” when the contract you violated might be two layers down.

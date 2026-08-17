@@ -6,6 +6,18 @@ tags: [Writing, Linux]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>tee</strong>, <strong>pipes</strong>, or <strong>stdout vs a log file</strong> are new.</p>
+    <ul>
+      <li><a href="https://man7.org/linux/man-pages/man1/tee.1.html">tee(1)</a> — copy stdin to a file <em>and</em> to stdout; the tool this post is about</li>
+      <li><a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Pipeline (Unix)</a> — connecting one command’s stdout to the next stdin</li>
+      <li><a href="https://tldp.org/LDP/abs/html/io-redirection.html">I/O redirection (ABS)</a> — <code>&gt;</code> / <code>&gt;&gt;</code> hide the live stream unless you also <code>tee</code></li>
+    </ul>
+  </div>
+</details>
+
 ## Why plain redirection hides the stream
 
 Redirecting stdout with `>` is fine until you need **both** a log file and a live view. A long Gradle build, a flaky integration test, or a device log dump can run for minutes. If you write everything to a file, the terminal stays blank and you miss the first stack trace. If you skip the file, you lose the artifact you wanted to attach to a bug report.

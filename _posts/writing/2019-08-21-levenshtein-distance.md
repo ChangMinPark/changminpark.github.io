@@ -6,6 +6,18 @@ tags: [Writing, Systems]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>strings as sequences</strong>, <strong>dynamic programming</strong>, or <strong>edit distance</strong> are new.</p>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Edit_distance">Edit distance</a> — family of metrics for how many edits turn one string into another</li>
+      <li><a href="https://en.wikipedia.org/wiki/Dynamic_programming">Dynamic programming</a> — overlapping subproblems and a table (or cache) instead of recomputing</li>
+      <li><a href="https://norvig.com/spell-correct.html">How to Write a Spelling Corrector (Norvig)</a> — fuzzy match as an engineering product, not only an interview problem</li>
+    </ul>
+  </div>
+</details>
+
 ## When exact match is too strict
 
 Search fields, contact pickers, and command palettes break on one typo: `"Gamboll"` does not match `"Gambol"`, even though a human sees the intent. **Levenshtein distance (LD)** scores that gap: the minimum number of single-character **insertions, deletions, and substitutions** needed to turn string A into string B. Lower distance means more similar strings.

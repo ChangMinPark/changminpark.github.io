@@ -6,6 +6,19 @@ tags: [Writing, Security]
 draft: false
 ---
 
+<details class="post-prereq" markdown="0">
+  <summary>Prerequisites</summary>
+  <div class="post-prereq__body">
+    <p class="post-prereq__hint">Read these first if <strong>CIA triad, authenticity, watermarking, or TrustZone display</strong> are new.</p>
+    <ul>
+      <li><a href="https://csrc.nist.gov/glossary/term/confidentiality">CIA triad (NIST glossary)</a> — confidentiality, integrity, availability basics</li>
+      <li><a href="https://csrc.nist.gov/glossary/term/non_repudiation">Authenticity / non-repudiation</a> — proving origin, not only secrecy</li>
+      <li><a href="https://en.wikipedia.org/wiki/Digital_watermarking">Digital watermarking overview</a> — visible vs invisible marks (primer, not product)</li>
+      <li><a href="{{ site.baseurl }}/rushmore">Rushmore (this site)</a> — TrustZone secure display threat model on mobile</li>
+    </ul>
+  </div>
+</details>
+
 ## Why a photo is harder to secure than a message
 
 Every messaging app encrypts text in transit. Photos look equally protected — until you trace the full path: compression, thumbnails, CDN caching, and a display stack that may decode on a GPU you do not control. At each hop someone can see pixels — the OS, a middle service, or another app with storage access.
