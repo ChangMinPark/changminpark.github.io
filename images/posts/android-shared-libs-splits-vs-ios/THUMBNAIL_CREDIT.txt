@@ -1,0 +1,1 @@
+Logo-card split panel (Simple Icons via rsvg-convert). android-shared-libs-splits-vs-ios
