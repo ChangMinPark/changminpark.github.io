@@ -1,0 +1,163 @@
+---
+layout: default
+---
+<article class="agent-lab">
+  <div class="agent-lab__shell">
+    <div class="agent-lab__main">
+      <header class="agent-lab__hero" id="overview">
+        <p class="agent-lab__eyebrow">Private lab</p>
+        <h1 class="agent-lab__title">{{ page.title }}</h1>
+        {% if page.excerpt %}
+        <p class="agent-lab__lede">{{ page.excerpt | strip_html | strip }}</p>
+        {% endif %}
+        <ul class="agent-lab__meta">
+          <li>~9–12 weeks · 4–8 hr/week</li>
+          <li>Claude-first · optional local 7B</li>
+          <li>Folder: <code>agent-lab/</code></li>
+        </ul>
+      </header>
+
+      <div class="agent-lab__body post">
+        {{ content }}
+      </div>
+    </div>
+
+    <aside class="agent-lab__rail" aria-label="Contents">
+      <nav class="agent-lab__toc" id="agent-lab-toc">
+        <p class="agent-lab__toc-label">Contents</p>
+        <div class="agent-lab__toc-progress" id="lab-toc-progress" hidden>
+          <div class="agent-lab__toc-progress-track" aria-hidden="true">
+            <div class="agent-lab__toc-progress-fill" id="lab-toc-progress-fill"></div>
+          </div>
+          <p class="agent-lab__toc-progress-text" id="lab-toc-progress-text"></p>
+        </div>
+        <ol class="agent-lab__toc-list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#how-to-run">How to run</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#phase-0" data-phase="0">0 · Setup</a></li>
+          <li><a href="#phase-1" data-phase="1">1 · Loop</a></li>
+          <li><a href="#phase-2" data-phase="2">2 · Tools</a></li>
+          <li><a href="#phase-3" data-phase="3">3 · Skills</a></li>
+          <li><a href="#phase-4" data-phase="4">4 · Guardrails</a></li>
+          <li><a href="#phase-5" data-phase="5">5 · Planning</a></li>
+          <li><a href="#phase-6" data-phase="6">6 · Subagents</a></li>
+          <li><a href="#phase-7" data-phase="7">7 · Eval</a></li>
+          <li><a href="#phase-8" data-phase="8">8 · Judgment</a></li>
+          <li><a href="#phase-9" data-phase="9">9 · RAG</a></li>
+          <li><a href="#phase-10" data-phase="10">10 · Capstone</a></li>
+          <li><a href="#essays">Essays</a></li>
+          <li><a href="#finish">Finish line</a></li>
+        </ol>
+        <p class="agent-lab__toc-note">Green check = required todos done (optional skipped).</p>
+      </nav>
+    </aside>
+  </div>
+</article>
+
+<script>
+(function () {
+  var toc = document.getElementById('agent-lab-toc');
+  if (!toc) return;
+  var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+  var ids = links.map(function (a) { return a.getAttribute('href').slice(1); });
+  var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if (!sections.length || !('IntersectionObserver' in window)) return;
+
+  var activeId = null;
+  function setActive(id) {
+    if (id === activeId) return;
+    activeId = id;
+    links.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+    });
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    var visible = entries
+      .filter(function (e) { return e.isIntersecting; })
+      .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
+    if (visible[0]) setActive(visible[0].target.id);
+  }, { rootMargin: '-12% 0px -70% 0px', threshold: [0, 0.25, 0.5, 1] });
+
+  sections.forEach(function (s) { observer.observe(s); });
+})();
+
+(function () {
+  var KEY = 'agent-harness-lab-todos-v1';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-todo]'));
+  if (!boxes.length) return;
+
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+
+  function updateProgress() {
+    var done = boxes.filter(function (b) { return b.checked; }).length;
+    var total = boxes.length;
+    var pct = total ? Math.round((done / total) * 100) : 0;
+    var label = 'Progress: ' + done + ' / ' + total + ' todos checked (saved in this browser).';
+
+    var el = document.getElementById('lab-progress');
+    var fill = document.getElementById('lab-progress-fill');
+    var text = document.getElementById('lab-progress-text');
+    if (el) {
+      el.hidden = false;
+      el.setAttribute('role', 'progressbar');
+      el.setAttribute('aria-valuemin', '0');
+      el.setAttribute('aria-valuemax', String(total));
+      el.setAttribute('aria-valuenow', String(done));
+      el.setAttribute('aria-valuetext', done + ' of ' + total + ' todos checked');
+      if (fill) fill.style.width = pct + '%';
+      if (text) text.textContent = label;
+    }
+
+    var tocWrap = document.getElementById('lab-toc-progress');
+    var tocFill = document.getElementById('lab-toc-progress-fill');
+    var tocText = document.getElementById('lab-toc-progress-text');
+    if (tocWrap) {
+      tocWrap.hidden = false;
+      if (tocFill) tocFill.style.width = pct + '%';
+      if (tocText) tocText.textContent = done + ' / ' + total + ' · ' + pct + '%';
+    }
+
+    // Mark phase TOC links complete when all required (non-optional) todos are checked
+    var phaseLinks = document.querySelectorAll('#agent-lab-toc a[data-phase]');
+    phaseLinks.forEach(function (a) {
+      var phase = a.getAttribute('data-phase');
+      var phaseBoxes = document.querySelectorAll('.lab-todos[data-phase="' + phase + '"] input[data-todo]');
+      var required = Array.prototype.filter.call(phaseBoxes, function (b) {
+        var label = b.closest('label');
+        var copy = label ? label.textContent : '';
+        return copy.indexOf('Optional:') === -1;
+      });
+      var complete = required.length > 0 && required.every(function (b) { return b.checked; });
+      a.classList.toggle('is-done', complete);
+    });
+  }
+
+  function persist() {
+    var next = {};
+    boxes.forEach(function (b) { next[b.getAttribute('data-todo')] = !!b.checked; });
+    try { localStorage.setItem(KEY, JSON.stringify(next)); } catch (e) {}
+    updateProgress();
+  }
+
+  boxes.forEach(function (b) {
+    var id = b.getAttribute('data-todo');
+    if (saved[id]) b.checked = true;
+    b.addEventListener('change', persist);
+  });
+
+  var reset = document.getElementById('lab-reset-progress');
+  if (reset) {
+    reset.addEventListener('click', function () {
+      if (!window.confirm('Clear all checked todos on this page?')) return;
+      boxes.forEach(function (b) { b.checked = false; });
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      updateProgress();
+    });
+  }
+
+  updateProgress();
+})();
+</script>
