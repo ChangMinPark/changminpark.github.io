@@ -162,23 +162,41 @@ layout: default
 })();
 
 (function () {
-  function openGuide(id) {
-    if (!id || id.indexOf('guide-') !== 0) return;
-    var el = document.getElementById(id);
-    if (!el || el.tagName !== 'DETAILS') return;
-    el.open = true;
+  function setGuideOpen(btn, guide, open) {
+    if (!btn || !guide) return;
+    guide.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.classList.toggle('is-open', open);
+    btn.textContent = open ? 'Hide' : 'How';
+    btn.title = open ? 'Hide steps' : 'Show steps';
   }
 
   function openFromHash() {
-    openGuide((location.hash || '').slice(1));
+    var id = (location.hash || '').slice(1);
+    if (!id || id.indexOf('guide-') !== 0) return;
+    var guide = document.getElementById(id);
+    var btn = document.querySelector('.lab-todo__how[data-guide="' + id + '"]');
+    if (!guide || !btn) return;
+    setGuideOpen(btn, guide, true);
+    try { btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
   }
 
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a.lab-todo__how');
-    if (!a) return;
-    var href = a.getAttribute('href') || '';
-    if (href.charAt(0) !== '#') return;
-    openGuide(href.slice(1));
+    var btn = e.target.closest && e.target.closest('button.lab-todo__how');
+    if (!btn) return;
+    e.preventDefault();
+    var id = btn.getAttribute('data-guide') || btn.getAttribute('aria-controls');
+    var guide = id ? document.getElementById(id) : null;
+    if (!guide) return;
+    var open = guide.hidden; // currently hidden → open
+    setGuideOpen(btn, guide, open);
+    if (open) {
+      if (history.replaceState) history.replaceState(null, '', '#' + id);
+      else location.hash = id;
+    } else if ((location.hash || '').slice(1) === id) {
+      if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+      else location.hash = '';
+    }
   });
 
   window.addEventListener('hashchange', openFromHash);
