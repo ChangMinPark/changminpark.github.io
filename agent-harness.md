@@ -19,7 +19,9 @@ Work top-down. Each phase has **prerequisites → learn links → checkable todo
 6. Re-read the linked Writing post with the lab still open.
 7. Pass the phase bar out loud without notes.
 
-Hardware: MacBook Pro with 24 GB is enough. Cloud Claude is the primary brain. Optional Ollama 7B / on-device is wiring literacy only. Phase 11 (computer-use) is optional.
+**Auth (this lab):** Use a **Claude Pro / Max** account with **Claude Code** via browser login (`claude auth login --claudeai`). Do **not** set `ANTHROPIC_API_KEY` — that routes to Console pay-per-token billing instead of your subscription. No Anthropic Console API credits are required for the default track.
+
+Hardware: MacBook Pro with 24 GB is enough. Claude Code (Pro) is the primary brain. Optional Ollama 7B / on-device is wiring literacy only. Phase 11 (computer-use) is optional.
 
 <div class="lab-progress" id="lab-progress" hidden>
   <div class="lab-progress__track" aria-hidden="true">
@@ -38,12 +40,12 @@ Think in layers. Don’t confuse a chat UI with a harness.
 
 | Layer | Options | Use here |
 | --- | --- | --- |
-| **Brain** | Claude API · Ollama 7B · on-device (opt.) | Claude for real failure modes; Ollama/on-device = wiring literacy |
-| **Runtime** | Hand-rolled loop · LangGraph · OpenClaw | Start hand-rolled; graphs later |
-| **Tools / MCP** | Hardcoded schemas · MCP servers | Discovery ≠ allowlist — Phase 2 |
+| **Brain** | Claude Code (Pro/Max login) · Ollama 7B · on-device (opt.) | Claude Code for real failure modes; Ollama/on-device = wiring literacy |
+| **Runtime** | Claude Code session + your gates · LangGraph · OpenClaw | Start with Claude Code + harness scripts/hooks; graphs later |
+| **Tools / MCP** | Built-in tools · MCP servers · allowlists | Discovery ≠ allowlist — Phase 2 |
 | **Channels** | OpenClaw · Open WebUI · browser/computer-use | Capstone / RAG / Phase 11 |
-| **Observe** | JSONL logs · Langfuse · audit fields | Required once you hit eval |
-| **Cost** | Pricing · prompt cache · triage models | Treat $/task as a harness concern |
+| **Observe** | JSONL / session logs · Langfuse · audit fields | Required once you hit eval |
+| **Cost** | Pro usage limits · triage · when *not* to burn a session | Treat quota/time-per-task as a harness concern |
 
 <div class="lab-diagram" aria-label="Agent harness loop">
 <pre class="lab-diagram__pre">
@@ -57,7 +59,7 @@ Think in layers. Don’t confuse a chat UI with a harness.
 <p class="lab-diagram__cap">The harness owns the loop. The model proposes; tools act; observe decides whether to stop.</p>
 </div>
 
-LangChain/LangGraph sit in **runtime** — same tier as a loop you wrote yourself, not a Claude replacement.
+LangChain/LangGraph sit in **runtime** — same tier as gates you write around Claude Code, not a Claude replacement.
 
 ---
 
@@ -68,7 +70,7 @@ LangChain/LangGraph sit in **runtime** — same tier as a loop you wrote yoursel
 
 **Topic** Environment · **Essay** — · **Prior phases** none · **~4–6 hr**
 
-Get a working Claude path and a place to put labs. No site post yet.
+Get a working Claude Code path (Pro login) and a place to put labs. No site post yet. No Console API key.
 
 </div>
 
@@ -79,11 +81,11 @@ Get a working Claude path and a place to put labs. No site post yet.
 | --- | --- | --- |
 | Terminal / env vars | Run scripts | [macOS Terminal](https://support.apple.com/guide/terminal/welcome/mac) |
 | Git basics | Version lab code | [Git handbook](https://docs.github.com/en/get-started/using-git) |
-| Python 3 + venv | SDK | [venv docs](https://docs.python.org/3/tutorial/venv.html) |
-| HTTP API → JSON | LLM calls | [MDN web APIs intro](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction) |
-| Tokens ≈ cost | Budget | [Anthropic pricing](https://docs.anthropic.com/en/docs/about-claude/pricing) |
+| Python 3 + venv | Harness scripts / fake CI | [venv docs](https://docs.python.org/3/tutorial/venv.html) |
+| Claude Code install + Pro login | Brain for this lab | [Claude Code setup](https://code.claude.com/docs/en/setup) · [Auth](https://code.claude.com/docs/en/authentication) |
+| Usage / limits (subscription) | Budget sessions | [Claude Code + Pro/Max](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan) |
 
-**References:** [Anthropic docs](https://docs.anthropic.com/) · [Messages API](https://docs.anthropic.com/en/api/messages) · [Ollama](https://ollama.com) · [Artificial Analysis](https://artificialanalysis.ai/)
+**References:** [Claude Code docs](https://code.claude.com/docs/en/overview) · [Authentication](https://code.claude.com/docs/en/authentication) · [Ollama](https://ollama.com) (optional local) · [Artificial Analysis](https://artificialanalysis.ai/)
 
 ### Todos
 {: #phase-0-todos .lab-todos-h}
@@ -109,36 +111,35 @@ Get a working Claude path and a place to put labs. No site post yet.
 
   <li class="lab-todo">
     <div class="lab-todo__head">
-      <label><input type="checkbox" data-todo="p0-2"> Anthropic API key + small credits; hello-world Messages call works</label>
+      <label><input type="checkbox" data-todo="p0-2"> Claude Code installed; Pro/Max browser login; hello session works</label>
       <button type="button" class="lab-todo__how" aria-expanded="false" aria-controls="guide-p0-2" data-guide="guide-p0-2">How</button>
     </div>
     <div class="lab-guide" id="guide-p0-2" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Create an API key in the Anthropic Console and add ~$5–20 credits.</li>
-        <li>Store it outside git: <code>echo 'export ANTHROPIC_API_KEY=sk-…' >> ~/.zshrc</code> or a local <code>.env</code> loaded by your script (never commit the key).</li>
-        <li>Install the SDK: <code>pip install anthropic</code>.</li>
-        <li>Write <code>00-setup/hello.py</code> that calls the Messages API with a one-line prompt and prints the text reply.</li>
-        <li>Run it; fix auth/model errors until you get a normal assistant string.</li>
+        <li>Install Claude Code (prefer native arm64 on Apple Silicon: <code>curl -fsSL https://claude.ai/install.sh | bash</code>, or <code>brew install --cask claude-code</code> on matching arch). Put <code>~/.local/bin</code> on your <code>PATH</code> if needed.</li>
+        <li>Log in with subscription: <code>claude auth login --claudeai</code> and finish the browser flow with your Claude.ai <strong>Pro or Max</strong> account. Do <strong>not</strong> use Console / API-credit login for this lab.</li>
+        <li>Confirm: <code>claude auth status</code> shows logged in. Ensure <code>ANTHROPIC_API_KEY</code> is <strong>unset</strong> (<code>unset ANTHROPIC_API_KEY</code> and remove any export from shell rc) so usage stays on Pro, not pay-per-token.</li>
+        <li>From <code>agent-lab/</code>, run <code>claude</code> and ask something trivial (e.g. “reply with pong”). Exit when done.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://docs.anthropic.com/en/api/messages">Messages API</a> · <a href="https://docs.anthropic.com/en/api/getting-started">Getting started</a> · <a href="https://docs.anthropic.com/en/api/client-sdks">Client SDKs</a></p>
-      <p class="lab-guide__done"><strong>Done when:</strong> A script prints a Claude reply without pasting the key into chat history.</p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://code.claude.com/docs/en/setup">Setup</a> · <a href="https://code.claude.com/docs/en/authentication">Authentication</a> · <a href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan">Claude Code with Pro/Max</a></p>
+      <p class="lab-guide__done"><strong>Done when:</strong> <code>claude --version</code> works, auth status is logged in via subscription, and a one-line session replies without any Console API key.</p>
     </div>
   </li>
 
   <li class="lab-todo">
     <div class="lab-todo__head">
-      <label><input type="checkbox" data-todo="p0-3"> Explain tokens ≈ cost (one sentence in <code>NOTES.md</code>)</label>
+      <label><input type="checkbox" data-todo="p0-3"> Explain session / usage budget (one sentence in <code>NOTES.md</code>)</label>
       <button type="button" class="lab-todo__how" aria-expanded="false" aria-controls="guide-p0-3" data-guide="guide-p0-3">How</button>
     </div>
     <div class="lab-guide" id="guide-p0-3" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Skim Anthropic pricing: input vs output tokens, and that tools/long context multiply cost.</li>
-        <li>In <code>NOTES.md</code>, write one sentence you could say out loud (e.g. “tokens are the billable units; more prompt + more tool thrash = higher $”).</li>
-        <li>Optional: log <code>usage</code> from one API response and note input/output counts.</li>
+        <li>Skim how Claude Code uses Pro/Max included usage (limits exist; thrash burns the budget).</li>
+        <li>In <code>NOTES.md</code>, write one sentence you could say out loud (e.g. “subscription usage is finite; more tool thrash and longer sessions = fewer tasks before you hit the wall”).</li>
+        <li>Optional: after one short Claude Code session, note in NOTES what you spent time on (thinking vs tools vs waiting).</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://docs.anthropic.com/en/docs/about-claude/pricing">Anthropic pricing</a></p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan">Claude Code with Pro/Max</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> <code>NOTES.md</code> has that sentence, and you can explain it without opening the page.</p>
     </div>
   </li>
@@ -152,8 +153,8 @@ Get a working Claude path and a place to put labs. No site post yet.
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
         <li>Read that many local servers expose a Chat Completions-shaped HTTP API (OpenAI-compatible).</li>
-        <li>Note the difference: Anthropic Messages vs OpenAI chat/completions — same “HTTP JSON in, JSON out” idea, different schemas.</li>
-        <li>Write 2–3 lines in <code>NOTES.md</code>: why pointing a client at <code>localhost</code> Ollama can “look like” cloud if the client speaks the compatible shape.</li>
+        <li>Note the difference: Claude Code (subscription session) vs a raw HTTP chat API vs OpenAI-shaped local servers — same “prompt in, text/tools out” idea, different packaging.</li>
+        <li>Write 2–3 lines in <code>NOTES.md</code>: why pointing a client at <code>localhost</code> Ollama can “look like” cloud if the client speaks a compatible shape — and why this lab’s primary brain is still Claude Code + Pro.</li>
       </ol>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://github.com/ollama/ollama/blob/main/docs/openai.md">Ollama OpenAI compatibility</a> · <a href="https://platform.openai.com/docs/api-reference/chat">OpenAI Chat Completions</a> (shape only)</p>
       <p class="lab-guide__done"><strong>Done when:</strong> You can explain “compatible API” without claiming the models are equal.</p>
@@ -245,13 +246,13 @@ Chat “done” and merge-ready are different signals. The **harness** must obse
 
 | Knowledge | Why | Refresh |
 | --- | --- | --- |
-| Phase 0 done | Working Claude path | — |
-| Message roles (system / user / assistant) | Loop state | [Messages API](https://docs.anthropic.com/en/api/messages) |
-| JSON in Python | Tool args | [json module](https://docs.python.org/3/library/json.html) |
+| Phase 0 done | Working Claude Code (Pro) path | — |
+| Claude Code session + tools | Brain already has a tool loop | [Claude Code overview](https://code.claude.com/docs/en/overview) · [Hooks](https://code.claude.com/docs/en/hooks) |
+| JSON in Python | Fake CI / logs | [json module](https://docs.python.org/3/library/json.html) |
 | ReAct (high level) | Loop shape | [ReAct paper](https://arxiv.org/abs/2210.03629) (skim) |
 | CI / PR gates | Done ≠ merge | [GH Actions quickstart](https://docs.github.com/en/actions/writing-workflows/quickstart) · essay Prerequisites |
 
-**References:** [Anthropic tool use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) · [Building effective agents](https://www.anthropic.com/research/building-effective-agents) · [Essay](/agent-done-but-ci-red)
+**References:** [Claude Code hooks](https://code.claude.com/docs/en/hooks) · [Building effective agents](https://www.anthropic.com/research/building-effective-agents) · [Essay](/agent-done-but-ci-red)
 
 ### Todos
 {: #phase-1-todos .lab-todos-h}
@@ -259,19 +260,19 @@ Chat “done” and merge-ready are different signals. The **harness** must obse
 <ul class="lab-todos" data-phase="1">
   <li class="lab-todo">
     <div class="lab-todo__head">
-      <label><input type="checkbox" data-todo="p1-1"> Hand-roll loop: messages → Claude → tool → observe (1–2 fake tools)</label>
+      <label><input type="checkbox" data-todo="p1-1"> Drive Claude Code as the brain; harness owns tools/observe around it (1–2 fake gates)</label>
       <button type="button" class="lab-todo__how" aria-expanded="false" aria-controls="guide-p1-1" data-guide="guide-p1-1">How</button>
     </div>
     <div class="lab-guide" id="guide-p1-1" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Create <code>01-loop/agent.py</code>: a list of messages (system + user).</li>
-        <li>Call Claude with <strong>tools</strong> defined (start with 1–2 fakes, e.g. <code>get_time</code>, <code>echo</code>).</li>
-        <li>When the model returns a tool_use block, run your Python function, append a tool_result message, call again.</li>
-        <li>Repeat until the model returns plain text (or you hit a stop rule in the next todo).</li>
+        <li>Create <code>01-loop/</code>: a tiny toy task (e.g. fix a deliberate bug in a 20-line script) plus <code>NOTES.md</code> describing the harness you own.</li>
+        <li>Use <strong>Claude Code</strong> (<code>claude</code> in that folder) as the brain — Pro login, no API key. Let it use built-in tools (read/edit/bash) for the toy task.</li>
+        <li>Add 1–2 <strong>harness-side</strong> checks outside the model: e.g. a script <code>observe.py</code> that reads <code>ci_status.json</code> or runs a local test and prints green/red.</li>
+        <li>Document the loop in NOTES: goal → Claude Code → tools → <em>your</em> observe → stop? (Claude Code runs the model loop; you own the stop gate.)</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview">Tool use overview</a> · <a href="https://docs.anthropic.com/en/api/messages">Messages API</a> · <a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a></p>
-      <p class="lab-guide__done"><strong>Done when:</strong> You can watch 1–2 fake tools fire in a real multi-turn loop.</p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://code.claude.com/docs/en/overview">Claude Code overview</a> · <a href="https://code.claude.com/docs/en/hooks">Hooks</a> · <a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a></p>
+      <p class="lab-guide__done"><strong>Done when:</strong> You completed one task with Claude Code and can point at an observe script/check you own (not “the chat said so”).</p>
     </div>
   </li>
 
@@ -283,10 +284,10 @@ Chat “done” and merge-ready are different signals. The **harness** must obse
     <div class="lab-guide" id="guide-p1-2" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Add a hard <code>max_steps</code> (e.g. 8). Exit with a clear “stopped: max steps” message.</li>
-        <li>Add a budget guard: stop if estimated tokens or $ exceeds a tiny cap you set in config.</li>
-        <li>Define a <code>done</code> signal the harness understands (tool or structured flag) — model text alone is not enough yet.</li>
-        <li>Force a case that would loop forever without the cap; prove the harness stops.</li>
+        <li>Add a hard <code>max_steps</code> or max-session rule you enforce (script, checklist, or Claude Code hook) — e.g. refuse another Claude Code run after N attempts.</li>
+        <li>Add a budget guard: stop if wall-clock or attempt count exceeds a tiny cap you set in config/NOTES.</li>
+        <li>Define a <code>done</code> signal the harness understands (green observe script / CI file) — model text alone is not enough yet.</li>
+        <li>Force a case that would thrash forever without the cap; prove the harness stops.</li>
       </ol>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://www.anthropic.com/research/building-effective-agents">Effective agents (stop / orchestration)</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> A runaway prompt cannot spin forever; logs show which stop rule fired.</p>
@@ -321,7 +322,7 @@ Chat “done” and merge-ready are different signals. The **harness** must obse
       <ol class="lab-guide__steps">
         <li>After every step, append one JSON object to <code>runs/run-….jsonl</code>: step #, role, tool name, summary, stop reason.</li>
         <li>Reproduce a failure once (bad tool result or red CI).</li>
-        <li>Write a tiny <code>replay.py</code> that prints the JSONL chronologically so you can narrate the failure without re-calling the API.</li>
+        <li>Write a tiny <code>replay.py</code> (or shell) that prints the JSONL chronologically so you can narrate the failure without starting another Claude Code session.</li>
       </ol>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://jsonlines.org/">JSON Lines</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> You can replay one failed run from the log alone.</p>
@@ -399,11 +400,11 @@ The model only sees schemas. A bloated catalog is a harness bug: access ≠ expe
 | Knowledge | Why | Refresh |
 | --- | --- | --- |
 | Phase 1 loop | Tools plug into harness | — |
-| Tool schema (name, description, JSON params) | Model only sees schema | [Tool use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) |
+| Tool schema (name, description, JSON params) | Model only sees schema | [Claude Code tools / MCP](https://code.claude.com/docs/en/mcp) · [Tool use concepts](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) |
 | Filesystem paths / cwd | Coding tools | — |
-| Prompt bloat / token cost | Too many tools hurts | [Pricing](https://docs.anthropic.com/en/docs/about-claude/pricing) |
+| Prompt bloat / usage cost | Too many tools hurts | [Pro/Max + Claude Code](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan) |
 
-**References:** [Anthropic tool use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) · [LangChain tools](https://python.langchain.com/docs/concepts/tools/) (opt.) · [Essay](/agent-too-many-tools)
+**References:** [Claude Code MCP](https://code.claude.com/docs/en/mcp) · [Anthropic tool use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) (concepts) · [Essay](/agent-too-many-tools)
 
 ### Todos
 {: #phase-2-todos .lab-todos-h}
@@ -417,11 +418,11 @@ The model only sees schemas. A bloated catalog is a harness bug: access ≠ expe
     <div class="lab-guide" id="guide-p2-1" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Pick ~5 tools only (e.g. read_file, write_file, list_dir, run_tests, git_status) — delete the rest from the schema list.</li>
-        <li>Give a small coding task in a toy folder (fix a function + run a test).</li>
+        <li>With Claude Code, start from a <strong>narrow</strong> tool/MCP surface (~5 capabilities you actually need — e.g. read/edit/bash/tests only; disable extra MCP servers).</li>
+        <li>Give a small coding task in a toy folder (fix a function + run a test) via <code>claude</code> (Pro login).</li>
         <li>Log steps and whether the task completed. Keep this as your baseline run.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview">Tool use</a> · <a href="/agent-too-many-tools">Essay: Too Many Tools</a></p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://code.claude.com/docs/en/mcp">Claude Code MCP</a> · <a href="/agent-too-many-tools">Essay: Too Many Tools</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> Baseline succeed with ~5 tools; save transcript/metrics.</p>
     </div>
   </li>
@@ -434,11 +435,11 @@ The model only sees schemas. A bloated catalog is a harness bug: access ≠ expe
     <div class="lab-guide" id="guide-p2-2" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Add ~15 useless or overlapping tool schemas (noise names/descriptions) without removing the good five.</li>
-        <li>Re-run the <strong>same</strong> coding task.</li>
-        <li>Compare: steps, tool thrash, tokens/$, success. Save both runs.</li>
+        <li>Add ~15 useless MCP servers / overlapping tools (noise) without removing the good five — or document a “flood” config you can toggle.</li>
+        <li>Re-run the <strong>same</strong> coding task in Claude Code.</li>
+        <li>Compare: steps, tool thrash, session length / usage feel, success. Save both runs.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="/agent-too-many-tools">Essay</a> · <a href="https://docs.anthropic.com/en/docs/about-claude/pricing">Pricing</a></p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="/agent-too-many-tools">Essay</a> · <a href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan">Pro/Max usage</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> Side-by-side numbers show more tools ≠ more expertise.</p>
     </div>
   </li>
@@ -451,7 +452,7 @@ The model only sees schemas. A bloated catalog is a harness bug: access ≠ expe
     <div class="lab-guide" id="guide-p2-3" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>From both runs, fill a table in <code>NOTES.md</code>: columns for steps, distinct tools called, input/output tokens (or $), success Y/N.</li>
+        <li>From both runs, fill a table in <code>NOTES.md</code>: columns for steps, distinct tools called, session thrash, success Y/N.</li>
         <li>Add one row for allowlist (~5) and one for flood (~20).</li>
         <li>Write 3–5 sentences: the model only sees schemas — a bloated catalog is a <em>harness</em> bug (access ≠ expertise).</li>
         <li>Optional: paste one thrashy tool-call sequence from the flood run as evidence.</li>
@@ -565,7 +566,7 @@ Durable rules live in files / system prompt — not in yesterday’s chat scroll
 | Knowledge | Why | Refresh |
 | --- | --- | --- |
 | Phase 1–2 | Rules constrain tools | — |
-| System vs user messages | Durable rules live in system / files | [Messages API](https://docs.anthropic.com/en/api/messages) |
+| System vs user / project rules | Durable rules live in files | [CLAUDE.md / memory](https://code.claude.com/docs/en/memory) · [AGENTS.md](https://agents.md/) |
 | Finite context | Can’t paste whole repo | [Context windows](https://docs.anthropic.com/en/docs/build-with-claude/context-windows) |
 | Monorepo layout | Navigability | Your day job |
 
@@ -1411,7 +1412,7 @@ Bad retrieval + high confidence is worse than “I don’t know.” Hooks set se
         <li>Implement as a function the harness always calls before the first model turn (a “hook”).</li>
         <li>Prove two cold runs get the same structural preamble.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="/wrong-chunk-confident-answer">Essay</a> · Messages API system prompt patterns</p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="/wrong-chunk-confident-answer">Essay</a> · Claude Code system / project prompt patterns</p>
       <p class="lab-guide__done"><strong>Done when:</strong> Same preamble every cold start.</p>
     </div>
   </li>
@@ -1523,7 +1524,7 @@ Optional. Convenience must not delete approvals (phase 4) or eval (phase 7).
 | --- | --- | --- |
 | Phases 1–2, 4, 6–7 | Capstone reuses them | — |
 | Agent gateway / channels | Always-on team | [OpenClaw docs](https://docs.openclaw.ai/) |
-| Claude as provider | Auth + models | [OpenClaw Anthropic](https://docs.openclaw.ai/providers/anthropic) |
+| Claude as provider | Auth + models | Prefer Claude Code / Claude.ai account path; avoid Console API keys for this lab · [OpenClaw Anthropic](https://docs.openclaw.ai/providers/anthropic) |
 | *(Opt.)* Remote access | Phone → gateway | [Tailscale KB](https://tailscale.com/kb) |
 
 **References:** [OpenClaw](https://docs.openclaw.ai/) · [Tailscale](https://tailscale.com/kb) · Essays reading map below
@@ -1626,7 +1627,7 @@ Optional. Convenience must not delete approvals (phase 4) or eval (phase 7).
     <div class="lab-guide" id="guide-p10-6" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Define User A vs User B in NOTES: separate API keys or env files, separate workspace dirs.</li>
+        <li>Define User A vs User B in NOTES: separate Claude Code projects/workspaces (or accounts), separate dirs — <strong>not</strong> shared Console API keys.</li>
         <li>Prove a tool running as A cannot read B’s <code>secrets/</code> (path allowlist or OS perms).</li>
         <li>Optional: separate OpenClaw/agent profiles with clear bindings.</li>
       </ol>
