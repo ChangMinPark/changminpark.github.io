@@ -113,6 +113,5 @@ A stronger model still ships broken diffs when "done" means conversational confi
 
 ## References
 
-- [Formatters vs Linters (this site)]({{ site.baseurl }}/formatter-vs-linter)
 - [From Jenkins to Screwdriver (this site)]({{ site.baseurl }}/cicd-jenkins-to-screwdriver)
 - [Effective harnesses for long-running agents (Anthropic)](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — initializer + incremental sessions; clean state between windows

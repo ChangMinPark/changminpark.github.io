@@ -80,8 +80,6 @@ GitHub will publish a fuller RCA when it is ready. Until then, the actionable le
 
 ## References
 
-- [GitHub Status](https://www.githubstatus.com/) — Aug 6, 2026 Actions / Pages / Copilot updates (public timeline)
 - [GitHub Actions docs](https://docs.github.com/en/actions)
-- [GitHub Actions for Android PR gates (this site)]({{ site.baseurl }}/github-actions-android-pr-gates)
 - [GHEC vs GHES (this site)]({{ site.baseurl }}/ghec-vs-ghes)
 - [From Jenkins to Screwdriver (this site)]({{ site.baseurl }}/cicd-jenkins-to-screwdriver)

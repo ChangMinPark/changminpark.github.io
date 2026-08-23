@@ -99,6 +99,5 @@ Cache invalidation from CDN to Room is one causal chain. Stale avatars and threa
 ## References
 
 - [Cloud CDN — cache invalidation overview](https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview)
-- [Room InvalidationTracker](https://developer.android.com/reference/androidx/room/InvalidationTracker)
 - [CDN cache invalidation (VergeCloud)](https://www.vergecloud.com/blog/cache-invalidation-in-a-cdn/)
 - [Redis cache invalidation strategy (Loke.dev)](https://loke.dev/blog/redis-cache-invalidation-strategy-troubleshooting)

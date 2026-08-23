@@ -333,5 +333,10 @@ Android FE architecture evolved from Activities that did everything, through tes
 ## Related reading
 
 - **Internal:** [Imperative vs Declarative Android UI]({{ site.baseurl }}/imperative-vs-declarative-android-ui) · [Android Architecture Breakdown]({{ site.baseurl }}/android-architecture-breakdown) · [Redux with Kotlin]({{ site.baseurl }}/redux-with-kotlin)
-- **Docs:** [Guide to app architecture (Android Developers)](https://developer.android.com/topic/architecture)
-- **Compose:** [State and Jetpack Compose](https://developer.android.com/develop/ui/compose/state)
+
+## References
+
+- [UI layer](https://developer.android.com/topic/architecture/ui-layer) — unidirectional state in the screen, after the platform architecture guide
+- [Handling lifecycles](https://developer.android.com/topic/libraries/architecture/lifecycle) — why God-Activities leaked observers
+- [Hannes Dorfmann — Mosby](https://hannesdorfmann.com/android/mosby/) — MVP on Android as a historical waypoint
+- [MVI on Android (Hannes Dorfmann)](https://hannesdorfmann.com/android/mosby3-mvi-1/) — intent → model → view as a single state machine

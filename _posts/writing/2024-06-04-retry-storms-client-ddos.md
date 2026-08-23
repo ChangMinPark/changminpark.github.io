@@ -96,4 +96,3 @@ When the outage ends and phones retry wrong, your clients become the DDoS. Expon
 - [Designing retry and backoff for mobile networks](https://dcdhameliya.com/blog/designing-retry-and-backoff-strategies-for-mobile-networks)
 - [Retry storms — backoff, jitter, budgets (Webalert)](https://web-alert.io/blog/retry-storms-exponential-backoff-jitter-explained)
 - [Mobile API retry storm detection and mitigation](https://www.appxiom.com/blogs/how-to-detect-and-mitigate-mobile-api-retry-storms-that-bring-down-backend-services/)
-- [AWS Architecture Blog — exponential backoff and jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)

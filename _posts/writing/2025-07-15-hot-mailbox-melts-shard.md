@@ -85,7 +85,6 @@ A hot mailbox is the celebrity problem with folders. Sharding spreads keys; it d
 
 ## References
 
-- [Cache-Aside pattern (Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside)
 - [Caching guidance (Azure)](https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching)
 - [Hot key and cache stampede (System Design Sandbox)](https://www.systemdesignsandbox.com/learn/hot-key-cache-stampede)
 - [Distributed cache design (Sujeet Jaiswal)](https://sujeet.pro/articles/distributed-cache-design)

@@ -105,7 +105,6 @@ There is no universal "best" install prompt — only fit for user occasion. Full
 ## References
 
 - [Branch — Smart banners & web-to-app engagement](https://www.branch.io/products/banners/)
-- [Apple — Promoting apps with Smart App Banners](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners)
 - [Google Search Central — Intrusive interstitials](https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials)
 - [AppsFlyer — Smart Banners (web-to-app)](https://support.appsflyer.com/hc/en-us/articles/360000764837-Smart-Banners-mobile-web-to-app-for-marketers)
 - [Linkrunner — Deep linking for web-to-app](https://linkrunner.io/blog/deep-linking-for-web-to-app-how-to-convert-mobile-web-visitors-into-app-users)
