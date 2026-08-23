@@ -1,7 +1,7 @@
 ---
 title: "On-Device Agents Without the Mini Fantasy"
 excerpt: "On-device and edge agent work is latency, privacy, and offline wiring — not a shopping list for a Mini or a 70B. Harness approvals and evals stay the same."
-date: 2026-08-22 09:15:00
+date: 2026-06-27 09:15:00
 tags: [Writing, Agents]
 draft: false
 ---

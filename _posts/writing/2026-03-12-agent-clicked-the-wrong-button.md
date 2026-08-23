@@ -1,7 +1,7 @@
 ---
 title: "The Agent Clicked the Wrong Button"
 excerpt: "Browser and computer-use agents are a different tool class. Selector drift and page-borne injection beat chat-tone caution — multimodal observation does not fix that."
-date: 2026-08-21 11:00:00
+date: 2026-03-12 11:00:00
 tags: [Writing, Agents]
 draft: false
 ---

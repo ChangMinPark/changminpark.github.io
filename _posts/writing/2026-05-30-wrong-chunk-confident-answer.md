@@ -1,7 +1,7 @@
 ---
 title: "Wrong Chunk, Confident Answer"
 excerpt: "Knowledge bases and RAG fail the same way: the model sounds sure while ranking served the wrong passage. When to index docs — and when repo search is enough."
-date: 2026-08-14 11:00:00
+date: 2026-05-30 11:00:00
 tags: [Writing, Agents]
 draft: false
 ---

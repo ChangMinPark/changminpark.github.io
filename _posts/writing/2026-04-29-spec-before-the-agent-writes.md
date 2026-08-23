@@ -1,7 +1,7 @@
 ---
 title: "CI Green Is Not Done — Spec Before the Agent Writes"
 excerpt: "Green CI can still ship the wrong feature if the agent wrote the tests. Put an acceptance contract and a failing signal in place before coding starts."
-date: 2026-08-20 10:30:00
+date: 2026-04-29 10:30:00
 tags: [Writing, Agents]
 draft: false
 ---
