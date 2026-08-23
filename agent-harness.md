@@ -19,7 +19,7 @@ Work top-down. Each phase has **prerequisites → learn links → checkable todo
 6. Re-read the linked Writing post with the lab still open.
 7. Pass the phase bar out loud without notes.
 
-**Auth (this lab):** Use a **Claude Pro / Max** account with **Claude Code** via browser login (`claude auth login --claudeai`). Do **not** set `ANTHROPIC_API_KEY` — that routes to Console pay-per-token billing instead of your subscription. No Anthropic Console API credits are required for the default track.
+**Auth (this lab):** Use a **Claude Pro / Max** account with **Claude Code** via browser login (`claude auth login --claudeai`).
 
 Hardware: MacBook Pro with 24 GB is enough. Claude Code (Pro) is the primary brain. Optional Ollama 7B / on-device is wiring literacy only. Phase 11 (computer-use) is optional.
 
@@ -70,7 +70,7 @@ LangChain/LangGraph sit in **runtime** — same tier as gates you write around C
 
 **Topic** Environment · **Essay** — · **Prior phases** none · **~4–6 hr**
 
-Get a working Claude Code path (Pro login) and a place to put labs. No site post yet. No Console API key.
+Get a working Claude Code path (Pro login) and a place to put labs. No site post yet.
 
 </div>
 
@@ -118,12 +118,12 @@ Get a working Claude Code path (Pro login) and a place to put labs. No site post
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
         <li>Install Claude Code (prefer native arm64 on Apple Silicon: <code>curl -fsSL https://claude.ai/install.sh | bash</code>, or <code>brew install --cask claude-code</code> on matching arch). Put <code>~/.local/bin</code> on your <code>PATH</code> if needed.</li>
-        <li>Log in with subscription: <code>claude auth login --claudeai</code> and finish the browser flow with your Claude.ai <strong>Pro or Max</strong> account. Do <strong>not</strong> use Console / API-credit login for this lab.</li>
-        <li>Confirm: <code>claude auth status</code> shows logged in. Ensure <code>ANTHROPIC_API_KEY</code> is <strong>unset</strong> (<code>unset ANTHROPIC_API_KEY</code> and remove any export from shell rc) so usage stays on Pro, not pay-per-token.</li>
+        <li>Log in with subscription: <code>claude auth login --claudeai</code> and finish the browser flow with your Claude.ai <strong>Pro or Max</strong> account.</li>
+        <li>Confirm: <code>claude auth status</code> shows logged in.</li>
         <li>From <code>agent-lab/</code>, run <code>claude</code> and ask something trivial (e.g. “reply with pong”). Exit when done.</li>
       </ol>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://code.claude.com/docs/en/setup">Setup</a> · <a href="https://code.claude.com/docs/en/authentication">Authentication</a> · <a href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan">Claude Code with Pro/Max</a></p>
-      <p class="lab-guide__done"><strong>Done when:</strong> <code>claude --version</code> works, auth status is logged in via subscription, and a one-line session replies without any Console API key.</p>
+      <p class="lab-guide__done"><strong>Done when:</strong> <code>claude --version</code> works, auth status is logged in, and a one-line session replies.</p>
     </div>
   </li>
 
@@ -267,7 +267,7 @@ Chat “done” and merge-ready are different signals. The **harness** must obse
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
         <li>Create <code>01-loop/</code>: a tiny toy task (e.g. fix a deliberate bug in a 20-line script) plus <code>NOTES.md</code> describing the harness you own.</li>
-        <li>Use <strong>Claude Code</strong> (<code>claude</code> in that folder) as the brain — Pro login, no API key. Let it use built-in tools (read/edit/bash) for the toy task.</li>
+        <li>Use <strong>Claude Code</strong> (<code>claude</code> in that folder) as the brain — Pro login. Let it use built-in tools (read/edit/bash) for the toy task.</li>
         <li>Add 1–2 <strong>harness-side</strong> checks outside the model: e.g. a script <code>observe.py</code> that reads <code>ci_status.json</code> or runs a local test and prints green/red.</li>
         <li>Document the loop in NOTES: goal → Claude Code → tools → <em>your</em> observe → stop? (Claude Code runs the model loop; you own the stop gate.)</li>
       </ol>
@@ -1524,7 +1524,7 @@ Optional. Convenience must not delete approvals (phase 4) or eval (phase 7).
 | --- | --- | --- |
 | Phases 1–2, 4, 6–7 | Capstone reuses them | — |
 | Agent gateway / channels | Always-on team | [OpenClaw docs](https://docs.openclaw.ai/) |
-| Claude as provider | Auth + models | Prefer Claude Code / Claude.ai account path; avoid Console API keys for this lab · [OpenClaw Anthropic](https://docs.openclaw.ai/providers/anthropic) |
+| Claude as provider | Auth + models | Claude Code / Claude.ai account · [OpenClaw Anthropic](https://docs.openclaw.ai/providers/anthropic) |
 | *(Opt.)* Remote access | Phone → gateway | [Tailscale KB](https://tailscale.com/kb) |
 
 **References:** [OpenClaw](https://docs.openclaw.ai/) · [Tailscale](https://tailscale.com/kb) · Essays reading map below
@@ -1627,7 +1627,7 @@ Optional. Convenience must not delete approvals (phase 4) or eval (phase 7).
     <div class="lab-guide" id="guide-p10-6" hidden>
       <p class="lab-guide__title">What to do &amp; how</p>
       <ol class="lab-guide__steps">
-        <li>Define User A vs User B in NOTES: separate Claude Code projects/workspaces (or accounts), separate dirs — <strong>not</strong> shared Console API keys.</li>
+        <li>Define User A vs User B in NOTES: separate Claude Code projects/workspaces (or accounts), separate dirs.</li>
         <li>Prove a tool running as A cannot read B’s <code>secrets/</code> (path allowlist or OS perms).</li>
         <li>Optional: separate OpenClaw/agent profiles with clear bindings.</li>
       </ol>
