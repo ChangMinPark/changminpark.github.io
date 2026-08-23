@@ -1,7 +1,7 @@
 ---
 title: "You Can't Delete Claude's Watermark With a Remover"
 excerpt: "Claude's text watermark lives in word choices, not hidden characters. Unicode strippers miss it; heavy rewrites erase it by rewriting the piece; a positive hit only means Claude was involved somewhere."
-date: 2026-08-22 18:30:00
+date: 2026-08-22 19:35:00
 tags: [Writing, Agents]
 draft: false
 ---
