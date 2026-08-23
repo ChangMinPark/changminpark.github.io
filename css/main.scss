@@ -1099,23 +1099,55 @@ html.theme-dark .lab-progress__text {
   padding: 0;
 }
 
-.lab-todos li {
+.lab-todos > li,
+.lab-todo {
   margin: 0;
-  padding: 0.35rem 0;
+  padding: 0.55rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 
-.lab-todos li:last-child {
+.lab-todos > li:last-child,
+.lab-todo:last-child {
   border-bottom: 0;
+}
+
+.lab-todo__head {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .lab-todos label {
   display: flex;
   gap: 0.65rem;
   align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0;
   cursor: pointer;
   line-height: 1.5;
   color: var(--color-text);
+}
+
+.lab-todo__how {
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated, rgba(127, 127, 127, 0.08));
+  color: var(--color-accent, #e25440) !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  line-height: 1.4;
+}
+
+.lab-todo__how:hover,
+.lab-todo__how:focus {
+  border-color: var(--color-accent, #e25440);
+  background: rgba(226, 84, 64, 0.1);
 }
 
 .lab-todos input[type="checkbox"] {
@@ -1131,6 +1163,61 @@ html.theme-dark .lab-progress__text {
   color: var(--color-muted);
   text-decoration: line-through;
   text-decoration-color: rgba(127, 127, 127, 0.55);
+}
+
+.lab-guide {
+  margin: 0.55rem 0 0.15rem 1.65rem;
+  padding: 0.35rem 0.7rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated, rgba(127, 127, 127, 0.05));
+}
+
+.lab-guide > summary {
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  list-style: none;
+}
+
+.lab-guide > summary::-webkit-details-marker {
+  display: none;
+}
+
+.lab-guide > summary::before {
+  content: "▸ ";
+  color: var(--color-accent, #e25440);
+}
+
+.lab-guide[open] > summary::before {
+  content: "▾ ";
+}
+
+.lab-guide__steps {
+  margin: 0.55rem 0 0.35rem;
+  padding-left: 1.15rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.lab-guide__steps li {
+  margin: 0.35rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.lab-guide__refs,
+.lab-guide__done {
+  margin: 0.45rem 0 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+.lab-guide__done {
+  color: var(--color-heading);
 }
 
 .lab-pass {
