@@ -154,10 +154,13 @@ Detect tampering **without** the original — pixel inconsistencies, shadow phys
 ## References
 
 ### Public-key infrastructure
+
 - [Trust Models in Public Key Infrastructure](https://www.researchgate.net/publication/320537664_Trust_Models_in_Public_Key_Infrastructure) (ACSIT '17)
 - [Everything you should know about certificates and PKI](https://smallstep.com/blog/everything-pki/) (smallstep.com)
 - [PGP Web of Trust: Core Concepts](https://www.linux.com/training-tutorials/pgp-web-trust-core-concepts-behind-trusted-communication/) (Linux.com)
+
 ### Watermarking and authentication surveys
+
 - [Methods for image authentication: a survey](https://doi.org/10.1016/j.patcog.2006.06.008) (166 citations)
 - [Review on Semi-Fragile Watermarking Algorithms](https://doi.org/10.3390/fi9040056) (Future Internet '17)
 - [Secure Watermarking Schemes in IoT: An Overview](https://doi.org/10.3390/s21165505) ('21)

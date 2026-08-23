@@ -102,6 +102,7 @@ I will not claim internal Mail quota numbers or edge product names. The portable
 
 ## References
 
+- [MDN — Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After)
 - [RFC 9110 — 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc9110.html#name-429-too-many-requests)
 - [Designing Rate Limiting for Mobile APIs](https://dcdhameliya.com/blog/designing-rate-limiting-for-mobile-apis)
 - [Rate Limiting Strategies That Don't Kill Your UX](https://raghavkattel.com.np/blog/rate-limiting-strategies-that-dont-kill-your-ux)

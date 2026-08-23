@@ -79,6 +79,5 @@ Modularization is a **product and org** decision wearing Gradle clothes. Slice f
 
 ## References
 
-- [Android Developers — Modularization patterns](https://developer.android.com/topic/modularization/patterns) — feature vs layer vs data-type slices (the meeting this post is in)
-- [Add build dependencies](https://developer.android.com/build/dependencies) — how module edges show up in Gradle, not in a hexagon diagram
-- [Gradle — Multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) — configuration/execution of a graph you actually have to sync
+- [Android Developers — App modularization](https://developer.android.com/topic/modularization)
+- [Gradle User Guide — Java Library plugin (`api` / `implementation`)](https://docs.gradle.org/current/userguide/java_library_plugin.html)

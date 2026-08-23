@@ -97,5 +97,6 @@ User tap
 
 - [Flutter — Platform channels](https://docs.flutter.dev/platform-integration/platform-channels)
 - [React Native — New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page)
+- [.NET MAUI — What is MAUI?](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
 - [Impact Tech Lab — Flutter vs React Native vs Xamarin](https://impacttechlab.com/flutter-react-native-xamarin-a-cross-platform-comparison/)
 - [Tempest House — Xamarin vs RN vs Ionic vs Flutter vs PhoneGap vs Titanium](https://www.tempest.house/blog-posts/pros-and-cons-xamarin-vs-react-native-vs-ionic-vs-flutter-vs-phonegap-vs-appcelerator-titanium-which-one-is-right-for-you)

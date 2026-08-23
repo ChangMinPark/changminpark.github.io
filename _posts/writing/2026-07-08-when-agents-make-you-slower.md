@@ -82,5 +82,3 @@ Refuse agency on unclear, tiny, confidential, or oracle-free tickets. Keep assis
 ## References
 
 - [Ars Technica summary of the METR study](https://arstechnica.com/ai/2025/07/study-finds-ai-tools-made-open-source-software-developers-19-percent-slower/) — review/prompt/wait overhead eating coding-time savings
-- [The bot commented on your PR and nobody owns it (this site)]({{ site.baseurl }}/bot-commented-on-pr-nobody-owns) — review-queue tax from agent-washed tickets
-- [Making a monorepo navigable to agents (this site)]({{ site.baseurl }}/monorepo-navigable-to-agents) — missing command maps that turn agency into wandering

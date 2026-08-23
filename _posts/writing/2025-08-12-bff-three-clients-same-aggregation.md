@@ -90,5 +90,6 @@ When Android, iOS, and web each invent the same aggregation, you are already pay
 ## References
 
 - [Sam Newman — Backends for Frontends](https://samnewman.io/patterns/architectural/bff/)
+- [Backends for Frontends (Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends)
 - [Backend for Frontend (HLD Handbook)](https://hld.handbook.academy/curriculum/architecture-patterns/backend-for-frontend/)
 - [Backends for Frontends (arc42 Quality Model)](https://quality.arc42.org/approaches/backends-for-frontends)

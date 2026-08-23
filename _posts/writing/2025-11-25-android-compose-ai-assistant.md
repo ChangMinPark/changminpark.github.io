@@ -165,6 +165,7 @@ If you are migrating from a WebView or legacy chat shell, treat it as a state re
 
 ## References
 
+- [Jetpack Compose lists](https://developer.android.com/jetpack/compose/lists) — `LazyColumn`, keys, reverse layout
 - [Material 3 theming in Compose](https://developer.android.com/jetpack/compose/designsystems/material3)
 - [State in Compose](https://developer.android.com/develop/ui/compose/state) — ViewModel + `StateFlow`
 - [Support keyboard inset animations](https://developer.android.com/develop/ui/views/layout/sw-keyboard) — IME and window insets (applies to Compose inset modifiers)

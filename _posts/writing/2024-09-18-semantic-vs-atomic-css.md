@@ -101,7 +101,7 @@ Utility-first won a lot of product UI in the 2020s. Semantic never left content 
 
 ## References
 
-- [Adam Wathan — CSS Utility Classes and “Separation of Concerns”](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) — why utilities fight the old “semantic class = component” rule
-- [MDN — Introducing the CSS cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Introduction) — specificity and source order when both naming styles share a stylesheet
-- [CUBE CSS](https://cube.fyi/) — composition layer that keeps semantic shells and utility internals from collapsing into one soup
-- [CSS Guidelines (Harry Roberts)](https://cssguidelin.es/) — long-lived CSS architecture for sites that outlive a redesign
+- [Tailwind — Utility-first](https://tailwindcss.com/docs/utility-first)
+- [BEM introduction](https://getbem.com/introduction/)
+- [Brad Frost — Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
+- [MDN — Getting started with CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started)

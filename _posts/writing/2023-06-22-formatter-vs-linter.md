@@ -97,7 +97,9 @@ Noisy diffs usually mean missing or mismatched **formatters**, not missing linte
 
 ## References
 
+- [Prettier — Comparison with linters](https://prettier.io/docs/en/comparison.html) — scope and speed
 - [Formatter vs Linter (Awesome Code)](https://medium.com/awesomecode/formatter-vs-linter-what-is-the-difference-42b898a276ae)
 - [Linter vs Formatter (nono.ma)](https://nono.ma/linter-vs-formatter)
+- [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html)
 - [ktlint](https://ktlint.github.io/) — Kotlin linter with formatting fixes
 - [detekt](https://detekt.dev/) — static analysis for Kotlin

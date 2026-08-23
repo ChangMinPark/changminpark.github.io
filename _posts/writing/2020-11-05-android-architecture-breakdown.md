@@ -80,6 +80,7 @@ Symptoms at this layer are blunt: reboot loops, driver panics, storage corruptio
 
 ## References
 
+- [Platform architecture — Android Developers](https://developer.android.com/guide/platform)
 - [Architecture overview — Android Open Source Project](https://source.android.com/docs/core/architecture)
+- [Android runtime and Dalvik — AOSP](https://source.android.com/docs/core/runtime)
 - [Application Sandbox — AOSP Security](https://source.android.com/docs/security/app-sandbox)
-- [Low memory killer / LMKD](https://source.android.com/docs/core/perf/lmkd) — when the kernel, not your Activity, owns the “crash”

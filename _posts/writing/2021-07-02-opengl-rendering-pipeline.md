@@ -118,5 +118,6 @@ Z-fighting between coplanar surfaces, or a HUD that vanishes behind geometry, is
 ## References
 
 - Figures from Joe’s *An intro to modern OpenGL — Chapter 1: The Graphics Pipeline* ([duriansoftware.com](https://duriansoftware.com/joe/An-intro-to-modern-OpenGL.-Chapter-1:-The-Graphics-Pipeline.html))
+- [Rendering Pipeline Overview — OpenGL Wiki](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
+- [LearnOpenGL — Hello Triangle](https://learnopengl.com/Getting-started/Hello-Triangle)
 - Site: [Rushmore]({{ site.baseurl }}/rushmore)
-- [OpenGL ES spec (Khronos)](https://www.khronos.org/opengles/) — mobile GLES vs desktop GL when a stage “works on the laptop”

@@ -104,6 +104,7 @@ Backend nines measure the door you already walked through. Phones fail earlier: 
 
 ## References
 
+- [SRE Book — Service Level Objectives](https://sre.google/sre-book/service-level-objectives/)
 - [SRE Workbook — Implementing SLOs](https://sre.google/workbook/implementing-slos/)
 - [Engineering Reliable Mobile Applications](https://sre.google/resources/practices-and-processes/engineering-reliable-mobile-applications/)
 - [Product-Focused Reliability for SRE](https://sre.google/resources/practices-and-processes/product-focused-reliability-for-sre/)

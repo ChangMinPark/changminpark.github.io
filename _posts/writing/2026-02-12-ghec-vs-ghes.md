@@ -83,5 +83,7 @@ What I would not do: choose GHES because it “feels more enterprise,” then ex
 
 ## References
 
+- [About GitHub for enterprises](https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-for-enterprises) — official GHEC / GHES deployment split; Connect note
 - [Getting started with GitHub Enterprise Cloud](https://docs.github.com/en/get-started/onboarding/getting-started-with-github-enterprise-cloud) — hosted vs self-hosted one-liner
 - [Combined enterprise use / licensing](https://docs.github.com/en/billing/concepts/enterprise-billing/combined-enterprise-use) — one license covering Cloud + Server
+- [About GitHub Connect](https://docs.github.com/en/enterprise-server@latest/admin/configuring-settings/configuring-github-connect/about-github-connect) — bridging Server toward github.com features

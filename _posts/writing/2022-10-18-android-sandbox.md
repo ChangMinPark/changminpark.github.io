@@ -104,5 +104,7 @@ Each path keeps the kernel UID wall intact while allowing controlled collaborati
 
 ## References
 
+- [Application Sandbox — AOSP Security](https://source.android.com/docs/security/app-sandbox)
+- [Security-Enhanced Linux in Android — AOSP](https://source.android.com/docs/security/features/selinux)
 - [SELinux concepts — AOSP](https://source.android.com/docs/security/features/selinux/concepts)
 - [Platform architecture — Android Developers](https://developer.android.com/guide/platform)

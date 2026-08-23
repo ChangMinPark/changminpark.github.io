@@ -85,5 +85,4 @@ Mail storage is latency design: put each data class where the gesture can afford
 ## References
 
 - [Android Developers — Data and file storage](https://developer.android.com/training/data-storage)
-- [OkHttp cache](https://square.github.io/okhttp/features/cache/) — HTTP response cache as a layer above Room, not a second source of truth
-- [Cache invalidation from CDN to Room (this site)]({{ site.baseurl }}/cache-invalidation-cdn-to-room) — when local observers and HTTP caches disagree
+- [Android Developers — Room](https://developer.android.com/training/data-storage/room)

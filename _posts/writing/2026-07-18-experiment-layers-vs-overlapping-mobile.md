@@ -80,6 +80,8 @@ For example, in a mail-shaped client, the dense-list + loud-CTA week is not a st
 
 ## References
 
+- [Feature flags on mobile (this site)]({{ site.baseurl }}/feature-flags-experiments-mobile)
+- [Statsig — Layers overview](https://docs.statsig.com/experiments/layers-overview)
+- [Embracing overlapping A/B tests (Statsig)](https://www.statsig.com/blog/embracing-overlapping-a-b-tests-and-the-danger-of-isolating-experiments)
+- [Holdouts](https://docs.statsig.com/experiments/holdouts-introduction)
 - [Interaction detection](https://docs.statsig.com/experiments/exploring-results/interaction-detection)
-- [Tang et al. — Overlapping Experiment Infrastructure (KDD 2010)](https://research.google.com/archive/papers/Overlapping_Experiment_Infrastructure_More_Be.pdf) — layers as mutually exclusive domains so more tests share traffic
-- [Kohavi, Tang, Xu — Trustworthy Online Controlled Experiments](https://experimentguide.com/) — interactions, SRM, and why isolation is not free

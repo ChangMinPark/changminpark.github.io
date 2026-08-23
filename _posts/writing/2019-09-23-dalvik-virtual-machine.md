@@ -100,6 +100,7 @@ ART is the engine; DEX is still the fuel format. Dalvik is the name of the path 
 
 ## References
 
+- [Android runtime and Dalvik — AOSP](https://source.android.com/docs/core/runtime)
+- [Dalvik bytecode format — AOSP](https://source.android.com/docs/core/runtime/dalvik-bytecode)
 - [Platform architecture (ART section) — Android Developers](https://developer.android.com/guide/platform)
 - Mark Faction, *Stack-based vs register-based VM architecture and the Dalvik VM* ([markfaction.wordpress.com](https://markfaction.wordpress.com/2012/07/15/stack-based-vs-register-based-virtual-machine-architecture-and-the-dalvik-vm/)) — register vs stack intuition (figure credit for Figure 2)
-- [Stack-based vs register-based VMs (this site)]({{ site.baseurl }}/stack-vs-register-based-vm) — why DEX named registers instead of an operand stack

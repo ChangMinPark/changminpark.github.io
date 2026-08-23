@@ -97,6 +97,7 @@ Crashlytics belongs in the ANR toolkit — especially for Android 11+ builds wit
 
 ## References
 
+- [ANRs (Android Developers)](https://developer.android.com/topic/performance/vitals/anr) — user-perceived thresholds and categories
 - [Crashlytics troubleshooting — Android ANRs](https://firebase.google.com/docs/crashlytics/troubleshooting?platform=android#anr-requires-android-11-plus) — Android 11+ requirement, Play vs Crashlytics counts
 - [Debug ANRs in Android apps (Crashlytics)](https://firebase.google.com/docs/crashlytics/debug-anr-errors) — grouping and triage tips
 - [Customize crash reports for Android](https://firebase.google.com/docs/crashlytics/android/customize-crash-reports) — breadcrumbs via Analytics

@@ -70,6 +70,8 @@ Charles proves what the wire did. Empty captures and pinning fights are not tool
 
 ## References
 
+- [Android — Network security configuration](https://developer.android.com/privacy-and-security/security-config)
+- [Charles — SSL certificates](https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/)
+- [MDN — Proxy servers and tunneling](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling)
 - [API up, still broken on phones (this site)]({{ site.baseurl }}/api-up-still-broken-on-phones)
 - [Retry storms (this site)]({{ site.baseurl }}/retry-storms-client-ddos)
-- [Certificate pinning (OWASP)](https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning) — why Charles goes dark on release builds

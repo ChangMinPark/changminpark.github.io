@@ -102,3 +102,4 @@ Ship one join key from APK to backend, and treat crashes, logs, and metrics as d
 - [OpenTelemetry — Client-side apps](https://opentelemetry.io/docs/platforms/client-apps/)
 - [OpenTelemetry — Android](https://opentelemetry.io/docs/platforms/client-apps/android/)
 - [Android mobile observability with OpenTelemetry (base14)](https://docs.base14.io/blog/android-mobile-observability-opentelemetry/)
+- [W3C Trace Context](https://www.w3.org/TR/trace-context/)

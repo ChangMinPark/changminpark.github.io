@@ -111,5 +111,7 @@ Neither design is "better" in the abstract — JVM stack bytecode dominates serv
 
 ## References
 
+- [Dalvik bytecode format — AOSP](https://source.android.com/docs/core/runtime/dalvik-bytecode)
+- [Android runtime and Dalvik — AOSP](https://source.android.com/docs/core/runtime)
 - Mark Faction, *Stack-based vs register-based VM architecture and the Dalvik VM* ([markfaction.wordpress.com](https://markfaction.wordpress.com/2012/07/15/stack-based-vs-register-based-virtual-machine-architecture-and-the-dalvik-vm/))
 - Ertl & Gregg, *The Structure and Performance of Efficient Interpreters* ([dl.acm.org](https://dl.acm.org/doi/10.1145/362066.362073)) — empirical stack vs register dispatch costs

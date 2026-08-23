@@ -80,7 +80,6 @@ Name the job before you pick the tool. Kill switches need speed and safe default
 
 ## References
 
+- [Firebase — Remote Config](https://firebase.google.com/docs/remote-config)
 - [Datadog — Feature Flags documentation](https://docs.datadoghq.com/feature_flags/)
 - [Android — Avoid blocking on network at startup](https://developer.android.com/topic/performance/vitals/launch-time)
-- [LaunchDarkly — flags vs experiments](https://launchdarkly.com/blog/feature-flags-vs-experimentation/) — kill switch vs measurement, the split this post needs after Remote Config
-- [Experiment layers vs overlapping (this site)]({{ site.baseurl }}/experiment-layers-vs-overlapping-mobile) — what happens when two flags share traffic

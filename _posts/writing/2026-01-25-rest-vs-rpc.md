@@ -78,6 +78,8 @@ Prefer **both** when the edge must stay boring and the mesh must stay fast. Put 
 
 ## References
 
+- [Architectural Styles and the Design of Network-based Software Architectures — Roy Fielding](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) — REST as defined, not as marketing
+- [gRPC Core concepts](https://grpc.io/docs/what-is-grpc/core-concepts/) — modern RPC framing (HTTP/2, stubs, streaming)
 - [gRPC vs REST (Postman)](https://blog.postman.com/grpc-vs-rest/) — accessible side-by-side of styles and tooling
 - [Service-to-service: REST, gRPC, and events (freeCodeCamp)](https://www.freecodecamp.org/news/service-to-service-communication-when-to-use-rest-grpc-and-event-driven-messaging/) — hybrid production pattern
 - [gRPC vs REST (Toptal)](https://www.toptal.com/developers/grpc/grpc-vs-rest-api) — performance and when complexity pays off

@@ -72,7 +72,6 @@ Instrument for decisions: separate crash, action, and metric pipes; pick tools t
 
 ## References
 
+- [Android Vitals](https://developer.android.com/topic/performance/vitals)
+- [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics)
 - [Datadog Mobile RUM](https://docs.datadoghq.com/real_user_monitoring/mobile_and_tv_monitoring/)
-- [Diagnose crashes](https://developer.android.com/topic/performance/vitals/crash) — crash-free users as a store-facing SLI, distinct from log volume
-- [ANR stack traces lie by omission (this site)]({{ site.baseurl }}/android-crashlytics-anr) — why crash/ANR tools are a different pipe than action logs
-- [SRE workbook — Alerting on SLOs](https://sre.google/workbook/alerting-on-slos/) — page on burn, not on every log line

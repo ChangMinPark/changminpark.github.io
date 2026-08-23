@@ -68,7 +68,8 @@ Android and Apple both dynamic-link and both thin delivery. The myth is useful a
 
 ## References
 
+- [Android App Bundles](https://developer.android.com/guide/app-bundle)
+- [Reduce your app size](https://developer.android.com/topic/performance/reduce-apk-size)
 - [App bundle format / configuration APKs](https://developer.android.com/guide/app-bundle/app-bundle-format)
+- [Apple — Reducing your app’s size](https://developer.apple.com/documentation/xcode/reducing-your-app-s-size)
 - [Types of mobile apps (this site)]({{ site.baseurl }}/types-of-mobile-apps)
-- [Android ABIs](https://developer.android.com/ndk/guides/abis) — why `.so` files multiply per CPU and splits exist
-- [Play Feature Delivery](https://developer.android.com/guide/playcore/feature-delivery) — on-demand modules vs shipping every native lib up front

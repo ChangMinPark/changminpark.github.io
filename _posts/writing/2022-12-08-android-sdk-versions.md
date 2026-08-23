@@ -116,6 +116,6 @@ The fix is rarely a one-line manifest change. It is reading the behavior-change 
 ## References
 
 - [Configure your build — SDK versions](https://developer.android.com/build/configure-app-module#set-sdk-versions)
+- [Meet Google Play's target API level requirement](https://developer.android.com/google/play/requirements/target-sdk)
 - [Android version distribution dashboards](https://developer.android.com/about/dashboards)
-- [Behavior changes for all apps](https://developer.android.com/about/versions/14/behavior-changes-all) — example of targetSdk-gated platform shifts (read the level you skipped)
-- [Request runtime permissions](https://developer.android.com/training/permissions/requesting) — a frequent “it broke on a newer phone” class tied to targetSdk
+- [Behavior changes: all Android versions](https://developer.android.com/about/versions)

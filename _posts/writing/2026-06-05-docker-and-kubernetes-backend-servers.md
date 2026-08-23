@@ -73,6 +73,9 @@ The APK is a client of that hostname. Docker and Kubernetes are how the servers 
 
 ## References
 
+- [Docker overview](https://docs.docker.com/get-started/docker-overview/)
+- [Kubernetes concepts overview](https://kubernetes.io/docs/concepts/overview/)
+- [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 - [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Backends for Frontends](https://samnewman.io/patterns/architectural/bff/)
