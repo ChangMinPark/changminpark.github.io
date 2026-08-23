@@ -21,6 +21,8 @@ Work top-down. Each phase has **prerequisites → learn links → checkable todo
 
 **Auth (this lab):** Use a **Claude Pro / Max** account with **Claude Code** via browser login (`claude auth login --claudeai`).
 
+**`NOTES.md`:** Your personal **lab workbook** (teach-backs, tables, comparisons). Claude Code does **not** auto-load it — put agent instructions in `CLAUDE.md` / `.claude/` when you want Claude to see them every session.
+
 Hardware: MacBook Pro with 24 GB is enough. Claude Code (Pro) is the primary brain. Optional Ollama 7B / on-device is wiring literacy only. Phase 11 (computer-use) is optional.
 
 <div class="lab-progress" id="lab-progress" hidden>
