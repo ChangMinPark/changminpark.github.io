@@ -1802,7 +1802,7 @@ Open **after** the matching lab, not before.
 | 7 | [Eval Is Not a Demo](/agent-eval-not-a-demo) (audit) · Spec essay |
 | 8 | [Makes You Slower](/when-agents-make-you-slower) · [Overnight PR Fantasy](/overnight-agent-pr-fantasy) (durable) · [Bot on PR](/bot-commented-on-pr-nobody-owns) |
 | 9 | [Wrong Chunk, Confident Answer](/wrong-chunk-confident-answer) |
-| 0 / 10 | [On-Device Without the Mini Fantasy](/on-device-agents-without-the-mini-fantasy) |
+| 10 | [On-Device Without the Mini Fantasy](/on-device-agents-without-the-mini-fantasy) |
 | 11 | [The Agent Clicked the Wrong Button](/agent-clicked-the-wrong-button) |
 
 ---
