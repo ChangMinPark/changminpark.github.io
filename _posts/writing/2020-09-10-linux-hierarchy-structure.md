@@ -112,6 +112,6 @@ Learn these when a bug points there — not upfront.
 
 ## References
 
-- [Filesystem Hierarchy Standard (FHS) 3.0](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
 - `man 5 proc`, `man 7 hier` — Linux manual pages
 - [systemd.file-hierarchy(7)](https://www.freedesktop.org/software/systemd/man/latest/file-hierarchy.html) — modern distro layout notes
+- [hier(7)](https://man7.org/linux/man-pages/man7/hier.7.html) — traditional layout notes alongside FHS

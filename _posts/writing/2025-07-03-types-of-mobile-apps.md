@@ -96,7 +96,6 @@ Labels matter less than *where your bottleneck lives*. Browser distribution wins
 
 ## References
 
-- [Android Developers — App fundamentals](https://developer.android.com/guide/components/fundamentals)
 - [web.dev — PWA checklist](https://web.dev/articles/pwa-checklist)
 - [Koder.ai — PWA vs Flutter vs native (Compose/SwiftUI)](https://koder.ai/blog/pwa-vs-flutter-vs-native-swiftui-compose-key-differences)
 - [James Ross Jr. — Enterprise mobile: native, hybrid, or PWA](https://www.jamesrossjr.com/blog/enterprise-mobile-development)

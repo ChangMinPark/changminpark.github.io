@@ -116,6 +116,6 @@ On boards where I ran secure-display experiments, a “stuck” NW thread during
 
 ## References
 
-- [OP-TEE OS documentation — interrupt handling](https://optee.readthedocs.io/en/latest/architecture/core.html#interrupt-handling)
 - [OP-TEE OS source (GitHub)](https://github.com/OP-TEE/optee_os)
 - ARM, *Generic Interrupt Controller Architecture Specification* — [GICv2](https://developer.arm.com/documentation/ihi0048/latest), [GICv3 and GICv4](https://developer.arm.com/documentation/ihi0069/latest)
+- [Trusted Firmware / OP-TEE](https://www.trustedfirmware.org/projects/op-tee/) — project home for the secure OS this post walks

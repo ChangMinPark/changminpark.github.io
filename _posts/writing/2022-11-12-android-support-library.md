@@ -111,7 +111,5 @@ The Support Library was the compatibility layer that kept Android apps shippable
 
 ## References
 
-- [AndroidX overview](https://developer.android.com/jetpack/androidx)
-- [Migrate to AndroidX](https://developer.android.com/jetpack/androidx/migrate)
 - [Support Library (historical overview)](https://developer.android.com/topic/libraries/support-library)
 - [AndroidX stable releases](https://developer.android.com/jetpack/androidx/versions)

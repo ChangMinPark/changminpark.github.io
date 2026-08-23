@@ -150,7 +150,5 @@ The declarative win is not fewer lines on paper. It is **one directional data fl
 
 ## References
 
-- [Thinking in Compose](https://developer.android.com/develop/ui/compose/mental-model) — recomposition and declarative updates
-- [State and Jetpack Compose](https://developer.android.com/develop/ui/compose/state) — why `TextField` does not update itself
 - [Using Views in Compose](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose) — `AndroidView` interop
 - [Using Compose in Views](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/compose-in-views) — `ComposeView` for incremental migration
