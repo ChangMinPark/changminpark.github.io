@@ -68,8 +68,6 @@ Weaker local models make bad judgment *more* obvious. That is useful for labs. I
 
 Step 3 is where people overspend. A 7–8B on a laptop already teaches timeout budgets, context limits, and "the model agreed but the tool never ran." A Mini hosting a 70B teaches thermals and electricity. Only one of those lessons transfers to shipping an Android feature that must not upload draft text.
 
-If you want a structured checklist for that path, the site's [agent harness lab]({{ site.baseurl }}/agent-harness/) keeps Mini/70B fantasies off the critical path on purpose. Use it or ignore it; the essays stand alone.
-
 ## Wrap-up
 
 Buy silicon when a product constraint demands it. Learn agents by wiring loops, gates, and evals — on whatever brain you already have. On-device without the Mini fantasy is just honest placement of compute.
