@@ -76,9 +76,15 @@ A bounded Compose tweak with a fast unit target might survive overnight. A cross
 
 Also decide *where* the agent is allowed to fail. Local `./gradlew :feature:testDebugUnitTest` as a gate is honest. “Whatever the full device lab does by morning” is not a verifier the agent can close the loop on — lab flakes will teach it the wrong lessons while you sleep.
 
+## Durable is not “keep the chat tab open”
+
+Overnight fantasy often skips the boring systems word: **job**. A durable run needs a checkpoint — step index, plan file, last tool result, status — that survives process death. Kill the worker mid-loop; restart should resume, not silently restart from zero and double-apply a half-done edit. Queues, worktrees, and `job.json` are not ceremony; they are how “left it overnight” stops meaning “maybe a zombie tmux.”
+
+Durability still does not earn auto-merge. Checkpoint → draft PR → morning review is the honest pipeline. Checkpoint → merge-to-default is the fantasy with better logging.
+
 ## What “done” means in the morning
 
-Green CI on an agent branch is necessary, not sufficient. Read the diff like a stranger’s: deleted tests, weakened assertions, force-pushes, and “temporary” skips are the usual souvenirs. Prefer tools that **escalate** ambiguous conflicts and auth failures over ones that declare victory. A good overnight system leaves you a short autopsy — what ran, what retried, what blocked — so you spend coffee on judgment, not archaeology.
+Green CI on an agent branch is necessary, not sufficient. Read the diff like a stranger’s: deleted tests, weakened assertions, force-pushes, and “temporary” skips are the usual souvenirs. Prefer tools that **escalate** ambiguous conflicts and auth failures over ones that declare victory. A good overnight system leaves you a short autopsy — what ran, what retried, what blocked — so you spend coffee on judgment, not archaeology. Check that the checkpoint and the summary agree; a resumed job that lost its plan file is a new failure mode, not a success.
 
 > **Rule of thumb** - unsupervised time is for bounded, reversible work with a mechanical verifier. If the acceptance criteria are product judgment, stay in the loop.
 

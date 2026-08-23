@@ -95,6 +95,18 @@ The portable lesson matches CI discipline: smaller surface, clearer contracts, e
 
 Twenty plugins degrade judgment; live access without playbooks confuses hands for expertise. Ship a thin tool core, add MCP only when reach truly needs it, and put procedure in skills that load on demand. Fewer tools is not austerity — it is how the model finds the right one.
 
+## Discovery is not permission
+
+MCP (and cousins) make tools **show up at runtime**. That is useful — and it is also how an agent inherits fifteen new verbs because someone clicked “connect” in a desktop client. Discovery answers “what *could* I call?” The harness still answers “what *may* I call?”
+
+Treat an MCP catalog like a package index: interesting, untrusted as policy. Your allowlist / deny list / approval gates apply **after** discovery. If a server advertises `deploy_prod` and your policy never enabled it, the model should not see it — or should see a stub that hard-fails closed.
+
+## Inference economics is a harness concern
+
+Tool thrash is not only a quality bug; it is a bill. A kitchen-sink catalog burns tokens on schema soup before the first useful edit. The same discipline applies across models: a cheap triage pass that decides “no code change” can skip a full Claude coding loop. Log **$/task** (or tokens in/out) next to steps-to-success. If “connect everything” doubles cost for the same outcome, the catalog is the regression — not the model version.
+
+Prompt caching and smaller triage models are tactics. The strategy is unchanged: small surface, clear contracts, measure thrash.
+
 ## References
 
 - [The Agent Said Done — and CI Is Red (this site)]({{ site.baseurl }}/agent-done-but-ci-red)

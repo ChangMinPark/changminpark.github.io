@@ -88,6 +88,10 @@ A bot that comments on every style nit is competing with human attention — the
 
 On Android monorepos the failure mode is especially sharp: the bot invents a Gradle module that does not exist, or tells you to edit `build/` outputs. That is a navigability problem as much as a model problem — see the companion notes on making a tree [reachable to tools]({{ site.baseurl }}/monorepo-navigable-to-agents) — but the PR still pays the attention tax either way.
 
+## Identity is ownership you can grep
+
+“Nobody owns it” often means the comment has no auditable actor: a personal PAT, a shared bot token with no maintainer doc, or a model run id that never landed in the PR thread. Prefer a team identity, a documented rotation, and a log line that ties `approved_by` / `posted_by` to a human-reachable owner. If you cannot answer “who turns this off?” from the workflow README in under a minute, ownership is theater.
+
 ## Wrap-up
 
 Ship event agents only when you can answer: who owns false positives, what is the dedupe key, and what is the rate limit. Chat can be sloppy; PR comments cannot. Treat bot review like CI — a verifier with an off switch — not like a senior engineer who happens to lack a calendar.
@@ -95,3 +99,5 @@ Ship event agents only when you can answer: who owns false positives, what is th
 ## References
 
 - [pr-shepherd](https://github.com/jonathanong/pr-shepherd) — deterministic PR orchestration and bot-noise classification for agentic tools
+- [About pull request reviews](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews) — human review threads vs bot noise
+- [Tickets where an agent makes you slower (this site)]({{ site.baseurl }}/when-agents-make-you-slower) — when the comment stream is negative expected value

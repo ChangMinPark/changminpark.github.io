@@ -86,6 +86,12 @@ Keep the always-on suite under ~15 minutes. Park expensive multi-hour trajectori
 
 Avoid turning the suite into a leaderboard chase. If a stronger model still fails your golden "do not touch generated sources" task, the bug is your rules or layout docs — not the need for a bigger card.
 
+## Audit fields are part of the ship bar
+
+A pass/fail table without **who acted** is half an eval. For any side-effect step, the JSONL (or Langfuse trace) should answer: which actor, which tool, whether a human approved, and which spec/case id was in force. “Anonymous write succeeded” is a failed gate even if the file contents look right.
+
+Pair this with a [spec written before the agent codes]({{ site.baseurl }}/spec-before-the-agent-writes): at least one golden case should assert the acceptance check itself — not that the model sounded done.
+
 ## Wrap-up
 
 Promote agent configs the way you promote flaky-test policy: spike in chat, encode 5–15 golden tasks, gate on outcomes with a flake budget, then ship. "It worked once while I watched" is exploratory testing. The ship bar is boring, repeatable, and slightly annoying to maintain — which is how you know it is real.
