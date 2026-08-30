@@ -5,7 +5,7 @@ layout: default
   <div class="agent-lab__shell">
     <div class="agent-lab__main">
       <header class="agent-lab__hero" id="overview">
-        <p class="agent-lab__eyebrow">Private lab</p>
+        <p class="agent-lab__eyebrow">Hands-on lab</p>
         <h1 class="agent-lab__title">{{ page.title }}</h1>
         {% if page.excerpt %}
         <p class="agent-lab__lede">{{ page.excerpt | strip_html | strip }}</p>
@@ -13,7 +13,7 @@ layout: default
         <ul class="agent-lab__meta">
           <li>~10–14 weeks · 4–8 hr/week</li>
           <li>Claude-first · optional local 7B</li>
-          <li>Folder: <code>agent-lab/</code></li>
+          <li>Repo: <code>~/demo-on-call-triage</code></li>
         </ul>
       </header>
 
@@ -33,8 +33,14 @@ layout: default
         </div>
         <ol class="agent-lab__toc-list">
           <li><a href="#overview">Overview</a></li>
+          <li><a href="#who-this-is-for">Who this is for</a></li>
           <li><a href="#how-to-run">How to run</a></li>
+          <li><a href="#demo-project">Demo project</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
           <li><a href="#stack">Stack</a></li>
+          <li><a href="#rules-hooks-guardrails">Rules · hooks · guardrails</a></li>
+          <li><a href="#gitignore-vs-worktreeinclude">gitignore vs worktreeinclude</a></li>
+          <li><a href="#config-directory">Config directory</a></li>
           <li><a href="#phase-0" data-phase="0">0 · Setup</a></li>
           <li><a href="#phase-1" data-phase="1">1 · Loop</a></li>
           <li><a href="#phase-2" data-phase="2">2 · Tools</a></li>
@@ -48,6 +54,7 @@ layout: default
           <li><a href="#phase-10" data-phase="10">10 · Capstone</a></li>
           <li><a href="#phase-11" data-phase="11">11 · Computer use</a></li>
           <li><a href="#essays">Essays</a></li>
+          <li><a href="#workflow-design">Workflow design</a></li>
           <li><a href="#finish">Finish line</a></li>
         </ol>
         <p class="agent-lab__toc-note">Green check = required todos done (optional skipped).</p>
