@@ -362,7 +362,7 @@ Copy the demo app, get Claude Code working, and stub `.claude/` — every later 
         <li>Note the difference: Claude Code (subscription session) vs a raw HTTP chat API vs OpenAI-shaped local servers — same “prompt in, text/tools out” idea, different packaging.</li>
         <li>Explain why pointing a client at <code>localhost</code> Ollama can “look like” cloud if the client speaks a compatible shape — and why this lab’s primary brain is still Claude Code + Pro.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://github.com/ollama/ollama/blob/main/docs/openai.md">Ollama OpenAI compatibility</a> · <a href="https://platform.openai.com/docs/api-reference/chat">OpenAI Chat Completions</a> (shape only)</p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://docs.ollama.com/api/openai-compatibility">Ollama OpenAI compatibility</a> · <a href="https://platform.openai.com/docs/api-reference/chat">OpenAI Chat Completions</a> (shape only)</p>
       <p class="lab-guide__done"><strong>Done when:</strong> You can explain “compatible API” without claiming the models are equal.</p>
     </div>
   </li>
@@ -379,7 +379,7 @@ Copy the demo app, get Claude Code working, and stub `.claude/` — every later 
         <li>Install Ollama from the site; pull a small model (e.g. <code>ollama pull llama3.1:8b</code> or <code>qwen2.5:7b</code>).</li>
         <li>Run the same prompt via <code>ollama run …</code> and via HTTP if you want.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://ollama.com">Ollama</a> · <a href="https://github.com/ollama/ollama/blob/main/docs/api.md">Ollama API</a></p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://ollama.com">Ollama</a> · <a href="https://docs.ollama.com/api/introduction">Ollama API</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> Offline reply works; you know this is ops practice, not the primary brain.</p>
     </div>
   </li>
