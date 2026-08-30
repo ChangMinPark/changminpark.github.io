@@ -36,7 +36,7 @@ Work phases top-down. Each has learn links, then todos with a **How** guide. Eve
 2. **Clone** [`demo-on-call-triage`](https://github.com/ChangMinPark/demo-on-call-triage) to `~/demo-on-call-triage/` (Phase 0) and run Claude Code from that folder.
 3. For each phase: skim learn → do todos on On-Call Triage → **demo the failure mode first** → re-read the essay → pass the phase bar (check understanding: explain in one sentence).
 
-Skim early: [Rules · hooks · guardrails](#rules-hooks-guardrails) and [gitignore vs worktreeinclude](#gitignore-vs-worktreeinclude) — Phases 3–4 and 8 make these concrete on the demo.
+Concepts like rules vs hooks vs guardrails and gitignore vs worktreeinclude live as **collapsed notes under Phase 4 / Phase 8 How** — open those todos when you reach them.
 
 **Stack:** Claude Code with a **Pro / Max** login (`claude auth login --claudeai`) is the brain. Put durable agent instructions in `CLAUDE.md` / `.claude/`. Ollama / on-device and Phase 11 are optional.
 
@@ -172,34 +172,7 @@ Think in layers. Don’t confuse a chat UI with a harness.
 
 LangChain/LangGraph sit in **runtime** — same tier as gates you write around Claude Code, not a Claude replacement.
 
-### Rules vs hooks vs guardrails
-{: #rules-hooks-guardrails}
-
-These three get mixed up constantly. Treat them as different layers — the lab demos each on **On-Call Triage**.
-
-| Layer | What it is | Where it lives | Can the model talk past it? | Lab phase |
-| --- | --- | --- | --- | --- |
-| **Rules** | Written instructions the model *should* follow | `CLAUDE.md`, `.claude/rules/` | **Yes** — guidance only under pressure / injection | **3** |
-| **Hooks** | Scripts that run around tool use (before/after/stop) | `.claude/settings.json` → `hooks` | **No** — the harness runs them whether the chat “agrees” or not | **1**, **4** |
-| **Guardrails** | The *design* that keeps side-effects safe: permissions + hooks + human approval + verify-after-write | Settings permissions, hooks, harness checks — not a single file | **No** for enforced parts; rules alone are not a guardrail | **4** |
-
-**One-line mnemonic:** rules *ask*; hooks *run*; guardrails *design the cage* (approvals + verify, with hooks/permissions as the bars).
-
-**Demo failure mode (Phases 3 → 4):** put “never run `scripts/deploy.sh`” only in `CLAUDE.md` / rules, then feed `tickets/INC-042.md` (injection). Chat may still try deploy. Add a PreToolUse **hook** / permission deny for deploy — that attempt must fail closed. That is the difference between a rule and a guardrail.
-
----
-
-### `.gitignore` vs `.worktreeinclude`
-{: #gitignore-vs-worktreeinclude}
-
-| File | Who reads it | Job | Commit it? |
-| --- | --- | --- | --- |
-| **`.gitignore`** | **Git** | Keep secrets / local junk *out of the repo* (never tracked) | Yes |
-| **`.worktreeinclude`** | **Claude Code** (not Git) | When Claude creates an isolated **git worktree**, *copy* listed gitignored files into that worktree so the app still runs | Yes (patterns only — not the secret values) |
-
-**Why `.worktreeinclude` exists:** a worktree is a fresh checkout. Git copies tracked files; anything in `.gitignore` (`.env.local`, local keys) is **absent**. Your main checkout has `.env.local`; the worktree does not — tests/app fail for a “missing config” reason that looks like an agent bug. `.worktreeinclude` lists which gitignored paths to copy into every new worktree (same pattern syntax as `.gitignore`; only files that are *also* gitignored are copied).
-
-**Demo on On-Call Triage (Phase 8):** `.gitignore` already excludes `.env` / `.env.local`. Copy `.env.example` → `.env.local`, list `.env.local` in `.worktreeinclude`, then open an isolated worktree (`claude --worktree …` or a parallel desktop session). Without the include file the worktree lacks config; with it, config is present. Never list `secrets/` for copying unless you intentionally want secrets in every worktree.
+**Guidance vs enforcement:** Text in `CLAUDE.md` / rules is *guidance*. Hooks, permissions, and harness scripts are *enforced*. Expand Phase 4’s approval-gate How for the full **rules · hooks · guardrails** note.
 
 ---
 
@@ -980,6 +953,21 @@ Side-effects need real approvals. Tool return values can lie — verify after wr
         <li>Optional: if team <code>settings.json</code> is too strict for you locally, add personal overrides in <code>.claude/settings.local.json</code> (same JSON, gitignored) — see <a href="#config-directory">Config directory</a>.</li>
         <li>Log approvals (who/when/what) in JSONL. One-sentence check: <em>rule asked; hook/permission enforced.</em></li>
       </ol>
+<details class="lab-details" markdown="1" id="rules-hooks-guardrails">
+<summary><strong>Rules vs hooks vs guardrails</strong> (expand)</summary>
+
+These three get mixed up constantly. Treat them as different layers on **On-Call Triage**.
+
+| Layer | What it is | Where it lives | Can the model talk past it? | Lab phase |
+| --- | --- | --- | --- | --- |
+| **Rules** | Written instructions the model *should* follow | `CLAUDE.md`, `.claude/rules/` | **Yes** — guidance only under pressure / injection | **3** |
+| **Hooks** | Scripts that run around tool use (before/after/stop) | `.claude/settings.json` → `hooks` | **No** — the harness runs them whether the chat “agrees” or not | **1**, **4** |
+| **Guardrails** | The *design* that keeps side-effects safe: permissions + hooks + human approval + verify-after-write | Settings permissions, hooks, harness checks — not a single file | **No** for enforced parts; rules alone are not a guardrail | **4** |
+
+**One-line mnemonic:** rules *ask*; hooks *run*; guardrails *design the cage* (approvals + verify, with hooks/permissions as the bars).
+
+**Why this demo:** Put “never run <code>scripts/deploy.sh</code>” only in <code>CLAUDE.md</code> / rules, then feed <code>tickets/INC-042.md</code> (injection). Chat may still try deploy — that is a <strong>rule</strong> (guidance). Add a PreToolUse <strong>hook</strong> / permission deny for deploy — that attempt must fail closed. That is the difference between a rule and a <strong>guardrail</strong>.
+</details>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="#rules-hooks-guardrails">Rules vs hooks vs guardrails</a> · <a href="https://code.claude.com/docs/en/hooks">Hooks</a> · <a href="https://code.claude.com/docs/en/settings">Settings</a> · <a href="/agent-trust-boundaries">Essay</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> You showed (1) rules-only can be bypassed under injection, and (2) hook/permission blocks deploy until yes.</p>
     </div>
@@ -1660,13 +1648,25 @@ Overnight **draft** can be fine. Overnight **merge** is fantasy. Someone must ow
       <p class="lab-guide__title">What to do &amp; how</p>
       <p class="lab-guide__point"><strong>Point:</strong> <code>.gitignore</code> keeps files out of Git; <code>.worktreeinclude</code> copies selected gitignored files into Claude worktrees so isolated runs still have config.</p>
       <ol class="lab-guide__steps">
-        <li>Read <a href="#gitignore-vs-worktreeinclude">gitignore vs worktreeinclude</a>. Confirm starter <code>.gitignore</code> lists <code>.env</code> / <code>.env.local</code> (Git will not track them).</li>
+        <li>Confirm starter <code>.gitignore</code> lists <code>.env</code> / <code>.env.local</code> (Git will not track them). Expand the note below if you need the why.</li>
         <li>Copy <code>.env.example</code> → <code>.env.local</code> in the main checkout. Confirm <code>git status</code> does <em>not</em> show it as a new tracked file.</li>
         <li><strong>Failure mode first:</strong> create an isolated worktree (<code>claude --worktree lab-wt</code> or a parallel desktop session). In that worktree, <code>.env.local</code> is missing — that is why the include file exists.</li>
         <li>Add root <code>.worktreeinclude</code> containing <code>.env.local</code> (gitignore-style patterns). Commit the <em>include file</em> (patterns only), never the secret values.</li>
         <li>Create a fresh worktree again — <code>.env.local</code> should be copied. One-sentence check: gitignore = keep out of repo; worktreeinclude = bring into worktrees.</li>
         <li>Do <strong>not</strong> put <code>secrets/</code> in <code>.worktreeinclude</code> for this lab — off-limits stays off-limits.</li>
       </ol>
+<details class="lab-details" markdown="1" id="gitignore-vs-worktreeinclude">
+<summary><strong>.gitignore vs .worktreeinclude</strong> (why this exists)</summary>
+
+| File | Who reads it | Job | Commit it? |
+| --- | --- | --- | --- |
+| **`.gitignore`** | **Git** | Keep secrets / local junk *out of the repo* (never tracked) | Yes |
+| **`.worktreeinclude`** | **Claude Code** (not Git) | When Claude creates an isolated **git worktree**, *copy* listed gitignored files into that worktree so the app still runs | Yes (patterns only — not the secret values) |
+
+**Why `.worktreeinclude` exists:** a worktree is a fresh checkout. Git copies tracked files; anything in `.gitignore` (`.env.local`, local keys) is **absent**. Your main checkout has `.env.local`; the worktree does not — tests/app fail for a “missing config” reason that looks like an agent bug. `.worktreeinclude` lists which gitignored paths to copy into every new worktree (same pattern syntax as `.gitignore`; only files that are *also* gitignored are copied).
+
+**On-Call Triage:** `.gitignore` already excludes `.env` / `.env.local`. Without the include file the worktree lacks config; with it, config is present. Never list `secrets/` for copying unless you intentionally want secrets in every worktree. Official docs: [Copy gitignored files into worktrees](https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees).
+</details>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="#gitignore-vs-worktreeinclude">gitignore vs worktreeinclude</a> · <a href="https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees">Copy gitignored files into worktrees</a></p>
       <p class="lab-guide__done"><strong>Done when:</strong> You demonstrated missing config without include, then present config with include — and can explain both files in one sentence each.</p>
     </div>
@@ -2196,6 +2196,6 @@ You’re done with the **core lab** (Phases 0–7, ideally 8) when you can:
 
 **Design review test:** A peer asks “should we agentify this ticket?” — you can answer with: done signal, tool surface, approval gates, eval coverage, and babysitting cost. If you can’t, you’re not done yet.
 
-**Config spot-check (60 seconds):** Without looking — (1) rules vs hooks vs guardrails in one sentence each? (2) where do hooks live? (3) `.gitignore` vs `.worktreeinclude`? (4) where does team MCP config live? If any answer is vague, re-read [Rules · hooks · guardrails](#rules-hooks-guardrails), [gitignore vs worktreeinclude](#gitignore-vs-worktreeinclude), and [Config directory](#config-directory).
+**Config spot-check (60 seconds):** Without looking — (1) rules vs hooks vs guardrails in one sentence each? (2) where do hooks live? (3) `.gitignore` vs `.worktreeinclude`? (4) where does team MCP config live? If vague, open Phase 4 / Phase 8 How and expand the notes, plus [Config directory](#config-directory).
 
 Not a goal: matching Claude with a local 70B or building a product — this lab is harness literacy.
