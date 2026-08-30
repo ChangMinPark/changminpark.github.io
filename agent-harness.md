@@ -324,10 +324,10 @@ Copy the demo app, get Claude Code working, and stub `.claude/` — every later 
         <li>Create <code>.claude/settings.json</code> with a minimal stub (e.g. empty <code>{}</code>) — you’ll add permissions/hooks in Phases 1 and 4. Know that <code>.claude/settings.local.json</code> (same shape, gitignored) is for your personal overrides later.</li>
         <li>Skim <strong>output styles</strong> in <code>~/.claude/output-styles/</code> (personal) or project <code>.claude/output-styles/</code> (team). Optional: pick one in <code>/config</code>.</li>
         <li>Optional skim: <code>~/.claude.json</code> holds app/UI state and personal MCP — managed via <code>/config</code>, not usually hand-edited.</li>
-        <li>In a Claude Code session, run <code>/context</code> and confirm <code>CLAUDE.md</code> appears under Memory files.</li>
+        <li>Restart the Claude Code session (new chat / exit and re-enter the project) so freshly created memory files are picked up. Then run <code>/context</code> and confirm <code>CLAUDE.md</code> appears under Memory files.</li>
       </ol>
       <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://code.claude.com/docs/en/claude-directory">Claude directory</a> · <a href="https://code.claude.com/docs/en/memory">Memory / CLAUDE.md</a> · <a href="https://code.claude.com/docs/en/output-styles">Output styles</a> · <a href="https://code.claude.com/docs/en/settings">Settings</a></p>
-      <p class="lab-guide__done"><strong>Done when:</strong> You have a project <code>CLAUDE.md</code>, know where settings and output styles live, and <code>/context</code> shows the memory file.</p>
+      <p class="lab-guide__done"><strong>Done when:</strong> You have a project <code>CLAUDE.md</code>, know where settings and output styles live, and after a session restart <code>/context</code> shows the memory file.</p>
     </div>
   </li>
 
