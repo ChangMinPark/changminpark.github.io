@@ -362,7 +362,7 @@ Copy the demo app, get Claude Code working, and stub `.claude/` — every later 
         <li>Note the difference: Claude Code (subscription session) vs a raw HTTP chat API vs OpenAI-shaped local servers — same “prompt in, text/tools out” idea, different packaging.</li>
         <li>Explain why pointing a client at <code>localhost</code> Ollama can “look like” cloud if the client speaks a compatible shape — and why this lab’s primary brain is still Claude Code + Pro.</li>
       </ol>
-      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://docs.ollama.com/api/openai-compatibility">Ollama OpenAI compatibility</a> · <a href="https://platform.openai.com/docs/api-reference/chat">OpenAI Chat Completions</a> (shape only)</p>
+      <p class="lab-guide__refs"><strong>Guides:</strong>  <a href="https://ollama.com/blog/openai-compatibility">Ollama OpenAI compatibility</a> · <a href="https://docs.ollama.com/api/openai-compatibility">API reference</a> · <a href="https://developers.openai.com/api/docs/api-reference/chat">OpenAI Chat Completions</a> (shape only)</p>
       <p class="lab-guide__done"><strong>Done when:</strong> You can explain “compatible API” without claiming the models are equal.</p>
     </div>
   </li>
