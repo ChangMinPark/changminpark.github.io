@@ -304,6 +304,12 @@ fun MessageListScreen(viewModel: MessageListViewModel = hiltViewModel()) {
 
 State flows one way; events flow up. The pattern name matters less than keeping **one source of truth** for what the list shows.
 
+By 2026, Compose is the default for new Google samples and for large migrations (including high-traffic mail surfaces), and that moved the architecture conversation again:
+
+- **Less adapter glue**, more **state collection** (`collectAsStateWithLifecycle`)
+- **Slot APIs** and list item stability replace ViewHolder manual diffing
+- **Interop** (AndroidView, WebView, legacy fragments) remains the real migration cost — not learning `@Composable` syntax
+
 ## Comparison at a glance
 
 | Pattern | Era (approx.) | Core split | Testing sweet spot | Common pain |
@@ -317,14 +323,6 @@ State flows one way; events flow up. The pattern name matters less than keeping 
 | Compose + MVVM | 2021–present | State in VM; UI as functions | Same + Compose UI tests | Recomposition, stability |
 
 Teams mix freely — **Clean use cases + MVVM + Compose** is a common production stack. The mistake is picking a buzzword without matching team size and feature velocity.
-
-## What changed in the Compose era
-
-By 2026, Compose is the default for new Google samples and for large migrations (including high-traffic mail surfaces). Architecture discussions shifted:
-
-- **Less adapter glue**, more **state collection** (`collectAsStateWithLifecycle`)
-- **Slot APIs** and list item stability replace ViewHolder manual diffing
-- **Interop** (AndroidView, WebView, legacy fragments) remains the real migration cost — not learning `@Composable` syntax
 
 ## Wrap-up
 

@@ -13,7 +13,7 @@ draft: false
     <ul>
       <li><a href="https://source.android.com/docs/core/runtime">Android Runtime (ART) and Dalvik</a> — how Android runs app code (DEX → ART)</li>
       <li><a href="https://source.android.com/docs/core/runtime/dalvik-bytecode">Dalvik Executable format</a> — what a `.dex` contains</li>
-      <li><a href="https://source.android.com/docs/core/runtime/app-process">Zygote</a> — how app processes are forked</li>
+      <li><a href="https://source.android.com/docs/core/runtime/zygote">Zygote</a> — how app processes are forked</li>
       <li><a href="https://source.android.com/docs/core/runtime/configure">Configure ART</a> — AOT, JIT, and profile-guided compilation at a glance</li>
     </ul>
   </div>
@@ -21,7 +21,7 @@ draft: false
 
 ## Why Dalvik still shows up in stack traces
 
-Search “Dalvik” in 2026 and you get archaeology — fair enough. **ART replaced Dalvik as the default runtime in Android 5.0 (Lollipop)** and every current device runs ART. But the bytecode format, the per-process VM model, and the Zygote fork path Dalvik established are still how apps start and execute. When cold start regresses or you see DEX/OAT/VDEX in a build artifact, you are looking at that lineage.
+Search “Dalvik” today and you mostly get archaeology — fair enough. **ART replaced Dalvik as the default runtime in Android 5.0 (Lollipop)** and every current device runs ART. But the bytecode format, the per-process VM model, and the Zygote fork path Dalvik established are still how apps start and execute. When cold start regresses or you see DEX/OAT/VDEX in a build artifact, you are looking at that lineage.
 
 The useful question is not “which VM is installed?” but **which runtime contract did I violate** — process isolation, bytecode shape, or compilation timing.
 
@@ -90,7 +90,7 @@ Do not build new features assuming an interpreter-only Dalvik world. Do understa
 
 | Symptom | Runtime-angle check |
 |--------|---------------------|
-| Slow cold start after OS upgrade | Zygote boot image, ART profile, baseline profiles |
+| Slow cold start after OS upgrade | Zygote boot image, ART profiles, `dex2oat` state |
 | `ClassNotFoundException` only in release | R8 shrinking vs reflection; verify release build |
 | `VerifyError` / dex2oat failure | Invalid bytecode from post-processing tools |
 | Native crash after JNI change | JNI pinning / thread attachment across ART GC |

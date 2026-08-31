@@ -14,8 +14,8 @@ draft: false
       <li><a href="https://docs.anthropic.com/en/docs/agents-and-tools/computer-use">Anthropic — Computer use</a> — screenshot, mouse, and keyboard as model tools in an environment you control</li>
       <li><a href="https://playwright.dev/docs/intro">Playwright docs</a> — browser automation, locators, and why brittle selectors fail</li>
       <li><a href="https://www.anthropic.com/research/prompt-injection-defenses">Mitigating prompt injections in browser use (Anthropic)</a> — page content as an adversarial channel</li>
-      <li><a href="{{ site.baseurl }}/agent-trust-boundaries">Agent Trust Boundaries</a> — approvals that matter; tool results as untrusted input</li>
-      <li><a href="{{ site.baseurl }}/agent-too-many-tools">Your Agent Has Too Many Tools</a> — why a fat browser MCP is rarely the default coding session</li>
+      <li><a href="https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/overview">Strengthen guardrails (Anthropic)</a> — approvals that matter; treat tool/page output as untrusted</li>
+      <li><a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview">Tool use (Anthropic)</a> — design a small, clear tool surface; fat browser MCP is rarely the default</li>
     </ul>
   </div>
 </details>

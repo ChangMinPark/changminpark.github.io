@@ -37,7 +37,7 @@ Here `ls` writes filenames to stdout; `grep` reads that stream as stdin and prin
 That last point matters on CI: piping avoids disk I/O and race-prone temp files. It also means **only stdout** is wired by default. If you need stderr in the pipeline, merge it first:
 
 ```bash
-./gradlew test 2>&1 | tee test.log
+./gradlew test 2>&1 | grep -i "failed"
 ```
 
 ## Redirection — files and streams
@@ -80,6 +80,8 @@ Place redirection operators after options and arguments (`grep -i error log.txt 
 | `2>` / `2>>` | Redirect stderr |
 | `2>&1` | Merge stderr into stdout |
 
+**Stderr is separate by default.** A failing test that prints errors to stderr while stdout goes quiet will not land in `cmd > log.txt` unless you merge streams with `2>&1` before the redirect or pipe — easy to miss when the exit code is non-zero but the log file looks empty.
+
 ## tee — copy the stream without losing the terminal
 
 `tee` reads stdin and writes **two** copies: one to stdout (your terminal) and one to each file you name. That is the piece `>` alone cannot do.
@@ -94,7 +96,7 @@ Chain `tee` with `less` when output is long: you watch one screen at a time (`le
 ./long_job.sh 2>&1 | tee debug.log | less
 ```
 
-That pattern is the one I reach for when a build log might be thousands of lines but the failure is usually near the end.
+Build logs are the common case: thousands of lines, with the failure usually near the end.
 
 **Log and count in one pass:**
 
@@ -128,9 +130,7 @@ Use `-a` when you want a running journal, not a fresh truncate each time.
 | Save, show, **and** pipe to another tool | `cmd \| tee out.log \| tail -20` |
 | Feed a file into a command | `cmd < input.txt` |
 
-On Android dev machines, I reach for `tee` when capturing `adb logcat` or a long `./gradlew` run: the file is there for Jira, but I can still Ctrl-C the moment something interesting appears. For one-shot commands where I only need a file, `>` keeps the pipeline shorter.
-
-**Stderr is separate by default.** A failing test that prints errors to stderr while stdout goes quiet will not land in `cmd > log.txt` unless you merge streams with `2>&1` before the redirect or pipe — easy to miss when the exit code is non-zero but the log file looks empty.
+On Android dev machines, I reach for `tee` when capturing `adb logcat` or a long `./gradlew` run: the file is there for the bug report, but I can still Ctrl-C the moment something interesting appears. For one-shot commands where I only need a file, `>` keeps the pipeline shorter.
 
 **Process substitution** (`tee >(grep ERROR >&2)`) is the next step when you want to fork the stream more than once; for day-to-day logging, plain `tee` plus `less` or `tail -f` covers most Android and CI workflows.
 

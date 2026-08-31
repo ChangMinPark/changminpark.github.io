@@ -21,7 +21,7 @@ draft: false
 
 ## Twenty plugins, worse judgment
 
-By mid-2025 the pattern was familiar in my own agent setups: wire every MCP server you can find — GitHub, Jira, Datadog, Notion, three browsers, a docs crawler — then wonder why the coding agent flails. It calls the wrong tool, summarizes the wrong dashboard, and spends half the context window reading schemas it will never need. You did not make it smarter. You widened the decision space until correct tool choice became the hard problem.
+The pattern is familiar from my own agent setups: wire every MCP server you can find — GitHub, Jira, Datadog, Notion, three browsers, a docs crawler — then wonder why the coding agent flails. It calls the wrong tool, summarizes the wrong dashboard, and spends half the context window reading schemas it will never need. You did not make it smarter. You widened the decision space until correct tool choice became the hard problem.
 
 The other half of the mistake is subtler. Connecting GitHub gives the agent **hands**. It still does not know your triage labels, your module map, or which package owns the screen you meant. Access is not expertise. Kitchen-sink plugins optimize for demos; useful agents need a **thin interface** plus **playbooks** that load when the task actually needs them.
 
@@ -83,6 +83,18 @@ A useful skepticism has spread with MCP adoption: many servers should not exist 
 
 On a large Android monorepo, the expertise gap shows up as agents that *can* `gh` but still edit the wrong Gradle module. Connecting GitHub did not teach module ownership. A short skill that points at the module map did.
 
+## Discovery is not permission
+
+MCP (and cousins) make tools **show up at runtime**. That is useful — and it is also how an agent inherits fifteen new verbs because someone clicked “connect” in a desktop client. Discovery answers “what *could* I call?” The harness still answers “what *may* I call?”
+
+Treat an MCP catalog like a package index: interesting, untrusted as policy. Your allowlist / deny list / approval gates apply **after** discovery. If a server advertises `deploy_prod` and your policy never enabled it, the model should not see it — or should see a stub that hard-fails closed.
+
+## Inference economics is a harness concern
+
+Tool thrash is not only a quality bug; it is a bill. A kitchen-sink catalog burns tokens on schema soup before the first useful edit. The same discipline applies across models: a cheap triage pass that decides “no code change” can skip a full Claude coding loop. Log **$/task** (or tokens in/out) next to steps-to-success. If “connect everything” doubles cost for the same outcome, the catalog is the regression — not the model version.
+
+Prompt caching and smaller triage models are tactics; the size of the catalog is the strategy.
+
 ## Practical consolidation
 
 1. Audit the default MCP list monthly; remove anything unused for two weeks
@@ -94,18 +106,6 @@ On a large Android monorepo, the expertise gap shows up as agents that *can* `gh
 The portable lesson matches CI discipline: smaller surface, clearer contracts, expertise written down where the agent can load it — not implied by a longer plugin sidebar.
 
 Twenty plugins degrade judgment; live access without playbooks confuses hands for expertise. Ship a thin tool core, add MCP only when reach truly needs it, and put procedure in skills that load on demand. Fewer tools is not austerity — it is how the model finds the right one.
-
-## Discovery is not permission
-
-MCP (and cousins) make tools **show up at runtime**. That is useful — and it is also how an agent inherits fifteen new verbs because someone clicked “connect” in a desktop client. Discovery answers “what *could* I call?” The harness still answers “what *may* I call?”
-
-Treat an MCP catalog like a package index: interesting, untrusted as policy. Your allowlist / deny list / approval gates apply **after** discovery. If a server advertises `deploy_prod` and your policy never enabled it, the model should not see it — or should see a stub that hard-fails closed.
-
-## Inference economics is a harness concern
-
-Tool thrash is not only a quality bug; it is a bill. A kitchen-sink catalog burns tokens on schema soup before the first useful edit. The same discipline applies across models: a cheap triage pass that decides “no code change” can skip a full Claude coding loop. Log **$/task** (or tokens in/out) next to steps-to-success. If “connect everything” doubles cost for the same outcome, the catalog is the regression — not the model version.
-
-Prompt caching and smaller triage models are tactics. The strategy is unchanged: small surface, clear contracts, measure thrash.
 
 ## References
 

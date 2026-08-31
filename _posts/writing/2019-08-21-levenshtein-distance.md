@@ -106,7 +106,7 @@ fun fuzzyFilter(items: List<String>, query: String, maxEdits: Int = 2): List<Str
 }
 ```
 
-For a Mail-style contact row or settings search, cap `maxEdits` at 2 for queries under six characters and widen slowly for longer input so `"john"` still matches `"jon"` without flooding results.
+For a contact row or a settings search field, cap `maxEdits` at 2 for queries under six characters and widen slowly for longer input so `"john"` still matches `"jon"` without flooding results.
 
 ## Real uses on mobile and tooling
 

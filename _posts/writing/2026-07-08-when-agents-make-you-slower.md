@@ -33,7 +33,7 @@ It helps to separate two products that share a chat box:
 | **Assistant** | Completions, local refactors, explain-this-stack-trace | Usually contained; you stay in the loop |
 | **Agency** | Multi-file goals, PR bots, "just fix CI overnight" | Diffs and comments you must still own |
 
-An **assistant** speeds mechanical work when you can verify line-by-line. **Agency** needs a clear goal, a navigable repo, and a verifier — or it externalizes judgment while leaving you accountable. I wrote about [assistant-style Compose UI]({{ site.baseurl }}/android-compose-ai-assistant) as a **UI/IME pattern**: streaming bubbles, keyboard insets, stable list keys — not as a claim that Mail shipped a product assistant. This one is about when *you* should refuse agency on a ticket. Different layer; same word. Do not confuse a helpful panel with an unsupervised worker.
+An **assistant** speeds mechanical work when you can verify line-by-line. **Agency** needs a clear goal, a navigable repo, and a verifier — or it externalizes judgment while leaving you accountable. I wrote about [assistant-style Compose UI]({{ site.baseurl }}/android-compose-ai-assistant) as a **UI/IME pattern**: streaming bubbles, keyboard insets, stable list keys. This one is about when *you* should refuse agency on a ticket. Different layer; same word. Do not confuse a helpful panel with an unsupervised worker.
 
 ```mermaid
 flowchart LR

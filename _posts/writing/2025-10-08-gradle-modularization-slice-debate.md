@@ -25,12 +25,6 @@ Every large Android team eventually holds the same meeting: *should we modulariz
 
 This plays out on production mail clients and smaller products alike. The useful question is not “how many modules,” it is “what boundary survives the next twenty PRs without becoming a tax.”
 
-## Related reading
-
-- **Docs:** [Android — Guide to app modularization](https://developer.android.com/topic/modularization)
-- **Docs:** [Gradle — `api` vs `implementation`](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation)
-- **Internal:** [From Jenkins to Screwdriver]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) — org CI is useless if every change still compiles the world
-
 ## Five slices teams actually argue
 
 **1. Don’t modularize yet.** One or few modules until compile pain or ownership pain is real. Ceremony (`settings.gradle` wiring, navigation graphs, DI graphs, sync time) is not free. If two engineers merge without stepping on each other, wait.
@@ -51,6 +45,16 @@ This plays out on production mail clients and smaller products alike. The useful
   └─ :core:database          (Room types, migrations)
 ```
 
+## How to slice a mail-scale app
+
+Start from **change frequency**. For example, in a mail app, message list and compose often churn weekly; attachment pipelines less so. Give high-churn surfaces a feature module. Put stable infrastructure behind `api`/`impl` so internals can move without recompiling the world. Delay layer-only modules until a second client or test target needs the same domain — not because a blog post said “clean architecture.”
+
+## A concrete anti-pattern: the expanding `:core`
+
+The most common failure after “we modularized” is a single `:core` (or `:common`) that absorbs everything awkward. Navigation helpers, analytics wrappers, date formatters, network clients, and half of domain models land there because “everyone needs it.” Then every feature depends on `:core`, `:core` slowly depends back on features through callbacks or sealed hierarchies, and you have reinvented the mega-module with worse sync times.
+
+Prefer **narrow cores** (`:core:network-api`, `:core:database`) and let features own glue. If two features need the same helper, extract a third library with a clear owner — do not grow an anonymous junk drawer.
+
 ## What to measure before declaring victory
 
 | Signal | Healthy | Smell |
@@ -60,18 +64,7 @@ This plays out on production mail clients and smaller products alike. The useful
 | Who merges what | Feature owners stay in one module | Every PR edits five projects |
 | `api` edges | Rare, intentional | Accidental ABI leaks force downstream rebuilds |
 
-Gradle’s `api` vs `implementation` is not trivia: leaking a type through `api` expands the compile fan-out. Circular project dependencies are the other classic smell — if `:feature:a` needs `:feature:b` and vice versa, your slice is lying.
-
-## How to slice a mail-scale app
-
-Start from **change frequency**. For example, in a mail app, message list and compose often churn weekly; attachment pipelines less so. Give high-churn surfaces a feature module. Put stable infrastructure behind `api`/`impl` so internals can move without recompiling the world. Delay layer-only modules until a second client or test target needs the same domain — not because a blog post said “clean architecture.”
-
-
-## A concrete anti-pattern: the expanding `:core`
-
-The most common failure after “we modularized” is a single `:core` (or `:common`) that absorbs everything awkward. Navigation helpers, analytics wrappers, date formatters, network clients, and half of domain models land there because “everyone needs it.” Then every feature depends on `:core`, `:core` slowly depends back on features through callbacks or sealed hierarchies, and you have reinvented the mega-module with worse sync times.
-
-Prefer **narrow cores** (`:core:network-api`, `:core:database`) and let features own glue. If two features need the same helper, extract a third library with a clear owner — do not grow an anonymous junk drawer.
+Gradle’s `api` vs `implementation` is not trivia: leaking a type through `api` expands the compile fan-out. Circular project dependencies are the other classic smell — if `:feature:a` needs `:feature:b` and vice versa, your slice is lying. Faster [org-wide CI]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) buys nothing while every change still compiles the world.
 
 ## Wrap-up
 

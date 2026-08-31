@@ -22,7 +22,7 @@ draft: false
 
 A service fails after reboot, disk alerts fire at 3 a.m., or `strace` shows `ENOENT` on a path that “worked yesterday.” The FHS tree looks like a vocabulary quiz — `/bin`, `/lib`, fourteen more top-level names — but in production you rarely need all of them equally. Three directories explain most surprises I have seen on servers and dev boards: **`/proc` for live state**, **`/etc` for config that outlives your editor session**, and **`/var` for data that grows until the disk is full**.
 
-This is not a tour of every mount point. It is the problem-first map I wish I had when debugging before I knew where Linux keeps the truth.
+This is not a tour of every mount point. It is the problem-first map I wish I had before I knew where Linux keeps the truth.
 
 ## A mental model, not a catalog
 

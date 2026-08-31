@@ -13,8 +13,8 @@ draft: false
     <ul>
       <li><a href="https://aakashgupta.medium.com/2025-was-agents-2026-is-agent-harnesses-heres-why-that-changes-everything-073e9877655e">2025 was agents; 2026 is harnesses</a> — runtime around the model: tools, context, stop conditions</li>
       <li><a href="https://cursor.com/docs/hooks">Cursor docs — Hooks</a> — stop/lifecycle scripts that can veto “done” (not chat tone)</li>
-      <li><a href="{{ site.baseurl }}/formatter-vs-linter">Formatters vs linters</a> — mechanical checks that turn a green chat into a red PR</li>
-      <li><a href="{{ site.baseurl }}/github-actions-android-pr-gates">GitHub Actions for Android PR gates</a> — the merge bar the agent is not allowed to skip</li>
+      <li><a href="https://prettier.io/docs/comparison">Prettier vs. Linters</a> — format vs bug-catching rules; mechanical checks that turn a green chat into a red PR</li>
+      <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks">About status checks (GitHub)</a> — the merge bar the agent is not allowed to skip</li>
       <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — model + tools in a loop; when a workflow beats free-form agency</li>
     </ul>
   </div>
@@ -24,12 +24,7 @@ draft: false
 
 You upgrade the coding model. The agent edits three modules, narrates a confident wrap-up, and marks the task complete. You open the PR. Formatting fails. A unit test you never touched is red. The typechecker catches a nullable the agent invented in a helper. The chat was green; the merge bar is not.
 
-This is not a one-off fluke of a weak model. Stronger models still ship **broken diffs with a done claim** — wrong module, skipped tests, or a "fix" that never left the agent's imagination. The interesting failure is not intelligence on a leaderboard. It is the **runtime around the model**: what tools it may call, what it must observe before stopping, and which checks are allowed to veto "done."
-
-## Related reading
-
-- **Internal:** [Formatters vs Linters]({{ site.baseurl }}/formatter-vs-linter) — mechanical verifiers that shrink and block diffs; [From Jenkins to Screwdriver]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) — CI as the outer proof, not a vibe
-- **Docs / context:** [Model Context Protocol](https://modelcontextprotocol.io/) — how tools get into the loop; [Cursor hooks](https://cursor.com/docs/hooks) — verify claims with exit codes, not chat tone
+Upgrading the model did not fix this. Stronger models still ship **broken diffs with a done claim** — wrong module, skipped tests, or a "fix" that never left the agent's imagination. What decides the outcome is the **runtime around the model**: what tools it may call, what it must observe before stopping, and which checks are allowed to veto "done."
 
 ## Stronger models still need a harness
 
@@ -105,7 +100,7 @@ Whether you use Cursor hooks, Claude Code stop events, or a custom wrapper, the 
 4. Require a green local gate before "done"; let CI remain the outer proof
 5. Cap repair loops; escalate to a human with the failing log, not another optimistic summary
 
-I am not claiming a specific internal agent stack at Mail. The lesson from shipping Android through serious CI is older than agents: **green that lies erodes trust faster than red**. Agents accelerate the lying unless you refuse to accept a done claim without a verifier.
+The lesson from shipping Android through serious CI is older than agents: **green that lies erodes trust faster than red**. Agents accelerate the lying unless you refuse to accept a done claim without a verifier.
 
 ## Wrap-up
 

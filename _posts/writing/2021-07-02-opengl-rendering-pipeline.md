@@ -21,13 +21,9 @@ draft: false
 
 ## Why the pipeline map matters
 
-OpenGL turns vertex and index buffers into pixels through a short chain of stages. Treat each stage as a **contract**, and “mystery” bugs get local: wrong pose → vertex stage, missing faces → assembly, FPS cliff → fragment/fill, flicker → depth.
+OpenGL turns vertex and index buffers into pixels through a short chain of stages. Treat each stage as a **contract**, and “mystery” bugs get local: wrong pose → vertex stage, missing faces → assembly, FPS cliff → fragment/fill, flicker → depth. Wrong pixels are rarely “the GPU is broken” — they are usually **data that violated one stage’s contract**.
 
-If you already know Android UI or systems work and only skimmed OpenGL/ES, you do not need another glossary. You need somewhere to point when the screen is wrong — the debugging map I wish I’d had when a mesh looked “almost right” and I could not tell which stage owned the failure.
-
-Wrong pixels are rarely “the GPU is broken.” They are usually **data that violated a stage’s contract**. That same vocabulary shows up in systems work later — for example in [Rushmore]({{ site.baseurl }}/rushmore), where the hard question is not only how fragments are shaded, but **which world may write which display path** before pixels hit the panel.
-
-Others already cover the fundamentals well ([LearnOpenGL — Hello Triangle](https://learnopengl.com/Getting-started/Hello-Triangle), the [Khronos pipeline overview](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)). This post sits beside those as a stage map: when something looks wrong, name the stage before changing random GL state.
+If you already know Android UI or systems work and only skimmed OpenGL/ES, you do not need another glossary. You need somewhere to point when the screen is wrong, and a habit of naming the stage before changing random GL state. That same vocabulary carries into systems work: in [Rushmore]({{ site.baseurl }}/rushmore), the hard question is not only how fragments are shaded, but **which world may write which display path** before pixels hit the panel.
 
 ## Pipeline overview
 
@@ -36,7 +32,7 @@ OpenGL-managed memory usually starts with two arrays:
 - **Vertex array** — positions (and attributes) that become screen-space points, triangles, fragments, then colors
 - **Element (index) array** — which vertices form triangles; order matters
 
-The overview figure below (from Joe’s modern OpenGL intro — credited in References):
+Joe’s modern OpenGL intro (credited in References) fits the whole path in one figure:
 
 <img src="{{ site.baseurl }}/images/posts/opengl-rendering-pipeline/pipeline-overview.png" alt="OpenGL pipeline from vertex and element arrays through shaders to the framebuffer" width="500px" style="margin-top: 0px; margin-bottom: 8px;"/>
 

@@ -25,12 +25,6 @@ draft: false
 
 This is a survey of industry patterns (including Datadog-shaped stacks) and a sane client architecture — not a vendor pitch.
 
-## Related reading
-
-- **Docs:** [Firebase Remote Config](https://firebase.google.com/docs/remote-config)
-- **Docs:** [Datadog Feature Flags](https://docs.datadoghq.com/feature_flags/) (product surface evolves; treat as one pattern among many)
-- **Internal:** [BFF / multi-client]({{ site.baseurl }}/bff-three-clients-same-aggregation) — flags as protocol negotiation across clients
-
 ## Separate the jobs
 
 | Job | Question | Failure mode |
@@ -40,6 +34,10 @@ This is a survey of industry patterns (including Datadog-shaped stacks) and a sa
 | Experiment | Can we measure lift with a holdout? | No exposure events → fake wins |
 
 Remote config can host all three; experiment platforms add assignment, exposure logging, and analysis. Homegrown “JSON on S3” works for kill switches and fails quietly for science.
+
+## Exposure logging is the experiment
+
+Without an exposure event (“user X saw treatment T at time τ”), downstream metrics cannot be attributed. Product analytics that only record “flag was true on the device” after the fact will include users who never hit the screen. Fire exposure **when the treatment is applied to a user-visible path**, once per assignment window, and keep it privacy-safe. Kill switches do not need exposures; experiments do — that difference alone justifies separate configs.
 
 ## Tools you will actually meet
 
@@ -68,11 +66,6 @@ class FlagSession(private val store: FlagStore) {
 ```
 
 Pipeline: **bootstrap defaults → fetch/cache → sticky assign → exposure event → metric**. Skip exposure and you are guessing.
-
-
-## Exposure logging is the experiment
-
-Without an exposure event (“user X saw treatment T at time τ”), downstream metrics cannot be attributed. Product analytics that only record “flag was true on the device” after the fact will include users who never hit the screen. Fire exposure **when the treatment is applied to a user-visible path**, once per assignment window, and keep it privacy-safe. Kill switches do not need exposures; experiments do — that difference alone justifies separate configs.
 
 ## Wrap-up
 

@@ -25,10 +25,6 @@ Origin recovers. Deploy is rolled forward. Error budgets look ready to heal. The
 
 Mail clients (and every other always-on mobile app) are distributed load generators with imperfect clocks. A well-meant `repeatOnFailure` without jitter and caps turns recovery into a self-inflicted DDoS. This post is about that metastable failure mode and the client-side brakes that keep retries from owning the incident.
 
-## Related reading
-
-- **Articles surveyed:** [Retry storm as self-inflicted DDoS (Rack2Cloud)](https://www.rack2cloud.com/retry-storm-self-inflicted-ddos/); [Backoff and jitter for mobile networks](https://dcdhameliya.com/blog/designing-retry-and-backoff-strategies-for-mobile-networks); [Retry storms — backoff, jitter, budgets (Webalert)](https://web-alert.io/blog/retry-storms-exponential-backoff-jitter-explained); [Mobile API retry storm mitigation (Appxiom)](https://www.appxiom.com/blogs/how-to-detect-and-mitigate-mobile-api-retry-storms-that-bring-down-backend-services/)
-
 ## How phones synchronize by accident
 
 During the outage, failures cluster in wall-clock time: push storms, users foregrounding the app, shared timeouts. Each client schedules retry at `now + backoff`. Without randomness, exponential backoff alone produces **waves** — T+1s, T+2s, T+4s — that all hit the recovering service together. The third wave is often worse than the original fault because the service has just started accepting work again.

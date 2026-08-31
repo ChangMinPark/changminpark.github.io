@@ -106,11 +106,9 @@ export PERSONAL_WEBSITE_WRITING="$HOME/Personal/personal-website-writing"
 ./serve-local.sh    # hard-links _posts/ and images/posts/ into the site tree
 ```
 
-Edits here appear instantly in the local Jekyll tree because `_posts/2022-09-30-hard-link-vs-soft-link.md` and the linked copy are the **same inode** — not a rsync copy, not a symlink to a folder. Re-run `serve-local.sh` after adding or removing posts so new files get linked; removed posts need their links cleaned up the same way.
+Edits here appear instantly in the local Jekyll tree because this post’s markdown and the linked copy are the **same inode** — not an rsync copy, not a symlink to a folder. The same goes for `images/posts/<permalink>/thumbnail.png`: edit the PNG here and the Writing list thumbnail updates on the next refresh, with no separate sync step. Re-run `serve-local.sh` after adding or removing posts so new files get linked, and clean up links for posts you delete.
 
-Symlinks would also “work” for preview, but hard links avoid an extra indirection layer and keep permissions and tooling behavior closer to a normal file. When something looks stale in localhost, check whether the hard link exists (`ls -li` in both trees) before blaming Jekyll caching.
-
-Hard links also explain why **`images/posts/<permalink>/thumbnail.png` in this repo and the linked copy under the public site share one file** — edit the PNG here and the Writing list thumbnail updates on the next refresh without a separate sync step for drafts.
+Symlinks would also “work” for preview, but hard links avoid an extra indirection layer and keep permissions and tooling behavior closer to a normal file. When something looks stale in localhost, check whether the hard link still exists (`ls -li` in both trees) before blaming Jekyll caching.
 
 ## References
 

@@ -82,11 +82,13 @@ No architectural recommendations.
 
 Suppose you are mid–XML → Compose on several related screens that share draft compatibility, lifecycle quirks, and a slot architecture for optional chrome. The tempting parallel split is “one agent per screen.” Children that never saw the parent’s rollout constraints produce three incompatible “just use a new ViewModel” plans.
 
-The cheaper path in my experience: one thread that already has the feature-flag and migration notes in context, plus a skill for the verify checklist — not a committee of explorers. Use subagents at the edges: “list every `WebView` leftover under this module” or “summarize why `:feature:compose:testDebugUnitTest` failed.” Keep the migration decisions single-threaded.
+The cheaper path is one thread that already has the feature-flag and migration notes in context, plus a skill for the verify checklist — not a committee of explorers. Use subagents at the edges: “list every `WebView` leftover under this module” or “summarize why `:feature:compose:testDebugUnitTest` failed.” Keep the migration decisions single-threaded.
 
 ## Cost is a product decision
 
-Cheaper models on mechanical scan subagents can help. They do not fix a bad decomposition. “Refactor the API layer” with unconstrained children is how you buy a 7–15× token multiplier and a PR nobody trusts. Budget the tree the way you budget CI minutes: exploration is billable work. If two summaries already disagree on the owning module, paying for a third opinion is theater — open the Gradle module and end it.
+Cheaper models on mechanical scan subagents can help. They do not fix a bad decomposition. “Refactor the API layer” with unconstrained children is how you buy a 7–15× token multiplier and a PR nobody trusts. Budget the tree the way you budget CI minutes: exploration is billable work.
+
+## Wrap-up
 
 Subagents are isolation for noisy reads, not a substitute for knowing which module owns the bug. On Android trees, default to one thread with sharp rules; spawn only when a disposable explorer returns a small, checkable artifact. If two children already disagree, stop spawning a third — open the file yourself and end the debate.
 

@@ -23,7 +23,7 @@ draft: false
 
 Sharding by mailbox id looks fair on a whiteboard: hash the key, spread load, sleep well. Then a celebrity account, a shared support inbox, or a viral thread lands on one shard. Reads concentrate. Tail latency climbs for every *other* mailbox that happens to share that partition. The cluster is “balanced” by key count and on fire by request rate.
 
-Mail products make this visceral. A shared team inbox or a high-profile account is a **hot key**. Clients amplify it: pull-to-refresh, aggressive sync, preview fetches, and badge polls all hammer the same logical mailbox. I write this from the **client amplification** angle — what Android mail apps do that pours gasoline — plus the cache-aside and hot-key tactics systems like mail typically use. Not as a claim that I ran the shard fleet.
+Mail products make this visceral. A shared team inbox or a high-profile account is a **hot key**. Clients amplify it: pull-to-refresh, aggressive sync, preview fetches, and badge polls all hammer the same logical mailbox. This post takes the **client amplification** angle — what Android mail apps do that pours gasoline on a hot partition — alongside the cache-aside and hot-key tactics large read-heavy systems use to absorb it.
 
 ## Sharding does not split one key
 
@@ -80,6 +80,8 @@ What large mail backends typically plan for — useful context when you are desi
 5. **Throttle clients** — rate limits and sync backoff for abusive refresh patterns
 
 Detection without a playbook is just a prettier pager. Synthetic load tests that assume uniform mailbox popularity will never find this bug. From the app side: treat sync aggressiveness as part of the capacity model — coalesce, backoff, and stop retry storms when the server is already hot.
+
+## Wrap-up
 
 A hot mailbox is the celebrity problem with folders. Sharding spreads keys; it does not dilute one key’s traffic. Cache-aside is the first shield; L1, coalescing, and key splitting handle extremes; clients must stop amplifying heat. If your dashboards only show average QPS per shard, you will learn about hot keys from an incident instead of a graph.
 

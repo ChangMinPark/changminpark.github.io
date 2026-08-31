@@ -18,7 +18,7 @@ draft: false
   </div>
 </details>
 
-## You closed the laptop on a green fantasy
+## Close the laptop, wake up to a PR
 
 The pitch is irresistible: leave a coding agent with a plan, a branch, and CI access; wake up to a ready PR. Async runners and “overnight” CLIs exist for a reason — [unattended queues](https://github.com/a20185/OvernightAgent), [PR shepherds](https://github.com/jonathanong/pr-shepherd) that interpret failing checks, worktree isolation so your main checkout stays clean.
 

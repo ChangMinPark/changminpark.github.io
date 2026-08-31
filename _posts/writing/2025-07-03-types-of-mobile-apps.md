@@ -14,7 +14,7 @@ draft: false
       <li><a href="https://developer.android.com/develop/ui/views/layout/webapps">Web apps and WebView</a> — embedding a browser engine inside an APK (the trap this post warns about)</li>
       <li><a href="https://web.dev/explore/progressive-web-apps">Progressive Web Apps (web.dev)</a> — installable web apps vs store binaries</li>
       <li><a href="https://developer.android.com/guide/components/fundamentals">App fundamentals</a> — what “native” means: components and platform APIs, not a tab</li>
-      <li><a href="{{ site.baseurl }}/cross-platform-mobile-frameworks">Cross-platform mobile frameworks</a> — Flutter/RN as a third option beside native and web</li>
+      <li><a href="https://docs.flutter.dev/resources/architectural-overview">Flutter architectural overview</a> — cross-platform toolkit as a third option beside native and web</li>
     </ul>
   </div>
 </details>
@@ -23,9 +23,7 @@ draft: false
 
 Every mobile project eventually hits the same fork: ship a browser tab, wrap the website, or commit to platform-native code. The labels — native, web, PWA, hybrid — sound like a textbook taxonomy. In practice the choice shows up as symptoms: scroll jank on a long feed, a camera API that works on Android but not iOS Safari, or a surface where WebView already failed a performance budget.
 
-I have hit this fork more than once. At Breeding (2020–2021), a dog-trainer marketplace, we chose native Android early because push, camera uploads, and session reliability were core to the product. The same question shows up at much larger scale in consumer apps — for example, in a mail app: when does a high-traffic surface justify Kotlin and Jetpack Compose instead of stacking more WebView?
-
-This post is a decision map written after both, not a claim that the Breeding years were Mail work.
+I have hit this fork more than once. At Breeding (2020–2021), a dog-trainer marketplace, we chose native Android early because push, camera uploads, and session reliability were core to the product. The same question shows up at much larger scale in consumer apps — for example, in a mail app: when does a high-traffic surface justify Kotlin and Jetpack Compose instead of stacking more WebView? What follows is a decision map for that fork.
 
 ## Four buckets — and what actually differs
 
@@ -84,11 +82,6 @@ See [Cross-Platform Mobile Frameworks]({{ site.baseurl }}/cross-platform-mobile-
 | Existing web team, simple forms, MVP | PWA or hybrid shell |
 | BLE, AR, custom camera pipeline | Native |
 | One mobile team, custom UI, not WebView | Flutter or React Native |
-
-## Related reading
-
-- **Docs:** [Android app fundamentals](https://developer.android.com/guide/components/fundamentals); [What makes a good PWA](https://web.dev/articles/pwa-checklist)
-- **Articles surveyed:** Koder.ai on [PWA vs Flutter vs native Compose/SwiftUI tradeoffs](https://koder.ai/blog/pwa-vs-flutter-vs-native-swiftui-compose-key-differences) — strong on offline and hardware boundaries; James Ross Jr. on [enterprise native vs hybrid vs PWA](https://www.jamesrossjr.com/blog/enterprise-mobile-development) — good cost framing for B2B.
 
 ## Wrap-up
 

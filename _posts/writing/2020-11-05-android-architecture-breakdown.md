@@ -62,13 +62,15 @@ Boot performance ties back here through **Zygote**: at startup the system forks 
 
 Below ART sit native libraries: SQLite, OpenGL ES, WebKit, media codecs, SSL, and the **Hardware Abstraction Layer (HAL)** that talks to drivers without exposing vendor blobs to apps. Many “Android APIs” are thin Java/Kotlin wrappers over C++.
 
-JNI crashes (`SIGSEGV` in `libsomething.so`), camera preview glitches, and codec failures often land here. Your Kotlin stack trace stops at `native`; the fix is in buffer lifetime, thread affinity, or a vendor HAL quirk — not in Compose recomposition.
+JNI crashes (`SIGSEGV` in `libsomething.so`), camera preview glitches, and codec failures often land here. Your Kotlin stack trace stops at `native`; the fix is in buffer lifetime, thread affinity, or a vendor HAL quirk — not in your Kotlin UI code.
 
 ## Linux Kernel — scheduling, memory, and the real sandbox
 
 The kernel schedules processes, maps memory, routes I/O, and enforces UID separation. Android adds Binder as a kernel driver for IPC and wake locks for power policy. **App sandboxing starts here**: each app gets a unique Linux UID; the kernel denies cross-app file access unless you explicitly share data through a mediated API.
 
 Symptoms at this layer are blunt: reboot loops, driver panics, storage corruption, or an exploit chain that already escaped userspace. Normal app developers rarely patch the kernel — but knowing that **UID + SELinux** sit below your APK explains why “just read `/data/data/other.app/`” never works on a stock device.
+
+## Start from the symptom
 
 | Symptom | Likely layer to inspect first |
 |--------|--------------------------------|
@@ -77,6 +79,8 @@ Symptoms at this layer are blunt: reboot loops, driver panics, storage corruptio
 | OOM / GC churn | ART + your allocations / leaks |
 | Native crash in `lib*.so` | JNI + HAL / vendor libs |
 | Cross-app data leak | Kernel UID + SELinux + your exported components |
+
+Naming the layer does not fix the bug. It stops you from fixing the wrong one for an afternoon.
 
 ## References
 

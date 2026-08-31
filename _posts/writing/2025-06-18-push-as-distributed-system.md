@@ -13,7 +13,7 @@ draft: false
     <ul>
       <li><a href="https://firebase.google.com/docs/cloud-messaging/android/client">FCM on Android</a> — how push reaches a device</li>
       <li><a href="https://firebase.google.com/docs/cloud-messaging/concept-options">About FCM messages</a> — notification vs data payloads; priority</li>
-      <li><a href="https://firebase.google.com/docs/cloud-messaging/concept-options#collapsible_and_non-collapsible_messages">Collapse keys</a> — coalescing queued pushes</li>
+      <li><a href="https://firebase.google.com/docs/cloud-messaging/customize-messages/collapsible-message-types">Collapse keys</a> — coalescing queued pushes</li>
       <li><a href="https://developer.android.com/training/monitoring-device-state/doze-standby">Optimize for Doze</a> — how idle modes delay delivery</li>
     </ul>
   </div>
@@ -23,7 +23,7 @@ draft: false
 
 New mail arrives. Someone wires `FirebaseMessaging.send(...)` from the ingest service and ships. It works in dogfood. In production you discover silent failures: Doze delays, collapse keys eating updates, tokens rotting, dual providers, and a backlog that looks healthy until one region’s fan-out stalls. Push delivery is not a library call. It is a **distributed system** with queues, prioritization, provider contracts, and failure domains.
 
-Mail clients feel this acutely: bursty traffic when a campaign or outage clears, and users who treat a missing badge as product breakage. This post sketches the parts you must design explicitly — collapse, priority, payload type, and failover — from the **client contract** and the industry patterns behind FCM/APNs, not as a claim that I owned the push pipeline.
+Mail clients feel this acutely: bursty traffic when a campaign or outage clears, and users who treat a missing badge as product breakage. This post sketches the parts you must design explicitly — collapse, priority, payload type, and failover — from the **client contract** outward, using the industry patterns FCM and APNs already assume you know.
 
 ## Collapse keys are capacity, not cosmetics
 
@@ -81,11 +81,13 @@ Failover is more than “retry FCM.” When a region’s worker pool stalls, you
 
 From the Android client: register and refresh tokens carefully, treat invalidation as expected, and never assume a high-priority data message will arrive before the user opens the app. The honest production bar is: you can explain, for a missed push, whether collapse, priority, TTL, token rot, or queue lag caused it.
 
+## Wrap-up
+
 Calling FCM is one hop. The system is collapse policy, priority ethics, payload semantics, queues, retries, and token lifecycle. Treat push like any other fan-out pipeline: design failure modes first, then wire the SDK. If your design doc stops at `send()`, it is not finished.
 
 ## References
 
-- [FCM — collapsible and non-collapsible messages](https://firebase.google.com/docs/cloud-messaging/customize-messages/collapsible-message-types)
 - [FCM — set the priority of a message](https://firebase.google.com/docs/cloud-messaging/customize-messages/setting-message-priority)
+- [FCM — manage registration tokens](https://firebase.google.com/docs/cloud-messaging/manage-tokens)
 - [Design a notification system (Sujeet Jaiswal)](https://sujeet.pro/articles/design-notification-system)
 - [Set and manage Android message priority (FCM)](https://firebase.google.com/docs/cloud-messaging/android-message-priority)

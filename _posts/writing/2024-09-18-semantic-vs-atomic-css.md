@@ -69,7 +69,7 @@ Utility-first call site (Tailwind-shaped):
 | Dead CSS | Classes accumulate forever | Lower if purge works; higher if you fork utilities by hand |
 | Content / docs sites | Stable role names (`.post-prereq`) age well | Utility soup fights long-lived HTML in markdown |
 
-## The incident that settles the argument
+## Where the hybrid shows up
 
 A product UI ships fast in utilities. Six months later, “make primary buttons match the new brand” touches dozens of files — or worse, half of them. Someone extracts `.btn--primary` that `@apply`s the utilities. Call sites go quiet again. That is not a conversion ceremony; it is admitting **the boundary needs a name**.
 

@@ -95,12 +95,18 @@ When sharing is required, use system-mediated channels:
 
 Each path keeps the kernel UID wall intact while allowing controlled collaboration — the design mail clients and browsers rely on every day.
 
+## Symptom vs cause
+
+Most “the sandbox is broken” reports resolve to a short list:
+
 | Mistake | What actually happened |
 |--------|-------------------------|
 | “Cannot read other app’s `/data`” | Sandbox OK — use a share API |
 | Data leak after SDK update | New exported component in merged manifest |
 | Works with debug cert only | Signature permission mismatch in release |
 | `avc: denied` on file create | SELinux context / path policy |
+
+None of those are the sandbox failing. The default is tight; what leaks is what you declared. Audit the merged manifest and read the `avc` line before assuming the platform is wrong.
 
 ## References
 

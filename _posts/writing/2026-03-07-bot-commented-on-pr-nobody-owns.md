@@ -61,7 +61,7 @@ flowchart TD
 2. **False positives** — a path to silence or fix the rule when the bot is systematically wrong
 3. **Escalation** — who humans `@` when the bot creates review theater without a real, documented merge gate
 
-Name a human or a rotation in the workflow README. Prefer bots that post as a team identity with a documented maintainer, not a personal token from whoever wired the Action last quarter. When I have seen review bots survive on large Android trees, the teams that kept them had a kill switch in the same PR template as the JDK pin — not a tribal "ask #ai-help."
+Name a human or a rotation in the workflow README. Prefer bots that post as a team identity with a documented maintainer, not a personal token from whoever wired the Action last quarter — and make the actor greppable, so `posted_by` / `approved_by` in the log ties back to someone reachable instead of a model run id that never landed in the PR thread. When I have seen review bots survive on large Android trees, the teams that kept them had a kill switch in the same PR template as the JDK pin — not a tribal "ask #ai-help."
 
 > **Rule of thumb** - if nobody can turn the bot off in under five minutes, it is not automation; it is a roommate with commit access.
 
@@ -87,10 +87,6 @@ Tools in this space increasingly separate **orchestration** (fetch PR state, cla
 A bot that comments on every style nit is competing with human attention — the scarcest review resource. Cap severity. Prefer one structured summary plus a few high-confidence inline notes over a wall of "consider renaming." Suppress known-noisy peers (rate-limit notices, "reviews paused") instead of asking the next agent to "address all comments."
 
 On Android monorepos the failure mode is especially sharp: the bot invents a Gradle module that does not exist, or tells you to edit `build/` outputs. That is a navigability problem as much as a model problem — see the companion notes on making a tree [reachable to tools]({{ site.baseurl }}/monorepo-navigable-to-agents) — but the PR still pays the attention tax either way.
-
-## Identity is ownership you can grep
-
-“Nobody owns it” often means the comment has no auditable actor: a personal PAT, a shared bot token with no maintainer doc, or a model run id that never landed in the PR thread. Prefer a team identity, a documented rotation, and a log line that ties `approved_by` / `posted_by` to a human-reachable owner. If you cannot answer “who turns this off?” from the workflow README in under a minute, ownership is theater.
 
 ## Wrap-up
 

@@ -25,11 +25,6 @@ A user taps Send on a mail compose screen. The button greys out. A circular prog
 
 Rate limits are not a backend-only concern. On a production Android client, a 429 is a **contract**: the server is healthy enough to answer, and it is telling you how to wait. If the UX ignores that contract, you gaslight the user — the app looks broken while the platform is doing its job.
 
-## Related reading
-
-- **Docs:** [MDN — Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After); [RFC 9110 — 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc9110.html#name-429-too-many-requests)
-- **Articles surveyed:** [Designing Rate Limiting for Mobile APIs](https://dcdhameliya.com/blog/designing-rate-limiting-for-mobile-apis) — token bucket + mobile bursts; [Rate Limiting Strategies That Don't Kill Your UX](https://raghavkattel.com.np/blog/rate-limiting-strategies-that-dont-kill-your-ux) — headers and backoff; [Consuming Rate-Limited APIs](https://web-alert.io/blog/consuming-rate-limited-apis-handling-429s-guide) — client-side budgets
-
 ## Token buckets, not fixed windows, for phones
 
 Mobile traffic is bursty. A user returns from airplane mode; the app wakes sync, prefetch, and analytics in the same second. A **fixed window** ("100 requests per minute") treats that foreground burst like abuse and blocks the next legitimate tap. A **token bucket** fits the pattern better: tokens refill at a steady rate, unused capacity accumulates up to a cap, and short bursts spend the savings.
@@ -98,7 +93,7 @@ For abuse-sensitive flows (SMS OTP, password reset), fail closed with an explici
 
 ## Wrap-up
 
-I will not claim internal Mail quota numbers or edge product names. The portable lesson is boring on purpose: typed 429 handling, shared request coalescing, and honest copy beat another loading indicator. Token buckets absorb mobile bursts; `Retry-After` tells the client when a retry is welcome; queue / coalesce / explain keep the product usable without pretending the network failed. If your rate limit only shows up as a spinner, you have a UX bug — not just an ops control.
+The portable lesson is boring on purpose: typed 429 handling, shared request coalescing, and honest copy beat another loading indicator. Token buckets absorb mobile bursts; `Retry-After` tells the client when a retry is welcome; queue / coalesce / explain keep the product usable without pretending the network failed. If your rate limit only shows up as a spinner, you have a UX bug — not just an ops control.
 
 ## References
 

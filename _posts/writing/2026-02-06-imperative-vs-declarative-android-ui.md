@@ -14,7 +14,7 @@ draft: false
       <li><a href="https://developer.android.com/develop/ui/compose/mental-model">Compose mental model</a> — describe UI from state; the runtime reconciles</li>
       <li><a href="https://developer.android.com/develop/ui/compose/state">State and Jetpack Compose</a> — why stale UI is usually a source-of-truth bug</li>
       <li><a href="https://developer.android.com/develop/ui/views/layout/declaring-layout">Layouts in Views</a> — inflate once, hold references, call setters (the imperative side)</li>
-      <li><a href="{{ site.baseurl }}/android-fe-architecture-history">Android FE architecture history</a> — where declarative UI sits after MVVM/MVI</li>
+      <li><a href="https://developer.android.com/topic/architecture/ui-layer">UI layer (Android architecture)</a> — where declarative UI sits in the recommended app structure</li>
     </ul>
   </div>
 </details>

@@ -25,11 +25,6 @@ A release candidate built on a laptop "worked fine." The store build did not —
 
 I have shipped Android through classic Jenkins jobs and through org-scale platforms including [Screwdriver](https://github.com/screwdriver-cd/screwdriver) at enterprise scale (Verizon Media / Yahoo open-source lineage). The tools differ; the mental model does not. This post clarifies that model, how Jenkins fits, why platforms like Screwdriver exist, and how adjacent tools like Jira and Azure DevOps relate — without conflating project tracking with compilation.
 
-## Related reading
-
-- **Video:** [Jenkins pipeline overview](https://www.youtube.com/watch?v=LFDrDnKPOTg) — jobs, agents, and CI flow
-- **Articles surveyed:** [Synopsys — Agile vs CI/CD vs DevOps](https://www.synopsys.com/blogs/software-security/agile-cicd-devops-difference.html); [Geekflare — Jira vs Azure DevOps](https://geekflare.com/dev/jira-vs-azure-devops/)
-
 ## Agile, CI/CD, and DevOps — three different layers
 
 Teams mix these labels in one sentence; they solve different problems:
@@ -99,9 +94,9 @@ New hires often ask whether to "move CI from Jenkins to Jira." Wrong comparison.
 
 [Geekflare's Jira vs Azure DevOps comparison](https://geekflare.com/dev/jira-vs-azure-devops/) is useful for **planning and ALM**, not for choosing Gradle cache strategy. You can hook Jira ticket keys into CI for traceability (`PROJ-1234` in commit messages) without running compiles inside Jira.
 
-## Practical lessons (enterprise CI, no secret sauce)
+## Practical lessons that transfer
 
-What transfers across Jenkins → Screwdriver (or any migration):
+What survives a Jenkins → Screwdriver move, or any other migration:
 
 1. **Pin toolchains** — JDK, Android SDK, NDK in image or config; document bumps
 2. **Gradle remote cache** — pays off on modular Android monorepos
@@ -109,7 +104,7 @@ What transfers across Jenkins → Screwdriver (or any migration):
 4. **Signed releases only from CI** — no manual keystore on a laptop
 5. **Treat flaky tests as debt** — green that lies erodes trust faster than red
 
-Public takeaway: large mail-client Android CI looks boring on purpose — repeatable Gradle, guarded secrets, staged promotion — because exciting pipelines mean someone is firefighting.
+Android CI at that scale looks boring on purpose — repeatable Gradle, guarded secrets, staged promotion — because exciting pipelines mean someone is firefighting.
 
 ## Wrap-up
 

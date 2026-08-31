@@ -25,7 +25,7 @@ draft: false
 
 In 2022 the question for small teams was cost and reuse across Flutter, Xamarin, React Native, and Titanium. The comparison still holds on *intent*; the market moved on *status*. Xamarin became [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui); Appcelerator Titanium is effectively legacy. Flutter and React Native absorbed most greenfield cross-platform work. What has not changed is the hybrid-vs-native-bridge confusion — still the most common misunderstanding in mobile architecture threads.
 
-## The comparison table
+## The four options
 
 <img src="{{ site.baseurl }}/images/posts/cross-platform-mobile-frameworks/framework-comparison-table.png" alt="Comparison table of Flutter, Xamarin, React Native, and Titanium cross-platform frameworks" width="100%" style="margin-top: 0px; margin-bottom: 8px;"/>
 
@@ -87,15 +87,10 @@ User tap
 | Web app already shipped, thin native shell | Ionic/Capacitor (know the WebView ceiling) |
 | List-heavy, ads, platform text fields | Native Compose/SwiftUI (cross-platform may fight you) |
 
+Answer the UI-runtime question before the language question. Whether pixels come from a WebView, from native views, or from an engine drawing its own widgets is what sets your ceiling on scroll, keyboard, and text behavior — and it is the one thing "write once" marketing never says out loud.
+
 ## Related reading
 
 - **Internal:** [Types of Mobile Apps]({{ site.baseurl }}/types-of-mobile-apps)
 - **Docs:** [Flutter — platform channels](https://docs.flutter.dev/platform-integration/platform-channels); [React Native — New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page)
 - **Articles surveyed:** Impact Tech Lab [Flutter vs React Native vs Xamarin](https://impacttechlab.com/flutter-react-native-xamarin-a-cross-platform-comparison/) — useful feature matrix, notes Xamarin deprecation; Tempest House on [Titanium vs RN vs Ionic](https://www.tempest.house/blog-posts/pros-and-cons-xamarin-vs-react-native-vs-ionic-vs-flutter-vs-phonegap-vs-appcelerator-titanium-which-one-is-right-for-you) — good for the WebView vs bridge distinction.
-
-## References
-
-- [Flutter — Platform channels](https://docs.flutter.dev/platform-integration/platform-channels)
-- [React Native — New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page)
-- [Impact Tech Lab — Flutter vs React Native vs Xamarin](https://impacttechlab.com/flutter-react-native-xamarin-a-cross-platform-comparison/)
-- [Tempest House — Xamarin vs RN vs Ionic vs Flutter vs PhoneGap vs Titanium](https://www.tempest.house/blog-posts/pros-and-cons-xamarin-vs-react-native-vs-ionic-vs-flutter-vs-phonegap-vs-appcelerator-titanium-which-one-is-right-for-you)

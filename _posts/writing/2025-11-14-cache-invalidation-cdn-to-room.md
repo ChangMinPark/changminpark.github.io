@@ -26,11 +26,6 @@ A user changes their avatar. Support sends a screenshot of the old face on the m
 
 From edge CDN through API response cache into on-device Room, each tier optimizes for hit rate and latency. Each also extends the window where thread metadata, avatars, and folder counts can be wrong. This post walks that path as one failure mode — including the stampede that starts when everyone misses at once.
 
-## Related reading
-
-- **Docs:** [Cloud CDN — cache invalidation overview](https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview); [Room InvalidationTracker](https://developer.android.com/reference/androidx/room/InvalidationTracker)
-- **Articles surveyed:** [CDN invalidation and stampede risk (VergeCloud)](https://www.vergecloud.com/blog/cache-invalidation-in-a-cdn/); [Redis invalidation and multi-layer traps (Loke.dev)](https://loke.dev/blog/redis-cache-invalidation-strategy-troubleshooting)
-
 ## One story: write lands, copies linger
 
 ```mermaid

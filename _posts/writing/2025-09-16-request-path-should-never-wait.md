@@ -23,7 +23,7 @@ draft: false
 
 You tap **Send** on a mail compose screen. The UI freezes for a few seconds, then shows success — or worse, a timeout with an ambiguous error. The message may already be on the server. The attachment may still be scanning. Search and analytics never got the event. The user learned one lesson: the request path waited for work that did not need to block trust.
 
-From the **client** side, the interesting failures are rarely “the database was down.” They are **latency budgets** on the hot path the phone is waiting on: every extra dependency the API awaits before acknowledging becomes someone else’s p99 and someone else’s support ticket. This post is about what belongs on that synchronous contract, what belongs in a queue behind it, and what must stay inline because trust requires it — framed as patterns mail-shaped products use, not as backend ownership claims.
+From the **client** side, the interesting failures are rarely “the database was down.” They are **latency budgets** on the hot path the phone is waiting on: every extra dependency the API awaits before acknowledging becomes someone else’s p99 and someone else’s support ticket. This post walks the patterns mail-shaped products use to draw that line: what belongs on the synchronous contract, what belongs in a queue behind it, and what must stay inline because trust requires it.
 
 ## Ack fast; finish later
 

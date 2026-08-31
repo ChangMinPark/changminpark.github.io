@@ -107,10 +107,8 @@ I use Claude in the same places many Android engineers do: draft PR text, reshap
 
 Practically:
 
-1. **Do not trust Unicode removers** for Claude text marks. They solve a different problem.
-2. **Do not treat a future detector score as authorship court.** Ask what policy you actually want: disclose assistance, ban certain uses, or judge the work product.
-3. **Expect short, factual, or code-heavy outputs to mark weakly** — and long generative prose to mark more strongly.
-4. **Separate C2PA hygiene from text hygiene** when you ship screenshots or SVGs.
+1. **Do not treat a future detector score as authorship court.** Ask what policy you actually want: disclose assistance, ban certain uses, or judge the work product.
+2. **Separate C2PA hygiene from text hygiene** when you ship screenshots or SVGs.
 
 The headline fight — “can watermarking be deleted?” — has a precise answer: **not by deletion, only by replacement.** Everything else is either metadata theater or an unverifiable SaaS claim. The harder product question is the one Anthropic already admits in the FAQ: a watermark says Claude was *in the loop*, not that a human was *out* of it.
 

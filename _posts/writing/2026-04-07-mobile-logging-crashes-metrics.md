@@ -25,12 +25,6 @@ Mobile teams either drown in unsampled logs nobody reads, or fly blind when cras
 
 ANR forensics deserve their own deep dive — see [ANR traces lie by omission]({{ site.baseurl }}/android-crashlytics-anr). Client↔server correlation is covered in [telemetry across client and server]({{ site.baseurl }}/telemetry-across-client-and-server). This post is the **stack map**: what to collect, with which industry tools, without repeating those essays.
 
-## Related reading
-
-- **Internal:** [ANR / Crashlytics]({{ site.baseurl }}/android-crashlytics-anr)
-- **Internal:** [Telemetry across client and server]({{ site.baseurl }}/telemetry-across-client-and-server)
-- **Docs:** [Play Vitals](https://developer.android.com/topic/performance/vitals), [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics)
-
 ## Three pipes (do not merge them in your head)
 
 | Pipe | Answers | Examples |
@@ -61,7 +55,6 @@ Shared concerns everywhere: **sampling**, **PII redaction**, **offline batching*
 
 If everything is a “log,” nothing is an alert. If everything is an alert, nobody pages.
 
-
 ## Sampling without lying to yourself
 
 Log everything in debug builds; sample in production. Crash and ANR pipelines usually want high capture; verbose action logs need aggressive sampling or they become a storage and privacy problem. Metrics should be cheap enough to be continuous. The mistake is one global “log level” that either blinds you or bankrupts the pipeline — set policy **per pipe**.
@@ -72,7 +65,7 @@ Instrument for decisions: separate crash, action, and metric pipes; pick tools t
 
 ## References
 
-- [Datadog Mobile RUM](https://docs.datadoghq.com/real_user_monitoring/mobile_and_tv_monitoring/)
+- [Datadog Mobile RUM](https://docs.datadoghq.com/real_user_monitoring/mobile_and_tv_monitoring/) — sessions, errors, and custom metrics in one vendor pipe
 - [Diagnose crashes](https://developer.android.com/topic/performance/vitals/crash) — crash-free users as a store-facing SLI, distinct from log volume
 - [ANR stack traces lie by omission (this site)]({{ site.baseurl }}/android-crashlytics-anr) — why crash/ANR tools are a different pipe than action logs
 - [SRE workbook — Alerting on SLOs](https://sre.google/workbook/alerting-on-slos/) — page on burn, not on every log line

@@ -25,33 +25,15 @@ On GitHub, Android teams often land in one of two traps: a required check that o
 
 This post is about designing that **merge contract**: what must be true before `main` moves, without turning every PR into a release rehearsal.
 
-## Related reading
-
-- **Internal:** [Jenkins to Screwdriver]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) — org CI vs app-team Actions
-- **Internal:** [Formatter vs Linter]({{ site.baseurl }}/formatter-vs-linter) — put style in CI so review is not about whitespace
-- **Docs:** [GitHub Actions](https://docs.github.com/en/actions), [Branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches)
-
 ## The merge contract (mobile-shaped)
 
 A useful PR gate answers three questions fast:
 
 1. **Will this compile the cone it touches?** Prefer affected-module assemble over whole-monorepo when possible.
 2. **Did we introduce a graph or Manifest footgun?** Cycles, forbidden edges (`feature`→`feature`), unexpected `api` exports, dangerous permissions.
-3. **Is the diff reviewable?** Formatters and linters as required checks — ktlint/detekt/Spotless — so humans review behavior, not spaces. Details live in the formatter vs linter post; here the point is **required status**.
+3. **Is the diff reviewable?** Formatters and linters as required checks — ktlint/detekt/Spotless — so humans review behavior, not spaces. Which tool owns which complaint is the subject of [formatter vs linter]({{ site.baseurl }}/formatter-vs-linter); here the point is **required status**.
 
 Optional but high leverage: mapping-file / R8 smoke on release-track PRs, unit tests for touched modules, and cache (Gradle + dependencies) so the latency budget stays under “I’ll wait.”
-
-## Bots as signal, not authority
-
-Claude / Copilot (or similar) on raised PRs can catch API/`impl` leaks, Manifest merges, missing tests, and “this PR edits generated/.” They cannot own **product risk** or rollout judgment. Treat bot review as a noisy sensor:
-
-| Bot checks | Human keeps |
-|------------|-------------|
-| Graph / style / obvious API misuse | Product risk, rollout, privacy |
-| Missing tests for pure functions | Experiment design |
-| Dangerous permission diffs | “Should we ship Friday?” |
-
-If the bot is wrong in public, someone must own the thread — same lesson as event-driven PR agents elsewhere on this site.
 
 ## Branch protection that matches reality
 
@@ -77,10 +59,21 @@ jobs:
 
 Wire flake policy explicitly: quarantine flaky instrumentation; do not train the team to re-run until green.
 
-
 ## Latency budget for PR feedback
 
 If the gate routinely exceeds ~10–15 minutes for ordinary app PRs, developers will work around it — force-pushing, marking checks optional, or merging with “I’ll fix CI later.” Prefer a **fast required path** (style + unit + assembleDebug cone) and a **slower non-blocking** or nightly path (full instrumentation, size analysis). Document which jobs are merge-blocking. Flakes belong in quarantine with an owner, not in tribal knowledge about which “re-run” button to mash.
+
+## Bots as signal, not authority
+
+Automated reviewers on raised PRs can catch API/`impl` leaks, Manifest merges, missing tests, and “this PR edits generated/.” They cannot own **product risk** or rollout judgment. Treat bot review as a noisy sensor that runs alongside the required checks, never as one of them:
+
+| Bot checks | Human keeps |
+|------------|-------------|
+| Graph / style / obvious API misuse | Product risk, rollout, privacy |
+| Missing tests for pure functions | Experiment design |
+| Dangerous permission diffs | “Should we ship Friday?” |
+
+If the bot is wrong in public, a person still owns the thread.
 
 ## Wrap-up
 

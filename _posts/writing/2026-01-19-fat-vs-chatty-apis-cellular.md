@@ -23,13 +23,6 @@ draft: false
 
 On office Wi‑Fi, a message list that fires six GETs per row feels snappy. On cellular — mid-train, one bar, radio cycling — the same design hitch-steps: placeholders flash, scroll janks while JSON arrives late, and background sync drains battery waking the radio for tiny payloads. The bug is not “Android is slow.” It is **physics**: latency and radio state dominate more than database purity arguments about resource-oriented REST.
 
-This post is about fat vs chatty APIs for mobile mail-style UIs — what to optimize (bytes vs round trips), how that shows up as scroll and sync cost, and why “normalize everything like a DB” is the wrong default on a phone.
-
-## Related reading
-
-- **Articles surveyed:** [CACM — Designing APIs for mobile performance](https://cacm.acm.org/blogcacm/designing-apis-for-mobile-performance-best-practices/); [JSON mobile API optimization (Jsonic)](https://jsonic.io/guides/json-mobile-apis); [Mobile API strategy notes](https://developersvoice.com/blog/mobile/mobile-api-strategy-in-2025/)
-- **Related:** [Three Clients, Same Aggregation]({{ site.baseurl }}/bff-three-clients-same-aggregation) — put the fat shape behind a BFF when three clients share the need
-
 ## Round trips usually hurt more than a few extra bytes
 
 Cellular RTT is often tens to hundreds of milliseconds. Each sequential request pays that tax again. A home or message-list screen that needs messages + badges + ads + experiments as separate calls can stack seconds before first useful paint — even when each response is small.
@@ -69,7 +62,7 @@ flowchart LR
 
 ## Not database dogma
 
-Server engineers sometimes push chatty APIs because normalized resources are easier to cache and evolve. That is a real concern — and it belongs behind a [BFF](https://samnewman.io/patterns/architectural/bff/) or aggregate endpoint, not in the mobile critical path. The phone should not reimplement a join across a flaky network.
+Server engineers sometimes push chatty APIs because normalized resources are easier to cache and evolve. That is a real concern — and it belongs behind a [BFF](https://samnewman.io/patterns/architectural/bff/) or aggregate endpoint, not in the mobile critical path. The phone should not reimplement a join across a flaky network. When several clients need the same fat shape, that is [an argument for one aggregation layer]({{ site.baseurl }}/bff-three-clients-same-aggregation), not for pushing the work back onto the radio.
 
 Practical split:
 
@@ -86,11 +79,7 @@ The portable wins on large mail-style Android surfaces usually come from fewer b
 - Frame time / jank while the first page binds
 - Radio wake patterns during background sync (coarse is fine)
 
-If fat payloads are bloated, sparse fieldsets and compression help. If chatty APIs are chatty, aggregate. Watch for the false compromise: “parallelize six calls on OkHttp” — better than sequential, still six failure modes and six chances for partial UI. The answer is usually hybrid — not a slogan.
-
-## Wrap-up
-
-On cellular, round trips and radio wakes dominate. Chatty resource APIs that look elegant on Wi‑Fi become scroll jank and sync tax on a phone. Prefer fat or BFF-aggregated payloads for the critical path, lazy-load the rest, and leave normalized purity to the server edge. Measure list open and sync cost on a bad network before declaring the API “clean.”
+If fat payloads are bloated, sparse fieldsets and compression help. If chatty APIs are chatty, aggregate. Watch for the false compromise: “parallelize six calls on OkHttp” — better than sequential, still six failure modes and six chances for partial UI. The answer is usually hybrid, and you only know which hybrid after you have measured list open and sync cost on a bad network.
 
 ## References
 

@@ -15,7 +15,7 @@ draft: false
       <li><a href="https://facebookarchive.github.io/flux/docs/in-depth-overview/">Flux in-depth overview</a> — actions in, store out; views do not write peer state</li>
       <li><a href="https://developer.android.com/kotlin/flow/stateflow-and-sharedflow">StateFlow and SharedFlow</a> — the Kotlin stream this post maps onto a Redux-style write path</li>
       <li><a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel overview</a> — UI state that survives configuration change</li>
-      <li><a href="{{ site.baseurl }}/android-fe-architecture-history">Android FE architecture history</a> — MVC → MVVM → MVI/Flux before the Redux slice</li>
+      <li><a href="https://developer.android.com/topic/architecture">Guide to app architecture (Android)</a> — recommended layers before a Redux-style write path</li>
     </ul>
   </div>
 </details>
@@ -27,11 +27,6 @@ A screen had three buttons that all mutated the same `ViewModel` fields from dif
 That is the problem Redux-style architecture solves: **one write path** for application state. It is not new to Android — Flux and MVI conversations predated Compose — but Kotlin coroutines and `StateFlow` make the pattern easier to express without boilerplate libraries. The question is when the extra ceremony pays off vs when a thin ViewModel is enough.
 
 For how Android front-end architecture evolved (MVC, MVP, MVVM, MVI, Flux), see [Android FE architecture history]({{ site.baseurl }}/android-fe-architecture-history) — this post focuses on the Redux slice of that map.
-
-## Related reading
-
-- **Internal:** [Android FE architecture history]({{ site.baseurl }}/android-fe-architecture-history) — Flux/MVI in the broader Android story
-- **Articles surveyed:** [Flux, Android Architecture Components, and Kotlin](https://medium.com/lewisrhine/flux-android-architecture-components-using-kotlin-a1c933ebf883) — mapping Flux to AAC patterns
 
 ## Flux and Redux in one paragraph each
 
@@ -123,7 +118,7 @@ Android's default **MVVM + `StateFlow`** already gives unidirectional *data* flo
 
 > **Rule of thumb** - if your bug is "wrong text on screen," fix state exposure first; if your bug is "impossible interleaving of events," consider a reducer-shaped store.
 
-MVI (Model-View-Intent) on Android is a close cousin: intents in, immutable state out, often with a single reducer pipeline. The [architecture history post]({{ site.baseurl }}/android-fe-architecture-history) ties Flux/MVI to later Compose state hoisting — same direction, different naming.
+MVI (Model-View-Intent) on Android is a close cousin: intents in, immutable state out, often with a single reducer pipeline. Compose state hoisting pushes the same direction under different naming, which is why teams already hoisting state find the reducer step a small one.
 
 ## Testing and tradeoffs
 

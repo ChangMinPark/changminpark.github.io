@@ -25,11 +25,6 @@ A traveler opens your app over airport Wi‑Fi in SFO, then boards a flight and 
 
 Multi-region architecture slides are tidy: latency-based DNS, health checks, active-active reads. Mobile clients are not tidy. They cache resolvers aggressively, keep sockets open across radio changes, and move through the world faster than TTL math assumes. This post is about that mismatch — what breaks when the phone moves and the control plane assumes a laptop that sat still.
 
-## Related reading
-
-- **Docs:** [AWS — cross-region DNS load balancing and failover](https://docs.aws.amazon.com/whitepapers/latest/real-time-communication-on-aws/cross-region-dns-based-load-balancing-and-failover.html)
-- **Articles surveyed:** [Multi-Region Deployment (Codelit)](https://codelit.io/blog/multi-region-deployment-architecture) — routing and session options; [Multi-Region Failover (CloudRoute)](https://cloudroute.net/insights/reliability/multi-region-failover/) — TTL and untested failover
-
 ## Latency is not only "pick the nearest region"
 
 Serving from a nearby region cuts RTT. That helps — until the path is: phone → bad radio → CDN edge → region that is "nearest" by yesterday's DNS answer → a dependency that still calls home to the primary DC. End-to-end user latency is the sum of **DNS age**, **connection reuse**, **TLS**, **app-layer retries**, and **cross-region chatter** you forgot about (session store, feature flags, analytics).

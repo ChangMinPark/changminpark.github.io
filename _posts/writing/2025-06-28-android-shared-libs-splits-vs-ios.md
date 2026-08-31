@@ -56,6 +56,10 @@ WebView, Play services, or a system framework changed behavior. Your versionCode
 
 **Failure mode:** treating every regression as a regression in *your* binary. Sometimes the shared stack outside the APK moved. Sometimes an **on-demand module** never finished downloading and feature code is simply missing until Play Core completes.
 
+## Which story is it?
+
+The three stories share one symptom vocabulary, so start by naming which layer the evidence points at:
+
 | Symptom | Which story to open first |
 |---------|---------------------------|
 | Missing native method / ABI-specific crash | Your `.so` / ABI splits |

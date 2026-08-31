@@ -22,13 +22,7 @@ draft: false
 
 Android builds a message-list model: headers, unread badges, ad slots, onboarding nudges, attachment previews. iOS builds the same composition from the same microservices. Web does it again with slightly different pagination. Three teams reinvent the same fan-out, the same null handling, and the same “which field is authoritative?” bugs — then disagree on edge cases in production.
 
-That duplication is how [Backends for Frontends (BFF)](https://samnewman.io/patterns/architectural/bff/) earns its keep. At a large mail client, the pain is not theoretical: list surfaces are aggregations, not single-resource GETs. This post is about when a BFF helps, what it costs, and how versioning plus feature flags keep three clients from sharing one brittle contract forever.
-
-## Related reading
-
-- **Canonical:** [Sam Newman — Backends for Frontends](https://samnewman.io/patterns/architectural/bff/)
-- **Docs:** [Azure — Backends for Frontends](https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends)
-- **Articles surveyed:** [HLD Handbook — BFF](https://hld.handbook.academy/curriculum/architecture-patterns/backend-for-frontend/) (ownership rule); [arc42 — Backends for Frontends](https://quality.arc42.org/approaches/backends-for-frontends) (drift between experiences)
+That duplication is how [Backends for Frontends (BFF)](https://samnewman.io/patterns/architectural/bff/) earns its keep. In large mail clients the pain is not theoretical: list surfaces are aggregations, not single-resource GETs. This post is about when a BFF helps, what it costs, and how versioning plus feature flags keep three clients from sharing one brittle contract forever.
 
 ## The problem BFF actually solves
 
@@ -79,7 +73,7 @@ Three clients never upgrade in lockstep. Practical controls:
 3. **Feature flags** for experimental slots (ads, nudges, onboarding) so server composition can change without forcing an app store wait for every experiment
 4. **Contract tests** between BFF and clients for the home/list payload — the highest-churn aggregation
 
-On Android mail work, slot-style composition (list + ads + nudges) is exactly the kind of aggregation that wants a server-owned layout with flags — not three hard-coded client assemblers that drift. Flags also let you dark-launch a new slot on one platform while others stay unchanged, which is hard when aggregation lives only in app binaries with staggered store rollouts.
+In Android mail clients, slot-style composition (list + ads + nudges) is exactly the kind of aggregation that wants a server-owned layout with flags — not three hard-coded client assemblers that drift. Flags also let you dark-launch a new slot on one platform while others stay unchanged, which is hard when aggregation lives only in app binaries with staggered store rollouts.
 
 > **Rule of thumb** - put experience-specific shaping in the BFF; keep durable domain rules in downstream services so BFFs do not become three divergent sources of truth.
 

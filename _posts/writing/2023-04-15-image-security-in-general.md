@@ -14,7 +14,7 @@ draft: false
       <li><a href="https://csrc.nist.gov/glossary/term/confidentiality">CIA triad (NIST glossary)</a> — confidentiality, integrity, availability basics</li>
       <li><a href="https://csrc.nist.gov/glossary/term/non_repudiation">Authenticity / non-repudiation</a> — proving origin, not only secrecy</li>
       <li><a href="https://en.wikipedia.org/wiki/Digital_watermarking">Digital watermarking overview</a> — visible vs invisible marks (primer, not product)</li>
-      <li><a href="{{ site.baseurl }}/rushmore">Rushmore (this site)</a> — TrustZone secure display threat model on mobile</li>
+      <li><a href="https://www.arm.com/technologies/trustzone-for-cortex-a">Arm TrustZone for Cortex-A</a> — secure world / TEE threat model on mobile SoCs</li>
     </ul>
   </div>
 </details>
@@ -143,6 +143,10 @@ Detect tampering **without** the original — pixel inconsistencies, shadow phys
 | No enrollment at capture time | Adversarial editing adapts to detectors |
 | Works on screenshots and re-uploads | Real-time on-device analysis is still expensive |
 | Complements metadata credentials (e.g. C2PA) when present | Cannot alone prove who captured the scene |
+
+## Wrap-up
+
+No single mechanism covers all four properties, so the real question is which failure you cannot tolerate — a leaked thumbnail, a doctored re-share, a stolen identity, or a denied leak — and which layer of the path that failure lands on. Encryption protects bytes in transit; signatures and watermarks protect claims about origin; forensics is what is left when everything else was stripped. On mobile the guarantee usually ends earlier than the design assumed: at the decode step, where pixels become visible to something you do not control.
 
 ## Related reading
 

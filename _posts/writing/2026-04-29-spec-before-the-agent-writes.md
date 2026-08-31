@@ -12,10 +12,10 @@ draft: false
     <p class="post-prereq__hint">Read these first if <strong>acceptance criteria</strong>, <strong>SPEC.md</strong>, <strong>red-green gates</strong>, or <strong>harness stop conditions</strong> are new.</p>
     <ul>
       <li><a href="https://addyosmani.com/blog/good-spec/">How to write a good spec for AI agents (Addy Osmani)</a> — success criteria and tests as part of the agent brief</li>
-      <li><a href="{{ site.baseurl }}/agent-done-but-ci-red">The Agent Said Done — and CI Is Red</a> — exit codes as the done signal; hooks that veto chat confidence</li>
-      <li><a href="{{ site.baseurl }}/agent-eval-not-a-demo">"It Worked Once in Chat" Is Not a Ship Bar</a> — golden tasks and re-runnable outcomes beyond one green session</li>
+      <li><a href="https://code.claude.com/docs/en/hooks">Claude Code hooks</a> — exit codes as the done signal; hooks that veto chat confidence</li>
+      <li><a href="https://langfuse.com/docs/evaluation/overview">Langfuse — Evaluation overview</a> — golden tasks and re-runnable outcomes beyond one green session</li>
       <li><a href="https://blog.logrocket.com/building-an-agent-harness-with-claude-code/">Building an agent harness with Claude Code</a> — planner / generator / evaluator; spec as the durable artifact</li>
-      <li><a href="{{ site.baseurl }}/planning-theater-vs-real-plan">Planning Theater vs a Plan That Saves a Rewrite</a> — short plans with checkable acceptance, not preamble monologues</li>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents (Anthropic)</a> — workflows vs agents; short plans with checkable acceptance</li>
     </ul>
   </div>
 </details>

@@ -12,9 +12,9 @@ draft: false
     <p class="post-prereq__hint">Read these first if <strong>on-device LLMs</strong>, <strong>edge vs cloud inference</strong>, or <strong>agent harness loops</strong> are new.</p>
     <ul>
       <li><a href="https://arxiv.org/html/2409.00088v1">On-Device Language Models: A Comprehensive Review</a> — why edge-cloud hybrids dominate wish lists (latency, privacy, cost)</li>
-      <li><a href="{{ site.baseurl }}/agent-done-but-ci-red">The Agent Said Done — and CI Is Red</a> — stop conditions and verifiers; the loop shape does not change on-device</li>
-      <li><a href="{{ site.baseurl }}/agent-trust-boundaries">Agent Trust Boundaries</a> — approvals and least privilege still bound tool blast radius</li>
-      <li><a href="{{ site.baseurl }}/agent-eval-not-a-demo">"It Worked Once in Chat" Is Not a Ship Bar</a> — golden tasks beat a single local demo</li>
+      <li><a href="https://code.claude.com/docs/en/hooks">Claude Code hooks</a> — stop conditions and verifiers; the loop shape does not change on-device</li>
+      <li><a href="https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/overview">Strengthen guardrails (Anthropic)</a> — approvals and least privilege still bound tool blast radius</li>
+      <li><a href="https://langfuse.com/docs/evaluation/overview">Langfuse — Evaluation overview</a> — golden tasks beat a single local demo</li>
       <li><a href="https://ollama.com/">Ollama</a> — run a small local model with an OpenAI-compatible API shape (ops literacy, not a 70B goal)</li>
     </ul>
   </div>
@@ -66,11 +66,9 @@ Weaker local models make bad judgment *more* obvious. That is useful for labs. I
 3. Optional: same prompts against a small local model to feel latency and quality cliffs
 4. On-device / edge as a **product** topic when you have a latency, privacy, or offline requirement — not as gear acquisition
 
-Step 3 is where people overspend. A 7–8B on a laptop already teaches timeout budgets, context limits, and "the model agreed but the tool never ran." A Mini hosting a 70B teaches thermals and electricity. Only one of those lessons transfers to shipping an Android feature that must not upload draft text.
+Step 3 is where people overspend. A 7–8B on a laptop already teaches timeout budgets, context limits, and "the model agreed but the tool never ran." A Mini hosting a 70B mostly teaches thermals and electricity bills. Only one of those lessons transfers to shipping an Android feature that must not upload draft text.
 
-## Wrap-up
-
-Buy silicon when a product constraint demands it. Learn agents by wiring loops, gates, and evals — on whatever brain you already have. On-device without the Mini fantasy is just honest placement of compute.
+The order is the point, not the silicon. Hardware becomes worth buying at the moment a latency, privacy, or offline requirement forces the weights local — and by then the question you are answering is which gate moves onto the device, not which parameter count fits in RAM.
 
 ## References
 

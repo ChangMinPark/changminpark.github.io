@@ -13,8 +13,8 @@ draft: false
     <ul>
       <li><a href="https://developer.android.com/guide/playcore/in-app-review">In-app reviews (Play)</a> — what the API guarantees (and does not)</li>
       <li><a href="https://developer.android.com/reference/com/google/android/play/core/review/ReviewManager">ReviewManager API</a> — request/launch review flow</li>
-      <li><a href="https://developer.android.com/guide/playcore">Play Core libraries</a> — Task-based async Play APIs</li>
       <li><a href="https://developer.android.com/guide/playcore/in-app-review/test">Test in-app reviews</a> — how to verify without production quotas</li>
+      <li><a href="https://developer.android.com/guide/playcore">Play Core libraries</a> — Task-based async Play APIs</li>
     </ul>
   </div>
 </details>
@@ -26,13 +26,6 @@ Around **21 April 2026**, Play Console inbound reviews for many apps fell off a 
 What made this incident nasty was the API surface. `ReviewManager.launchReviewFlow` completed **successfully**. No exception. No failed `Task`. Logs showed bind → launch info → unbind in tens of milliseconds — and **no UI**. Google’s own docs already warn that completion does **not** mean a dialog was shown. In April that warning stopped being pedantry and became the whole outage.
 
 This post is the forensic path: how to decide **app misuse vs Play-side regression**, what the silent-success contract already admitted, and what not to panic-ship while Google rolls a store update.
-
-## Related reading
-
-- **Docs:** [In-app reviews (Kotlin/Java)](https://developer.android.com/guide/playcore/in-app-review/kotlin-java) — completion ≠ dialog shown
-- **Incident:** [Google Issue Tracker #506844940](https://issuetracker.google.com/issues/506844940)
-- **Write-up:** [AppFollow — Google confirms Play Store bug](https://appfollow.io/blog/google-confirms-play-store-bug-causing-review-drops-fix-coming-may-5th)
-- **Internal:** [ANR Stack Traces Lie by Omission]({{ site.baseurl }}/android-crashlytics-anr) — another place “green signal” hides the real failure mode
 
 ## What “success” actually promises
 
@@ -108,3 +101,4 @@ The April 2026 in-app review incident was a reminder that **rating pipelines are
 - [Android Developers — In-app reviews](https://developer.android.com/guide/playcore/in-app-review/kotlin-java)
 - [Google Issue Tracker #506844940](https://issuetracker.google.com/issues/506844940)
 - [AppFollow — Google confirms Play Store bug, fix from May 5th](https://appfollow.io/blog/google-confirms-play-store-bug-causing-review-drops-fix-coming-may-5th)
+- [ANR stack traces lie by omission (this site)]({{ site.baseurl }}/android-crashlytics-anr) — another place a “green signal” hides the real failure mode

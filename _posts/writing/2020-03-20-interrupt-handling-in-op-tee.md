@@ -36,7 +36,7 @@ The **Generic Interrupt Controller (GIC)** decides which interrupt line fires. O
 
 Each world has its own exception vector base (`VBAR`). Same-world interrupts are handled locally. Cross-world interrupts require a context switch through the Monitor first, then delivery in the target world.
 
-## Standard SMC entry from normal world
+## SMC entry from normal world
 
 Normal world invokes `optee_os` with an SMC. On every switch the Monitor **saves the current world and restores the other** (NW ↔ SW).
 

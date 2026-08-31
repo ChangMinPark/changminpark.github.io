@@ -25,11 +25,6 @@ The repro is cursed in the best way: send a message, watch “Sent,” pull to r
 
 What actually happened is older than Jetpack: the write hit the **primary**, the refresh read a **replica** that had not applied the commit yet. Replication lag wore an Android costume.
 
-## Related reading
-
-- **Docs:** [Amazon RDS Read Replicas announcement (read-after-write note)](https://aws.amazon.com/blogs/aws/amazon-rds-announcing-read-replicas/)
-- **Articles surveyed:** [Read-your-writes: replicas, routing, session tokens](https://matheuspalma.com/blog/read-your-writes-consistency-replicas-routing-tokens); [Aurora write forwarding and read consistency](https://aws.amazon.com/blogs/database/using-write-forwarding-with-amazon-aurora-global-database-for-postgresql/); [Read replica lag — four application bugs (FlowVerify)](https://www.flowverify.co/blog/read-replica-replication-lag-bugs)
-
 ## Why it looks like a client bug
 
 | Observation | Android hypothesis | Systems reality |

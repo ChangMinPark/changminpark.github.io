@@ -27,12 +27,6 @@ That gap is usually **GHEC vs GHES**.
 
 GitHub Enterprise is one **plan**. [Deployment is two products](https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-for-enterprises): **GitHub Enterprise Cloud (GHEC)** — GitHub hosts it — and **GitHub Enterprise Server (GHES)** — you run an appliance on your metal or a public cloud. Purchase often entitles you to **both**; you can run cloud-only, server-only, or a hybrid with [GitHub Connect](https://docs.github.com/en/enterprise-server@latest/admin/configuring-settings/configuring-github-connect/about-github-connect). The license is shared. The **ops model** is not.
 
-## Related reading
-
-- **Internal:** [GitHub Actions for Android PR gates]({{ site.baseurl }}/github-actions-android-pr-gates) — merge contracts that still assume a working Actions fleet
-- **Internal:** [Jenkins to Screwdriver]({{ site.baseurl }}/cicd-jenkins-to-screwdriver) — when org CI sits beside GitHub
-- **Docs:** [About GitHub for enterprises](https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-for-enterprises), [Getting started with Enterprise Cloud](https://docs.github.com/en/get-started/onboarding/getting-started-with-github-enterprise-cloud)
-
 ## Two products, one decision surface
 
 **GHEC** keeps repositories and enterprise policy on GitHub’s side. Updates and bugfixes land without your weekend patch train. You can stay on `github.com` or use a dedicated subdomain on **GHE.com** when data residency / tenancy control matters more than “just SaaS.” Identity is either personal accounts + SAML SSO, or **Enterprise Managed Users** provisioned from your IdP.

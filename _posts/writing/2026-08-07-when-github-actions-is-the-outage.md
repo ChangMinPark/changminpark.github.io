@@ -15,10 +15,12 @@ draft: false
       <li><a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Understanding GitHub Actions</a> — workflows, jobs, and how a runner gets assigned work</li>
       <li><a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners">About self-hosted runners</a> — your VM is not a full escape from GitHub’s scheduler</li>
       <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">About protected branches</a> — required checks turn an Actions outage into a merge freeze</li>
-      <li><a href="{{ site.baseurl }}/github-actions-android-pr-gates">GitHub Actions for Android PR gates</a> — what those required checks are supposed to protect</li>
+      <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks">About status checks (GitHub)</a> — what those required checks are supposed to protect</li>
     </ul>
   </div>
 </details>
+
+## It was not your Gradle cache
 
 On August 6, 2026, [GitHub Status](https://www.githubstatus.com/) opened an Actions investigation at **15:22 UTC**. Within an hour, workflow runs were failing to start or dying mid-flight, the Actions REST API was erroring, and some workflows saw unexpected rate limits. Capacity stayed constrained for hours. Hosted runners were hit hard; self-hosted runners still saw registration errors and rate limiting. Webhook delivery slowed. Pages, Copilot code review, and Copilot coding agent degraded alongside Actions. Enterprise Importer migrations were paused to help recovery.
 

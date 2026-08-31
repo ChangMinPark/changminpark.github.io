@@ -12,7 +12,7 @@ draft: false
     <p class="post-prereq__hint">Read these first if <strong>ANR, Play Vitals, Crashlytics, or main-thread watchdogs</strong> are new.</p>
     <ul>
       <li><a href="https://developer.android.com/topic/performance/vitals/anr">ANRs</a> — definition and common causes</li>
-      <li><a href="https://developer.android.com/topic/performance/vitals/anr#diagnose">Diagnose ANRs</a> — traces and clustering basics</li>
+      <li><a href="https://developer.android.com/reference/android/app/ApplicationExitInfo">ApplicationExitInfo</a> — the historical exit record modern ANR reporting reads from</li>
       <li><a href="https://firebase.google.com/docs/crashlytics">Firebase Crashlytics</a> — crash/ANR reporting many teams use</li>
       <li><a href="https://support.google.com/googleplay/android-developer/answer/9844486">Play Console Vitals</a> — how Play surfaces ANR/crash rates</li>
     </ul>
@@ -63,9 +63,20 @@ Even with Crashlytics configured, several gaps remain in production ANR work:
 
 > **Rule of thumb** - treat Crashlytics as a **structured incident record**, not a replay. Reproduce with the same user journey, device tier, and data shape.
 
+## ANR categories worth knowing
+
+The category is the one piece of the report that does tell you something structural. Android distinguishes several ANR types (input dispatch, broadcast receiver, service timeout, etc.). The [official ANR guidance](https://developer.android.com/topic/performance/vitals/anr) documents thresholds and mitigations — for example, `goAsync()` on a broadcast does not cancel the ANR deadline for background delivery. Knowing **which contract you violated** saves days of chasing the wrong thread dump.
+
+| Symptom cluster | Often means | First check |
+|-----------------|-------------|-------------|
+| Input dispatch timeout | Main thread busy during touch/key | Work on UI thread; lock contention |
+| Broadcast ANR | `onReceive` too slow | Move work off main; mind background limits |
+| Service / binder stall | IPC or startForeground timing | Trace cross-process calls |
+| `nativePollOnce` top frame | Idle at snapshot | Earlier blocking work; strict mode in dev |
+
 ## Building a holistic view
 
-What helped on high-traffic mail surfaces was stacking tools instead of expecting one dashboard to explain everything:
+The category narrows the contract; it still does not hand you the session. What helped on high-traffic mail surfaces was stacking tools instead of expecting one dashboard to explain everything:
 
 1. **Vitals for rate and regression** — did a release move the ANR needle on a specific device model?
 2. **Crashlytics for clustering + custom keys** — which screen and flags were set?
@@ -79,17 +90,6 @@ Third-party observability platforms push further on grouping and flame graphs. E
 </div>
 
 [How to Solve ANRs and Boost Google Play Store Ranking (Embrace)](https://www.youtube.com/watch?v=ug31wHjdhoU)
-
-## ANR categories worth knowing
-
-Android distinguishes several ANR types (input dispatch, broadcast receiver, service timeout, etc.). The [official ANR guidance](https://developer.android.com/topic/performance/vitals/anr) documents thresholds and mitigations — for example, `goAsync()` on a broadcast does not cancel the ANR deadline for background delivery. Knowing **which contract you violated** saves days of chasing the wrong thread dump.
-
-| Symptom cluster | Often means | First check |
-|-----------------|-------------|-------------|
-| Input dispatch timeout | Main thread busy during touch/key | Work on UI thread; lock contention |
-| Broadcast ANR | `onReceive` too slow | Move work off main; mind background limits |
-| Service / binder stall | IPC or startForeground timing | Trace cross-process calls |
-| `nativePollOnce` top frame | Idle at snapshot | Earlier blocking work; strict mode in dev |
 
 ## Wrap-up
 

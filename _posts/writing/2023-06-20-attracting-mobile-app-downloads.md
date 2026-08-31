@@ -93,11 +93,6 @@ Web-side tools (Optimizely, VWO, in-house flags) can split UI easily. The hard p
 
 Interstitials often win CTR; banners sometimes win **retained installers** because taps are intentional, not accidental ([Tolinku](https://tolinku.com/blog/banner-vs-interstitial/)). Pick the metric that matches your business before declaring a winner.
 
-## Related reading
-
-- **Docs:** [Apple — Smart App Banners](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners); [Google — Avoid intrusive interstitials](https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials)
-- **Articles surveyed:** Linkrunner on [web-to-app deep linking and A/B tests](https://linkrunner.io/blog/deep-linking-for-web-to-app-how-to-convert-mobile-web-visitors-into-app-users) — strong on variant IDs through install; AppsFlyer on [Smart Banner setup](https://support.appsflyer.com/hc/en-us/articles/360000764837-Smart-Banners-mobile-web-to-app-for-marketers) — attribution plumbing.
-
 ## Wrap-up
 
 There is no universal "best" install prompt — only fit for user occasion. Full-page interstitials buy visibility at retention risk; bottom sheets split the difference; smart banners protect the web experience on iOS especially. Default to the least intrusive format that still moves your KPI, instrument through install, and A/B test on **downstream activity**, not banner vanity metrics. The user who needed web today might install tomorrow — unless you teach them to leave.

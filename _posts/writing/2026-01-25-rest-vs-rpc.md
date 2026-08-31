@@ -27,12 +27,6 @@ Both can ride HTTP. Both can return JSON. Both can power a mobile app. The fork 
 
 This post is the contract-level distinction — not a bake-off of gRPC vs Spring Boot, and not the cellular round-trip story in [Fat vs Chatty APIs]({{ site.baseurl }}/fat-vs-chatty-apis-cellular). Those concerns stack; they do not replace each other.
 
-## Related reading
-
-- **Internal:** [Fat vs Chatty APIs on Cellular]({{ site.baseurl }}/fat-vs-chatty-apis-cellular) — payload shape and RTT on phones
-- **Internal:** [Three Clients, Same Aggregation]({{ site.baseurl }}/bff-three-clients-same-aggregation) — where aggregation lives when clients disagree
-- **External:** [Fielding’s REST dissertation (ch. 5)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm); [gRPC docs — core concepts](https://grpc.io/docs/what-is-grpc/core-concepts/); [Postman — gRPC vs REST](https://blog.postman.com/grpc-vs-rest/)
-
 ## Two ways to carve the surface
 
 **REST** (Representational State Transfer) is an architectural *style*. In the HTTP mapping most teams mean: URLs name **resources**, verbs (`GET` / `POST` / `PUT` / `PATCH` / `DELETE`) say what to do, status codes carry outcomes, and clients navigate representations. Idealized REST is more than “JSON over GET”; day-to-day “REST APIs” are usually **resource-oriented HTTP**.

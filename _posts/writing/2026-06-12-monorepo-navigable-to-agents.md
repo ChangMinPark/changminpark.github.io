@@ -88,7 +88,7 @@ Always-on context is a budget. A 10k-token root file that restates Clean Archite
 - **Glob-scoped rules** (e.g. Cursor `.mdc`) — Compose, ViewModel, or test patterns that attach only when matching files are in play
 - **On-demand skills** — multi-step runbooks loaded when the task matches, not on every chat
 
-Medium Engineering described the evolution from one heavy `AGENTS.md` to scoped rules so the model gets the *right* playbook at the *right* time. Cursor's docs for [rules and AGENTS.md](https://cursor.com/docs/rules.md) match that shape: portable repo instructions plus scoped overrides.
+The point of the split is that the model gets the *right* playbook at the *right* time instead of one always-on essay. Cursor's docs for [rules and AGENTS.md](https://cursor.com/docs/rules.md) match that shape: portable repo instructions plus scoped overrides.
 
 > **Rule of thumb** - if a paragraph has not prevented a real wrong edit in the last quarter, cut it; agents do not need your manifesto.
 

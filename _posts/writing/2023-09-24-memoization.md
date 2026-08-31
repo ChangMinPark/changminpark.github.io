@@ -21,7 +21,7 @@ draft: false
 
 ## When the same work runs twice
 
-The first time memoization mattered outside a LeetCode tab, it was not for Fibonacci. For example, in a mail app a feature may need to resolve a stable display label from a long chain of IDs — contacts, aliases, domain rules — on every list scroll frame. The resolver is pure: same inputs, same string out. Profiling often shows the same `(userId, threadId)` pairs recomputing dozens of times per second. The fix is not a faster algorithm; it is **remembering answers** for keys already paid for.
+Outside a LeetCode tab, memoization rarely shows up as Fibonacci. Take a mail app that resolves a display label from a long chain of IDs — contacts, aliases, domain rules — on every list scroll frame. The resolver is pure: same inputs, same string out. Profile it and the same `(userId, threadId)` pairs come back dozens of times per second, each one paying full price. The fix is not a faster algorithm; it is **remembering answers** for keys already paid for.
 
 That is **memoization**: wrap a function so repeated calls with the same arguments return a cached result instead of recomputing. It is the technique behind many dynamic-programming wins, but you do not need a DP table on the wall to use it in production code.
 

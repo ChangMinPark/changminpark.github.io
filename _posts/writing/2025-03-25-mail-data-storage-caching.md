@@ -25,13 +25,6 @@ Inbox open, scroll, search, and send all fail differently when data lives on the
 
 This pairs with [offline-first consistency]({{ site.baseurl }}/offline-first-mail-consistency) and [CDN→Room invalidation]({{ site.baseurl }}/cache-invalidation-cdn-to-room). Here the focus is **on-device tiers and budgets**, not the whole sync protocol.
 
-## Related reading
-
-- **Internal:** [Offline-first mail consistency]({{ site.baseurl }}/offline-first-mail-consistency)
-- **Internal:** [Cache invalidation CDN→Room]({{ site.baseurl }}/cache-invalidation-cdn-to-room)
-- **Internal:** [ANR traces lie by omission]({{ site.baseurl }}/android-crashlytics-anr) — storage work on the wrong thread shows up here
-- **Docs:** [Data and files overview](https://developer.android.com/training/data-storage)
-
 ## Assign a home to each class of data
 
 | Data | Default home | Why |
@@ -71,8 +64,7 @@ If invalidation storms refill Room on every push, you will win “freshness” a
 
 ## Consistency vs snappiness
 
-Stale-while-revalidate for thread lists is usually right. Multi-device sync landing mid-scroll needs conflict rules (last-writer, server wins for metadata, outbox wins for unsent). Measure **jank and ANR**, not only “cache hit rate.” A 99% hit rate that stalls the main thread is still a product bug.
-
+Stale-while-revalidate for thread lists is usually right. Multi-device sync landing mid-scroll needs conflict rules (last-writer, server wins for metadata, outbox wins for unsent). Measure **jank and ANR**, not only “cache hit rate.” A 99% hit rate that stalls the main thread is still a product bug — and storage work on the wrong thread is exactly what shows up in [ANR traces]({{ site.baseurl }}/android-crashlytics-anr).
 
 ## When memory cache fights Room
 

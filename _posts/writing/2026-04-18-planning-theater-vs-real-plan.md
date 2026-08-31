@@ -89,9 +89,7 @@ No redesign of the preview UI. No network protocol changes.
 3. Wire call site; run module tests
 ```
 
-Each checkbox is something an agent (or you) can **falsify**. Prefer commands and path bounds over adjectives. If acceptance cannot be pasted into a later verifier prompt, it will evaporate under context pressure.
-
-> **Rule of thumb** - if the plan's "done" criteria are only readable by a human who already knew the answer, the agent will declare victory early.
+Each checkbox is something an agent (or you) can **falsify**. Prefer commands and path bounds over adjectives. If acceptance cannot be pasted into a later verifier prompt, it will evaporate under context pressure — and "done" criteria that are only legible to a human who already knew the answer are exactly how an agent ends up declaring victory early.
 
 Gate before execution when the blast radius is high: approve the acceptance list, not the essay. A human (or a strict self-check prompt) should be able to reject "Step 2: refactor shared networking" if that was never in scope. Once execution starts, paste the acceptance block into the verifier turn so "done" means the checkboxes, not a summary paragraph.
 

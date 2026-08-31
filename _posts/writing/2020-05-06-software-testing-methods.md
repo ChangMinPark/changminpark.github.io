@@ -11,18 +11,18 @@ draft: false
   <div class="post-prereq__body">
     <p class="post-prereq__hint">Read these first if <strong>fuzzing</strong>, <strong>concolic / symbolic execution</strong>, or <strong>unit vs UI tests</strong> are new.</p>
     <ul>
-      <li><a href="https://en.wikipedia.org/wiki/Fuzzing">Fuzzing</a> — random/invalid inputs to surface crashes; a major method in this post</li>
-      <li><a href="https://en.wikipedia.org/wiki/Concolic_testing">Concolic testing</a> — concrete + symbolic paths; the method the opening says UI suites miss</li>
+      <li><a href="https://en.wikipedia.org/wiki/Fuzzing">Fuzzing</a> — random or invalid inputs thrown at a program to surface crashes</li>
+      <li><a href="https://en.wikipedia.org/wiki/Concolic_testing">Concolic testing</a> — a concrete run steered by symbolic path constraints</li>
       <li><a href="https://developer.android.com/training/testing">Test apps on Android</a> — local unit vs instrumented vs UI tests</li>
-      <li><a href="https://martinfowler.com/articles/practical-test-pyramid.html">The Practical Test Pyramid (Fowler)</a> — cheap checks vs slow UI; what each layer can prove</li>
-      <li><a href="{{ site.baseurl }}/white-box-black-box-gray-box-testing">White Box, Black Box, and Gray Box Testing</a> — access model vs method choice</li>
+      <li><a href="https://martinfowler.com/articles/practical-test-pyramid.html">The Practical Test Pyramid (Fowler)</a> — cheap checks vs slow UI, and what each layer can prove</li>
+      <li><a href="https://en.wikipedia.org/wiki/White-box_testing">White-box testing (Wikipedia)</a> — how much of the implementation a test is allowed to see</li>
     </ul>
   </div>
 </details>
 
 ## Why method choice is a budget decision
 
-A green CI badge does not mean your Android build is safe to ship. I have seen fuzz passes and hundred-case UI suites miss production failures — vendor-specific rotation bugs, concolic-path-level logic errors, boundary values at `Integer.MAX_VALUE` — because the team used one cheap method everywhere. Each testing technique buys a different kind of confidence at a different cost. The engineering question is not "did we test?" but **which failure class earns the next hour of automation**.
+A green CI badge does not mean your Android build is safe to ship. I have seen fuzz passes and hundred-case UI suites miss production failures — vendor-specific rotation bugs, logic errors buried behind a rare branch, boundary values at `Integer.MAX_VALUE` — because the team used one cheap method everywhere. Each testing technique buys a different kind of confidence at a different cost. The engineering question is not "did we test?" but **which failure class earns the next hour of automation**.
 
 Below is a map of methods I reach for in mobile and UI work, with Android-flavored examples and honest tradeoffs.
 
@@ -75,7 +75,7 @@ Applications: security analysis, equivalence checking (e.g., Code Hunt-style puz
 
 **Concolic (concrete + symbolic) testing** runs the program on real inputs, then solves path constraints to **mutate inputs** that flip the next branch. It is typically cheaper than full symbolic exploration because it follows one concrete trace at a time.
 
-Useful for tight algorithms (parsers, diff engines) embedded in an app. Rarely the first tool for end-to-end Mail UI — but valuable for attachment metadata parsers or migration utilities with deep branches.
+Useful for tight algorithms (parsers, diff engines) embedded in an app. Rarely the first tool for end-to-end UI flows — but valuable for attachment metadata parsers or migration utilities with deep branches.
 
 ## A/B (split) testing — production comparison with statistics
 
@@ -85,19 +85,7 @@ Useful for tight algorithms (parsers, diff engines) embedded in an app. Rarely t
 
 *Figure 1. Split traffic between variants; significance gates promotion.*
 
-Compose rollouts at scale fit here: lazy-list architecture vs baseline, ad slot placement experiments. The oracle is a **product metric**, not pass/fail. Requires traffic, ethical bucketing, and guardrails so a losing variant does not silently harm core flows.
-
-## Boundary testing — edges of valid input
-
-**Boundary testing** targets extremes and just-inside/just-outside edges of valid ranges: min, max, zero, empty string, last pixel, `API_LEVEL` boundaries.
-
-<img src="{{ site.baseurl }}/images/posts/software-testing-methods/figure-2.jpg" alt="Boundary values at the edges of a valid input range" width="460px" style="margin-top: 0px; margin-bottom: 8px;"/>
-
-*Figure 2. Test at min, just above min, nominal, just below max, and max.*
-
-Android examples: list with exactly one item vs empty vs max adapter count; font scale at accessibility maximum; process death at the last moment before `onSaveInstanceState`. Bugs love fence posts.
-
-Boundary testing usually follows **equivalence class partitioning** — first divide inputs into classes that should behave the same, then probe each class edge.
+Staged UI rollouts fit here: a rewritten list implementation vs the baseline, or placement experiments for a promotional slot. The oracle is a **product metric**, not pass/fail. Requires traffic, ethical bucketing, and guardrails so a losing variant does not silently harm core flows.
 
 ## Equivalence class partitioning (ECP)
 
@@ -105,11 +93,23 @@ Boundary testing usually follows **equivalence class partitioning** — first di
 
 <img src="{{ site.baseurl }}/images/posts/software-testing-methods/figure-3.png" alt="Input domain divided into equivalence classes with one test per class" width="67%" style="margin-top: 0px; margin-bottom: 8px;"/>
 
-*Figure 3. Cover each equivalence class at least once.*
+*Figure 2. Cover each equivalence class at least once.*
 
-Example for a Compose message list: {empty inbox, single thread, paginated history} × {portrait, landscape} × {light, dark} — pick one case per cell instead of enumerating every message id.
+Example for a paginated list screen: {empty list, single item, full page of history} × {portrait, landscape} × {light, dark} — pick one case per cell instead of enumerating every row id.
 
 **Pros:** Cuts redundant tests. **Cons:** Wrong partitions hide bugs — if you lump "all tablets" together, a foldable-specific bug survives.
+
+Once the partitions are drawn, the inputs worth writing down are the ones sitting on their edges.
+
+## Boundary testing — edges of valid input
+
+**Boundary testing** targets extremes and just-inside/just-outside edges of valid ranges: min, max, zero, empty string, last pixel, `API_LEVEL` boundaries.
+
+<img src="{{ site.baseurl }}/images/posts/software-testing-methods/figure-2.jpg" alt="Boundary values at the edges of a valid input range" width="460px" style="margin-top: 0px; margin-bottom: 8px;"/>
+
+*Figure 3. Test at min, just above min, nominal, just below max, and max.*
+
+Android examples: list with exactly one item vs empty vs max adapter count; font scale at accessibility maximum; process death at the last moment before `onSaveInstanceState`. Bugs love fence posts.
 
 ## When each method earns its cost
 
@@ -121,9 +121,9 @@ Example for a Compose message list: {empty inbox, single thread, paginated histo
 | Symbolic | Path feasibility | Pure logic modules | High analysis cost |
 | Concolic | Branch coverage | Parsers, utilities | Medium–high |
 | A/B | Product metrics | Compose/feature rollout | Needs traffic + stats |
-| Boundary / ECP | Spec edges | Input validation, configs | Low per case |
+| ECP / boundary | Spec edges | Input validation, configs | Low per case |
 
-No single row replaces the others. Production Android work stacks them: ECP + boundary for unit specs, replay + stochastic for compatibility, A/B for user-visible experiments, fuzz for native attack surface.
+No single row replaces the others. Production Android work stacks them: ECP plus boundary for unit specs, replay plus stochastic for compatibility, A/B for user-visible experiments, fuzz for native attack surface.
 
 ## References
 

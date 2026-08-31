@@ -13,7 +13,7 @@ draft: false
     <ul>
       <li><a href="https://en.wikipedia.org/wiki/White-box_testing">White-box testing</a> — tests that use internal structure (code, control flow)</li>
       <li><a href="https://en.wikipedia.org/wiki/Black-box_testing">Black-box testing</a> — inputs and observed outputs with no implementation view</li>
-      <li><a href="https://en.wikipedia.org/wiki/Gray-box_testing">Gray-box testing</a> — partial knowledge (the third access model in this post’s title)</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gray-box_testing">Gray-box testing</a> — partial knowledge: logs, flags, and stack traces without full source</li>
       <li><a href="https://developer.android.com/training/testing">Test apps on Android</a> — unit, instrumentation, and UI tests as different access models</li>
     </ul>
   </div>
@@ -37,7 +37,7 @@ Typical owners: feature developers, platform engineers, security reviewers with 
 
 - **Lifecycle leaks.** Reading an Activity-held listener that survives rotation shows why `onDestroy` never unregisters — Espresso alone may only report a slow leak days later in profiling.
 - **Main-thread blocking.** Static analysis plus reading a Repository implementation reveals a `runBlocking` call on UI thread; black-box UI tests might flake only under load.
-- **Compose recomposition waste.** Inspecting slot table structure and unstable parameters explains wasted recompositions on a message list — the Systrace symptom is visible black-box; the fix is white-box (stable keys, skippable lambdas).
+- **Wasted layout passes.** Reading a custom view’s `onMeasure`/`onLayout` explains why a list row re-measures on every bind — the Systrace symptom is visible black-box; the fix is white-box (view recycling, flatter hierarchy).
 - **Incorrect `@VisibleForTesting` seams.** Unit tests that reach into private state can pass while violating module boundaries — white-box review catches false confidence.
 
 Tools: JUnit on JVM, Robolectric with shadow internals, JaCoCo coverage, Android Studio profilers, lint with custom detectors.
@@ -54,7 +54,7 @@ Typical owners: external QA, release qualification, cross-team consumers of an A
 
 - **Integration regressions across OEM skins.** [Mimic]({{ site.baseurl }}/mimic)-style UI replay compares rendered trees across devices without reading app code — the oracle is visual/structural equivalence to a baseline recording.
 - **Permission and backup flows.** Grant dialog → deny → retry paths from a clean install mirror user reality; internals of `PermissionController` do not matter.
-- **Deep link and notification cold start.** Input: intent URI; output: correct screen and back stack — black-box contract tests survive internal refactors from Fragments to Compose.
+- **Deep link and notification cold start.** Input: intent URI; output: correct screen and back stack — black-box contract tests survive internal refactors from Activities to Fragments.
 - **Accessibility.** TalkBack traversal order and touch target sizes are behavioral; they should pass whether UI is XML or Compose.
 
 Tools: Espresso, UI Automator, Maestro, Firebase Test Lab device farms, screenshot diff pipelines.
@@ -69,10 +69,10 @@ Typical owners: on-call engineers, release captains, compatibility teams, beta t
 
 ### Android failure modes gray box excels at
 
-- **Staged Compose migration.** You know which screens still use WebView (partial map) and run black-box compose tests on migrated surfaces while reading internal rollout flags to bucket failures.
+- **Staged rewrite of a screen.** You know which surfaces still run the legacy WebView path (partial map), run black-box UI tests on the rewritten ones, and read internal rollout flags to bucket failures.
 - **Crash cluster triage.** Play Console stack trace + mapping file + approximate repro steps — not full white-box debugging, but more than pure black box.
 - **ANR diagnosis.** `traces.txt` names framework Binder stalls; gray-box tester correlates with `systrace` slice without rewriting business logic.
-- **Compatibility recovery flows.** Research on reusing user flows after compatibility crashes sits here: partial knowledge of which activities relaunch, black-box replay of saved journeys ([Recover from compatibility mobile app crashes](https://dl.acm.org/doi/10.1145/3639478.3639748)).
+- **Recovery after a compatibility crash.** Partial knowledge of which activities relaunch, plus black-box replay of a saved user journey, is usually enough to get someone back where they were — no source dive required.
 
 Gray box is how most production Android teams operate day to day — neither pure unit isolation nor blind manual QA.
 
@@ -93,4 +93,4 @@ Gray box is how most production Android teams operate day to day — neither pur
 - [Mimic — UI compatibility testing]({{ site.baseurl }}/mimic)
 - [Fundamentals of testing — Android Developers](https://developer.android.com/training/testing/fundamentals)
 - Myers, Sandler, Badgett, *The Art of Software Testing* — classic treatment of test design by visibility
-- [Recover from compatibility mobile app crashes by reusing user flows](https://dl.acm.org/doi/10.1145/3639478.3639748) — gray-box recovery framing
+- [Espresso and UI Automator — Android Developers](https://developer.android.com/training/testing/instrumented-tests) — the black-box and gray-box tooling referenced above

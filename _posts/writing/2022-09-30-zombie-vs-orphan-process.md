@@ -99,7 +99,7 @@ Too many long-lived orphans can stress init’s reap loop, but the usual concern
 
 1. **`ps -eo pid,ppid,stat,cmd`** — `Z` in STAT → zombie; PPID `1` on a long worker → likely orphan
 2. **Find parent of zombies:** `ps -o ppid= -p <zombie-pid>` then inspect/kill parent
-3. **Server code:** install SIGCHLD handler or reap in a loop; use double-fork daemon pattern only when you understand who owns reap
+3. **Server code:** install a SIGCHLD handler or reap in a loop after every spawn
 4. **Containers:** PID 1 in the namespace must reap — minimal images that run app as PID 1 without an init wrapper (`tini`, `dumb-init`) are a common zombie source
 5. **Double-fork daemons:** the classic backgrounding pattern can orphan intentionally; know who owns reap before copying boilerplate
 
@@ -107,5 +107,6 @@ When a zombie’s parent is already gone, init usually reaps it within milliseco
 
 ## References
 
-- `man 2 wait`, `man 2 fork`, `man 7 signal` — Linux programmer’s manual
+- [signal(7)](https://man7.org/linux/man-pages/man7/signal.7.html) — SIGCHLD delivery, and why reaping belongs in the handler
+- [daemon(7)](https://man7.org/linux/man-pages/man7/daemon.7.html) — the double-fork backgrounding pattern and who ends up owning reap
 - Silberschatz, Galvin, Gagne, *Operating System Concepts* — process termination and orphan handling

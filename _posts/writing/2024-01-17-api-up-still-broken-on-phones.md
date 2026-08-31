@@ -24,11 +24,6 @@ Backend availability sits at a comfortable stretch of nines. On-call is quiet. T
 
 For example, in a mail Android client the user-visible path is a chain: process start, auth/token refresh, config, mailbox metadata, then the first useful paint. A dependency that is “mostly up” can still fail the session if it sits on the critical path of cold start. Server SLIs that only count well-formed requests at the edge miss phones that never get that far.
 
-## Related reading
-
-- **Docs:** [SRE Book — Service Level Objectives](https://sre.google/sre-book/service-level-objectives/)
-- **Articles surveyed:** [Engineering Reliable Mobile Applications (Google SRE)](https://sre.google/resources/practices-and-processes/engineering-reliable-mobile-applications/); [Product-Focused Reliability for SRE](https://sre.google/resources/practices-and-processes/product-focused-reliability-for-sre/); [How we build good SLOs at Google](https://cloud.google.com/blog/products/gcp/building-good-slos-cre-life-lessons)
-
 ## What backend nines actually measure
 
 Classic request SLIs answer: *of the requests that reached us, what fraction succeeded fast enough?* That is necessary. It is not sufficient for a native client.
@@ -70,7 +65,7 @@ On a mail client, “API up” often means many APIs. The wrong instinct after a
 
 > **Rule of thumb** - if a call can turn a healthy backend into a stuck splash, it belongs on a session SLI, not only on a service dashboard.
 
-Qualitatively: when cold-start critical paths balloon under partial dependency failure, users experience “the app is down” even while edge success rates stay high. That is the product truth — for example, in a mail app with a green API dashboard and a stuck splash.
+When cold-start critical paths balloon under partial dependency failure, users experience “the app is down” even while edge success rates stay high. A mail app with a green API dashboard and a stuck splash is, to the person holding the phone, down.
 
 ## Redefine SLIs when the client is the product
 

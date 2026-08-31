@@ -27,11 +27,6 @@ That is not stubbornness. Long sessions fill a finite context window. Older inst
 
 The second failure mode feels worse. Yesterday’s session wrote a memory note: “Compose list uses XML adapters.” That was true before the migration. Today every new chat “remembers” it, invents a fix for adapters that no longer exist, and argues with you when you correct it. Stale memory does not merely miss — it **gaslights the diagnosis**.
 
-## Related reading
-
-- **Docs:** [Cursor skills](https://cursor.com/help/customization/skills) — on-demand workflows vs short always-on rules
-- **Articles surveyed:** [Why Cursor forgets mid-task](https://www.learncursor.dev/tips/cursor-forgets-context) — context hygiene; [Rules vs skills](https://getaibook.com/blog/agent-skills-vs-cursor-rules/) — deterministic vs relevance-loaded context
-
 ## Three places a constraint can live
 
 Treat durability as a placement problem, not a prompting contest.

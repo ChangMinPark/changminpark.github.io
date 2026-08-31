@@ -76,6 +76,8 @@ A central scheduler runs a dependency graph: unlock ready tasks, retry failures,
 
 **Vignette:** Send pipelines as a DAG — persist draft → upload attachments → commit send → fan out push/index. Orchestration on the server (or a workflow engine) beats a phone that chains five fragile network calls and loses power mid-flight. The client’s job is optimistic UI and idempotent retries; the orchestrator owns “what runs next when step three fails.”
 
+## Which one to reach for
+
 | Pattern | Steal when… | Prefer something else when… |
 |---------|-------------|-----------------------------|
 | Load balancer | Workers are interchangeable | Soft state still lives on one box |

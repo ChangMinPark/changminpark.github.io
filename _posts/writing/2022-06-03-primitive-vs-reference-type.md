@@ -96,6 +96,8 @@ fun updateFromJava(value: Int?) {
 
 5. **R8 and reflection.** Code that assumes a field is `int` but is actually `Integer` after Kotlin compilation can break reflective access or serialization. Release-build-only crashes here often trace back to type erasure and boxing, not "random" shrinker bugs.
 
+In Compose, the same distinction shows up in **what triggers recomposition**. A `mutableIntStateOf(0)` tracks a primitive-backed slot; `mutableStateOf<Int?>(null)` tracks a nullable wrapper and a different "empty vs zero" story for your UI. Picking the wrong one is not a style issue — it is a state contract.
+
 ## Quick decision guide
 
 | Situation | Prefer |
@@ -105,8 +107,6 @@ fun updateFromJava(value: Int?) {
 | Large numeric array | `IntArray` / `FloatArray`, not `List<Int>` |
 | Shared mutable object | Reference type + clear ownership |
 | Java interop parameter | Match SDK nullability; avoid `!!` at boundaries |
-
-In Compose, the same distinction shows up in **what triggers recomposition**. A `mutableIntStateOf(0)` tracks a primitive-backed slot; `mutableStateOf<Int?>(null)` tracks a nullable wrapper and a different "empty vs zero" story for your UI. Picking the wrong one is not a style issue — it is a state contract.
 
 Understanding the split does not make you avoid objects — it tells you **where aliasing, null, and allocation happen** before they become ANRs or release-only NPEs.
 

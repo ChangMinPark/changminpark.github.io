@@ -25,12 +25,6 @@ Play Console shows a mild crash uptick. Backend latency is flat. Product analyti
 
 This post is about stitching that story: correlation IDs from client to server, and why crashes, logs, and metrics answer different questions. For the **client ANR / Crashlytics layer** specifically — watchdog snapshots, Play Vitals vs Crashlytics timing — see [ANR Stack Traces Lie by Omission]({{ site.baseurl }}/android-crashlytics-anr). Here the focus is the **system boundary**, not ANR forensics.
 
-## Related reading
-
-- **Internal:** [ANR Stack Traces Lie by Omission]({{ site.baseurl }}/android-crashlytics-anr) — client ANR/crash reporting constraints
-- **Docs:** [OpenTelemetry — client-side apps](https://opentelemetry.io/docs/platforms/client-apps/); [OpenTelemetry Android](https://opentelemetry.io/docs/platforms/client-apps/android/)
-- **Articles surveyed:** [Android mobile observability with OTel](https://docs.base14.io/blog/android-mobile-observability-opentelemetry/) — W3C propagation end-to-end; [W3C Trace Context](https://www.w3.org/TR/trace-context/) — the header contract
-
 ## Correlation is the join key
 
 A useful incident join looks like this:
@@ -92,7 +86,7 @@ Ownership matters as much as tooling. Decide who pages on **client crash-free**,
 
 ## Wrap-up
 
-[Crashlytics / ANR work]({{ site.baseurl }}/android-crashlytics-anr) teaches you to distrust a single main-thread snapshot and to design custom keys for session context. This post assumes that layer and asks the next question: **can you walk from that key into backend time?** If the answer is only "we have Play Vitals" and "we have Grafana," you will keep holding three-way meetings about whose chart is right.
+If the answer to "can you walk from a client key into backend time?" is only "we have Play Vitals" and "we have Grafana," you will keep holding three-way meetings about whose chart is right.
 
 Ship one join key from APK to backend, and treat crashes, logs, and metrics as different questions — not competing sources of truth. Store dashboards explain process death; correlated traces explain "users say it's broken" when the process lived. Wire the header before you buy another chart.
 

@@ -24,7 +24,7 @@ The fastest way to waste a user study is to pick the wrong kind of evidence firs
 
 Qualitative and quantitative methods are not rivals. They answer different questions at different stages of a systems project. Treat them as a pipeline — hypothesize, validate, generalize, revisit the human element — rather than a checkbox on a grant form.
 
-<img src="{{ site.baseurl }}/images/posts/methodology-qualitative-vs-quantitative/figure-1.png" alt="Qualitative research gathers opinions and motivations; quantitative research gathers measurable structured data" width="50%" style="margin-top: 0px; margin-bottom: 8px;"/>
+<img src="{{ site.baseurl }}/images/posts/methodology-qualitative-vs-quantitative/figure-1.png" alt="Qualitative research gathers opinions and motivations; quantitative research gathers measurable structured data" width="100%" style="margin-top: 0px; margin-bottom: 8px;"/>
 
 *Figure 1. Qualitative methods explore reasons and motivations; quantitative methods produce structured, measurable data.*
 
@@ -34,7 +34,7 @@ Qualitative and quantitative methods are not rivals. They answer different quest
 
 It is exploratory by design. You are not proving a hypothesis yet; you are surfacing language, mental models, and blind spots that a spreadsheet will never show.
 
-Concrete examples from the mobile systems work I was doing around this paper year:
+Concrete examples from the mobile systems work I was doing at the time:
 
 - **Formulating hypotheses.** Before we automated UI replay in Mimic, we watched developers manually reproduce compatibility failures. Their descriptions ("the list jumps after rotation on Samsung") became test oracles we later encoded — not the other way around.
 - **[Gesto]({{ site.baseurl }}/gesto) gesture elicitation.** Asking users to perform a task in their own words reveals gesture vocabularies that lab-chosen swipe patterns miss. Qualitative data here is the raw material for a taxonomy, not a p-value.

@@ -11,11 +11,11 @@ draft: false
   <div class="post-prereq__body">
     <p class="post-prereq__hint">Read these first if <strong>RAG</strong>, <strong>chunking</strong>, <strong>embeddings</strong>, or <strong>knowledge bases</strong> are new.</p>
     <ul>
-      <li><a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is RAG? (AWS)</a> — retrieve from an authoritative corpus, then generate</li>
       <li><a href="https://www.pinecone.io/learn/chunking-strategies/">Chunking strategies (Pinecone)</a> — how you slice the corpus; wrong boundaries → wrong top-<em>k</em></li>
-      <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html">Understanding RAG (AWS Prescriptive Guidance)</a> — embeddings, vector store, retrieve → augment → generate</li>
+      <li><a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is RAG? (AWS)</a> — retrieve from an authoritative corpus, then generate</li>
       <li><a href="https://arxiv.org/abs/2005.11401">Lewis et al. — RAG for Knowledge-Intensive NLP Tasks</a> (NeurIPS 2020) — original paper that named the pattern</li>
       <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents (Anthropic)</a> — retrieved (or repo) context competes for the same attention budget</li>
+      <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html">Understanding RAG (AWS Prescriptive Guidance)</a> — embeddings, vector store, retrieve → augment → generate</li>
     </ul>
   </div>
 </details>
@@ -47,9 +47,9 @@ flowchart LR
 
 *Figure 1. RAG is search-then-write over a knowledge base — not a smarter model that "remembers" your wiki.*
 
-If the KB is a graveyard of contradictory Confluence pages, RAG will amplify the loudest stale page. Ownership matters as much as embeddings: who retires superseded runbooks, who can publish, and whether the index lags the wiki by hours or by quarters. Chunking that splits a definition from its exception produces the same confident wrongness taxonomies keep rediscovering: boundary errors, off-topic hits, distractor dominance while the answer-bearing span sits one chunk away.
+If the KB is a graveyard of contradictory Confluence pages, RAG will amplify the loudest stale page. Ownership matters as much as embeddings: who retires superseded runbooks, who can publish, and whether the index lags the wiki by hours or by quarters. Chunking that splits a definition from its exception produces the confident wrongness that RAG failure taxonomies keep rediscovering: boundary errors, off-topic hits, and distractors that dominate the prompt while the answer-bearing span sits one chunk away.
 
-For example, in a mail app help center, "deleted drafts" and "deleted messages" often live in adjacent articles. A fixed-size split can put the retention number in chunk A and the product caveat ("drafts vs sent") in chunk B. The retriever returns A because the query shared more tokens with the FAQ title. The model cites A and invents confidence. Users experience a policy answer; you experienced a ranking bug.
+For example, in a mail app help center, "deleted drafts" and "deleted messages" often live in adjacent articles. A fixed-size split can put the retention number in chunk A and the product caveat ("drafts vs sent") in chunk B. The retriever returns A because the query shared more tokens with the FAQ title. The model cites A and invents confidence. Users experience a policy answer; you have a ranking bug.
 
 > **Rule of thumb** - debug the ranked passages before you blame the model. If the gold paragraph never entered the prompt, no prompt tweak fixes the product.
 

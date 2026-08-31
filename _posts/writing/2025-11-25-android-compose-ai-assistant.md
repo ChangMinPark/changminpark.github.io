@@ -23,9 +23,7 @@ draft: false
 
 Wire a chat-like assistant into Compose and the backend can be fine while the UI still falls apart: a long question opens the keyboard and history vanishes behind the IME, scroll jumps, a streaming token arrives mid-animation and the last bubble flickers. Design review misses all of that — Figma does not simulate `WindowInsets` or partial text updates at dozens of tokens per second.
 
-This is a **pattern post** about Compose assistant-style surfaces — not a product claim about any particular mail or chat app. The hard parts are the same ones that show up on any high-churn list or editor UI: stable list keys, observable state, Material theming, and inset-aware layout. Assistant UX just amplifies those constraints — reverse-ordered lists, incremental text, and keyboard-driven layout shifts. Treat the panel like a single `TextField` on a `Column` and you will fight the framework.
-
-For the declarative mental model — state driving UI, recomposition, migration from Views — see [Imperative vs Declarative Android UI]({{ site.baseurl }}/imperative-vs-declarative-android-ui). This post assumes that contract and focuses on **assistant-specific Compose patterns**.
+The hard parts are the same ones that show up on any high-churn list or editor UI: stable list keys, observable state, Material theming, and inset-aware layout. Assistant UX amplifies all four at once — reverse-ordered lists, incremental text, and keyboard-driven layout shifts arrive together. Treat the panel like a single `TextField` on a `Column` and you will fight the framework. What follows assumes the declarative contract (state drives UI, the runtime reconciles) and focuses on the assistant-specific parts.
 
 ## Chat layout: LazyColumn, not Column
 

@@ -24,11 +24,6 @@ Reviewing a Kotlin change last month, half the lines were indentation and import
 
 That confusion shows up in every language shop. People say "run the linter" when they mean "run Prettier," or ship a formatter config and still wonder why review time did not drop. The fix is not another Slack thread about tabs vs spaces — it is knowing **which job each tool is built for** and where they overlap.
 
-## Related reading
-
-- **Docs:** [Prettier — Comparison with linters](https://prettier.io/docs/en/comparison.html); [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html)
-- **Articles surveyed:** [Formatter vs Linter (Awesome Code)](https://medium.com/awesomecode/formatter-vs-linter-what-is-the-difference-42b898a276ae) — high-level roles; [Linter vs Formatter (nono.ma)](https://nono.ma/linter-vs-formatter) — AST and speed
-
 ## Formatters: mechanical style, fast and deterministic
 
 A **formatter** enforces presentation rules: indentation, line breaks, spacing around operators, max line length, quote style. It does not care whether your function is too complex — only whether the braces match the team guide.
