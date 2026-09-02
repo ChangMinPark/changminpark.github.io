@@ -12,7 +12,7 @@ layout: default
         {% endif %}
         <ul class="agent-lab__meta">
           <li>~10–14 weeks · 4–8 hr/week</li>
-          <li>Claude-first · optional local 7B</li>
+          <li>Claude-first · optional local LLM</li>
           <li>Repo: <code>~/demo-on-call-triage</code></li>
         </ul>
       </header>
@@ -146,12 +146,69 @@ layout: default
     boxes.forEach(function (b) { next[b.getAttribute('data-todo')] = !!b.checked; });
     try { localStorage.setItem(KEY, JSON.stringify(next)); } catch (e) {}
     updateProgress();
+    syncPhaseMasters();
+  }
+
+  function setPhaseTodos(list, checked) {
+    var phaseBoxes = list.querySelectorAll('input[data-todo]');
+    Array.prototype.forEach.call(phaseBoxes, function (b) { b.checked = !!checked; });
+    persist();
+  }
+
+  function syncPhaseMasters() {
+    document.querySelectorAll('ul.lab-todos[data-phase]').forEach(function (list) {
+      var heading = list.previousElementSibling;
+      if (!heading || !heading.classList.contains('lab-todos-heading')) return;
+      var master = heading.querySelector('input.lab-todos-master__input');
+      if (!master) return;
+      var phaseBoxes = Array.prototype.slice.call(list.querySelectorAll('input[data-todo]'));
+      if (!phaseBoxes.length) return;
+      var done = phaseBoxes.filter(function (b) { return b.checked; }).length;
+      var all = done === phaseBoxes.length;
+      var none = done === 0;
+      master.checked = all;
+      master.indeterminate = !all && !none;
+      heading.classList.toggle('is-all-done', all);
+    });
   }
 
   boxes.forEach(function (b) {
     var id = b.getAttribute('data-todo');
     if (saved[id]) b.checked = true;
     b.addEventListener('change', persist);
+  });
+
+  // Per-phase master toggle to the left of the "Todos" heading
+  document.querySelectorAll('ul.lab-todos[data-phase]').forEach(function (list) {
+    var h = list.previousElementSibling;
+    if (!h || !h.classList.contains('lab-todos-h')) return;
+    if (h.parentElement && h.parentElement.classList.contains('lab-todos-heading')) return;
+
+    var row = document.createElement('div');
+    row.className = 'lab-todos-heading';
+    h.parentNode.insertBefore(row, h);
+
+    var masterLabel = document.createElement('label');
+    masterLabel.className = 'lab-todos-master';
+    masterLabel.title = 'Toggle all todos in this phase';
+
+    var master = document.createElement('input');
+    master.type = 'checkbox';
+    master.className = 'lab-todos-master__input';
+    master.setAttribute('aria-label', 'Mark all todos in this phase done');
+
+    var mark = document.createElement('span');
+    mark.className = 'lab-todos-master__mark';
+    mark.setAttribute('aria-hidden', 'true');
+
+    masterLabel.appendChild(master);
+    masterLabel.appendChild(mark);
+    row.appendChild(masterLabel);
+    row.appendChild(h);
+
+    master.addEventListener('change', function () {
+      setPhaseTodos(list, master.checked);
+    });
   });
 
   var reset = document.getElementById('lab-reset-progress');
@@ -161,10 +218,12 @@ layout: default
       boxes.forEach(function (b) { b.checked = false; });
       try { localStorage.removeItem(KEY); } catch (e) {}
       updateProgress();
+      syncPhaseMasters();
     });
   }
 
   updateProgress();
+  syncPhaseMasters();
 })();
 
 (function () {
