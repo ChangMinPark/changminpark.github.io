@@ -5,23 +5,15 @@ sitemap:
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-    {% unless post.published == false or post.draft == true %}
-    <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
-    </url>
-    {% endunless %}
-  {% endfor %}
-  {% assign hub_paths = "/,/writing/,/project,/project/" | split: "," %}
-  {% for page in site.pages %}
-    {% assign page_path = page.url | replace: "index.html", "" %}
-    {% if hub_paths contains page_path %}
-      {% unless page.robots contains "noindex" %}
-    <url>
-      <loc>{{ site.url }}{{ page_path }}</loc>
-    </url>
-      {% endunless %}
-    {% endif %}
-  {% endfor %}
+{% for post in site.posts %}{% unless post.published == false or post.draft == true %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+  </url>
+{% endunless %}{% endfor %}
+{% assign hub_paths = "/,/writing/,/project,/project/" | split: "," %}
+{% for page in site.pages %}{% assign page_path = page.url | replace: "index.html", "" %}{% if hub_paths contains page_path %}{% unless page.robots contains "noindex" %}
+  <url>
+    <loc>{{ site.url }}{{ page_path }}</loc>
+  </url>
+{% endunless %}{% endif %}{% endfor %}
 </urlset>
